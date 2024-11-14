@@ -90,12 +90,13 @@ Example Configuration of a custom default role:
 ````
 
 # Action Flags
-Actions flags represent players actions. Each flag has their own bypass and toggle permission, which is required for players to toggle the flag.
+Actions flags represent players actions. Each flag has their own bypass and toggle permission, which is required for players to toggle the flag. The wilderness bypass permission allows a player to bypass flags set in the wilderness via `/lands admin menu`.
 
 * **BLOCK_PLACE**\
 Allows the role to place blocks.\
 *Toggle permission: lands.role.setting.block_place*\
-*Bypass permission: lands.bypass.block_place*
+*Bypass permission: lands.bypass.block_place*\
+*Wilderness bypass permission: lands.bypass.wilderness.block_place*
 
 * **BLOCK_BREAK**\
 Allows the role to break blocks.\
