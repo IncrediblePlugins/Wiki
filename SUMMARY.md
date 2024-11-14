@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Home](README.md)
-* [Installation](https://lands.incredibleplugins.com/wiki/Installation)
+* [Installation](configuration/Installation)
 
 ## Basics
 
@@ -35,19 +35,19 @@
 
 ## Permissions
 
-* [Recommendation](permissions/Recommended-Permission-Setup)
+* [Recommendation](permissions/Recommended-Permission-Setup.md)
 * [Numbered](permissions/Permissions#numbered-permissions)
-* [Command](basics/Commands)
+* [Command](basics/Commands.md)
 * [Bypass](permissions/Permissions#bypass-permissions)
 * [Land Flags](permissions/Permissions#toggle-natural-flags)
 * [Role Flags](permissions/Permissions#toggle-role-flags)
 * [Personal Flags](permissions/Permissions#toggle-personal-flags)
 * [Administrator](permissions/Permissions#administrator-permissions)
-* [Playtime MAX Reward](permissions/Permissions#playtime-max-rewards)
-* [Luckperms Context](permissions/Luckperms-Context)
+* [Playtime MAX Reward](permissions/Permissions.md#playtime-max-rewards)
+* [Luckperms Context](permissions/Luckperms-Context.md)
 
-## [Moderation Tools](Moderation-Tools)
+## [Moderation Tools](Moderation-Tools.md)
 
-## [PlaceholderAPI Placeholders](configuration/PlaceholderAPI-Placeholders#placeholders)
+## [PlaceholderAPI Placeholders](configuration/PlaceholderAPI-Placeholders.md)
 
 ## [Developer API](https://github.com/IncrediblePlugins/LandsAPI/wiki)
