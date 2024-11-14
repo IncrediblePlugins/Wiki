@@ -1,6 +1,9 @@
+# Table of contents
+
 * [Home](https://wiki.incredibleplugins.com)
 
 ## For Players
+
 * [Frequently asked Questions](players/Frequently-asked-Questions.md)
 * [Start as a Player](players/How-to-Start-as-a-Player.md)
 * [Commands](players/Commands.md)
@@ -10,6 +13,7 @@
 * [Wars](players/Wars.md)
 
 ## Configuration
+
 * [Installation](configuration/Installation.md)
 * [Frequently asked Questions](configuration/Frequently-asked-Config-Questions.md)
 * [Database](configuration/Database.md)
@@ -29,6 +33,7 @@
 * [Edit other Lands](configuration/Administration.md)
 
 ## Permissions
+
 * [Recommendation](permissions/Recommended-Permission-Setup.md)
 * [For Commands](players/Commands.md)
 * [Other Permissions](permissions/Permissions.md)
@@ -38,6 +43,7 @@
 ## [PlaceholderAPI Placeholders](configuration/PlaceholderAPI-Placeholders.md)
 
 ## Developer API
+
 * [Setup](api/README.md)
 * [Levels](api/Levels.md)
 * [Update](api/API-Update.md)
