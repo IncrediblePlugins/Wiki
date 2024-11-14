@@ -1,5 +1,5 @@
 `/lands`\
-Opens the GUI menu.\
+Opens the GUI menu. Executing ˋ/lands menuˋ will have the same effect.\
 Permission: `lands.command.menu`
 
 `/lands help [page]`\
@@ -46,205 +46,196 @@ Permission: `lands.command.edit`
 Display information about a land. If no parameter is provided, it will display information about the land you're currently standing in.\
 Permission: `lands.command.info`
 
->`/lands invites`\
-Permission: `lands.command.invites`\
-Open received invites GUI.
+`/lands invites`\
+View all received invitations and ownership requests.\
+Permission: `lands.command.invites`
 
->`/lands leave <land | here>`\
-Permission: `lands.command.leave`\
-Leave a land or the area at your current position, if you provide "here" for the land parameter.
+`/lands leave <land | here>`\
+Leave a land. If you provide hereˋ as the argument, you'll leave the (sub)area at your current position.\
+Permission: `lands.command.leave`
 
-> `/lands map`\
-Permission: `lands.command.map`\
-Show lands map.
+`/lands map`\
+View a map that shows claimed and unclaimed chunks around you. If you want to view the map in chat instead of the GUI, execute ˋ/lands map chatˋ.\
+Permission: `lands.command.map`
 
->`/lands menu`\
-Permission: `lands.command.menu`\
-Open Lands GUI.\
-Append "here" to the command to open the GUI\
-for the chunk you're standing in.
+`/lands menu [menu] [additional]`\
+Open the GUI menu. You can open a specific menu by providing the ˋ[menu]ˋ parameter. If you execute ˋ/lands menu hereˋ, if will open the menu for the (sub)area you're currently standing in. The ˋ[additional]ˋ parameter is only available for server admins to open a menu for a specific player etc.\
+Permission: `lands.command.menu`
 
->`/lands menu here`\
-Permission: `lands.command.menu`\
-Open Lands GUI for the chunk you're standing in.
+`/lands rename <new name>`\
+Rename your land. Depending on the server this might charge you a fee.\
+Permission: `lands.command.rename`
 
->`/lands rename [land] <new name>`\
-Permission: `lands.command.rename`\
-Rename land.
+`/lands selectionˋ\
+Create a selection by selecting a lower and upper corner. Executing ˋ/lands selection expandˋ will expand the selection to the full height. When complete, you can execute the following commands for the selection:
+* ˋ/lands claimˋ - claim the selection
+* ˋ/lands assign <area>ˋ - resize an existing subarea or create a new subarea
+* ˋ/lands unclaimˋ - unclaim the selection\
+Permission: `lands.command.selectionˋ
 
-> `/lands selection`\
-Permission: `lands.command.selection`\
-Select a region for actions like /lands claim.\
-Use `/lands selection expand` to expand the selection to all y levels.\
-Possible actions:\
-/lands claim\
-/lands unclaim\
-/lands trust\
-/lands untrust
-
->`/lands assign <area>`\
+`/lands assign <area>`\
 Permission: `lands.command.assign`\
 Assign selection to a area (resize) or create a new area. Alternatively you can use `/lands selection assign`.
 
-> `/lands setrole <player> <area,*> <role>`\
+`/lands setrole <player> <area,*> <role>`\
 Permission: `lands.command.setrole`\
 Set a role of a player.\
 The area parameter defines a sub area of the land.
 
-> `/lands setspawn`\
+`/lands setspawn`\
 Permission: `lands.command.setspawn`\
 Set spawn for land.
       
-> `/lands spawn [land]`\
+`/lands spawn [land]`\
 Permission: `lands.command.spawn`\
 Teleport to land spawn.
 
-> `/lands top`\
+`/lands top`\
 Permission: `lands.command.top`\
 Show top ten lands.
 
-> `/lands trust <player> [area,*]`\
+`/lands trust <player> [area,*]`\
 Permission: `lands.command.trust`\
 Trust a player.\
 Area parameter is optional.
 
-> `/lands unclaim`\
+`/lands unclaim`\
 Permission: `lands.command.unclaim`\
 Unclaim a chunk.
 
-> `/lands unclaim auto`\
+`/lands unclaim auto`\
 Permission: `lands.command.unclaim.auto`\
 Unclaim chunks while walking.
 
-> `/lands unclaimall`\
+`/lands unclaimall`\
 Permission: `lands.command.unclaimall`\
 Unclaim all chunks for the land.
 
-> `/lands untrust <player> [area,*]`\
+`/lands untrust <player> [area,*]`\
 Permission: `lands.command.untrust`\
 Untrust player.\
 Area parameter is optional.
 
-> `/lands storage`\
+`/lands storage`\
 Permission: `lands.command.storage`\
 Open the land item storage inventory.
 
-> `/lands view`\
+`/lands view`\
 Permission: `lands.command.view`\
 Visualise land borders.
 
-> `/lands unstuck`\
+`/lands unstuck`\
 Permission: `lands.command.unstuck`\
 Teleport to the nearest unclaimed chunk. This allows you to teleport out of claims, if you're stuck inside.
 
-> `/lands wild [world] [player]`\
+`/lands wild [world] [player]`\
 Permission: `lands.command.wild`\
 Teleport to a random location. The optional player parameter is\
 only available to players with the permission "lands.admin.command.wild"\
 You can customize this command in the config file.
 
-> `/lands wild [world] [player]`\
+`/lands wild [world] [player]`\
 Permission: `lands.admin.command.wild`\
 Execute /wild for other players.
 
-> `/lands withdraw <amount> [land]`\
+`/lands withdraw <amount> [land]`\
 Permission: `lands.command.withdraw`\
 Withdraw money from land bank.
 
-> `/lands balance [land]`\
+`/lands balance [land]`\
 Permission: `lands.command.balance`\
 View land's balance.
 
-> `/lands taxes`\
+`/lands taxes`\
 Permission: `lands.command.taxes`\
 View upcoming tax payments.
 
-> `/lands rent`\
+`/lands rent`\
 Permission: `lands.command.rent`\
 [Manage rentals.](https://lands.incredibleplugins.com/wiki/Rent-System)
 
-> `/lands relations`\
+`/lands relations`\
 Permission: `lands.command.relations`\
 Manage relations.
 
-> `/lands confirmtp`\
+`/lands confirmtp`\
 Permission: `None`\
 Confirm unsafe destination.
 
 ### Nations
-> `/nations create`\
+`/nations create`\
 Permission: `nations.command.create`\
 Create a nation.
 
-> `/nations accept`\
+`/nations accept`\
 Permission: `nations.command.accept`\
 Accept invite.
 
-> `/nations delete`\
+`/nations delete`\
 Permission: `nations.command.delete`\
 Delete nation.
 
-> `/nations deny`\
+`/nations deny`\
 Permission: `nations.command.deny`\
 Deny invite.
 
-> `/nations leave`\
+`/nations leave`\
 Permission: `nations.command.leave`\
 Leave nation.
 
-> `/nations rename`\
+`/nations rename`\
 Permission: `nations.command.rename`\
 Rename nation.
 
-> `/nations menu`\
+`/nations menu`\
 Permission: `nations.command.menu`\
 Open nation menu.
 
-> `/nations  setcapital`\
+`/nations  setcapital`\
 Permission: `nations.command.setcapital`\
 Set capital of nation.
 
-> `/nations spawn`\
+`/nations spawn`\
 Permission: `nations.command.spawn`\
 Teleport to nation spawn.
 
-> `/nations trust`\
+`/nations trust`\
 Permission: `nations.command.trust`\
 Add land.
 
-> `/nations untrust`\
+`/nations untrust`\
 Permission: `nations.command.untrust`\
 Remove land.
 
-> `/nations relations`\
+`/nations relations`\
 Permission: `nations.command.relations`\
 Manage relations.
 
-> `/nations top`\
+`/nations top`\
 Permission: `nations.command.top`\
 View top nations.
 
 ### Wars
-> `/wars declare`\
+`/wars declare`\
 Permission: `wars.command.declare`\
 Declare war against a land or nation.
 
-> `/wars deny`\
+`/wars deny`\
 Permission: `wars.command.deny`\
 Deny mutual war declaration.
 
-> `/wars info`\
+`/wars info`\
 Permission: `wars.command.info`\
 Info about current war.
 
-> `/wars menu`\
+`/wars menu`\
 Permission: `wars.command.menu`\
 Open menu for current war.
 
-> `/wars list`\
+`/wars list`\
 Permission: `wars.command.list`\
 View all active wars.
 
-> `/wars spawn`\
+`/wars spawn`\
 Permission: `wars.command.spawn`\
 Teleport to the enemies border.
