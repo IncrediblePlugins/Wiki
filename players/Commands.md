@@ -30,22 +30,21 @@ Permission: `lands.command.chat`
 Delete a land or subarea at your current position. If you provide `here` for the land parameter, it will delete the subarea you're currently standin in.\
 Permission: `lands.command.delete`
 
->`/lands deny`\
-Permission: `lands.command.deny`\
-Deny invite.
+`/lands deny <land>`\
+Deny an invitation from a land.\
+Permission: `lands.command.deny`
 
->`/lands deposit [land] <amount>`\
-Permission: `lands.command.deposit`\
-Deposit money to land bank.
+`/lands deposit <amount> [land]`\
+Deposit money to a land bank.\
+Permission: `lands.command.deposit`
 
->`/lands edit <land>`\
-Permission: `lands.command.edit`\
-Enter edit mode for a land.\
-Actions like /lands claim will be executed for this land.
+`/lands edit <land>`\
+Enter the edit mode for a land. All following commands will be executed for this land.\
+Permission: `lands.command.edit`
 
->`/lands info [land]`\
-Permission: `lands.command.info`\
-Show information about a land.
+`/lands info [land]`\
+Display information about a land. If no parameter is provided, it will display information about the land you're currently standing in.\
+Permission: `lands.command.info`
 
 >`/lands invites`\
 Permission: `lands.command.invites`\
