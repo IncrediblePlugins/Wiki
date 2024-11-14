@@ -38,5 +38,5 @@
 ## [Moderation Tools](Moderation-Tools.md)
 ## [PlaceholderAPI Placeholders](configuration/PlaceholderAPI-Placeholders.md)
 
-## [Developer API]
+## Developer API
 * [Setup](https://github.com/IncrediblePlugins/LandsAPI/wiki)
