@@ -1,10 +1,10 @@
->`/lands`\
-`Permission: lands.command.menu`\
-Description: Open the menu.
+`/lands`\
+Opens the GUI menu.\
+Permission: `lands.command.menu`
 
->`/lands help [page]`\
-`Permission: lands.command.help`\
-Description: Display command usages of Lands.
+`/lands help [page]`\
+Display command usages of Lands.\
+Permission: `lands.command.help`
 
 >`/lands claim`\
 `Permission: lands.command.claim`\
