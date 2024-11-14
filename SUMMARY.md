@@ -1,18 +1,16 @@
 # Table of contents
 
 * [Home](README.md)
-* [Installation](configuration/Installation.md)
 
-## Basics
+## For Players
 
-* [Frequently asked Questions](basics/Frequently-asked-Questions.md)
-* [Start as a Player](basics/How-to-Start-as-a-Player.md)
-* [Commands](basics/Commands.md)
-* [About Sub Areas](basics/Sub-Areas.md)
-* [Rent and Sell System](basics/Rent-System.md)
-* [Nations](basics/Nations.md)
-* [Wars](basics/Wars.md)
-* [For Server-Admins](basics/Administration.md)
+* [Frequently asked Questions](players/Frequently-asked-Questions.md)
+* [Start as a Player](players/How-to-Start-as-a-Player.md)
+* [Commands](players/Commands.md)
+* [About Sub Areas](players/Sub-Areas.md)
+* [Rent and Sell System](players/Rent-System.md)
+* [Nations](players/Nations.md)
+* [Wars](players/Wars.md)
 
 ## Configuration
 
@@ -32,18 +30,13 @@
 * [Events](https://github.com/IncrediblePlugins/PluginFrameworkAPI/wiki/Events)
 * [Regeneration](configuration/Unclaim-and-Wilderness-Regeneration.md)
 * [Discord Bot](https://github.com/IncrediblePlugins/LandsDiscordBot/wiki)
+* [Edit other Lands](configuration/Administration.md)
 
 ## Permissions
 
 * [Recommendation](permissions/Recommended-Permission-Setup.md)
-* [Numbered](permissions/Permissions.md#numbered-permissions)
-* [Command](basics/Commands.md)
-* [Bypass](permissions/Permissions#bypass-permissions)
-* [Land Flags](permissions/Permissions#toggle-natural-flags)
-* [Role Flags](permissions/Permissions#toggle-role-flags)
-* [Personal Flags](permissions/Permissions#toggle-personal-flags)
-* [Administrator](permissions/Permissions#administrator-permissions)
-* [Playtime MAX Reward](permissions/Permissions#playtime-max-rewards)
+* [Command Permissions](players/Commands.md)
+* [Other Permissions](permissions/Permissions.md)
 * [Luckperms Context](permissions/Luckperms-Context.md)
 
 ## [Moderation Tools](Moderation-Tools.md)
