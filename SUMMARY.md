@@ -1,5 +1,5 @@
 # Table of contents
-* [Home](README.md)
+* [Home](https://wiki.incredibleplugins.com)
 
 ## For Players
 * [Frequently asked Questions](players/Frequently-asked-Questions.md)
