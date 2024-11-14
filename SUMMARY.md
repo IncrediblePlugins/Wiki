@@ -2,9 +2,9 @@
 
 * [Welcome](README.md)
 
-## Getting Started
+## Plugins
 
-* [Quickstart](getting-started/quickstart.md)
+* [Lands](https://wiki.incredibleplugins.com/lands)
 * [Publish your docs](getting-started/publish-your-docs.md)
 
 ## Basics
