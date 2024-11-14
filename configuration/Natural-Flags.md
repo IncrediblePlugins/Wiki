@@ -5,17 +5,17 @@ Options:
 
 Wilderness flags can be edited in the `/lands admin menu` menu.
 
-## Reset flag(s) to their defined state from config.yml:
+# Reset flag(s) to their defined state from config.yml:
 `/lands admin land <land | *> resetflag <flag | all>`\
 Keep in mind that changing flags in the configuration files requires a server reload / restart.\
 *Permission: lands.admin.command.land.resetflag*
 
-## Flags
+# Flags
 
-### ENTITY_GRIEFING
+## ENTITY_GRIEFING
 Allow entities to grief blocks?
 
-### TNT_GRIEFING
+## TNT_GRIEFING
 Allow tnt to destroy blocks?
 
 * **PISTON_GRIEFING**\
