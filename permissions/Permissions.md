@@ -100,130 +100,13 @@ Allow to teleport to a sub area. This permission is set by default.
 Allow to teleport via `/lands unstuck`. This permission is set by default.
 
 ## Toggle Natural Flags
-These permissions are needed to toggle natural flags like monster spawning for your land.
-````yaml
-      lands.setting.*:
-        description: Allow players to toggle natural flags.
-        children:
-          lands.setting.entity_griefing:
-            description: Allow to toggle entity griefing
-          lands.setting.block_spreading:
-            description: Allow to toggle block spreading
-          lands.setting.phantom_spawn:
-            description: Allow to toggle phantom spawning
-          lands.setting.piston_griefing:
-            description: Allow to toggle piston griefing
-          lands.setting.monster_spawn:
-            description: Allow to toggle monster spawn
-          lands.setting.animal_spawn:
-            description: Allow to toggle animal spawn
-          lands.setting.waterflow_allow:
-            description: Allow to toggle waterflow
-          lands.setting.tnt_griefing:
-            description: Allow to toggle tnt griefing
-          lands.setting.fire_spread:
-            description: Allow to toggle fire spread
-          lands.setting.leaf_decay:
-            description: Allow to toggle leaf decay
-          lands.setting.plant_growth:
-            description: Allow to toggle plant growth
-          lands.setting.snow_melt:
-            description: Allow to toggle snow melt
-          lands.setting.wither_attack_animal:
-            description: Allow to toggle wither attack animal
-````
-
+Permissions for toggleing natural flags can be found [here](configuration/Natural-Flags.md).
 
 ## Toggle Role Flags
-These permissions are needed to toggle role flags for your land.
-```yaml
-      lands.role.setting.*:
-        description: Allow players to toggle all role flags.
-        children:
-            lands.role.setting.block_break:
-              description: Allow players to toggle the 'block_break' flag.
-            lands.role.setting.block_place:
-              description: Allow players to toggle the 'block_place' flag.
-            lands.role.setting.harvest:
-              description: Allow players to toggle the 'harvest' flag.
-            lands.role.setting.attack_player:
-              description: Allow players to toggle the 'attack_player' flag.
-            lands.role.setting.attack_animal:
-              description: Allow players to toggle the 'attack_animal' flag.
-            lands.role.setting.block_ignite:
-              description: Allow players to toggle the 'block_ignite' flag.
-            lands.role.setting.interact_general:
-              description: Allow players to toggle the 'interact_general' flag.
-            lands.role.setting.interact_door:
-              description: Allow players to toggle the 'interact_door' flag.
-            lands.role.setting.interact_container:
-              description: Allow players to toggle the 'interact_container' flag.
-            lands.role.setting.interact_mechanism:
-              description: Allow players to toggle the 'interact_mechanism' flag.
-            lands.role.setting.interact_villager:
-              description: Allow players to toggle the 'interact_villager' flag.
-            lands.role.setting.fly:
-              description: Allow players to toggle the 'fly' flag.
-            lands.role.setting.land_enter:
-              description: Allow players to toggle the 'land_enter' flag.
-            lands.role.setting.player_trust:
-              description: Allow players to toggle the 'player_trust' flag.
-            lands.role.setting.player_untrust:
-              description: Allow players to toggle the 'player_untrust' flag.
-            lands.role.setting.player_setrole:
-              description: Allow players to toggle the 'player_setrole' flag.
-            lands.role.setting.land_claim:
-              description: Allow players to toggle the 'land_claim' flag.
-            lands.role.setting.land_claim_border:
-              description: Allow players to toggle the 'land_claim_border' flag.
-            lands.role.setting.spawn_set:
-              description: Allow players to toggle the 'spawn_set' flag.
-            lands.role.setting.spawn_teleport:
-              description: Allow players to toggle the 'spawn_teleport' flag.
-            lands.role.setting.balance_withdraw:
-              description: Allow players to toggle the 'balance_withdraw' flag.
-            lands.role.setting.area_assign:
-              description: Allow players to toggle the 'area_assign' flag.
-            lands.role.setting.setting_edit_land:
-              description: Allow players to toggle the 'setting_edit_land' flag.
-            lands.role.setting.setting_edit_role:
-              description: Allow players to toggle the 'setting_edit_role' flag.
-            lands.role.setting.setting_edit_taxes:
-              description: Allow players to toggle the 'setting_edit_taxes' flag.
-            lands.role.setting.vehicle_use:
-              description: Allow players to toggle the 'vehicle_use' flag.
-            lands.role.setting.attack_monster:
-              description: Allow players to toggle the 'attack_monster' flag.
-            lands.role.setting.ender_pearl:
-              description: Allow players to toggle the 'ender_pearl' flag.
-            lands.role.setting.interact_trapdoor:
-              description: Allow players to toggle the 'interact_trapdoor' flag.
-            lands.role.setting.item_pickup:
-              description: Allow players to toggle the 'item_pickup' flag.
-            lands.role.setting.land_rename:
-              description: Allow players to toggle the 'land_rename' flag.
-            lands.role.setting.player_ban:
-              description: Allow players to toggle the 'player_ban' flag.
-            lands.role.setting.setting_edit_various:
-              description: Allow players to toggle the 'setting_edit_various' flag.
-            lands.role.setting.trample_farmland:
-              description: Allow players to toggle the 'trample_farmland' flag.
-            lands.role.setting.war_manage:
-              description: Allow players to toggle the 'war_manage' flag.
-```
+Permissions for toggleing role flags can be found [here](configuration/Roles-and-their-Flags.md).
 
 ## Toggle Personal Flags
-```yaml
-      lands.player.setting:
-        description: Allow players to toggle all personal flags.
-        children:
-          lands.player.setting.enter_messages:
-            description: Allow players to toggle the 'enter_messages' flag.
-          lands.player.setting.receive_invites:
-            description: Allow players to toggle the 'receive_invites' flag.
-          lands.player.setting.show_inbox:
-            description: Allow players to toggle the 'show_inbox' flag.
-```
+Permissions for toggleing personal flags can be found [here](configuration/Player-Personal-Settings.md).
 
 # Staff Permissions
 These permissions should only be set for your staff.
@@ -339,73 +222,8 @@ These permissions should only be set for your staff.
                 description: Execute commands during teleportation.
 ```
 
-## Moderator Utilities
-```yaml
-      lands.mod.*:
-        description: Access to all moderator actions.
-        children:
-          lands.mod.command.*:
-            description: Access to all moderator commands.
-            children:
-              lands.mod.command.chatspy:
-                description: /Lands chatspy
-```
+## Admin & Moderator Utilities
+See [here](admins/Admin-Tools.md).
 
 # Administrator Permissions
-These permissions should only be set for administrators.
-
-```yaml
-      lands.admin.*:
-        description: Access to all admin actions. Commands require execution of /Lands edit <land> (to select the land).
-        children:
-          lands.admin.disabled-features:
-            description: Allow to use disabled features such as setting areas up for rental.
-          lands.admin.command.edit:
-            description: Allow to edit other lands via /lands edit. This may also ignore requirements such as max members for some commands.
-          lands.admin.land_delete:
-            description: Allow to delete other lands or unclaim chunks from other lands.
-          lands.admin.land_setowner:
-            description: Allow the usage of /Lands setowner for lands the player doesn't own
-          lands.admin.setting_edit_land:
-            description: Edit land settings of other lands (like mob spawning etc.)
-          lands.admin.setting_edit_role:
-            description: Edit role settings of other lands.
-          lands.admin.setting_edit_taxes:
-            description: Edit taxes settings of other lands.
-          lands.admin.command.*:
-            description: Access to all admin commands
-            children:
-              lands.admin.command.reload:
-                description: Access to /Lands reload
-              lands.admin.command.wilderness:
-                description: Open wilderness menu /Lands admin wilderness
-              lands.admin.command.land.*:
-                description: Access to admin land commands
-                children:
-                  lands.admin.command.land.delete:
-                    description: Delete land
-                  lands.admin.command.land.edit:
-                    description: Open GUI for land
-                  lands.admin.command.land.trust:
-                    description: Trust players to land
-                  lands.admin.command.land.untrust:
-                    description: Untrust players from land
-                  lands.admin.command.land.rename:
-                    description: Rename land
-                  lands.admin.command.land.settings.reset:
-                    description: Reset settings of land
-                  lands.admin.command.land.setowner:
-                    description: Set new owner for land
-              lands.admin.command.give.claimblock:
-                description: Give claimblocks to player
-              lands.admin.command.import:
-                description: Import data from other plugins
-              lands.admin.command.convert:
-                description: Convert database
-
-      nations.admin.*:
-        description: Access to all Nations admin actions
-        children:
-          nations.admin.nation_edit:
-            description: Edit other players nations of their lands from /lands edit
-```
+Permissions for toggleing role flags can be found [here](admins/Commands.md).
