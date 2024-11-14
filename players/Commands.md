@@ -193,34 +193,34 @@ Remove a land from your nation.\
 *Permission: nations.command.untrust*
 
 `/nations relations`\
-Permission: `nations.command.relations`\
-Manage relations.
+Add/remove allies and enemies of your nation.\
+*Permission: nations.command.relations*
 
 `/nations top`\
-Permission: `nations.command.top`\
-View top nations.
+View top nations. They can be sorted by different criteria in the GUI meu.\
+*Permission: nations.command.top*
 
 ### Wars
-`/wars declare`\
-Permission: `wars.command.declare`\
-Declare war against a land or nation.
+`/wars declare <land | nation>`\
+Declare war against a land or nation. If the server has mutual declarations enabled, the enemy needs to accept the war declaration before the war declaration even starts.\
+*Permission: wars.command.declare*
 
 `/wars deny`\
-Permission: `wars.command.deny`\
-Deny mutual war declaration.
+Deny mutual war declaration. This commands is only available if the server has mutual declarations enabled.\
+*Permission: wars.command.deny*
 
 `/wars info`\
-Permission: `wars.command.info`\
-Info about current war.
+View information about the current or upcoming war./
+*Permission: wars.command.info*
 
 `/wars menu`\
-Permission: `wars.command.menu`\
-Open menu for current war.
+Open the GUI menu for the current or upcoming war.\
+*Permission: wars.command.menu*
 
 `/wars list`\
-Permission: `wars.command.list`\
-View all active wars.
+View all active wars on the server.\
+*Permission: wars.command.list*\
 
 `/wars spawn`\
-Permission: `wars.command.spawn`\
-Teleport to the enemies border.
+Teleport to the entry spawn of your team during war. This will teleport you near the border of the enemy land or nation.\
+*Permission: wars.command.spawn*
