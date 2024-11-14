@@ -255,21 +255,6 @@ These permissions are needed to toggle role flags for your land.
             description: Allow players to toggle the 'show_inbox' flag.
 ```
 
-## Playtime Max Rewards
-**Only needed if playtime rewards are enabled in the config.**
-```
-      lands.chunks.max.<number>:
-        description: The player wont be able to get any chunks rewarded if his current lands.chunks.<number> permission is equal or higher.
-      lands.ownlands.max.<number>:
-        description: The player wont be able to get any land creations rewarded if his current lands.ownlands.<number> permission is equal or higher.
-      lands.lands.max.<number>:
-        description: The player wont be able to get any land joins rewarded if his current lands.lands.<number> permission is equal or higher.
-      lands.members.max.<number>:
-        description: The player wont be able to get any member limit rewarded if his current lands.members.<number> permission is equal or higher.
-      lands.chunks.support.max.<number>:
-        description: The player wont be able to get any support chunks rewarded if his current lands.chunks.support.<number> permission is equal or higher.
-```
-
 # Staff Permissions
 These permissions should only be set for your staff.
 

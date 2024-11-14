@@ -1,9 +1,11 @@
-You can configure these flags inside your config.yml file. Options: ``default_2_list, display_2_list``
+You can configure these flags inside your `config.yml` file. Options: 
+* default_2_list
+* display_2_list`
 
 These flags are applied to new players. Existing players can toggle these flags in their personal settings GUI menu, by executing ``/lands menu main`` and then navigating to the personal settings menu.
 They only control bahaviour related to this single player, such as receiving invites.
 
-# Available Personal Settings
+# Available Personal Flags
 * **RECEIVE_INVITES**\
   Allow other lands to invite the player to their land?
 
@@ -14,8 +16,8 @@ They only control bahaviour related to this single player, such as receiving inv
   Show inbox messages, from lands the player is part of, in chat?
 
 # Config
-Here can add new flags.
-```
+Here can configure default flags for new players and decide which flags should be displayed in the GUI menu.
+```yaml
 # Players can toggle personal flags to customize their experience.
 player:
   flags:
@@ -31,7 +33,3 @@ player:
     display_2_list:
       - 'all'
 ```
-
-# Other Flag Types
-* Role Flags: https://lands.incredibleplugins.com/wiki/Roles-and-their-Flags
-* Natural Flags: https://lands.incredibleplugins.com/wiki/Natural-Flags

@@ -1,12 +1,13 @@
 **You need to enable time-reward option in config to use this feature.**
-Time rewards are permission based. If you ever want to reset a player's progress, you can do so by editing their permissions in your permission plugin. The permissions can be found [here](https://lands.incredibleplugins.com/wiki/Permissions#numbered-permissions).
+Time rewards are permission based. If you ever want to reset a player's progress, you can do so by editing their permissions in your permission plugin. The permissions can be found [here](../permissions/Permissions.md).
 
-### How does it work?
+# How does it work?
 Players can get a reward, for example ONE chunk, every x seconds.
 
 ***
 
-### Configuration
+# Configuration
+````yaml
     time-reward:
       enabled_17: false
       # Time settings
@@ -17,20 +18,33 @@ Players can get a reward, for example ONE chunk, every x seconds.
       # or member.
       # NOTE: Timeunit is seconds
       time:
-        # /Lands claim
+        # /lands claim
         chunks: 3060
         # Lands the player can be part of.
         lands: 43200
         # Max land members (How many players can the land have?)
         members: 21600
         # Lands the player can create.
-        # /Lands create
+        # /lands create
         lands-own: 86400
-
+````
 
 ***
 
-### Maximum Restrictions
-**Set the maximum amount of chunks etc. a player can get through playtime rewards.**
+# Playtime maximum Rewards
+Only needed if playtime rewards are enabled in the config.
 
-https://lands.incredibleplugins.com/wiki/Permissions#playtime-reward-permissions
+`lands.chunks.max.<number>`\
+The player wont be able to get any chunks rewarded if his current lands.chunks.<number> permission is equal or higher.
+
+`lands.ownlands.max.<number>`\
+The player wont be able to get any land creations rewarded if his current lands.ownlands.<number> permission is equal or higher.
+
+`lands.lands.max.<number>`\
+The player wont be able to get any land joins rewarded if his current lands.lands.<number> permission is equal or higher.
+
+`lands.members.max.<number>`\
+The player wont be able to get any member limit rewarded if his current lands.members.<number> permission is equal or higher.
+
+`lands.chunks.support.max.<number>`\
+The player wont be able to get any support chunks rewarded if his current lands.chunks.support.<number> permission is equal or higher.
