@@ -405,7 +405,7 @@ These permissions should only be set for administrators.
         children:
           lands.admin.disabled-features:
             description: Allow to use disabled features such as setting areas up for rental.
-          lands.admin.land_edit:
+          lands.admin.command.edit:
             description: Allow to edit other lands via /lands edit. This may also ignore requirements such as max members for some commands.
           lands.admin.land_delete:
             description: Allow to delete other lands or unclaim chunks from other lands.
