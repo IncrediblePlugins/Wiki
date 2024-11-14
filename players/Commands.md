@@ -6,37 +6,29 @@ Permission: `lands.command.menu`
 Display command usages of Lands.\
 Permission: `lands.command.help`
 
-## `/lands claim`
-Claim the chunk you're standing in.\
+`/lands claim [radius, auto, fill]`\
+If no argument provided, it claims the chunk you're standing in. `radius` claims chunks in a specified radius. `auto` claims chunks while you're walking and `fill` claims all chunks that are surrounded by claimed chunks.\
 Permission: `lands.command.claim`
 
-### `/lands claim auto`
-Claim chunks while walking.\
-Permission: `lands.command.claim.auto`
-
-### `/lands claim radius <radius>`
-Claim chunks in a specific radius.\
-Permission: `lands.command.claim.radius`
-
-`/lands create`\
-Create a land.\
+`/lands create [newline]`\
+Create a new land.\
 Permission: `lands.command.create`
 
->`/lands merge <land>`\
-Permission: `lands.command.merge`\
-Merge a land (parameter) into your other land.
+`/lands merge <land>`\
+Merge the provided land with your current land.\
+Permission: `lands.command.merge`
 
->`/lands accept <land>`\
-Permission: `lands.command.accept`\
-Accept invites.
+`/lands accept <land>`\
+Accept an invitation from another land to join them.\
+Permission: `lands.command.accept`
 
->`/lands chat [land] <message>`\
-Permission: `lands.command.chat`\
-Chat with land.
+`/lands chat [land] <message>`\
+Send chat messages in the land chat. If the `land` parameter is not provided, it sends a message to your current `/lands edit <land>` land.\
+Permission: `lands.command.chat`
 
->`/lands delete <land | here>`\
-Permission: `lands.command.delete`\
-Delete a land or subarea at your current position, if you provide "here" for the land parameter.
+`/lands delete <land | here>`\
+Delete a land or subarea at your current position. If you provide `here` for the land parameter, it will delete the subarea you're currently standin in.\
+Permission: `lands.command.delete`
 
 >`/lands deny`\
 Permission: `lands.command.deny`\
