@@ -4,78 +4,78 @@ Opens the GUI menu. Executing `/lands menu` will have the same effect.\
 
 `/lands help [page]`\
 Display command usages of Lands.\
-Permission: `lands.command.help`
+*Permission: lands.command.help*
 
 `/lands claim [radius, auto, fill]`\
 If no argument provided, it claims the chunk you're standing in. `radius` claims chunks in a specified radius. `auto` claims chunks while you're walking and `fill` claims all chunks that are surrounded by claimed chunks.\
-Permission: `lands.command.claim`
+*Permission: lands.command.claim*
 
 `/lands create [newline]`\
 Create a new land.\
-Permission: `lands.command.create`
+*Permission: lands.command.create*
 
 `/lands merge <land>`\
 Merge the provided land with your current land.\
-Permission: `lands.command.merge`
+*Permission: lands.command.merge*
 
 `/lands accept <land>`\
 Accept an invitation from another land to join them.\
-Permission: `lands.command.accept`
+*Permission: lands.command.accept*
 
 `/lands chat [land] <message>`\
 Send chat messages in the land chat. If the `land` parameter is not provided, it sends a message to your current `/lands edit <land>` land.\
-Permission: `lands.command.chat`
+*Permission: lands.command.chat*
 
 `/lands delete <land | here>`\
 Delete a land or subarea at your current position. If you provide `here` for the land parameter, it will delete the subarea you're currently standin in.\
-Permission: `lands.command.delete`
+*Permission: lands.command.delete*
 
 `/lands deny <land>`\
 Deny an invitation from a land.\
-Permission: `lands.command.deny`
+*Permission: lands.command.deny*
 
 `/lands deposit <amount> [land]`\
 Deposit money to a land bank.\
-Permission: `lands.command.deposit`
+*Permission: lands.command.deposit*
 
 `/lands edit <land>`\
 Enter the edit mode for a land. All following commands will be executed for this land.\
-Permission: `lands.command.edit`
+*Permission: lands.command.edit*
 
 `/lands info [land]`\
 Display information about a land. If no parameter is provided, it will display information about the land you're currently standing in.\
-Permission: `lands.command.info`
+*Permission: lands.command.info*
 
 `/lands invites`\
 View all received invitations and ownership requests.\
-Permission: `lands.command.invites`
+*Permission: lands.command.invites*
 
 `/lands leave <land | here>`\
 Leave a land. If you provide hereˋ as the argument, you'll leave the (sub)area at your current position.\
-Permission: `lands.command.leave`
+*Permission: lands.command.leave*
 
 `/lands map`\
 View a map that shows claimed and unclaimed chunks around you. If you want to view the map in chat instead of the GUI, execute `/lands map chat`.\
-Permission: `lands.command.map`
+*Permission: lands.command.map*
 
 `/lands menu [menu] [additional]`\
 Open the GUI menu. You can open a specific menu by providing the `[menu]` parameter. If you execute `/lands menu here`, if will open the menu for the (sub)area you're currently standing in. The `[additional]` parameter is only available for server admins to open a menu for a specific player etc.\
-Permission: `lands.command.menu`
+*Permission: lands.command.menu*
 
 `/lands rename <new name>`\
 Rename your land. Depending on the server this might charge you a fee.\
-Permission: `lands.command.rename`
+*Permission: lands.command.rename*
 
 `/lands selection`\
 Create a selection by selecting a lower and upper corner. Executing `/lands selection expand` will expand the selection to the full height. When complete, you can execute the following commands for the selection:
 * `/lands claim` - claim the selection
 * `/lands assign <area>` - resize an existing subarea or create a new subarea
 * `/lands unclaim` - unclaim the selection\
-Permission: `lands.command.selection`
+*Permission: lands.command.selection*
 
 `/lands assign <area>`\
-Permission: `lands.command.assign`\
-Assign selection to a area (resize) or create a new area. Alternatively you can use `/lands selection assign`.
+Resize an existing subarea or create a new one.\
+*Permission: lands.command.assign*
 
 `/lands setrole <player> <area,*> <role>`\
 Permission: `lands.command.setrole`\
