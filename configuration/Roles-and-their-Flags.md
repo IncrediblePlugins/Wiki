@@ -132,7 +132,7 @@ Allows the role to open and close trapdoors.\
 *Toggle permission: lands.role.setting.interact_trapdoor*\
 *Bypass permission: lands.bypass.interact_trapdoor*
   
-**INTERACT_MECHANISM**\
+* **INTERACT_MECHANISM**\
 Allows the role to use redstone, levers, pressure plates, etc.\
 *Toggle permission: lands.role.setting.interact_mechanism*\
 *Bypass permission: lands.bypass.interact_mechanism*
@@ -217,64 +217,78 @@ Players of the role won't get any damage from any damage cause. This flag is hid
 *Bypass permission: None*
 
 # Management Flags
-Management flags will allow players to edit flags and options for the land. Each flag has their own toggle permission, which is required for players to be able to toggle the flag.
+Management flags will allow players to edit flags and options for the land. Each flag has their own toggle permission, which is required for players to be able to toggle the flag. The bypass permission allows server admins to execute these management operations for other lands.
 
 * **PLAYER_TRUST**\
 Allow the role to trust other players.\
-*Toggle permission: lands.role.setting.player_trust*
+*Toggle permission: lands.role.setting.player_trust*\
+*Bypass permission: lands.bypass.player_trust
 
 * **PLAYER_SETROLE**\
 Allow the role to set roles for trusted players.
 They can only edit players which have a lower role (priority) than their own.\
-*Toggle permission: lands.role.setting.player_setrole*
+*Toggle permission: lands.role.setting.player_setrole*\
+*Bypass permission: lands.bypass.player_setrole*
 
 * **PLAYER_UNTRUST**\
 Allow the role to untrust players.
 They can only untrust players which have a lower role (priority) than their own.\
-*Toggle permission: lands.role.setting.player_untrust*
+*Toggle permission: lands.role.setting.player_untrust*\
+*Bypass permission: lands.bypass.player_untrust*
 
 * **PLAYER_BAN**\
 Allow the role to ban players.
 They can only ban players which have a lower role (priority) than their own.\
-*Toggle permission: lands.role.setting.player_ban*
+*Toggle permission: lands.role.setting.player_ban*\
+*Bypass permission: lands.bypass.player_ban*
 
 * **SETTING_EDIT_LAND**\
 Allow the role to edit natural land flags (like mob spawning etc.)\
-*Toggle permission: lands.role.setting.setting_edit_land*
+*Toggle permission: lands.role.setting.setting_edit_land*\
+*Bypass permission: lands.bypass.setting_edit_land*
 
 * **SETTING_EDIT_ROLE**\
 Allow the role to edit settings and flags of roles which have a lower priority than their own role.\
-*Toggle permission: lands.role.setting.setting_edit_role*
+*Toggle permission: lands.role.setting.setting_edit_role*\
+*Bypass permission: lands.bypass.setting_edit_role*
 
 * **SETTING_EDIT_TAXES**\
 Allow the role to edit taxes of the area. Roles with that flag won't pay taxes.
 Note: It is recommended to give this permission only to trustworthy players in your land.\
-*Toggle permission: lands.role.setting.setting_edit_taxes*
+*Toggle permission: lands.role.setting.setting_edit_taxes*\
+*Bypass permission: lands.bypass.setting_edit_taxes*
 
 * **SETTING_EDIT_VARIOUS**\
 Allow role to set a new name for the land and to change the title.\
-*Toggle permission: lands.role.setting.setting_edit_various*
+*Toggle permission: lands.role.setting.setting_edit_various*\
+*Bypass permission: lands.bypass.setting_edit_various*
 
 * **LAND_CLAIM**\
 Allow the role to claim chunks for the land.\
-*Toggle permission: lands.role.setting.land_claim*
+*Toggle permission: lands.role.setting.land_claim*\
+*Bypass permission: lands.bypass.land_claim*
 
 * **AREA_ASSIGN**\
 Create sub areas and assign a selection to a sub area (`/lands selection assign <area>`).\
-*Toggle permission: lands.role.setting.area_assign*
+*Toggle permission: lands.role.setting.area_assign*\
+*Bypass permission: lands.bypass.area_assign*
 
 * **LAND_CLAIM_BORDER**\
 The players will be able to claim directly near your land, ignoring the chunk distance from config.\
-*Toggle permission: lands.role.setting.land_claim_border*
+*Toggle permission: lands.role.setting.land_claim_border*\
+*Bypass permission: lands.bypass.land_claim_border*
 
 * **SPAWN_SET**\
 Allow the players of the role to change the spawn.\
-*Toggle permission: lands.role.setting.spawn_set*
+*Toggle permission: lands.role.setting.spawn_set*\
+*Bypass permission: lands.bypass.spawn_set*
 
 * **BALANCE_WITHDRAW**\
 Withdraw balance from the land bank (`/lands withdraw`).\
-*Toggle permission: lands.role.setting.balance_withdraw*
+*Toggle permission: lands.role.setting.balance_withdraw*\
+*Bypass permission: lands.bypass.balance_withdraw*
 
 * **WAR_MANAGE**\
 Declare war with your land or surrender in the war of the land.\
-*Toggle permission: lands.role.setting.war_manage*
+*Toggle permission: lands.role.setting.war_manage*\
+*Bypass permission: lands.bypass.war_manage*
