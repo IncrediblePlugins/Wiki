@@ -120,7 +120,7 @@ Teleport to the nearest unclaimed chunk. In case you're ever trapped inside clai
 
 `/lands wild [world] [player]`\
 Teleport to a random location. The `[player]` parameter is only available to server admins and allows you to execute the command via the console for specific players.\
-*Permission: lands.command.wild*\
+*Permission: lands.command.wild*
 *Permission for the `[player]` parameter: lands.admin.command.wild*
 
 `/lands withdraw <amount> [land]`\
@@ -219,7 +219,7 @@ Open the GUI menu for the current or upcoming war.\
 
 `/wars list`\
 View all active wars on the server.\
-*Permission: wars.command.list*\
+*Permission: wars.command.list*
 
 `/wars spawn`\
 Teleport to the entry spawn of your team during war. This will teleport you near the border of the enemy land or nation.\
