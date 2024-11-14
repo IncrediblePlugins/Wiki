@@ -39,4 +39,6 @@
 ## [PlaceholderAPI Placeholders](configuration/PlaceholderAPI-Placeholders.md)
 
 ## Developer API
-* [Setup](https://github.com/IncrediblePlugins/LandsAPI/wiki)
+* [Setup](api/README.md)
+* [Levels](api/Levels.md)
+* [Update](api/API-Update.md)
