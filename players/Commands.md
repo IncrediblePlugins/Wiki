@@ -1,5 +1,5 @@
 `/lands`\
-Opens the GUI menu. Executing ˋ/lands menuˋ will have the same effect.\
+Opens the GUI menu. Executing `/lands menu` will have the same effect.\
 Permission: `lands.command.menu`
 
 `/lands help [page]`\
@@ -55,23 +55,23 @@ Leave a land. If you provide hereˋ as the argument, you'll leave the (sub)area 
 Permission: `lands.command.leave`
 
 `/lands map`\
-View a map that shows claimed and unclaimed chunks around you. If you want to view the map in chat instead of the GUI, execute ˋ/lands map chatˋ.\
+View a map that shows claimed and unclaimed chunks around you. If you want to view the map in chat instead of the GUI, execute `/lands map chat`.\
 Permission: `lands.command.map`
 
 `/lands menu [menu] [additional]`\
-Open the GUI menu. You can open a specific menu by providing the ˋ[menu]ˋ parameter. If you execute ˋ/lands menu hereˋ, if will open the menu for the (sub)area you're currently standing in. The ˋ[additional]ˋ parameter is only available for server admins to open a menu for a specific player etc.\
+Open the GUI menu. You can open a specific menu by providing the `[menu]` parameter. If you execute `/lands menu here`, if will open the menu for the (sub)area you're currently standing in. The `[additional]` parameter is only available for server admins to open a menu for a specific player etc.\
 Permission: `lands.command.menu`
 
 `/lands rename <new name>`\
 Rename your land. Depending on the server this might charge you a fee.\
 Permission: `lands.command.rename`
 
-`/lands selectionˋ\
-Create a selection by selecting a lower and upper corner. Executing ˋ/lands selection expandˋ will expand the selection to the full height. When complete, you can execute the following commands for the selection:
-* ˋ/lands claimˋ - claim the selection
-* ˋ/lands assign <area>ˋ - resize an existing subarea or create a new subarea
-* ˋ/lands unclaimˋ - unclaim the selection\
-Permission: `lands.command.selectionˋ
+`/lands selection`\
+Create a selection by selecting a lower and upper corner. Executing `/lands selection expand` will expand the selection to the full height. When complete, you can execute the following commands for the selection:
+* `/lands claim` - claim the selection
+* `/lands assign <area>` - resize an existing subarea or create a new subarea
+* `/lands unclaim` - unclaim the selection\
+Permission: `lands.command.selection`
 
 `/lands assign <area>`\
 Permission: `lands.command.assign`\
