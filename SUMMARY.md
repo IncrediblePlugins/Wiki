@@ -1,4 +1,3 @@
-# Table of contents
 * [Home](https://wiki.incredibleplugins.com)
 
 ## For Players
