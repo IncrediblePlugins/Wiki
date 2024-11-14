@@ -184,13 +184,13 @@ Set the capital of your nation.\
 Teleport to the spawn of your nation.\
 *Permission: nations.command.spawn*
 
-`/nations trust`\
-Permission: `nations.command.trust`\
-Add land.
+`/nations trust <land>`\
+Invite a land to join your nation.\
+*Permission: nations.command.trust*
 
-`/nations untrust`\
-Permission: `nations.command.untrust`\
-Remove land.
+`/nations untrust <land>`\
+Remove a land from your nation.\
+*Permission: nations.command.untrust*
 
 `/nations relations`\
 Permission: `nations.command.relations`\
