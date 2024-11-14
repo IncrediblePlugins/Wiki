@@ -94,104 +94,127 @@ Actions flags represent players actions. Each flag has their own bypass and togg
 
 * **BLOCK_PLACE**\
 Allows the role to place blocks.\
-*Toggle permission: lands.role.setting.block_place*
+*Toggle permission: lands.role.setting.block_place*\
 *Bypass permission: lands.bypass.block_place*
 
 * **BLOCK_BREAK**\
 Allows the role to break blocks.\
-*Toggle permission: lands.role.setting.block_break*
+*Toggle permission: lands.role.setting.block_break*\
+*Bypass permission: lands.bypass.block_break*
 
 * **PLANT**\
 Allows the role to plant crops, saplings, etc.\
-*Toggle permission: lands.role.setting.plant*
+*Toggle permission: lands.role.setting.plant*\
+*Bypass permission: lands.bypass.plant*
 
 * **HARVEST**\
 Allows the role to harvest crops, etc.\
-*Toggle permission: lands.role.setting.harvest*
+*Toggle permission: lands.role.setting.harvest*\
+*Bypass permission: lands.bypass.harvest*
 
 * **INTERACT_GENERAL**\
 Allows all types of interaction that are not covered by the other `INTERACT_<type>` flags.\
-*Toggle permission: lands.role.setting.interact_general*
+*Toggle permission: lands.role.setting.interact_general*\
+*Bypass permission: lands.bypass.interact_general*
 
 * **INTERACT_CONTAINER**\
 Allows the role to open containers like chests, etc.\
-*Toggle permission: lands.role.setting.interact_container*
+*Toggle permission: lands.role.setting.interact_container*\
+*Bypass permission: lands.bypass.interact_container*
 
 * **INTERACT_DOOR**\
 Allows the role to open and close doors.\
-*Toggle permission: lands.role.setting.interact_door*
+*Toggle permission: lands.role.setting.interact_door*\
+*Bypass permission: lands.bypass.interact_door*
 
 * **INTERACT_TRAPDOOR**\
 Allows the role to open and close trapdoors.\
-*Toggle permission: lands.role.setting.interact_trapdoor*
+*Toggle permission: lands.role.setting.interact_trapdoor*\
+*Bypass permission: lands.bypass.interact_trapdoor*
   
 **INTERACT_MECHANISM**\
 Allows the role to use redstone, levers, pressure plates, etc.\
-*Toggle permission: lands.role.setting.interact_mechanism*
+*Toggle permission: lands.role.setting.interact_mechanism*\
+*Bypass permission: lands.bypass.interact_mechanism*
 
 * **INTERACT_VILLAGER**\
 Allows the role to interact and trade with villagers.\
-*Toggle permission: lands.role.setting.interact_villager*
+*Toggle permission: lands.role.setting.interact_villager*\
+*Bypass permission: lands.bypass.interact_villager*
 
 * **BLOCK_IGNITE**\
 Allows the role to ignite blocks / set blocks on fire.\
-*Toggle permission: lands.role.setting.block_ignite*
+*Toggle permission: lands.role.setting.block_ignite*\
+*Bypass permission: lands.bypass.block_ignite*
 
 * **ATTACK_PLAYER**\
 Should the role be able to attack players? This flag may not always take effect, if combat-tag is enabled in the config.
 * If disabled: The role won't be able to attack anyone.
 * If enabled: The role will be able to attack other players that are also allowed to attack this role in the given claim.\
-*Toggle permission: lands.role.setting.attack_player*
+*Toggle permission: lands.role.setting.attack_player*\
+*Bypass permission: lands.bypass.attack_player*
 
 * **ATTACK_ANIMAL**\
 Allows the role to attack animals.\
-*Toggle permission: lands.role.setting.attack_animal*
+*Toggle permission: lands.role.setting.attack_animal*\
+*Bypass permission: lands.bypass.attack_animal*
 
 * **FLY**\
 Allow the role to fly within an area. Fly will be disabled if the player is not allowed to fly at a given location. If they enter a area where they're allowed to fly, Lands will automatically re-enable their fly (if fly was active before).\
 This is compatible with every fly plugin.\
-*Toggle permission: lands.role.setting.fly*
+*Toggle permission: lands.role.setting.fly*\
+*Bypass permission: lands.bypass.fly*
 
 * **ELYTRA**\
 Allow the role to use elytras within an area.\
-*Toggle permission: lands.role.setting.elytra*
+*Toggle permission: lands.role.setting.elytra*\
+*Bypass permission: lands.bypass.elytra*
 
 * **LAND_ENTER**\
 Allows the role to enter a area.\
-*Toggle permission: lands.role.setting.land_enter*
+*Toggle permission: lands.role.setting.land_enter*\
+*Bypass permission: lands.bypass.land_enter*
 
 * **SPAWN_TELEPORT**\
 Allows the role to teleport to the land spawn.\
-*Toggle permission: lands.role.setting.spawner_teleport*
+*Toggle permission: lands.role.setting.spawner_teleport*\
+*Bypass permission: lands.bypass.spawn_teleport*
 
 * **VEHICLE_USE**\
 Allows the role to use or place vehicles in the area.\
-*Toggle permission: lands.role.setting.vehicle_use*
+*Toggle permission: lands.role.setting.vehicle_use*\
+*Bypass permission: lands.bypass.vehicle_use*
 
 * **ITEM_PICKUP**\
 Allows the role to pick up dropped items.\
-*Toggle permission: lands.role.setting.item_pickup*
+*Toggle permission: lands.role.setting.item_pickup*\
+*Bypass permission: lands.bypass.item_pickup*
 
 * **ENDER_PEARL**\
 Allows the role to use ender pearls.\
-*Toggle permission: lands.role.setting.ender_pearl*
+*Toggle permission: lands.role.setting.ender_pearl*\
+*Bypass permission: lands.bypass.ender_pearl*
 
 * **SHEAR**\
 Allows the role to shear animals.\
-*Toggle permission: lands.role.setting.shear*
+*Toggle permission: lands.role.setting.shear*\
+*Bypass permission: lands.bypass.shear*
 
 * **ATTACK_MONSTER**\
 Allows the role to attack monsters.
 If disabled: Monsters also won't be able to damage the players of the role.\
-*Toggle permission: lands.role.setting.attack_monster*
+*Toggle permission: lands.role.setting.attack_monster*\
+*Bypass permission: lands.bypass.attack_monster*
 
 * **TRAMPLE_FARMLAND**\
 Allows the role to trample farmland.\
-*Toggle permission: lands.role.setting.trample_farmland*
+*Toggle permission: lands.role.setting.trample_farmland*\
+*Bypass permission: lands.bypass.trample_farmland*
   
 * **NO_DAMAGE**\
 Players of the role won't get any damage from any damage cause. This flag is hidden by default.\
-*Toggle permission: lands.role.setting.no_damage*
+*Toggle permission: lands.role.setting.no_damage*\
+*Bypass permission: None*
 
 # Management Flags
 Management flags will allow players to edit flags and options for the land. Each flag has their own toggle permission, which is required for players to be able to toggle the flag.
