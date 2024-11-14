@@ -1,6 +1,6 @@
 `/lands`\
 Opens the GUI menu. Executing `/lands menu` will have the same effect.\
-<sub><sub>Permission: lands.command.menu</sub></sub>
+*Permission: lands.command.menu*
 
 `/lands help [page]`\
 Display command usages of Lands.\
