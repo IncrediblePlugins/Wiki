@@ -31,7 +31,7 @@
 
 ## Permissions
 * [Recommendation](permissions/Recommended-Permission-Setup.md)
-* [Commands](players/Commands.md)
+* [For Commands](https://wiki.incredibleplugins.com/lands/for-players/commands)
 * [Other Permissions](permissions/Permissions.md)
 * [Luckperms Context](permissions/Luckperms-Context.md)
 
