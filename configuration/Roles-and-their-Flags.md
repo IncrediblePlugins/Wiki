@@ -90,129 +90,167 @@ Example Configuration of a custom default role:
 ````
 
 # Action Flags
-Actions flags represent players actions.
+Actions flags represent players actions. Each flag has their own toggle permission, which is required for players to toggle the flag.
 
 * **BLOCK_PLACE**\
-Allows the role to place blocks.
+Allows the role to place blocks.\
+*Toggle permission: lands.role.setting.block_place*
 
 * **BLOCK_BREAK**\
-Allows the role to break blocks.
+Allows the role to break blocks.\
+*Toggle permission: lands.role.setting.block_break*
 
 * **PLANT**\
-Allows the role to plant crops, saplings, etc.
+Allows the role to plant crops, saplings, etc.\
+*Toggle permission: lands.role.setting.plant*
 
 * **HARVEST**\
-Allows the role to harvest crops, etc.
+Allows the role to harvest crops, etc.\
+*Toggle permission: lands.role.setting.harvest*
 
 * **INTERACT_GENERAL**\
-Allows all types of interaction that are not covered by the other `INTERACT_<type>` flags.
+Allows all types of interaction that are not covered by the other `INTERACT_<type>` flags.\
+*Toggle permission: lands.role.setting.interact_general*
 
 * **INTERACT_CONTAINER**\
-Allows the role to open containers like chests, etc.
+Allows the role to open containers like chests, etc.\
+*Toggle permission: lands.role.setting.interact_container*
 
 * **INTERACT_DOOR**\
-Allows the role to open and close doors.
+Allows the role to open and close doors.\
+*Toggle permission: lands.role.setting.interact_door*
 
 * **INTERACT_TRAPDOOR**\
-Allows the role to open and close trapdoors.
+Allows the role to open and close trapdoors.\
+*Toggle permission: lands.role.setting.interact_trapdoor*
   
 **INTERACT_MECHANISM**\
-Allows the role to use redstone, levers, pressure plates, etc.
+Allows the role to use redstone, levers, pressure plates, etc.\
+*Toggle permission: lands.role.setting.interact_mechanism*
 
 * **INTERACT_VILLAGER**\
-Allows the role to interact and trade with villagers.
+Allows the role to interact and trade with villagers.\
+*Toggle permission: lands.role.setting.interact_villager*
 
 * **BLOCK_IGNITE**\
-Allows the role to ignite blocks / set blocks on fire.
+Allows the role to ignite blocks / set blocks on fire.\
+*Toggle permission: lands.role.setting.block_ignite*
 
 * **ATTACK_PLAYER**\
 Should the role be able to attack players? This flag may not always take effect, if combat-tag is enabled in the config.
 * If disabled: The role won't be able to attack anyone.
-* If enabled: The role will be able to attack other players that are also allowed to attack this role in the given claim.
+* If enabled: The role will be able to attack other players that are also allowed to attack this role in the given claim.\
+*Toggle permission: lands.role.setting.attack_player*
 
 * **ATTACK_ANIMAL**\
-Allows the role to attack animals.
+Allows the role to attack animals.\
+*Toggle permission: lands.role.setting.attack_animal*
 
 * **FLY**\
 Allow the role to fly within an area. Fly will be disabled if the player is not allowed to fly at a given location. If they enter a area where they're allowed to fly, Lands will automatically re-enable their fly (if fly was active before).\
-This is compatible with every fly plugin.
+This is compatible with every fly plugin.\
+*Toggle permission: lands.role.setting.fly*
 
 * **ELYTRA**\
-Allow the role to use elytras within an area.
+Allow the role to use elytras within an area.\
+*Toggle permission: lands.role.setting.elytra*
 
 * **LAND_ENTER**\
-Allows the role to enter a area.
+Allows the role to enter a area.\
+*Toggle permission: lands.role.setting.land_enter*
 
 * **SPAWN_TELEPORT**\
-Allows the role to teleport to the land spawn.
+Allows the role to teleport to the land spawn.\
+*Toggle permission: lands.role.setting.spawner_teleport*
 
 * **VEHICLE_USE**\
-Allows the role to use or place vehicles in the area.
+Allows the role to use or place vehicles in the area.\
+*Toggle permission: lands.role.setting.vehicle_use*
 
 * **ITEM_PICKUP**\
-Allows the role to pick up dropped items.
+Allows the role to pick up dropped items.\
+*Toggle permission: lands.role.setting.item_pickup*
 
 * **ENDER_PEARL**\
-Allows the role to use ender pearls.
+Allows the role to use ender pearls.\
+*Toggle permission: lands.role.setting.ender_pearl*
 
 * **SHEAR**\
-Allows the role to shear animals.
+Allows the role to shear animals.\
+*Toggle permission: lands.role.setting.shear*
 
 * **ATTACK_MONSTER**\
 Allows the role to attack monsters.
-If disabled: Monsters also won't be able to damage the players of the role.
+If disabled: Monsters also won't be able to damage the players of the role.\
+*Toggle permission: lands.role.setting.attack_monster*
 
 * **TRAMPLE_FARMLAND**\
-Allows the role to trample farmland.
+Allows the role to trample farmland.\
+*Toggle permission: lands.role.setting.trample_farmland*
   
 * **NO_DAMAGE**\
-Players of the role won't get any damage from any damage cause.
+Players of the role won't get any damage from any damage cause. This flag is hidden by default.\
+*Toggle permission: lands.role.setting.no_damage*
 
 # Management Flags
-Management flags will allow players to edit flags and options for the land.
+Management flags will allow players to edit flags and options for the land. Each flag has their own toggle permission, which is required for players to be able to toggle the flag.
 
 * **PLAYER_TRUST**\
-Allow the role to trust other players.
+Allow the role to trust other players.\
+*Toggle permission: lands.role.setting.player_trust*
 
 * **PLAYER_SETROLE**\
 Allow the role to set roles for trusted players.
-They can only edit players which have a lower role (priority) than their own.
+They can only edit players which have a lower role (priority) than their own.\
+*Toggle permission: lands.role.setting.player_setrole*
 
 * **PLAYER_UNTRUST**\
 Allow the role to untrust players.
-They can only untrust players which have a lower role (priority) than their own.
+They can only untrust players which have a lower role (priority) than their own.\
+*Toggle permission: lands.role.setting.player_untrust*
 
 * **PLAYER_BAN**\
 Allow the role to ban players.
-They can only ban players which have a lower role (priority) than their own.
+They can only ban players which have a lower role (priority) than their own.\
+*Toggle permission: lands.role.setting.player_ban*
 
 * **SETTING_EDIT_LAND**\
 Allow the role to edit natural land flags (like mob spawning etc.)\
+*Toggle permission: lands.role.setting.setting_edit_land*
 
 * **SETTING_EDIT_ROLE**\
-Allow the role to edit settings and flags of roles which have a lower priority than their own role.
+Allow the role to edit settings and flags of roles which have a lower priority than their own role.\
+*Toggle permission: lands.role.setting.setting_edit_role*
 
 * **SETTING_EDIT_TAXES**\
 Allow the role to edit taxes of the area. Roles with that flag won't pay taxes.
-Note: It is recommended to give this permission only to trustworthy players in your land.
+Note: It is recommended to give this permission only to trustworthy players in your land.\
+*Toggle permission: lands.role.setting.setting_edit_taxes*
 
 * **SETTING_EDIT_VARIOUS**\
-Allow role to set a new name for the land and to change the title.
+Allow role to set a new name for the land and to change the title.\
+*Toggle permission: lands.role.setting.setting_edit_various*
 
 * **LAND_CLAIM**\
-Allow the role to claim chunks for the land.
+Allow the role to claim chunks for the land.\
+*Toggle permission: lands.role.setting.land_claim*
 
 * **AREA_ASSIGN**\
-Create sub areas and assign a selection to a sub area (`/lands selection assign <area>`).
+Create sub areas and assign a selection to a sub area (`/lands selection assign <area>`).\
+*Toggle permission: lands.role.setting.area_assign*
 
 * **LAND_CLAIM_BORDER**\
-The players will be able to claim directly near your land, ignoring the chunk distance from config.
+The players will be able to claim directly near your land, ignoring the chunk distance from config.\
+*Toggle permission: lands.role.setting.land_claim_border*
 
 * **SPAWN_SET**\
-Allow the players of the role to change the spawn.
+Allow the players of the role to change the spawn.\
+*Toggle permission: lands.role.setting.spawn_set*
 
 * **BALANCE_WITHDRAW**\
-Withdraw balance from the land bank (`/lands withdraw`).
+Withdraw balance from the land bank (`/lands withdraw`).\
+*Toggle permission: lands.role.setting.balance_withdraw*
 
 * **WAR_MANAGE**\
-Declare war with your land or surrender in the war of the land.
+Declare war with your land or surrender in the war of the land.\
+*Toggle permission: lands.role.setting.war_manage*
