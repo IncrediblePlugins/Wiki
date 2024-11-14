@@ -1,9 +1,18 @@
+# Current Edit Land
+Most commands don't require you to provide the name of a land or nation. Commands are usually executed for the land that you selected via `/lands edit <land>`.
+
+`/lands edit <land>`\
+Enter the edit mode for a land. All following commands will be executed for this land.\
+*Permission: lands.command.edit*
+
+# Player Commands
+
 `/lands`\
 Opens the GUI menu. Executing `/lands menu` will have the same effect.\
 *Permission: lands.command.menu*
 
 `/lands help [page]`\
-Display command usages of Lands.\
+Display all command of Lands. Each command group has their own help command. For example `/lands claim help` will display all subcommands of the claim command.\
 *Permission: lands.command.help*
 
 `/lands claim [radius, auto, fill]`\
@@ -37,10 +46,6 @@ Deny an invitation from a land.\
 `/lands deposit <amount> [land]`\
 Deposit money to a land bank.\
 *Permission: lands.command.deposit*
-
-`/lands edit <land>`\
-Enter the edit mode for a land. All following commands will be executed for this land.\
-*Permission: lands.command.edit*
 
 `/lands info [land]`\
 Display information about a land. If no parameter is provided, it will display information about the land you're currently standing in.\
@@ -147,7 +152,7 @@ Manage relations of your land. You can add/remove allies and enemies.\
 Confirm an unsafe teleport destination.\
 *Permission: None*
 
-### Nations
+## Nations
 `/nations create [name]`\
 Create a new nation. Depending on the server you can also use color codes, including hex color.\
 *Permission: nations.command.create*
@@ -200,7 +205,7 @@ Add/remove allies and enemies of your nation.\
 View top nations. They can be sorted by different criteria in the GUI meu.\
 *Permission: nations.command.top*
 
-### Wars
+## Wars
 `/wars declare <land | nation>`\
 Declare war against a land or nation. If the server has mutual declarations enabled, the enemy needs to accept the war declaration before the war declaration even starts.\
 *Permission: wars.command.declare*

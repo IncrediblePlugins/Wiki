@@ -35,11 +35,12 @@
 ## Permissions
 
 * [Recommendation](permissions/Recommended-Permission-Setup.md)
-* [For Commands](players/Commands.md)
+* [Player Commands](players/Commands.md)
+* [Admin Commands](admins/Commands.md)
 * [Other Permissions](permissions/Permissions.md)
 * [Luckperms Context](permissions/Luckperms-Context.md)
 
-## [Moderation Tools](Moderation-Tools.md)
+## [Moderation Tools](admins/Moderation-Tools.md)
 ## [PlaceholderAPI Placeholders](configuration/PlaceholderAPI-Placeholders.md)
 
 ## Developer API
