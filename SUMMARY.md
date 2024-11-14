@@ -30,7 +30,7 @@
 * [Events](https://github.com/IncrediblePlugins/PluginFrameworkAPI/wiki/Events)
 * [Regeneration](configuration/Unclaim-and-Wilderness-Regeneration.md)
 * [Discord Bot](https://github.com/IncrediblePlugins/LandsDiscordBot/wiki)
-* [Edit other Lands](configuration/Administration.md)
+* [PlaceholderAPI Placeholders](configuration/PlaceholderAPI-Placeholders.md)
 
 ## Permissions
 
@@ -40,8 +40,8 @@
 * [Other Permissions](permissions/Permissions.md)
 * [Luckperms Context](permissions/Luckperms-Context.md)
 
-## [Moderation Tools](admins/Moderation-Tools.md)
-## [PlaceholderAPI Placeholders](configuration/PlaceholderAPI-Placeholders.md)
+## Admin & Moderation Tools
+* [Edit other lands etc.](admins/Admin-Tools)
 
 ## Developer API
 

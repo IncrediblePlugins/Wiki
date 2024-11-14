@@ -1,33 +1,34 @@
-### Available Database Types
-* SQLite: Doesn't require any database server and works without setting anything up.
-* MySQL: We recommend using MySQL, if you need to connect your database to an external system, or you use a backup system that requires it. If you want to use MySQL: Make sure that your MySQL server is set up correctly (up-to-date MySQL server version, connection limits, utf8mb4_0900_as_cs as table encoding etc.).
-* MySQL-v2: Better table schemas and supports [synchronizing claim data across multiple servers].(https://lands.incredibleplugins.com/wiki/Database#synchronizing-claims-across-servers)
-    ````
+# Available Database Types
+* SQLite-v2: Doesn't require any database server and works without setting anything up.
+* MySQL: Use MySQL-v2 instead. This database mode is deprecated.
+* MySQL-v2: We recommend using MySQL, if you need to connect your database to an external system, or you use a backup system that requires it. If you want to use MySQL: Make sure that your MySQL server is set up correctly (up-to-date MySQL server version, connection limits, utf8mb4_0900_as_cs as table encoding, etc.). This also supports [synchronizing claim data across multiple servers](https://lands.incredibleplugins.com/wiki/Database#synchronizing-claims-across-servers) in combination with Redis.\
+Please make sure to configure the table-prefix correctly:  
+  ````yaml
     # It is highly recommended to set a unique table prefix if the plugin
     # shares a database with other plugins or Lands instances.
     table-prefix: 'lands_'
     ````
-
+  
 We recommend using MySQL-v2 over SQLite, if possible. 
 
-### Backups
-If you want to take backups of your database, you may want to use MySQL and set up a backup service or just a simple script of your choice. This is specific to your environment. 
+# Backups
+If you want to take backups of your database, you may want to use MySQL-v2 and set up a backup service or just a simple script of your choice. This is specific to your environment. 
 
-### Migrate your Database to MySQL, SQLite
+# Migrate your Database to MySQL-v2, SQLite-v2
 1. If you use MySQL, make sure that there are no tables with the same table-prefix!
 2. Also, if you want to convert to MySQL, make sure the credentials and database name is set up correctly in your Lands config.
 3. Make sure to take a backup of your current database.
 After you have followed these steps, execute this command: `/lands admin migratedb [sqlite, mysql]`
 
-### Synchronizing Claims across Servers
+# Synchronizing Claims across Servers
 A MySQL database and Redis instance is required. It won't work properly without Redis!
 If you want to synchronize claim data between servers, make sure to configure the following sections in config.yml.
 
-#### MySQL:
+# MySQL:
 If you're currently using the old SQL schema, please make sure to migrate to the new one using `/lands admin migratedb mysql-v2`.
 Before migration, make sure to use a different `table-prefix` for `mysql-v2`, if you're currently using `mysql`. In case it's the same, adjust it and then reload the configuration before migration.
 
-````
+````yaml
   mysql-v2:
     enabled_19: true
     address_2: 'localhost'
@@ -42,7 +43,7 @@ Before migration, make sure to use a different `table-prefix` for `mysql-v2`, if
 
 #### Redis:
 It is very important to properly configure the `server-name` and `master` option properly.
-````
+````yaml
   redis:
     enabled_6: true
     address_3: "redis://127.0.0.1"
@@ -65,7 +66,7 @@ To migrate to the new SQL schema with SQLite, follow these instructions:
 1. Make sure that sqlite-v2 is **disabled** in config.yml and you currently still use the old database.
 2. Execute `/lands admin migratedb sqlite-v2`
 3. **Enable** `sqlite-v2` in config.yml:
-````
+````yaml
   # Use SQLite for the database. Doesn't require a database server.
   sqlite-v2: true
 ````
@@ -74,7 +75,7 @@ To migrate to the new SQL schema with SQLite, follow these instructions:
 ## MySQL
 To migrate to the new SQL schema with MySQL, follow these instructions:
 1. Configure the mysql-v2 section in config.yml. **Make sure that mysql-v2 is disabled, and you currently still use the old database. Also, make sure to use a different table prefix or database than your current MySQL config!**
-````
+````yaml
   # MySQL database
   # To use this without issues, your connection limits etc. need to be configured properly in your MySQL server configuration.
   # If you want to synchronize lands and claims across servers, please read the setup instructions: https://lands.incredibleplugins.com/wiki/Database#synchronizing-claims-across-servers
