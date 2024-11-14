@@ -71,6 +71,7 @@ Create a selection by selecting a lower and upper corner. Executing `/lands sele
 * `/lands claim` - claim the selection
 * `/lands assign <area>` - resize an existing subarea or create a new subarea
 * `/lands unclaim` - unclaim the selection\
+
 *Permission: lands.command.selection*
 
 `/lands assign <area>`\
@@ -118,30 +119,25 @@ Teleport to the nearest unclaimed chunk. In case you're ever trapped inside clai
 *Permission: lands.command.unstuck*
 
 `/lands wild [world] [player]`\
-Permission: `lands.command.wild`\
-Teleport to a random location. The optional player parameter is\
-only available to players with the permission "lands.admin.command.wild"\
-You can customize this command in the config file.
-
-`/lands wild [world] [player]`\
-Permission: `lands.admin.command.wild`\
-Execute /wild for other players.
+Teleport to a random location. The `[player]` parameter is only available to server admins and allows you to execute the command via the console for specific players.\
+*Permission: lands.command.wild*\
+*Permission for the `[player]` parameter: lands.admin.command.wild*
 
 `/lands withdraw <amount> [land]`\
-Permission: `lands.command.withdraw`\
-Withdraw money from land bank.
+Withdraw money from a land bank. If the `[land]` parameter isn't provided, it will withdraw money from your current land.\
+*Permission: lands.command.withdraw*
 
 `/lands balance [land]`\
-Permission: `lands.command.balance`\
-View land's balance.
+View the balance of a land. If the `[land]` parameter isn't provided, it will show the balance of your current land.\
+*Permission: lands.command.balance*
 
 `/lands taxes`\
-Permission: `lands.command.taxes`\
-View upcoming tax payments.
+View upcoming tax payments that will be taken from your personal balance to stay a member in your land. This doesn't apply to lands that you own. At the time of the tax collection, you need to have enough money in your personal balance.\
+*Permission: lands.command.taxes*
 
 `/lands rent`\
-Permission: `lands.command.rent`\
-[Manage rentals.](https://lands.incredibleplugins.com/wiki/Rent-System)
+With this command you can [manage rentals](players/Rent-System.md). It allows you to cancel your current rental or remove tenants in exchange for a compensation etc.\
+*Permission: lands.command.rent*
 
 `/lands relations`\
 Permission: `lands.command.relations`\
