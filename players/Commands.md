@@ -10,8 +10,8 @@ Display command usages of Lands.\
 If no argument provided, it claims the chunk you're standing in. `radius` claims chunks in a specified radius. `auto` claims chunks while you're walking and `fill` claims all chunks that are surrounded by claimed chunks.\
 *Permission: lands.command.claim*
 
-`/lands create [newline]`\
-Create a new land.\
+`/lands create <name>`\
+Create a new land. Depending on the server you might be able to use color codes and hex color.\
 *Permission: lands.command.create*
 
 `/lands merge <land>`\
@@ -62,8 +62,8 @@ View a map that shows claimed and unclaimed chunks around you. If you want to vi
 Open the GUI menu. You can open a specific menu by providing the `[menu]` parameter. If you execute `/lands menu here`, if will open the menu for the (sub)area you're currently standing in. The `[additional]` parameter is only available for server admins to open a menu for a specific player etc.\
 *Permission: lands.command.menu*
 
-`/lands rename <new name>`\
-Rename your land. Depending on the server this might charge you a fee.\
+`/lands rename <name>`\
+Rename your land. Depending on the server you might be able to use color codes and hex color.\
 *Permission: lands.command.rename*
 
 `/lands selection`\
@@ -140,49 +140,49 @@ With this command you can [manage rentals](players/Rent-System.md). It allows yo
 *Permission: lands.command.rent*
 
 `/lands relations`\
-Permission: `lands.command.relations`\
-Manage relations.
+Manage relations of your land. You can add/remove allies and enemies.\
+*Permission: lands.command.relations*
 
 `/lands confirmtp`\
-Permission: `None`\
-Confirm unsafe destination.
+Confirm an unsafe teleport destination.\
+*Permission: None*
 
 ### Nations
-`/nations create`\
-Permission: `nations.command.create`\
-Create a nation.
+`/nations create [name]`\
+Create a new nation. Depending on the server you can also use color codes, including hex color.\
+*Permission: nations.command.create*
 
-`/nations accept`\
-Permission: `nations.command.accept`\
-Accept invite.
+`/nations accept <nation>`\
+Accept an invitation from a nation to make your land join them.\
+*Permission: nations.command.accept*
 
 `/nations delete`\
-Permission: `nations.command.delete`\
-Delete nation.
+Delete the nation of your current land.\
+*Permission: nations.command.delete*
 
-`/nations deny`\
-Permission: `nations.command.deny`\
-Deny invite.
+`/nations deny <nation>`\
+Deny an invitation from a nation.\
+*Permission: nations.command.deny*
 
 `/nations leave`\
-Permission: `nations.command.leave`\
-Leave nation.
+Leave the nation of your current land.\
+*Permission: nations.command.leave*
 
-`/nations rename`\
-Permission: `nations.command.rename`\
-Rename nation.
+`/nations rename <name>`\
+Set a new name for your nation. Depending on your server you might be able to use color codes and hex color.\
+*Permission: nations.command.rename*
 
 `/nations menu`\
-Permission: `nations.command.menu`\
-Open nation menu.
+Open the nation menu of your current land.\
+*Permission: nations.command.menu*
 
-`/nations  setcapital`\
-Permission: `nations.command.setcapital`\
-Set capital of nation.
+`/nations setcapital`\
+Set the capital of your nation.\
+*Permission: nations.command.setcapital*
 
 `/nations spawn`\
-Permission: `nations.command.spawn`\
-Teleport to nation spawn.
+Teleport to the spawn of your nation.\
+*Permission: nations.command.spawn*
 
 `/nations trust`\
 Permission: `nations.command.trust`\
