@@ -23,6 +23,10 @@ Display all command of Lands. Each command group has their own help command. For
 Create a new land. Depending on the server you might be able to use color codes and hex color.\
 *Permission: lands.command.create*
 
+`/lands createcamp <name>`\
+Create a temporary land that will be deleted after a specific period. The perdiod depends on your servers configuration.\
+*Permission: lands.command.createcamp*
+
 `/lands delete <land | here>`\
 Delete a land or subarea at your current position. If you provide `here` for the land parameter, it will delete the subarea you're currently standin in.\
 *Permission: lands.command.delete*
@@ -38,6 +42,10 @@ Create a selection by selecting a lower and upper corner. Executing `/lands sele
 `/lands claim [radius, auto, fill]`\
 If no argument provided, it claims the chunk you're standing in. `radius` claims chunks in a specified radius. `auto` claims chunks while you're walking and `fill` claims all chunks that are surrounded by claimed chunks.\
 *Permission: lands.command.claim*
+
+`/lands claimlist`\
+View all claimed chunks for your land.\
+*Permission: lands.command.claimlist*
 
 `/lands unclaim`\
 Unclaim the chunk you're standing in. If you created a selection via `/lands selection`, it will unclaim the selection instead. You can also execute `/lands unclaim radius` to unclaim chunks in a specific radius or `/lands unclaim auto` to unclaim chunks you're walking into. `/lands unclaim all` will unclaim all chunks for your current `/lands edit <land>` land.\
@@ -75,17 +83,33 @@ Trust a player in the whole land or a specific (sub)area. If you don't provide a
 Untrust a player from the whole land or a specific (sub)area. If you don't provide a area, the player will be untrusted from the whole land.\
 *Permission: lands.command.untrust*
 
+`/lands ban <player> [area] [silent]`\
+Ban a player from the whole land or a specific (sub)area. If you don't provide a area, the player will be banned from the whole land. If you provide `true` for the `[silent]` argument, the player won't receive any message that they have been banned.\
+*Permission: lands.command.ban*
+
+`/lands unban <player> [area]`\
+Unban a player from the whole land or a specific (sub)area. If you don't provide a area, the player will be unbanned from the whole land.\
+*Permission: lands.command.unban*
+
 `/lands setrole <player> <area | *> <role>`\
 Set the role for a player in a specific area. If you provide `*` as the area name, the role will be given in all areas, if the role is available in all areas.\
 *Permission: lands.command.setrole*
 
+`/lands setowner <player>`\
+Ask a land member to be the new owner of your land.\
+*Permission: lands.command.setowner*
+
 `/lands accept <land>`\
-Accept an invitation from another land to join them.\
+Accept an invitation from another land to join them or an ownership request.\
 *Permission: lands.command.accept*
 
 `/lands deny <land>`\
 Deny an invitation from a land.\
 *Permission: lands.command.deny*
+
+`/lands level`\
+View the current level progress of your land.\
+*Permission: lands.command.level*
 
 `/lands invites`\
 View all received invitations and ownership requests.\
@@ -103,9 +127,17 @@ Send chat messages in the land chat. If the `land` parameter is not provided, it
 View upcoming tax payments that will be taken from your personal balance to stay a member in your land. This doesn't apply to lands that you own. At the time of the tax collection, you need to have enough money in your personal balance.\
 *Permission: lands.command.taxes*
 
+`/lands upkeep`\
+View upcoming upkeep payments for lands that you own. These payments will, depending on your servers configuration, be taken from the land bank or personal balance. The upkeep depends on the amount of chunks your land has claimed. If your land isn't able to pay the complete upkeep and the server has land deletion enabled, the last claimed chunks may be unclaimed to compensate for the missing balance.
+*Permission: lands.command.upkeep*
+
 `/lands info [land]`\
 Display information about a land. If no parameter is provided, it will display information about the land you're currently standing in.\
 *Permission: lands.command.info*
+
+`/lands player <player>`\
+View information about a specific player, such as joined lands.\
+*Permission: lands.command.player*
 
 `/lands map`\
 View a map that shows claimed and unclaimed chunks around you. If you want to view the map in chat instead of the GUI, execute `/lands map chat`.\
@@ -200,6 +232,18 @@ Leave the nation of your current land.\
 `/nations spawn`\
 Teleport to the spawn of your nations capital.\
 *Permission: nations.command.spawn*
+
+`nations chat [nation] <message>`\
+Send a message to all players of your nation. If the `[nation]` argument is not provided it will send a message to the nation of your current land.\
+*Permission: nations.command.chat*
+
+`/nations info [nation]`\
+View information about a nation. If the `[nation]` argument isn't provided, it will show information about the nation of your current land.\
+*Permission: nations.command.top*
+
+`/nations level`\
+View the level progress of your nation.\
+*Permission: nations.command.top*
 
 `/nations top`\
 View top nations. They can be sorted by different criteria in the GUI meu.\
