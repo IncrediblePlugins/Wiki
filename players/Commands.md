@@ -77,56 +77,45 @@ Create a selection by selecting a lower and upper corner. Executing `/lands sele
 Resize an existing subarea or create a new one.\
 *Permission: lands.command.assign*
 
-`/lands setrole <player> <area,*> <role>`\
-Permission: `lands.command.setrole`\
-Set a role of a player.\
-The area parameter defines a sub area of the land.
+`/lands setrole <player> <area | *> <role>`\
+Set the role for a player in a specific area. If you provide `*` as the area name, the role will be given in all areas, if the role is available in all areas.\
+*Permission: lands.command.setrole*
 
 `/lands setspawn`\
-Permission: `lands.command.setspawn`\
-Set spawn for land.
+Set the spawn for your land.\
+*Permission: lands.command.setspawn*
       
 `/lands spawn [land]`\
-Permission: `lands.command.spawn`\
-Teleport to land spawn.
+Teleport to a land spawn. If you don't provide a land, it will teleport you to the spawn of your current `/lands edit <land>` land.\
+*Permission: lands.command.spawn*
 
 `/lands top`\
-Permission: `lands.command.top`\
-Show top ten lands.
+View the top lands. They can be sorted by different criteria in the GUI menu.\
+*Permission: lands.command.top*
 
-`/lands trust <player> [area,*]`\
-Permission: `lands.command.trust`\
-Trust a player.\
-Area parameter is optional.
+`/lands trust <player> [area]`\
+Trust a player in the whole land or a specific (sub)area. If you don't provide a area, the player will be trusted in the whole land.\
+*Permission: lands.command.trust*
 
 `/lands unclaim`\
-Permission: `lands.command.unclaim`\
-Unclaim a chunk.
+Unclaim the chunk you're standing in. If you created a selection via `/lands selection`, it will unclaim the selection instead. You can also execute `/lands unclaim radius` to unclaim chunks in a specific radius or `/lands unclaim auto` to unclaim chunks you're walking into. `/lands unclaim all` will unclaim all chunks for your current `/lands edit <land>` land.\
+*Permission: lands.command.unclaim*
 
-`/lands unclaim auto`\
-Permission: `lands.command.unclaim.auto`\
-Unclaim chunks while walking.
-
-`/lands unclaimall`\
-Permission: `lands.command.unclaimall`\
-Unclaim all chunks for the land.
-
-`/lands untrust <player> [area,*]`\
-Permission: `lands.command.untrust`\
-Untrust player.\
-Area parameter is optional.
+`/lands untrust <player> [area]`\
+Untrust a player from the whole land or a specific (sub)area. If you don't provide a area, the player will be untrusted from the whole land.\
+*Permission: lands.command.untrust*
 
 `/lands storage`\
-Permission: `lands.command.storage`\
-Open the land item storage inventory.
+Open the virtual item storage for your land. Modifying the storage will be logged in the land inbox. So other land members will be able to see what you took or put into the storage.\
+*Permission: lands.command.storage*
 
 `/lands view`\
-Permission: `lands.command.view`\
-Visualise land borders.
+Visualize land borders with particles. Make sure particles aren't turned off in your Minecraft game settings.\
+*Permission: lands.command.view*
 
 `/lands unstuck`\
-Permission: `lands.command.unstuck`\
-Teleport to the nearest unclaimed chunk. This allows you to teleport out of claims, if you're stuck inside.
+Teleport to the nearest unclaimed chunk. In case you're ever trapped inside claim, you can use this command to get out of it.\
+*Permission: lands.command.unstuck*
 
 `/lands wild [world] [player]`\
 Permission: `lands.command.wild`\
