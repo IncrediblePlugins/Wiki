@@ -11,65 +11,21 @@ Enter the edit mode for a land. All following commands will be executed for this
 Opens the GUI menu. Executing `/lands menu` will have the same effect.\
 *Permission: lands.command.menu*
 
+`/lands menu [menu] [additional]`\
+Open the GUI menu. You can open a specific menu by providing the `[menu]` parameter. If you execute `/lands menu here`, if will open the menu for the (sub)area you're currently standing in. The `[additional]` parameter is only available for server admins to open a menu for a specific player etc.\
+*Permission: lands.command.menu*
+
 `/lands help [page]`\
 Display all command of Lands. Each command group has their own help command. For example `/lands claim help` will display all subcommands of the claim command.\
 *Permission: lands.command.help*
-
-`/lands claim [radius, auto, fill]`\
-If no argument provided, it claims the chunk you're standing in. `radius` claims chunks in a specified radius. `auto` claims chunks while you're walking and `fill` claims all chunks that are surrounded by claimed chunks.\
-*Permission: lands.command.claim*
 
 `/lands create <name>`\
 Create a new land. Depending on the server you might be able to use color codes and hex color.\
 *Permission: lands.command.create*
 
-`/lands merge <land>`\
-Merge the provided land with your current land.\
-*Permission: lands.command.merge*
-
-`/lands accept <land>`\
-Accept an invitation from another land to join them.\
-*Permission: lands.command.accept*
-
-`/lands chat [land] <message>`\
-Send chat messages in the land chat. If the `land` parameter is not provided, it sends a message to your current `/lands edit <land>` land.\
-*Permission: lands.command.chat*
-
 `/lands delete <land | here>`\
 Delete a land or subarea at your current position. If you provide `here` for the land parameter, it will delete the subarea you're currently standin in.\
 *Permission: lands.command.delete*
-
-`/lands deny <land>`\
-Deny an invitation from a land.\
-*Permission: lands.command.deny*
-
-`/lands deposit <amount> [land]`\
-Deposit money to a land bank.\
-*Permission: lands.command.deposit*
-
-`/lands info [land]`\
-Display information about a land. If no parameter is provided, it will display information about the land you're currently standing in.\
-*Permission: lands.command.info*
-
-`/lands invites`\
-View all received invitations and ownership requests.\
-*Permission: lands.command.invites*
-
-`/lands leave <land | here>`\
-Leave a land. If you provide hereˋ as the argument, you'll leave the (sub)area at your current position.\
-*Permission: lands.command.leave*
-
-`/lands map`\
-View a map that shows claimed and unclaimed chunks around you. If you want to view the map in chat instead of the GUI, execute `/lands map chat`.\
-*Permission: lands.command.map*
-
-`/lands menu [menu] [additional]`\
-Open the GUI menu. You can open a specific menu by providing the `[menu]` parameter. If you execute `/lands menu here`, if will open the menu for the (sub)area you're currently standing in. The `[additional]` parameter is only available for server admins to open a menu for a specific player etc.\
-*Permission: lands.command.menu*
-
-`/lands rename <name>`\
-Rename your land. Depending on the server you might be able to use color codes and hex color.\
-*Permission: lands.command.rename*
 
 `/lands selection`\
 Create a selection by selecting a lower and upper corner. Executing `/lands selection expand` will expand the selection to the full height. When complete, you can execute the following commands for the selection:
@@ -79,13 +35,85 @@ Create a selection by selecting a lower and upper corner. Executing `/lands sele
 
 *Permission: lands.command.selection*
 
+`/lands claim [radius, auto, fill]`\
+If no argument provided, it claims the chunk you're standing in. `radius` claims chunks in a specified radius. `auto` claims chunks while you're walking and `fill` claims all chunks that are surrounded by claimed chunks.\
+*Permission: lands.command.claim*
+
+`/lands unclaim`\
+Unclaim the chunk you're standing in. If you created a selection via `/lands selection`, it will unclaim the selection instead. You can also execute `/lands unclaim radius` to unclaim chunks in a specific radius or `/lands unclaim auto` to unclaim chunks you're walking into. `/lands unclaim all` will unclaim all chunks for your current `/lands edit <land>` land.\
+*Permission: lands.command.unclaim*
+
 `/lands assign <area>`\
 Resize an existing subarea or create a new one.\
 *Permission: lands.command.assign*
 
+`/lands merge <land>`\
+Merge the provided land with your current land.\
+*Permission: lands.command.merge*
+
+`/lands relations`\
+Manage relations of your land. You can add/remove allies and enemies.\
+*Permission: lands.command.relations*
+
+`/lands deposit <amount> [land]`\
+Deposit money to a land bank.\
+*Permission: lands.command.deposit*
+
+`/lands withdraw <amount> [land]`\
+Withdraw money from a land bank. If the `[land]` parameter isn't provided, it will withdraw money from your current land.\
+*Permission: lands.command.withdraw*
+
+`/lands balance [land]`\
+View the balance of a land. If the `[land]` parameter isn't provided, it will show the balance of your current land.\
+*Permission: lands.command.balance*
+
+`/lands trust <player> [area]`\
+Trust a player in the whole land or a specific (sub)area. If you don't provide a area, the player will be trusted in the whole land.\
+*Permission: lands.command.trust*
+
+`/lands untrust <player> [area]`\
+Untrust a player from the whole land or a specific (sub)area. If you don't provide a area, the player will be untrusted from the whole land.\
+*Permission: lands.command.untrust*
+
 `/lands setrole <player> <area | *> <role>`\
 Set the role for a player in a specific area. If you provide `*` as the area name, the role will be given in all areas, if the role is available in all areas.\
 *Permission: lands.command.setrole*
+
+`/lands accept <land>`\
+Accept an invitation from another land to join them.\
+*Permission: lands.command.accept*
+
+`/lands deny <land>`\
+Deny an invitation from a land.\
+*Permission: lands.command.deny*
+
+`/lands invites`\
+View all received invitations and ownership requests.\
+*Permission: lands.command.invites*
+
+`/lands leave <land | here>`\
+Leave a land. If you provide hereˋ as the argument, you'll leave the (sub)area at your current position.\
+*Permission: lands.command.leave*
+
+`/lands chat [land] <message>`\
+Send chat messages in the land chat. If the `land` parameter is not provided, it sends a message to your current `/lands edit <land>` land.\
+*Permission: lands.command.chat*
+
+`/lands taxes`\
+View upcoming tax payments that will be taken from your personal balance to stay a member in your land. This doesn't apply to lands that you own. At the time of the tax collection, you need to have enough money in your personal balance.\
+*Permission: lands.command.taxes*
+
+`/lands info [land]`\
+Display information about a land. If no parameter is provided, it will display information about the land you're currently standing in.\
+*Permission: lands.command.info*
+
+`/lands map`\
+View a map that shows claimed and unclaimed chunks around you. If you want to view the map in chat instead of the GUI, execute `/lands map chat`.\
+*Permission: lands.command.map*
+
+`/lands rename <name>`\
+Rename your land. Depending on the server you might be able to use color codes and hex color.\
+*Permission: lands.command.rename*
 
 `/lands setspawn`\
 Set the spawn for your land.\
@@ -98,18 +126,6 @@ Teleport to a land spawn. If you don't provide a land, it will teleport you to t
 `/lands top`\
 View the top lands. They can be sorted by different criteria in the GUI menu.\
 *Permission: lands.command.top*
-
-`/lands trust <player> [area]`\
-Trust a player in the whole land or a specific (sub)area. If you don't provide a area, the player will be trusted in the whole land.\
-*Permission: lands.command.trust*
-
-`/lands unclaim`\
-Unclaim the chunk you're standing in. If you created a selection via `/lands selection`, it will unclaim the selection instead. You can also execute `/lands unclaim radius` to unclaim chunks in a specific radius or `/lands unclaim auto` to unclaim chunks you're walking into. `/lands unclaim all` will unclaim all chunks for your current `/lands edit <land>` land.\
-*Permission: lands.command.unclaim*
-
-`/lands untrust <player> [area]`\
-Untrust a player from the whole land or a specific (sub)area. If you don't provide a area, the player will be untrusted from the whole land.\
-*Permission: lands.command.untrust*
 
 `/lands storage`\
 Open the virtual item storage for your land. Modifying the storage will be logged in the land inbox. So other land members will be able to see what you took or put into the storage.\
@@ -128,66 +144,38 @@ Teleport to a random location. The `[player]` parameter is only available to ser
 *Permission: lands.command.wild*
 *Permission for the `[player]` parameter: lands.admin.command.wild*
 
-`/lands withdraw <amount> [land]`\
-Withdraw money from a land bank. If the `[land]` parameter isn't provided, it will withdraw money from your current land.\
-*Permission: lands.command.withdraw*
-
-`/lands balance [land]`\
-View the balance of a land. If the `[land]` parameter isn't provided, it will show the balance of your current land.\
-*Permission: lands.command.balance*
-
-`/lands taxes`\
-View upcoming tax payments that will be taken from your personal balance to stay a member in your land. This doesn't apply to lands that you own. At the time of the tax collection, you need to have enough money in your personal balance.\
-*Permission: lands.command.taxes*
-
 `/lands rent`\
 With this command you can [manage rentals](players/Rent-System.md). It allows you to cancel your current rental or remove tenants in exchange for a compensation etc.\
 *Permission: lands.command.rent*
-
-`/lands relations`\
-Manage relations of your land. You can add/remove allies and enemies.\
-*Permission: lands.command.relations*
 
 `/lands confirmtp`\
 Confirm an unsafe teleport destination.\
 *Permission: None*
 
 ## Nations
+`/nations menu`\
+Open the nation menu of your current land.\
+*Permission: nations.command.menu*
+
 `/nations create [name]`\
 Create a new nation. Depending on the server you can also use color codes, including hex color.\
 *Permission: nations.command.create*
-
-`/nations accept <nation>`\
-Accept an invitation from a nation to make your land join them.\
-*Permission: nations.command.accept*
 
 `/nations delete`\
 Delete the nation of your current land.\
 *Permission: nations.command.delete*
 
-`/nations deny <nation>`\
-Deny an invitation from a nation.\
-*Permission: nations.command.deny*
-
-`/nations leave`\
-Leave the nation of your current land.\
-*Permission: nations.command.leave*
-
 `/nations rename <name>`\
 Set a new name for your nation. Depending on your server you might be able to use color codes and hex color.\
 *Permission: nations.command.rename*
-
-`/nations menu`\
-Open the nation menu of your current land.\
-*Permission: nations.command.menu*
 
 `/nations setcapital`\
 Set the capital of your nation.\
 *Permission: nations.command.setcapital*
 
-`/nations spawn`\
-Teleport to the spawn of your nation.\
-*Permission: nations.command.spawn*
+`/nations relations`\
+Add/remove allies and enemies of your nation.\
+*Permission: nations.command.relations*
 
 `/nations trust <land>`\
 Invite a land to join your nation.\
@@ -197,15 +185,31 @@ Invite a land to join your nation.\
 Remove a land from your nation.\
 *Permission: nations.command.untrust*
 
-`/nations relations`\
-Add/remove allies and enemies of your nation.\
-*Permission: nations.command.relations*
+`/nations accept <nation>`\
+Accept an invitation from a nation to make your land join them.\
+*Permission: nations.command.accept*
+
+`/nations deny <nation>`\
+Deny an invitation from a nation.\
+*Permission: nations.command.deny*
+
+`/nations leave`\
+Leave the nation of your current land.\
+*Permission: nations.command.leave*
+
+`/nations spawn`\
+Teleport to the spawn of your nations capital.\
+*Permission: nations.command.spawn*
 
 `/nations top`\
 View top nations. They can be sorted by different criteria in the GUI meu.\
 *Permission: nations.command.top*
 
 ## Wars
+`/wars menu`\
+Open the GUI menu for the current or upcoming war.\
+*Permission: wars.command.menu*
+
 `/wars declare <land | nation>`\
 Declare war against a land or nation. If the server has mutual declarations enabled, the enemy needs to accept the war declaration before the war declaration even starts.\
 *Permission: wars.command.declare*
@@ -218,14 +222,10 @@ Deny mutual war declaration. This commands is only available if the server has m
 View information about the current or upcoming war./
 *Permission: wars.command.info*
 
-`/wars menu`\
-Open the GUI menu for the current or upcoming war.\
-*Permission: wars.command.menu*
+`/wars spawn`\
+Teleport to the entry spawn of your team during war. This will teleport you near the border of the enemy land or nation.\
+*Permission: wars.command.spawn*
 
 `/wars list`\
 View all active wars on the server.\
 *Permission: wars.command.list*
-
-`/wars spawn`\
-Teleport to the entry spawn of your team during war. This will teleport you near the border of the enemy land or nation.\
-*Permission: wars.command.spawn*
