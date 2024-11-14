@@ -3,9 +3,7 @@
 * [Welcome](README.md)
 
 ## Plugins
-
 * [Lands](https://wiki.incredibleplugins.com/lands)
-* [Publish your docs](getting-started/publish-your-docs.md)
 
 ## Basics
 
