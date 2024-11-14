@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Home](https://wiki.incredibleplugins.com)
+* [Home](README.md)
 
 ## For Players
 
