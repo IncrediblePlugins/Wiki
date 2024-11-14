@@ -1,7 +1,7 @@
-## Display Placeholders for the Player's current Location
+# Display Placeholders for the Player's current Location
 You can even display a placeholder for a player's current location, by just appending `_here` to it.
 
-## Limit the Length of a Placeholder
+# Limit the Length of a Placeholder
 Append `_length(<number>)` to the placeholder and replace `<number>` with a number of your choice.
 
 ## General

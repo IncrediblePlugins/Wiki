@@ -11,24 +11,26 @@ Keep in mind that changing flags in the configuration files requires a server re
 *Permission: lands.admin.command.land.resetflag*
 
 # Flags
-
-## ENTITY_GRIEFING
+* **ENTITY_GRIEFING**\
 Allow entities to grief blocks?
 
-## TNT_GRIEFING
+* **TNT_GRIEFING**\
 Allow tnt to destroy blocks?
 
 * **PISTON_GRIEFING**\
-Allow pistons from a wilderness to push into the area?\
+Allow pistons from a wilderness to push into the area?
 This should be set to false, since it protects against griefing from other players.
 
 * **MONSTER_SPAWN**\
-Should monsters spawn? This does not include spawners by default.\
+Should monsters spawn? This does not include spawners by default.
 To include spawners, you need to enable the include-spawners option.
 
 * **PHANTOM_SPAWN**\
-Should phantoms spawn? This does not include spawners by default.\
-To include spawners, you need to enable the include-spawners option.
+Should phantoms spawn? This does not include spawners by default.
+* To include spawners, you need to enable the include-spawners option.
+
+* **WITHER_ATTACK_ANIMAL**\
+Should withers be able to damage animals? This flags gives you more control over mob farms.
 
 * **ANIMAL_SPAWN**\
 Should animals spawn? This does not include spawners.
@@ -63,8 +65,8 @@ Hide the land enter title?
 Automatically accept new membership requests?
 
 # Config
-Here can add new flags.
-```
+Here you configure the default flags and decide which flags should be displayed in the GUI menu to players.
+```yaml
   # Natural flags configuration. Role flags can be configured in the roles.yml file.
   # List of available landFlags: https://lands.incredibleplugins.com/wiki/Natural-Flags
   # NOTE: This option requires server reload / restart.
