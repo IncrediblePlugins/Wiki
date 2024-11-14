@@ -74,7 +74,7 @@ The following permissions limit all teleportation initiated by Lands. Players ha
 
 ### Disabling Teleportation
 If you want to disable a teleportation you need to unset the permission in your permissions plugin.
-Example for LuckPerms: `/luckperms group default permission set lands.teleport.sub_area false`
+Example for LuckPerms: `/luckperms group default permission set lands.teleport.sub_area false`\
 The value `false` is important here.
 
 ### Teleportation Permissions
@@ -136,7 +136,7 @@ These permissions are needed to toggle natural flags like monster spawning for y
 
 ## Toggle Role Flags
 These permissions are needed to toggle role flags for your land.
-```
+```yaml
       lands.role.setting.*:
         description: Allow players to toggle all role flags.
         children:
@@ -213,7 +213,7 @@ These permissions are needed to toggle role flags for your land.
 ```
 
 ## Toggle Personal Flags
-```
+```yaml
       lands.player.setting:
         description: Allow players to toggle all personal flags.
         children:
@@ -229,7 +229,7 @@ These permissions are needed to toggle role flags for your land.
 These permissions should only be set for your staff.
 
 ## Bypass Permissions
-```
+```yaml
       lands.bypass.*:
         description: Bypass all protections and other restrictions
         children:
@@ -340,7 +340,7 @@ These permissions should only be set for your staff.
 ```
 
 ## Moderator Utilities
-```
+```yaml
       lands.mod.*:
         description: Access to all moderator actions.
         children:
@@ -354,7 +354,7 @@ These permissions should only be set for your staff.
 # Administrator Permissions
 These permissions should only be set for administrators.
 
-```
+```yaml
       lands.admin.*:
         description: Access to all admin actions. Commands require execution of /Lands edit <land> (to select the land).
         children:
