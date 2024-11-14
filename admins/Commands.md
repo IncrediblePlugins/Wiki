@@ -1,7 +1,7 @@
-# Lands Administrator Commands
+# Lands Admin Commands
 
 `/lands admin`\
-Allows you do execute a variety of actions for lands and so on.
+Allows you do execute a variety of actions for lands and so on.\
 *Permission: lands.admin.command*
 
 ## Permissions for Admin Commands
@@ -12,7 +12,7 @@ Examples:
 
 # Wars Admin Commands
 `/wars admin`\
-Allows you do execute a variety of actions for lands and so on.
+Allows you do execute a variety of actions for lands and so on.\
 *Permission: wars.admin.command*
 
 ## Permissions for Admin Commands
@@ -21,7 +21,7 @@ Example: `/wars admin start` - wars.admin.command.start
 
 # Wars Admin Commands
 `/wars admin`\
-Allows you do execute a variety of actions for lands and so on.
+Allows you do execute a variety of actions for lands and so on.\
 *Permission: wars.admin.command*
 
 ## Permissions for Admin Commands
