@@ -3,7 +3,7 @@ View all placed furnaces of other players.\
 _Permission: fasterfurnaces.admin.command.list_
 
 # Admin Command
-
+Test
 `/fasterfurnaces admin`\
 Allows you to execute a variety of actions.\
 _Permission: fasterfurnaces.admin.command_
