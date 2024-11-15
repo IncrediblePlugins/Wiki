@@ -1,3 +1,6 @@
+# Multiple Locales
+The plugin supports multiple locales. If you place multiple locale files in the `Language` folder, the locale will depend on the players client locale.
+
 # Downloading Community Translations
 1. Community translations can be found in our Discord, by executing the `/translations` command in the Discord server.
 2. You'll be asked to sign up at the translations page, to start translating and downloading language files.
@@ -13,5 +16,5 @@ The default English (en-US) language is already included in the plugin's file an
   # Default: English (en-US) - no download required.
   # You can access translations maintained by the community in our Discord: https://discord.gg/B4MAJVk
   # To access translations, other than en-US, execute /translations in the Discord server.
-  language: 'de'
+  language: 'de-DE'
 ````
