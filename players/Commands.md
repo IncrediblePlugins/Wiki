@@ -12,8 +12,8 @@ _Permission: fasterfurnaces.command.get_
 
 `/fasterfurnaces list`\
 View all your placed furnaces.\
-_Permission: fasterfurnaces.command.list`_
+_Permission: fasterfurnaces.command.list_
 
 `/fasterfurnaces confirmtp`\
 Confirm an unsafe teleportation destination.\
-_Permission: None_\
+_Permission: None_
