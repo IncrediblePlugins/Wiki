@@ -6,6 +6,9 @@
 
 ## Configuration
 * [Installation](config/Installation.md)
+* [GUI Menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus)
+* [Messages](https://wiki.incredibleplugins.com/general/messages-and-config/messages)
+* [Translations](https://wiki.incredibleplugins.com/general/messages-and-config/translations)
 
 ## Modules
 * [Bot](modules/Bot.md)
