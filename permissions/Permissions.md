@@ -28,6 +28,15 @@ See here: [Link](../players/Commands.md)
 # Admin Commands
 See here: [Link](../admins/Commands.md)
 
+# Role Flags Toggle Permissions
+See here: [Link](../config/Roles-and-Flags.md)
+
+# Protection Flags Toggle Permissions
+See here: [Link](../config/Protection-Flags.md)
+
+# Personal Flags Toggle Permissions
+See here: [Link](../config/Personal-Flags.md)
+
 # Teleportation
 The following permissions limit all teleportation initiated by ChestProtect. Players have them by default. However, in some cases
 the teleportation is initiated by executing a command. In such case they need the permission to use the command as well.
@@ -40,46 +49,6 @@ The value ``false`` is important here.
 ## Teleportation Permissions
 `chestprotect.teleport.protection`\
 Allow teleportation to protections. This permission is set by default.
-
-## Settings Permissions
-
-      chestprotect.setting.*:
-        description: Access to all protection and player settings
-        default: op
-        children:
-          chestprotect.setting.player.*:
-            description: Access to all player settings
-            default: op
-            children:
-              chestprotect.setting.player.lock_persistent:
-                description: Access to toggle lock persistent setting
-                default: op
-              chestprotect.setting.player.unlock_persistent:
-                description: Access to toggle unlock persistent setting
-                default: op
-              chestprotect.setting.player.trust_persistent:
-                description: Access to toggle trust persistent setting
-                default: op
-              chestprotect.setting.player.untrust_persistent:
-                description: Access to toggle untrust persistent setting
-                default: op
-              chestprotect.setting.player.setrole_persistent:
-                description: Access to toggle setrole persistent setting
-                default: op
-          chestprotect.setting.protection.*:
-            description: Access to all protection settings
-            default: op
-            children:
-              chestprotect.setting.protection.player_trust:
-                description: Access to toggle role player trust setting
-                default: op
-              chestprotect.setting.protection.player_untrust:
-                description: Access to toggle role player untrust setting
-                default: op
-              chestprotect.setting.protection.player_setrole:
-                description: Access to toggle role player setrole setting
-                default: op
-
 
 # Bypass Permissions
 `chestprotect.bypass.edit`\
