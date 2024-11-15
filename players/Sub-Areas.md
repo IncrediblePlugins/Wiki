@@ -1,4 +1,3 @@
-# What is a Subarea?
 Subareas are inside a land. These areas are three dimensional. That means that they are not bound to chunks, but instead to blocks. You can trust players to specific areas and apply flags to them, like you would do for a land. The land also has a default area which contains every block that isn't part of a subarea. This is the area that you're normally modifying in the menu of your land.
 
 # Create a new Area
