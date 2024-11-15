@@ -1,5 +1,5 @@
 `/upgradeablehoppers list [player]`\
-View all placed hoppers of a specific player.\ 
+View all placed hoppers of a specific player.\
 _Permission: upgradeablehoppers.admin.command.list_
 
 `/upgradeablehoppers admin`\
@@ -8,7 +8,7 @@ _Permission: uhoppers.admin.command_
 
 ## Permissions for Admin Commands
 All subcommands of `/upgradeablehoppers admin` will have this permission format: `uhoppers.admin.command.<subcommand>`\
-Example: `/upgradeablehoppers admin reload` = uhoppers.admin.command.reload
+Example: `/upgradeablehoppers admin give` = uhoppers.admin.command.give
 
 
 
