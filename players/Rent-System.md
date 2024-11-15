@@ -1,4 +1,4 @@
-Areas can be setup for rental or to be purchased via the GUI menu or by using a sign. The setup via the GUI menu is recommended, but both way result in either a sign or a hologram, which players can use to rent or purchase.
+Areas can be setup for rental or to be purchased via the GUI menu or by using a sign. The setup via the GUI menu is recommended, but both ways result in either a sign or a hologram, which players can use to rent or purchase.
 
 # Menu
 1. Place a sign in the sub area that you want to setup to be rented or sold.
@@ -44,10 +44,10 @@ Parameters surrounded by `[]` are optional. Parameters surrounded by `<>` are re
 You can only set up sub areas for rental. The default area can only be set up for sale (= selling the whole land; more information below)
 
 #### Example
-![](https://imgur.com/IX3XwlJ.jpg)
+![Rent sign input example](https://imgur.com/IX3XwlJ.jpg)
 
 ## Sell Sign Setup
-Sell signs can be placed in sub areas and in the default area (= selling the whole land)\
+Sell signs can be placed in sub areas and in the default area (= selling the whole land)
 ![Sell sign setup](https://imgur.com/Qy68zNh.jpg)
 
 ### Explanation
@@ -57,4 +57,4 @@ Parameters surrounded by `[]` are optional. Parameters surrounded by `<>` are re
 * `<cost>`: Defines the total cost.
 
 #### Example
-![Sell sign result](https://imgur.com/9uRyayN.jpg)
+![Sell sign input example](https://imgur.com/9uRyayN.jpg)
