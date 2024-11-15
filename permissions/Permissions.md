@@ -5,3 +5,9 @@ These permissions are safe to set for your players.
 
 ## Command Permissions
 See here: [Link](../players/Commands.md)
+
+# Admin Permissions
+These permissions should only be given to server admins.
+
+## Command Permissions
+See here: [Link](../admins/Commands.md)
