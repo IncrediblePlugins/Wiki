@@ -10,7 +10,7 @@ Same as the previous question: [Link](https://wiki.incredibleplugins.com/lands/f
 
 ***
 
-# I'm part of multiple lands. At least two of them are now engaged in a war. Which team do I join?
+## I'm part of multiple lands. At least two of them are now engaged in a war. Which team do I join?
 Defending lands are prioritized and the team is calculated once and stays the same during the whole duration of the war.
 
 
