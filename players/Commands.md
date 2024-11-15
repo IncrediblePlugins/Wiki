@@ -1,3 +1,8 @@
+The following aliases for the `/upgradeablehoppers` command exist by default:
+* `/uhoppers`
+* `/hopper`
+
+# Commands
 `/upgradeablehoppers get <type> <amount`\
 Get or purchase hopper items.\
 _Permission: uhoppers.command.get_
