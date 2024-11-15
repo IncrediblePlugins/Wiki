@@ -1,7 +1,7 @@
-[![](https://jitpack.io/v/Angeschossen/UpgradeableHoppersAPI.svg)](https://jitpack.io/#Angeschossen/UpgradeableHoppersAPI)
+[![](https://jitpack.io/v/IncrediblePlugins/UpgradeableHoppersAPI.svg)](https://jitpack.io/#IncrediblePlugins/UpgradeableHoppersAPI)
 
 # Javadoc
-Can be found [here](https://jitpack.io/com/github/angeschossen/UpgradeableHoppersAPI/latest/javadoc/).
+Can be found [here](https://jitpack.io/com/github/incredibleplugins/UpgradeableHoppersAPI/latest/javadoc/).
 
 # API Usage Explained
 Include the API using Gradle:
