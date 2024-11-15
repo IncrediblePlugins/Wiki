@@ -1,7 +1,7 @@
-[![](https://jitpack.io/v/Angeschossen/ChestProtectAPI.svg)](https://jitpack.io/#Angeschossen/ChestProtectAPI)
+[![](https://jitpack.io/v/IncrediblePlugins/ChestProtectAPI.svg)](https://jitpack.io/#IncrediblePlugins/ChestProtectAPI)
 
 # Javadoc
-Can be found [here](https://jitpack.io/com/github/angeschossen/ChestProtectAPI/latest/javadoc/).
+Can be found [here](https://jitpack.io/com/github/incredibleplugins/ChestProtectAPI/latest/javadoc/).
 
 # API Usage Explained
 Include the API using Gradle:
