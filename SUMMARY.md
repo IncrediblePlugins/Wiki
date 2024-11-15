@@ -9,3 +9,6 @@
 * [DiscordBridge](https://wiki.incredibleplugins.com/discordbridge)
 * [UpgradeableSpawners](https://wiki.incredibleplugins.com/upgradeablespawners)
 * [BetterFarming](https://wiki.incredibleplugins.com/betterfarming)
+
+## General
+* [Locale & Menus](https://wiki.incredibleplugins.com/general)

@@ -11,4 +11,4 @@ Welcome to our wiki pages.
 * [BetterFarming](https://wiki.incredibleplugins.com/betterfarming)
 
 ## General
-* [Translations & GUI Menus](https://wiki.incredibleplugins.com/general)
+* [Locale & Menus](https://wiki.incredibleplugins.com/general)
