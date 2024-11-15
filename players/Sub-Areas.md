@@ -13,14 +13,10 @@ Subareas are inside a land. These areas are three dimensional. That means that t
 3. After that you will notice that the area will popup in the menu and give you instructions on how to set select the boundaries of the area.\
 ![Execute `/lands selection` and mark the lower and upper corner with left and right click.](https://imgur.com/6Fsnywv.png)
 
-4. The selection is set. It will display it to you live. You can make changes as you wish. Then just execute `/lands selection assign <area>`. After that everything is setup.\
+4. The selection is set. It will display it to you live. You can make changes as you wish. Then just execute `/lands selection assign <area>`. After that everything is setup. The GUI menu of the area can be opened via `/lands` or by standing inside it and executing `/lands menu here`.\
 ![](https://imgur.com/KnF2iWl.png)
 
-
-
-
-
-## Trust Players and set Flags
-By opening the areas menu again and clicking on the area, you can trust players to this specific area and edit flags. You can do everything for this specific area, like it is a land.
+# Trust Players and set Flags
+By opening the areas menu and clicking on the area, you can trust players to this specific area and edit flags. You can do everything for this specific area, just like for the default area.\
 ![This is the area menu. Click on the items to perform actions.](https://imgur.com/JyEu516.png)
 
