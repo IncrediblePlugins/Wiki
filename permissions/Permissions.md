@@ -102,7 +102,7 @@ Allow to teleport via `/lands unstuck`. This permission is set by default.
 ## Toggle Natural Flags
 Permissions for toggleing natural flags can be found [here](configuration/Natural-Flags.md).
 
-## Toggle Role Flags
+## Toggle Role Flags & Bypass
 Permissions for toggleing role flags can be found [here](configuration/Roles-and-their-Flags.md).
 
 ## Toggle Personal Flags
@@ -112,66 +112,62 @@ Permissions for toggleing personal flags can be found [here](configuration/Playe
 These permissions should only be set for your staff.
 
 ## Bypass Permissions
+### WorldEdit
+`lands.bypass.worldedit`\
+Use worldedit in other players lands.
+
+`lands.bypass.wilderness.worldedit`\
+Use worldedit in the wilderness.
+
+### Selection
+`lands.bypass.selection`\
+Bypass other plugins, such as WorldGuard, cancelling a selection creation.
+
+### Teleport Cooldowns
+`lands.bypass.cooldown.wild`\
+Bypass the `/lands wild` cooldown.
+
+`lands.bypass.cooldown.rename`\
+Bypass the `/lands rename` cooldown.
+
+`lands.bypass.cooldown.teleport`\
+Bypass the chunk teleport cooldown via `/lands claimlist`.
+
+`lands.bypass.cooldown.spawn`\
+Bypass the `/lands spawn` cooldown.
+
+`lands.bypass.cooldown.unstuck`\
+Bypass the `/lands unstuck` cooldown.
+
+### War
+`lands.bypass.war.trust`\
+Allow trusting other players during war.
+
+`lands.bypass.war.claim`\
+Allow claiming during war.
+
+### Options
+`lands.bypass.option.force-near`\
+Bypass the `force-near` option from `config.yml`.
+
+### Command Blacklist
+`lands.bypass.cmd.untrusted.*`\
+Bypass blacklisted commands for untrusted players from `config.yml`. Use `lands.bypass.cmd.untrusted.<command>` while replacing `<command>` with a command to bypass the restriction for a specific command.
+
+`lands.bypass.cmd.general.*`\
+Bypass blacklisted commands for untrusted **and trusted** players from `config.yml`. Use `lands.bypass.cmd.general.<command>` while replacing `<command>` with a command to bypass the restriction for a specific command.
+
 ```yaml
-      lands.bypass.*:
-        description: Bypass all protections and other restrictions
-        children:
-          lands.bypass.block_break:
-            description: Bypass block break protection
-          lands.bypass.block_place:
-            description: Bypass block place protection
-          lands.bypass.block_ignite:
-            description: Bypass block ignite protection
-          lands.bypass.interact_general:
-            description: Bypass interaction protection
-          lands.bypass.interact_mechanism:
-            description: Bypass interaction protection
-          lands.bypass.interact_door:
-            description: Bypass interaction protection
-          lands.bypass.interact_container:
-            description: Bypass interaction protection
-          lands.bypass.interact_villager:
-            description: Bypass villager protection
-          lands.bypass.attack_animal:
-            description: Bypass animal attack protection
-          lands.bypass.attack_player:
-            description: Bypass player attack protection
-          lands.bypass.member.untrust:
-            description: Untrust players or remove invites in other lands
-          lands.bypass.fly:
-            description: Bypass fly flag
           lands.bypass.worldedit:
             description: Bypass WorldEdit restrictions in other players lands
-          lands.bypass.land_enter:
-            description: Bypass land enter flag
           lands.bypass.selection:
             description: Bypass error message of other plugin cancelling selection
             
           lands.bypass.wilderness.*:
             description: Bypass all wilderness protections (for worlds in disallow-wilderness_list)
             children:
-              lands.bypass.wilderness.block_break:
-                description: Bypass block break protection for disallow-wilderness_list in config
-              lands.bypass.wilderness.block_place:
-                description: Bypass block place protection for disallow-wilderness_list in config
-              lands.bypass.wilderness.block_ignite:
-                description: Bypass block ignite protection for disallow-wilderness_list in config
-              lands.bypass.wilderness.interact_general:
-                description: Bypass interaction protection for disallow-wilderness_list in config
-              lands.bypass.wilderness.interact_mechanism:
-                description: Bypass interaction protection for disallow-wilderness_list in config
-              lands.bypass.wilderness.interact_door:
-                description: Bypass interaction protection for disallow-wilderness_list in config
-              lands.bypass.wilderness.interact_container:
-                description: Bypass interaction protection for disallow-wilderness_list in config
-              lands.bypass.wilderness.attack_animal:
-                description: Bypass animal attack protection for disallow-wilderness_list in config
-              lands.bypass.wilderness.attack_player:
-                description: Bypass player attack protection for disallow-wilderness_list in config
               lands.bypass.wilderness.worldedit:
                 description: Bypass WorldEdit restrictions in wilderness.
-              lands.bypass.wilderness.fly:
-                description: Fly in wilderness
 
           lands.bypass.cooldown.*:
             description: Bypass cooldowns
@@ -186,9 +182,6 @@ These permissions should only be set for your staff.
                 description: Bypass /lands spawn cooldown
               lands.bypass.cooldown.unstuck:
                 description: Bypass /lands unstuck cooldown
-
-          lands.bypass.spawn.private:
-            description: Teleport to private land spawns
 
           lands.bypass.war.*:
             description: Bypass war restrictions
