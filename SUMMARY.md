@@ -1,7 +1,7 @@
 # Table of contents
 * [Home](README.md)
 
-## Players
+## For Players
 * [Commands](players/Commands.md)
 
 ## Config
