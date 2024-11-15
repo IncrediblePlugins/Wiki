@@ -44,6 +44,7 @@ Parameters surrounded by `[]` are optional. Parameters surrounded by `<>` are re
 You can only set up sub areas for rental. The default area can only be set up for sale (= selling the whole land; more information below)
 
 #### Example
+The following example lets players rent the area for a maximum of 30 days.
 ![Rent sign input example](https://imgur.com/IX3XwlJ.jpg)
 
 ## Sell Sign Setup
@@ -57,4 +58,5 @@ Parameters surrounded by `[]` are optional. Parameters surrounded by `<>` are re
 * `<cost>`: Defines the total cost.
 
 #### Example
+The following example lets players buy the area or land (if placed in the default area) for $5000.
 ![Sell sign input example](https://imgur.com/9uRyayN.jpg)
