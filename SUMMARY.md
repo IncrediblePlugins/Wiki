@@ -1,5 +1,5 @@
 # Table of contents
-* [Welcome](README.md)
+* [Info](README.md)
 
 ## Plugins
 * [Lands](https://wiki.incredibleplugins.com/lands)
