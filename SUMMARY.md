@@ -3,5 +3,5 @@
 
 ## Plugins
 * [Lands](https://wiki.incredibleplugins.com/lands)
-* [UpgradeableHoppers](https://wiki.incredibleplugins.com/upgradeablehoppers)
+* [UpgradeableHoppers](https://wiki.incredibleplugins.com/upradeablehoppers)
 * [ChestProtect](https://wiki.incredibleplugins.com/chestprotect)
