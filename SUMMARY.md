@@ -1,6 +1,3 @@
-# Table of contents
-* [Welcome](README.md)
-
 ## Messages & Config
 * [Messages](config/Messages.md)
 * [Translations](config/Translations.md)
