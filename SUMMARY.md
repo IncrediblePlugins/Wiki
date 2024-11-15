@@ -15,7 +15,7 @@
 ## Configuration
 
 * [Installation](configuration/Installation.md)
-* [Frequently asked Questions](configuration/Frequently-asked-Config-Questions.md)
+* [Frequently asked Questions](configuration/Frequently-asked-Questions)
 * [Database](configuration/Database.md)
 * [Playtime Rewards](configuration/Playtime-Rewards.md)
 * [Leaderboards](configuration/Leaderboards.md)
@@ -42,8 +42,8 @@
 * [Other Permissions](permissions/Permissions.md)
 * [Luckperms Context](permissions/Luckperms-Context.md)
 
-## Admin & Moderation Tools
-* [Edit other lands etc.](admins/Admin-Tools.md)
+## Admin & Moderation
+* [Edit other lands etc.](admins/Tools)
 
 ## Developer API
 

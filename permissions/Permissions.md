@@ -169,7 +169,7 @@ Bypass the wait time before teleportation.
 Execute commands while waiting for the teleportation to start.
 
 ## Admin & Moderator Utilities
-See [here](../admins/Admin-Tools.md).
+See [here](../admins/Tools).
 
 # Administrator Permissions
 Permissions for toggleing role flags can be found [here](../admins/Commands.md).
