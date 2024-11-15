@@ -1,23 +1,7 @@
-`/Spawners get`\
-Permission: uspawners.command.get\
-Description: Get / buy spawner item
+`/spawners get`\
+Get a spawner item.\
+_Permission: uspawners.command.get_
 
-`/Spawners give`\
-Permission: uspawners.admin.command.give\
-Description: GGive spawners
-
-`/Spawners list`\
-Permission: uspawners.command.list\
-Description: View your spawners
-
-`/Spawners list [player]`\
-Permission: uspawners.admin.command.list\
-Description: View spawners of other players
-
-`/Spawners admin`\
-Permission: uspawners.admin.command.admin\
-Description: Admin commands
-
-`/Spawners reload`\
-Permission: uspawners.admin.command.reload\
-Description: Reload configurations
+`/spawners list`\
+View your placed spawners.\
+_Permission: uspawners.command.list_
