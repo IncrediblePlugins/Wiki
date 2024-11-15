@@ -3,7 +3,7 @@ Get a farm item.\
 _Permission: betterfarming.command.get_
 
 `/betterfarming list`\
-List your placed farms.
+List your placed farms.\
 _Permission: betterfarming.command.list_
 
 `/betterfarming help`\

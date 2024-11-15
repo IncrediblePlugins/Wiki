@@ -1,9 +1,9 @@
 [![](https://jitpack.io/v/IncrediblePlugins/BetterFarmingAPI.svg)](https://jitpack.io/#IncrediblePlugins/BetterFarmingAPI)
 
-### Javadoc
+# Javadoc
 See here: [Link](https://jitpack.io/com/github/incredibleplugins/BetterFarmingAPI/latest/javadoc/)
 
-### API Usage Explained
+# API Usage Explained
 Include the API using Gradle:
 ```groovy
 repositories {
