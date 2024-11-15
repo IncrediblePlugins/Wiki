@@ -8,12 +8,12 @@
 * [Installation](config/Setup.md)
 
 ## Modules
-* [Bot](modules/Bot-Module.md)
-* [Chat](modules/Chat-Module.md)
-* [Events](modules/Events-Module.md)
-* [Lands](modules/Lands-Module.md)
-* [Linking](modules/Linking-Module.md)
-* [Tickets](modules/Tickets-Module.md)
+* [Bot](modules/Bot.md)
+* [Chat](modules/Chat.md)
+* [Events](modules/Events.md)
+* [Lands](modules/Lands.md)
+* [Linking](modules/Linking.md)
+* [Tickets](modules/Tickets.md)
 
 ## Permissions
 * [Player Commands](players/Commands.md)
