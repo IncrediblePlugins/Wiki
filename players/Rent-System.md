@@ -31,6 +31,7 @@ Depending on your servers config, you can remove tenants by executing `/lands re
 An alternative way to setup areas for rental, is by using signs. However, the menu alternative is recommended, since it's just easier.
 
 ## Rent Sign Setup
+Rental signs can only be created in subareas. Whole lands can only be sold.\
 ![Rent sign setup](https://imgur.com/am5U7Sp.jpg) 
 
 ### Explanation
@@ -44,11 +45,11 @@ Parameters surrounded by `[]` are optional. Parameters surrounded by `<>` are re
 You can only set up sub areas for rental. The default area can only be set up for sale (= selling the whole land; more information below)
 
 #### Example
-The following example lets players rent the area for a maximum of 30 days.
+The following example lets players rent the area for a maximum of 30 days. They can expand their rental for $1000 for every 7 days until they have accumulated a maximum time of 30 days.\
 ![Rent sign input example](https://imgur.com/IX3XwlJ.jpg)
 
 ## Sell Sign Setup
-Sell signs can be placed in sub areas and in the default area (= selling the whole land).
+Sell signs can be placed in sub areas and in the default area (= selling the whole land).\
 ![Sell sign setup](https://imgur.com/Qy68zNh.jpg)
 
 ### Explanation
@@ -58,5 +59,5 @@ Parameters surrounded by `[]` are optional. Parameters surrounded by `<>` are re
 * `<cost>`: Defines the total cost.
 
 #### Example
-The following example lets players buy the area or land (if placed in the default area) for $5000.
+The following example lets players buy the area or land (if placed in the default area) for $5000.\
 ![Sell sign input example](https://imgur.com/9uRyayN.jpg)
