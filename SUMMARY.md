@@ -1,10 +1,21 @@
 # Table of contents
-* [Welcome](README.md)
+* [Home](README.md)
 
-## Plugins
-* [Lands](https://wiki.incredibleplugins.com/lands)
-* [UpgradeableHoppers](https://wiki.incredibleplugins.com/upradeablehoppers)
-* [ChestProtect](https://wiki.incredibleplugins.com/chestprotect)
-* [FasterFurnaces](https://wiki.incredibleplugins.com/fasterfurnaces)
-* [DiscordBridge](https://wiki.incredibleplugins.com/discordbridge)
-* [UpgradeableSpawners](https://wiki.incredibleplugins.com/upgradeablespawners)
+## Players
+* [Commands](players/Commands.md)
+
+## Config
+* [Installation](config/Installation.md)
+* [Farm Types](config/Farm-Types.md)
+* [Roles & Flags](config/Role-Flags.md)
+* [GUI Menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus)
+* [Messages](https://wiki.incredibleplugins.com/general/messages-and-config/messages)
+* [Translations](https://wiki.incredibleplugins.com/general/messages-and-config/translations)
+
+## Permissions
+* [Player Commands](players/Commands.md)
+* [Admin Commands](admins/Commands.md)
+* [Other Permissions](permissions/Permissions.md)
+
+## Developers
+* [API](developers/API.md)
