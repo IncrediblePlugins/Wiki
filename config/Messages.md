@@ -1,13 +1,13 @@
 Messages file: `/plugins/<plugin>/Language`
-You can place multiple locales in the plugin's "Language" folder to display different locales depending on the player's client locale.
+You can place multiple locales in the plugin's Language folder to display different locales depending on the player's client locale.
 
 # Display a Message
 ## As a Title
 Just add `#t#` in front of the message.\
 Example: 
-```yaml
+````yaml
 pvp-warning: '#t#[config]in:10,stay:60,out:5[/config]&cYou entered a pvp zone.[newline]Subtitle (optional)[newline]Actionbar (optional)'
-```
+````
 
 Whereas `in` is the fade in time, `stay` the stay time and `out` the fade out time. These are provided in ticks (20 ticks = 1 second) and are optional. This title would fade in half a second, stay for 3 seconds and fade out for 0.25 seconds. The times in this example are the default ones.
 
@@ -68,7 +68,7 @@ ${tax}
 ![Result of the example above.](https://i.imgur.com/BeOkyZs.png)
 
 # Disable messages
-Example: Disabling land enter messages in Lands:
+For example disabling land enter messages in Lands:
 ```yaml
 enter:
   land: '#t#&2&l{land}[newline]&3{title}'
