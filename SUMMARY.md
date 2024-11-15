@@ -1,7 +1,7 @@
 # Table of contents
 * [Home](README.md)
 
-## Messages & Config
+## Locale & Config
 * [Messages](config/Messages.md)
 * [Translations](config/Translations.md)
 * [Events](config/Events.md)
