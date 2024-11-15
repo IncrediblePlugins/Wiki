@@ -1,43 +1,45 @@
-## Numbered Permissions
-IMPORTANT: **Replace `<number>` with an actual number.** Example: `chestprotect.blocks.<number>` -> chestprotect.blocks.50
+To assign permissions to players you must install a permissions plugin, like [Luckperms](https://www.spigotmc.org/resources/28140). Below you find a list of permissions that you can assign to players or their permission groups. Please note that if a player has `/op`, they will have all permissions.
+
+# Numbered Permissions
+Important: 
+* **Replace `<number>` with an actual number.** Example: `chestprotect.blocks.<number>` -> chestprotect.blocks.5
 
 `chestprotect.blocks.<number>`\
-Description: How many blocks can a player protect?
+How many blocks can a player protect? Replace `number` with an actual number.
 
 `chestprotect.entities.<number>`\
-Description: How many entities can a player protect?
+How many entities can a player protect? Replace `number` with an actual number.
 
 `chestprotect.members.<number>`\
-Description: How many trusted players can\
-a player have per protection.
+How many trusted players can a player have per protection. Replace `number` with an actual number.
 
 `chestprotect.groups.<number>`\
-Description: How many groups can a player create?
+How many groups can a player create? Replace `number` with an actual number.
 
 `chestprotect.free.blocks.<number>`\
-Description: Set free block protections amount.
+Set the amount of free block protections. Replace `number` with an actual number.
 
 `chestprotect.free.entities.<number>`\
-Description: Set free entity protections amount.
+Set the amount of free entity protections. Replace `number` with an actual number.
 
-## Command Permissions
+# Player Commands
 See here: [Link](../players/Commands.md)
 
-## Teleportation
+# Admin Commands
+See here: [Link](../admins/Commands.md)
+
+# Teleportation
 The following permissions limit all teleportation initiated by ChestProtect. Players have them by default. However, in some cases
 the teleportation is initiated by executing a command. In such case they need the permission to use the command as well.
-You don't need to explicitly set them.
 
-### Disabling Teleportation
-If you want to disable a teleportation you
-need to unset the permission in your permissions plugin.
+## Disabling Teleportation
+If you want to disable a teleportation you need to unset the permission in your permissions plugin.
 Example for LuckPerms: ``/luckperms group default permission set chestprotect.teleport.protection false``
 The value ``false`` is important here.
 
-### Teleportation Permissions
+## Teleportation Permissions
 `chestprotect.teleport.protection`\
-Description: Allow teleportation to protections.\
-Note: This permission is set by default.
+Allow teleportation to protections. This permission is set by default.
 
 ## Settings Permissions
 
@@ -79,23 +81,12 @@ Note: This permission is set by default.
                 default: op
 
 
-## Bypass Permissions
+# Bypass Permissions
+`chestprotect.bypass.edit`\
+Edit protections of other players.
 
-      chestprotect.bypass.*:
-        description: Bypass all protections
-        default: op
-        children:
-          chestprotect.bypass.edit:
-            description: Edit other players protections
-            default: op
-          chestprotect.bypass.open:
-            description: Open other players protections
-            default: op
-          chestprotect.bypass.unlock:
-            description: Unlock other players protections
-            default: op
+`chestprotect.bypass.open`\
+Open protection of other players.
 
-
-## Admin Command Permissions
-See here: [Link](../admins/Commands.md
-)
+`chestprotect.bypass.unlock`\
+Unlock protections of other players.
