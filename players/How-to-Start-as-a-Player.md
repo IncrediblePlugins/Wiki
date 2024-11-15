@@ -12,9 +12,6 @@
 
 6. To use the commands for a different land execute `/lands edit <land>`. All following commands will be executed for this land.
 
-
-***
-
 # Select a Land for Editing
 Command: `/lands edit <land>`\
 Allow following commands will be executed for this land.
