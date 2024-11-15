@@ -42,7 +42,7 @@
 * [Luckperms Context](permissions/Luckperms-Context.md)
 
 ## Admin & Moderation Tools
-* [Edit other lands etc.](admins/Admin-Tools)
+* [Edit other lands etc.](admins/Admin-Tools.md)
 
 ## Developer API
 
