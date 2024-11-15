@@ -15,7 +15,7 @@
 ## Configuration
 
 * [Installation](configuration/Installation.md)
-* [Frequently asked Questions](configuration/Frequently-asked-Questions)
+* [Frequently asked Questions](configuration/Frequently-asked-Questions.md)
 * [Database](configuration/Database.md)
 * [Playtime Rewards](configuration/Playtime-Rewards.md)
 * [Leaderboards](configuration/Leaderboards.md)
