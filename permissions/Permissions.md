@@ -21,23 +21,23 @@ The value `false` is important here.
 Allow teleportation to hoppers through the `/hoppers list` menu. This permission is set by default.
 
 # Bypass Permissions
-      uhoppers.bypass.*:
-        description: Bypass protections etc.
-        children:
-          uhoppers.bypass.open:
-            description: Open other players hoppers.
-          uhoppers.bypass.upgrade:
-            description: Upgrade other players hoppers.
-          uhoppers.bypass.delete:
-            description: Delete other players hoppers.
-          uhoppers.bypass.claim:
-            description: Allow linking in claims the player is not trusted in.
-          uhoppers.bypass.only-land:
-            description: Bypass only-land option in config.yml and not being able to place hoppers in lands they're not trusted in.
-          uhoppers.bypass.vanilla.*:
-            description: Bypass all vanilla hopper settings.
-            children:
-              uhoppers.bypass.vanilla.craft:
-                description: Bypass vanilla hopper craft setting.
-              uhoppers.bypass.vanilla.place:
-                description: Bypass vanilla hopper place setting.
+`uhoppers.bypass.open`\
+Open hoppers from other players.
+
+`uhoppers.bypass.upgrade`\
+Upgrade hoppers from other players.
+
+`uhoppers.bypass.delete`\
+Delete hoppers from other players.
+
+`uhoppers.bypass.claim`\
+Allow creating links in claims, in which the player is not trusted.
+
+`uhoppers.bypass.only-land`\
+Bypass `only-land` option in `config.yml` and not being able to place hoppers in lands they're trusted in.
+
+`uhoppers.bypass.vanilla.craft`\
+Bypass the option that denies crafting vanilla hoppers.
+
+`uhoppers.bypass.vanilla.place`\
+Bypass the option that denies placing vanilla hoppers.
