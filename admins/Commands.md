@@ -1,5 +1,3 @@
-# ChestProtect Admin Commands
-
 `/chestprotect admin`\
 Allows you to execute a variety of actions.\
 *Permission: chestprotect.admin.command*
