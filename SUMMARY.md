@@ -19,3 +19,6 @@
 * [Player Commands](players/Commands.md)
 * [Admin Commands](admins/Commands.md)
 * [Other Permissions](permissions/Permissions.md)
+
+## Developers
+* [API](developers/API.md)
