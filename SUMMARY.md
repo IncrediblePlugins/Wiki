@@ -1,8 +1,16 @@
 # Table of contents
-* [Welcome](README.md)
+* [Home](README.md)
 
-## Plugins
-* [Lands](https://wiki.incredibleplugins.com/lands)
-* [UpgradeableHoppers](https://wiki.incredibleplugins.com/upradeablehoppers)
-* [ChestProtect](https://wiki.incredibleplugins.com/chestprotect)
-* [FasterFurnaces](https://wiki.incredibleplugins.com/fasterfurnaces)
+## For Players
+* [Commands](players/Commands.md)
+
+## Configuration
+* [Installation](config/Installation.md)
+
+## Permissions
+* [Player Commands](players/Commands.md)
+* [Admin Commands](admins/Commands.md)
+* [Other Permissions](permissions/Permissions.md)
+
+## Developers
+* [API](developers/API.md)
