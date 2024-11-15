@@ -60,20 +60,20 @@ This results in minimum one and maximum one carrot item at harvest. An example c
 You can apply [mode-data](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus#set-custom-model-data) and [enchantments](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus#specific-enchantments) to items.
 
 # Model Data
-You can specify persistent data holders, like player heads, to generate items with model-data. This player head with a pineapple texture will generate 1-4 items named "Pineapple Slice" with the model data 1000 each time it's harvested. You can apply model-data, names, lores etc. to [fuel items](https://github.com/Angeschossen/BetterFarming/wiki/Farm-Types#fuel) as well.
+You can specify persistent data holders, like player heads, to generate items with model-data. This player head with a pineapple texture will generate 1-4 items named "Pineapple Slice" with the model data 1000 each time it's harvested. You can apply model-data, names, lores etc. to [fuel items](https://wiki.incredibleplugins.com/betterfarming/config/farm-types#fuel) as well.
 ````yaml
 somehead:
-block: 'PLAYER_HEAD'
-item:
-  name: 'Pineapple'
-  # Custom head texture.
-  material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTdjNWU5MjVhOTQ5ZTU1ZGIyYzI1ZWZhYWQ2NDUxMmViNmRhYjc0YWZmYjJlOWYzMDRjMzg1YjRmNGIzMGJhNSJ9fX0='
-harvest:
-  1:
-    name: 'Pineapple Slice'
-    material: 'PAPER'
-    model-data: 1000
-    data:
-      min: 1
-      max: 4
+  block: 'PLAYER_HEAD'
+  item:
+    name: 'Pineapple'
+    # Custom head texture.
+    material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTdjNWU5MjVhOTQ5ZTU1ZGIyYzI1ZWZhYWQ2NDUxMmViNmRhYjc0YWZmYjJlOWYzMDRjMzg1YjRmNGIzMGJhNSJ9fX0='
+  harvest:
+    1:
+      name: 'Pineapple Slice'
+      material: 'PAPER'
+      model-data: 1000
+      data:
+        min: 1
+        max: 4
 ````

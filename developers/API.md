@@ -1,7 +1,7 @@
 [![](https://jitpack.io/v/IncrediblePlugins/BetterFarmingAPI.svg)](https://jitpack.io/#IncrediblePlugins/BetterFarmingAPI)
 
 ### Javadoc
-https://jitpack.io/com/github/incredibleplugins/BetterFarmingAPI/latest/javadoc/
+See here: [Link](https://jitpack.io/com/github/incredibleplugins/BetterFarmingAPI/latest/javadoc/)
 
 ### API Usage Explained
 Include the API using Gradle:
@@ -9,10 +9,12 @@ Include the API using Gradle:
 repositories {
 	maven { url 'https://jitpack.io' }
 }
+
 dependencies {
     compileOnly "com.github.angeschossen:BetterFarmingAPI:version"
 }
 ```
+Replace `version` with the version that you want to use.
 
 Include the API using Maven:
 ```xml
@@ -32,9 +34,10 @@ Include the API using Maven:
     </dependency>
 </dependencies>
 ```
+Replace `version` with the version that you want to use.
 
 The API is accessible through an implementation of the ``BetterFarmingAPI`` interface.
 BetterFarming needs to be loaded before this API can be used. It doesn't need to be enabled though.
-````
+````java
 BetterFarmingAPI api = BetterFarmingAPI.getInstance();
 ````

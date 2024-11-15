@@ -1,19 +1,11 @@
->`/betterFarming get`\
-`Permission: betterfarming.command.get`\
-Description: Get / buy farm item.
+`/betterfarming get <farm> <amount`\
+Get a farm item.\
+_Permission: betterfarming.command.get_
 
->`/betterFarming give <player> [amount]`\
-`Permission: betterfarming.command.give`\
-Description: Give farm items.
+`/betterfarming list`\
+List your placed farms.
+_Permission: betterfarming.command.list_
 
->`/betterFarming list`\
-`Permission: betterfarming.command.list`\
-Description: List farms.
-
->`/betterFarming help`\
-`Permission: betterfarming.command.help`\
-Description: List available commands.
-
->`/betterFarming admin`\
-`Permission: betterfarming.admin.command`\
-Description: Admin actions.
+`/betterfarming help`\
+List available commands. Only commands for, which you can execute, will be displayed.\
+_Permission: betterfarming.command.help_
