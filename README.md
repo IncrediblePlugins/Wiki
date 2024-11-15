@@ -1,5 +1,2 @@
 # Welcome
-Welcome to our wiki pages.
-
-### Plugins
-* [Lands](https://wiki.incredibleplugins.com/lands)
+This wiki contains information that may apply to all our plugins.
