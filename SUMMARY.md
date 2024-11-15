@@ -1,5 +1,15 @@
 # Table of contents
-* [Welcome](README.md)
+* [Home](README.md)
 
-## Plugins
-* [Lands](https://wiki.incredibleplugins.com/lands)
+## For Players
+* [Commands](players/Commands.md)
+
+## Configuration
+* [Installation](config/Installation.md)
+* [Roles & Flags](config/Roles-and-Flags.md)
+
+## Permissions
+* [Permissions](permissions/Permissions.md)
+
+## Developers
+* [API](developers/API.md)
