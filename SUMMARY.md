@@ -27,6 +27,7 @@
 * [Regeneration](configuration/Unclaim-and-Wilderness-Regeneration.md)
 * [Discord Bot](https://github.com/IncrediblePlugins/LandsDiscordBot/wiki)
 * [PlaceholderAPI Placeholders](configuration/PlaceholderAPI-Placeholders.md)
+* [Camps](configuration/Camps.md)
 * [GUI Menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus)
 * [Bedrock Forms](https://wiki.incredibleplugins.com/general/gui-menus/bedrock-forms)
 * [Messages](https://wiki.incredibleplugins.com/general/messages-and-config/messages)

@@ -1,8 +1,8 @@
-Camps are temporary lands that are created by placing a camp item. A camp will be deleted automatically after a configured period.
+Camps are temporary lands that are created by placing a camp item. A camp will be deleted automatically after a server defined period.
 A camp does not pay any upkeep. You can give camp items to players by executing `/lands admin player <player> give camp <amount> <radius>`.
 
 The configuration can be found in config.yml:
-````
+````yaml
 # Camps are temporary lands that will get deleted after a defined period.
 # Camp items can be given at first join or by executing /lands admin player <player> give camp <amount> <radius>
 camp:
