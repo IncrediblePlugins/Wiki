@@ -1,5 +1,5 @@
-# Welcome
-Welcome to our wiki pages.
+# Table of contents
+* [Info](README.md)
 
 ## Plugins
 * [Lands](https://wiki.incredibleplugins.com/lands)
