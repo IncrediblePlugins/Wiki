@@ -8,7 +8,7 @@ Important:
 * **Replace `<number>` with an actual number.** Example: `chestprotect.blocks.<number>` -> chestprotect.blocks.5
 
 `uhoppers.hoppers.<number>`\
-How many upgradeable hoppers can a player place? Replace `number` with an acutal number.
+How many upgradeable hoppers can a player place? Replace `number` with an actual number.
 
 ## Player Commands
 See here: [Link](../players/Commands.md)
