@@ -14,7 +14,9 @@
 * [Translations](https://wiki.incredibleplugins.com/general/messages-and-config/translations)
 
 ## Permissions
-* [Permissions](permissions/Permissions.md)
+* [Player Commands](players/Commands.md)
+* [Admin Commands](admins/Commands.md)
+* [Other Permissions](permissions/Permissions.md)
 
 ## Developers
 * [API](developers/API.md)
