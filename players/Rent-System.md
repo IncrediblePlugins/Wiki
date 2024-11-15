@@ -7,14 +7,13 @@ Areas can be setup for rental or to be purchased via the GUI menu or by using a 
 4. Set all values and confirm.
 
 # When the Setup is Done
-The rent or sell sign is setup and players can now access it.
+The rent or sell sign or hologram is setup and players can now access it.
 
-## Sign
-To rent a area, just click on the sign. To add more time to your rental, just click again on the sign.
-![](https://imgur.com/IX3XwlJ.jpg)\
+## Reant & Extend Time
+To rent a area, just click on the sign or hologram. To add more time to your rental, just click again on the sign or hologram.
 
-To purchase a area, just click on the sign.\
-![Sell sign result](https://imgur.com/9uRyayN.jpg)
+## Purchase a Area
+Just click on the sell sign or hologram.
 
 ## Brose Listings
 Use `/lands rent list` to view all areas and lands that can be rented or bought. There you can also filter and sort these offers.
@@ -44,6 +43,9 @@ Parameters surrounded by `[]` are optional. Parameters surrounded by `<>` are re
 
 You can only set up sub areas for rental. The default area can only be set up for sale (= selling the whole land; more information below)
 
+#### Example
+![](https://imgur.com/IX3XwlJ.jpg)
+
 ## Sell Sign Setup
 Sell signs can be placed in sub areas and in the default area (= selling the whole land)\
 ![Sell sign setup](https://imgur.com/Qy68zNh.jpg)
@@ -53,3 +55,6 @@ Parameters surrounded by `[]` are optional. Parameters surrounded by `<>` are re
 
 * `[area]`: This parameter is only needed if the sign is placed outside the area.
 * `<cost>`: Defines the total cost.
+
+#### Example
+![Sell sign result](https://imgur.com/9uRyayN.jpg)
