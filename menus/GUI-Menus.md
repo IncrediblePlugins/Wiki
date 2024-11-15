@@ -57,7 +57,6 @@ common_sounds:
     failure: ENTITY_VILLAGER_NO
 ````
 
-
 # Common Items Section
 The common section lets you define items that will apply to every menu.
 Items in the default configuration may not apply to every menu. Only menus that they're meant to apply. In the default configuration, all menus have the same size of 45. Therefore, this size is specified here. You can override any item or setting of the common section in the menu of your choice, by following the instructions here:
@@ -141,8 +140,8 @@ item:
 ## Set Sound
 Plays a sound when the item is set in the menu. This is especially useful for temporary items, that display failures. The `<volume>` and `<pitch>` parameters are optional and may be replaced with the sound's preferred volume and pitch.
 ````yaml
-      child_failure_page_next:
-        sound_set: ENTITY_VILLAGER_NO:<volume>:<pitch>
+child_failure_page_next:
+  sound_set: ENTITY_VILLAGER_NO:<volume>:<pitch>
 ````
 
 ## Execute Commands at Click
