@@ -16,8 +16,5 @@
 * [Admin Commands](admins/Commands.md)
 * [Other Permissions](permissions/Permissions.md)
 
-## For Admins
-* [Commands](admins/Commands.md)
-
 ## Developers
 * [API](developers/API.md)

@@ -11,7 +11,7 @@ Important:
 Allow players to place a specific amount of furnaces. Replace `number` with an actual number.
 
 ## Command Permissions
-Commands wiki page: https://github.com/Angeschossen/FasterFurnaces/wiki/Commands
+See here: [Link](../players/Commands.md)
 
 ## Teleportation
 The following permissions limit all teleportation initiated by FasterFurnaces. Players have them by default. However, in some cases
