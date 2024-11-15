@@ -9,7 +9,7 @@ The default English (en-US) language is already included in the plugin's file an
 # Applying Translations
 1. Insert the downloaded files into the `/Language` folder, which is located in the plugin folder.
 2. If you for example downloaded a file with the name `lands-chat-de.yml` or `lands-gui-de.yml` then set the language to `de` in the plugin's config.yml file:
-````
+````yaml
   # Default: English (en-US) - no download required.
   # You can access translations maintained by the community in our Discord: https://discord.gg/B4MAJVk
   # To access translations, other than en-US, execute /translations in the Discord server.
