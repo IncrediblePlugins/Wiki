@@ -17,6 +17,10 @@ _Toggle permission: chestprotect.setting.protection.player_trust_
 Allows the role to untrust players.\
 _Toggle permission: chestprotect.setting.protection.player_untrust_
 
+* **PLAYER_SETROLE**\
+Allow players to set role of other players.\
+_Toggle permission: chestprotect.setting.protection.player_setrole_
+
 * **UNLOCK**\
 Allows the role to unlock the protection.\
 _Toggle permission: chestprotect.setting.protection.unlock_
