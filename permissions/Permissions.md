@@ -111,7 +111,12 @@ Permissions for toggleing personal flags can be found [here](configuration/Playe
 # Staff Permissions
 These permissions should only be set for your staff.
 
+## Admin Commands
+See [here](../admins/Commands.md).
+
 ## Bypass Permissions
+These permissions allow you to edit other players lands etc.
+
 ### WorldEdit
 `lands.bypass.worldedit`\
 Use worldedit in other players lands.
@@ -170,6 +175,3 @@ Execute commands while waiting for the teleportation to start.
 
 ## Admin & Moderator Utilities
 See [here](../admins/Admin-Tools.md).
-
-# Administrator Permissions
-Permissions for toggleing role flags can be found [here](../admins/Commands.md).
