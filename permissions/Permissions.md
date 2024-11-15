@@ -157,63 +157,16 @@ Bypass blacklisted commands for untrusted players from `config.yml`. Use `lands.
 `lands.bypass.cmd.general.*`\
 Bypass blacklisted commands for untrusted **and trusted** players from `config.yml`. Use `lands.bypass.cmd.general.<command>` while replacing `<command>` with a command to bypass the restriction for a specific command.
 
-```yaml
-          lands.bypass.worldedit:
-            description: Bypass WorldEdit restrictions in other players lands
-          lands.bypass.selection:
-            description: Bypass error message of other plugin cancelling selection
-            
-          lands.bypass.wilderness.*:
-            description: Bypass all wilderness protections (for worlds in disallow-wilderness_list)
-            children:
-              lands.bypass.wilderness.worldedit:
-                description: Bypass WorldEdit restrictions in wilderness.
+### Expiration
+`lands.bypass.expiration`\
+Bypass land expiration. This only works, if you use LuckPerms for your permission management.
 
-          lands.bypass.cooldown.*:
-            description: Bypass cooldowns
-            children:
-              lands.bypass.cooldown.wild:
-                description: Bypass /lands wild cooldown
-              lands.bypass.cooldown.rename:
-                description: Bypass /lands rename cooldown
-              lands.bypass.cooldown.teleport:
-                description: Bypass chunk teleport cooldown
-              lands.bypass.cooldown.spawn:
-                description: Bypass /lands spawn cooldown
-              lands.bypass.cooldown.unstuck:
-                description: Bypass /lands unstuck cooldown
+### Teleportation
+`lands.bypass.teleport.delay`\
+Bypass the wait time before teleportation.
 
-          lands.bypass.war.*:
-            description: Bypass war restrictions
-            children:
-              lands.bypass.war.trust:
-                description: Trust players during war.
-              lands.bypass.war.claim:
-                description: Claim during war.
-
-          lands.bypass.option.*:
-            description: Bypass special config options.
-            children:
-              lands.bypass.option.force-near:
-                description: Bypass force-near option from config.
-
-          lands.bypass.cmd.untrusted.*:
-            description: Bypass blacklisted commands for untrusted players from config.yml. Use lands.bypass.cmd.untrusted.COMMAND to specify a command.
-          lands.bypass.cmd.general.*:
-            description: Bypass blacklisted commands for untrusted and trusted players from config.yml. Use lands.bypass.cmd.general.COMMAND to specify a command.
-          lands.bypass.priority:
-            description: Edit roles even if they have the same or a higher priority than your own role.
-          lands.bypass.expiration:
-            description: This permission only works when you use Luckperms as your permission plugin. Players with this permission will bypass the configured land expiration from your config.
-
-          lands.bypass.teleport.*:
-            description: Bypass teleport restrictions.
-            children:
-              lands.bypass.teleport.delay:
-                description: Skip teleport delay.
-              lands.bypass.teleport.cmd:
-                description: Execute commands during teleportation.
-```
+`lands.bypass.teleport.cmd`\
+Execute commands while waiting for the teleportation to start.
 
 ## Admin & Moderator Utilities
 See [here](admins/Admin-Tools.md).
