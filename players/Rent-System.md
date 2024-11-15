@@ -47,7 +47,7 @@ You can only set up sub areas for rental. The default area can only be set up fo
 ![Rent sign input example](https://imgur.com/IX3XwlJ.jpg)
 
 ## Sell Sign Setup
-Sell signs can be placed in sub areas and in the default area (= selling the whole land)
+Sell signs can be placed in sub areas and in the default area (= selling the whole land).
 ![Sell sign setup](https://imgur.com/Qy68zNh.jpg)
 
 ### Explanation
