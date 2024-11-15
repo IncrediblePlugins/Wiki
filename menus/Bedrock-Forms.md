@@ -1,6 +1,6 @@
 Bedrock players can join Java edition Minecraft servers with the help of the Geyser and floodgate plugin.
 
-# Does the Plugin provide special Features for Bedrock Clients?
+# Does the Plugin Provide Special Features for Bedrock Clients?
 Confirmation prompts will open a dedicated confirmation GUI, when floodgate is installed. Also chat inputs, like entering the name of a player, will open a dedicated GUI. Floodgate must be installed to provide these features. Lands and UpgradeableSpawners also provide Bedrock forms for the menus instead of the vanilla ones (this only affects Bedrock players and can be disabled).
 
 # General
@@ -27,5 +27,5 @@ back:
 # Disabling Buttons, Commands etc.
 Bedrock buttons support the same features as vanilla items, except you can't set enchantments to the buttons, etc. More info: [Link](GUI-Menus.md)
 
-# If Bedrock Menus don't open
+# If Bedrock Menus Don't Open
 Please follow the floodgate installation instructions for both "Paper / Spigot" and "Proxy Servers" (if you use a proxy): [Link](https://wiki.geysermc.org/floodgate/setup)
