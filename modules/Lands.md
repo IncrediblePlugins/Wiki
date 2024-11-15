@@ -3,8 +3,8 @@ Allows you to forward chat in-game to Discord and vice versa.
 
 # Requirements
 Requires the Lands plugin to be installed.
-* SpigotMC: https://www.spigotmc.org/resources/53313
-* Polymart: https://polymart.org/resource/876
+* SpigotMC: [Link](https://www.spigotmc.org/resources/53313)
+* Polymart: [Link](https://polymart.org/resource/876)
 
 # Setup
 1. Optional: Execute ``/config set LANDS_CHAT_CATEGORY`` in the Discord server. Lands chat and voice channels will be created under this category via the ``/lands channel create`` and ``/nations channel create`` Discord command.

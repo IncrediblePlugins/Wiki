@@ -8,7 +8,7 @@ Runs the Discord bot.
     * Alternatively you can use the following URL to add the bot with the required permissions. Just make sure to replace ``CLIENT_ID`` with your bots client ID: https://discord.com/api/oauth2/authorize?client_id=CLIENT_ID&permissions=2684480592&scope=bot+applications.commands
 2. Copy the bot token and paste it at the ``token`` option in DiscordBridge/Modules/bot.yml.
 
-# Commands
-> `/discordbridge invite`\
-`Permission: discordbridge.command.invite`\
-Description: Get invite to Discord server. Only available if ``invite-url`` is configured in the module config.
+# Ingame Commands
+`/discordbridge invite`\
+Get invite to thh Discord server. Only available if ``invite-url`` is configured in the module config.\
+_Permission: discordbridge.command.invite_
