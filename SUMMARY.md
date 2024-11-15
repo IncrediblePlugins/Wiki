@@ -9,4 +9,4 @@
 
 ## GUI Menus
 * [Menus](menus/GUI-Menus.md)
-* [Bedrock Forms](menus/Bedrock-Forms)
+* [Bedrock Forms](menus/Bedrock-Forms.md)
