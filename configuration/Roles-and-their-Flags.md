@@ -316,3 +316,6 @@ Withdraw balance from the land bank (`/lands withdraw`).\
 Declare war with your land or surrender in the war of the land.\
 *Toggle permission: lands.role.setting.war_manage*\
 *Bypass permission: lands.bypass.war_manage*
+
+## Bypass Role Priority
+With the permission `lands.bypass.priority` a player can bypass role priorities. That means theat they can for example untrust players with higher roles, if they have the permission to untrust any player. If they don't have this bypass permission, they won't be able to edit players with a higher role priority.
