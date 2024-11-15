@@ -5,7 +5,7 @@
 * [Commands](players/Commands.md)
 
 ## Configuration
-* [Installation](config/Setup.md)
+* [Installation](config/Installation.md)
 
 ## Modules
 * [Bot](modules/Bot.md)
