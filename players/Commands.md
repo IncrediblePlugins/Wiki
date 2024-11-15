@@ -5,3 +5,6 @@ _Permission: discordbridge.command.help_
 
 # Account Linking
 See here: [Link](https://wiki.incredibleplugins.com/discordbridge/modules/linking-module#commands)
+
+# Discord General
+See here: [Link](https://wiki.incredibleplugins.com/discordbridge/modules/bot#ingame-commands)
