@@ -15,13 +15,13 @@ Whereas `in` is the fade in time, `stay` the stay time and `out` the fade out ti
 Just add `#a#` in front of the message.\
 Example: 
 ```yaml
-pvp-warning: `'#a#&cYou entered a pvp zone.'
+pvp-warning: '#a#&cYou entered a pvp zone.'
 ```
 
 ## As a Bossbar
-Just add `#b#` in front of the message.\
+Just add `#b#` in front of the message.
 ```yaml
-Example: pvp-warning: `'#b#[config]color:green,style:solid,time:6[/config]&cYou entered a pvp zone.'`
+pvp-warning: '#b#[config]color:green,style:solid,time:6[/config]&cYou entered a pvp zone.'
 ```
 Whereas color, style and time are optional configuration options. This bossbar would be solid, green and would last 6 seconds. Click [here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarColor.html) to see a list of available colors.
 
@@ -70,29 +70,29 @@ ${tax}
 # Disable messages
 Example: Disabling land enter messages in Lands:
 ```yaml
-    enter:
-      land: '#t#&2&l{land}[newline]&3{title}'
-      safezone: '#t#&2&l{land}[newline]{title}'
+enter:
+  land: '#t#&2&l{land}[newline]&3{title}'
+  safezone: '#t#&2&l{land}[newline]{title}'
 ```
 Set them to an empty string:
 ```yaml
-    enter:
-      land: ''
-      safezone: ''
+enter:
+  land: ''
+  safezone: ''
 ```
 The welcome messages won't display anymore.
 
 # Disable the prefix for a specific Message
 Just insert `[noprefix]` in front of the message. Example:
 ```yaml
-      info: |
-        [NoPrefix]
-        &7&m━━━━━━━━━<━&r &5&lRent Area &7&m━>━━━━━━━━━
-        [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this area.[/H][C]lands view here[/C][/T]
-         &7Area:&6 {area}
-         &7Cost:&c {cost} &7each {time}
-         &8Max time: {max}
-        &7&m━━━━━━━━━<━&r &5&lRent Area &7&m━>━━━━━━━━━
+info: |
+  [NoPrefix]
+  &7&m━━━━━━━━━<━&r &5&lRent Area &7&m━>━━━━━━━━━
+  [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this area.[/H][C]lands view here[/C][/T]
+   &7Area:&6 {area}
+   &7Cost:&c {cost} &7each {time}
+   &8Max time: {max}
+  &7&m━━━━━━━━━<━&r &5&lRent Area &7&m━>━━━━━━━━━
 ```
 
 # Filter Swear Words and forbidden Names
