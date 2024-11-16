@@ -1,7 +1,7 @@
 # Available Database Types
 * SQLite-v2: Doesn't require any database server and works without setting anything up.
 * MySQL: Use MySQL-v2 instead. This database mode is deprecated.
-* MySQL-v2: We recommend using MySQL, if you need to connect your database to an external system, or you use a backup system that requires it. If you want to use MySQL: Make sure that your MySQL server is set up correctly (up-to-date MySQL server version, connection limits, utf8mb4_0900_as_cs as table encoding, etc.). This also supports [synchronizing claim data across multiple servers](https://lands.incredibleplugins.com/wiki/Database#synchronizing-claims-across-servers) in combination with Redis.\
+* MySQL-v2: We recommend using MySQL, if you need to connect your database to an external system, or you use a backup system that requires it. If you want to use MySQL: Make sure that your MySQL server is set up correctly (up-to-date MySQL server version, connection limits, utf8mb4_0900_as_cs as table encoding, etc.). This also supports [synchronizing claim data across multiple servers](https://wiki.incredibleplugins.com/lands/configuration/database#synchronizing-claims-across-servers) in combination with Redis.\
 Please make sure to configure the table-prefix correctly:  
   ````yaml
     # It is highly recommended to set a unique table prefix if the plugin
@@ -78,7 +78,7 @@ To migrate to the new SQL schema with MySQL, follow these instructions:
 ````yaml
   # MySQL database
   # To use this without issues, your connection limits etc. need to be configured properly in your MySQL server configuration.
-  # If you want to synchronize lands and claims across servers, please read the setup instructions: https://lands.incredibleplugins.com/wiki/Database#synchronizing-claims-across-servers
+  # If you want to synchronize lands and claims across servers, please read the setup instructions: https://wiki.incredibleplugins.com/lands/configuration/database#synchronizing-claims-across-servers
   mysql-v2:
     enabled_19: false
     address_2: 'localhost'

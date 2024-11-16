@@ -86,7 +86,7 @@ Automatically accept new membership requests?\
 Here you configure the default flags and decide which flags should be displayed in the GUI menu to players.
 ```yaml
   # Natural flags configuration. Role flags can be configured in the roles.yml file.
-  # List of available landFlags: https://lands.incredibleplugins.com/wiki/Natural-Flags
+  # List of available landFlags: https://wiki.incredibleplugins.com/lands/configuration/natural-flags
   # NOTE: This option requires server reload / restart.
   land-flags:
     # Configure DEFAULT natural flags which will apply to new land creations.

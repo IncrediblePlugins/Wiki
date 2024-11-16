@@ -1,5 +1,5 @@
 Lands features a war system which allows other lands to fight against each other. This page only explains the basic options you should start with configuring. There are even more options in the `wars.yml` file. They're all self explanatory (with comments) in the `wars.yml` file located in the `plugins/Lands` folder.
-The full file can be viewed here: https://github.com/IncrediblePlugins/Lands/blob/master/wars.yml
+The full file can be viewed here: https://github.com/IncrediblePlugins/Lands/blob/main/wars.yml
 
 # Before the War
 To declare war against a land or nation execute `/wars declare <land>`.
@@ -47,7 +47,7 @@ duration: 36h
   # Limit what invading enemies are able to do.
   flags:
     # Allow players doing the following things in the enemy land (only during war).
-    # Available actions: https://lands.incredibleplugins.com/wiki/Roles-and-their-Flags#action-flags
+    # Available actions: https://wiki.incredibleplugins.com/lands/configuration/roles-and-their-flags#action-flags
     # NOTE: Adding BLOCK_PLACE or BLOCK_BREAK to this list will allow invaders to break, place ALL blocks. If you want to specify blocks, please use the lists below.
     # NOTE: In war the attackers and defenders also have the flags of the untrusted role of the area they're invading.
     # NOTE: If you want to allow players to ignite and explode tnt blocks you need to add BLOCK_IGNITE to this list and TNT_GRIEFING to land-flags_list above.

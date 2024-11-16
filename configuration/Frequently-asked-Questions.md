@@ -87,7 +87,7 @@ a. Prevent players receiving the tools at first server join:
   # Give players items at first join.
   # Setting the slot or the amount of an item to a value lower than 1, will not give the item on first join.
   # But this does not disable those items completely. To completely disable those items
-  # follow the instructions here: https://github.com/IncrediblePlugins/PluginFrameworkAPI/wiki/GUI-Menus#disable-items
+  # follow the instructions here: https://wiki.incredibleplugins.com/general/menus/gui-menus#disable-items
   first-join-items:
     # The selection tool allows them to claim.
     selection:
@@ -107,15 +107,15 @@ a. Prevent players receiving the tools at first server join:
       amount_4: 1
 ````
 
-b. If you want the tool to be unique and therefore not responding to vanilla items, assign a random `model-data` in the GUI file to the item: https://github.com/Angeschossen/PluginFrameworkAPI/wiki/GUI-Menus#set-custom-model-data
+b. If you want the tool to be unique and therefore not responding to vanilla items, assign a random `model-data` in the GUI file to the item: https://wiki.incredibleplugins.com/general/menus/gui-menus#set-custom-model-data
 
 c. If you want to disable the tool usage completely:
-[Disable the item in the GUI language file.](https://github.com/IncrediblePlugins/PluginFrameworkAPI/wiki/GUI-Menus#disable-items)
+[Disable the item in the GUI language file.](https://wiki.incredibleplugins.com/general/menus/gui-menus#disable-items)
 
 ***
 
 ## How can I prevent land members attacking each other?
-In general, you should leave that decision up to the land itself. They can toggle the attack player flag in their land menu. But as a server admin you can force it by editing [roles.yml](https://lands.incredibleplugins.com/wiki/Roles-and-their-Flags) and restrict PvP in wilderness as well. The following option disables PvP for members of the same land in wilderness.
+In general, you should leave that decision up to the land itself. They can toggle the attack player flag in their land menu. But as a server admin you can force it by editing [roles.yml](https://wiki.incredibleplugins.com/lands/configuration/roles-and-their-flags) and restrict PvP in wilderness as well. The following option disables PvP for members of the same land in wilderness.
 ````yaml
     # Should players, which are members in a common land, be able to fight in wilderness?
     # NOTE: This option requires server restart / reload.
