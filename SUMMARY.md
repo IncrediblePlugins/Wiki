@@ -25,7 +25,7 @@
 * [Wars](configuration/Wars-Config.md)
 * [Levels](configuration/Levels.md)
 * [Regeneration](configuration/Unclaim-and-Wilderness-Regeneration.md)
-* [Discord Bot](https://github.com/IncrediblePlugins/LandsDiscordBot/wiki)
+* [Discord Bot](https://wiki.incredibleplugins.com/discordbridge/modules/lands)
 * [PlaceholderAPI Placeholders](configuration/PlaceholderAPI-Placeholders.md)
 * [Camps](configuration/Camps.md)
 * [GUI Menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus)
