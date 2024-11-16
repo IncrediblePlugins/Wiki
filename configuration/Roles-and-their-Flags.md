@@ -159,12 +159,12 @@ Allows the role to ignite blocks / set blocks on fire.\
 *Wilderness bypass permission: lands.bypass.wilderness.block_ignite*
 
 * **ATTACK_PLAYER**\
-Should the role be able to attack players? This flag may not always take effect, if combat-tag is enabled in the config.
-  * If disabled: The role won't be able to attack anyone.
-  * If enabled: The role will be able to attack other players that are also allowed to attack this role in the given claim.\
+Should the role be able to attack players? This flag may not always take effect, if combat-tag is enabled in the config.\
 *Toggle permission: lands.role.setting.attack_player*\
 *Bypass permission: lands.bypass.attack_player*\
-*Wilderness bypass permission: lands.bypass.wilderness.attack_player*
+*Wilderness bypass permission: lands.bypass.wilderness.attack_player*\
+  * If disabled: The role won't be able to attack anyone.
+  * If enabled: The role will be able to attack other players that are also allowed to attack this role in the given claim.
 
 * **ATTACK_ANIMAL**\
 Allows the role to attack animals.\
