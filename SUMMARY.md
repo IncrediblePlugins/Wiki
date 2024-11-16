@@ -45,7 +45,7 @@
 ## Admin & Moderation
 * [Tools](admins/Tools.md)
 
-## Developer API
+## Developers
 
 * [Setup](developers/API.md)
 * [Levels](developers/Levels.md)
