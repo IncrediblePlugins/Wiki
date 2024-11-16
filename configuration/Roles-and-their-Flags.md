@@ -246,7 +246,7 @@ Management flags will allow players to edit flags and options for the land. Each
 * **PLAYER_TRUST**\
 Allow the role to trust other players.\
 *Toggle permission: lands.role.setting.player_trust*\
-*Bypass permission: lands.bypass.player_trust
+*Bypass permission: lands.bypass.player_trust*
 
 * **PLAYER_SETROLE**\
 Allow the role to set roles for trusted players.
