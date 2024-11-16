@@ -1,5 +1,5 @@
 # Usage
-Allows you to forward chat in-game to Discord and vice versa.
+Allows you to forward chat in-game to Discord and vice versa. Also land and nation owners can create a text and voice channel in the Discord server. This can be disabled and configured.
 
 # Requirements
 Requires DiscordBridge the Lands plugin to be installed.
