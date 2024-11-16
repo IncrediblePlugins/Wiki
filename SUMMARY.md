@@ -22,7 +22,7 @@
 * [Roles and their Flags](configuration/Roles-and-their-Flags.md)
 * [Natural flags](configuration/Natural-Flags.md)
 * [Player Personal Settings](configuration/Player-Personal-Settings.md)
-* [Wars](configuration/Wars-Config.md)
+* [Wars](configuration/Wars.md)
 * [Levels](configuration/Levels.md)
 * [Regeneration](configuration/Unclaim-and-Wilderness-Regeneration.md)
 * [Discord Bot](https://wiki.incredibleplugins.com/discordbridge/modules/lands)
