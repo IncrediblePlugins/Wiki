@@ -89,7 +89,8 @@ Example Configuration of a custom default role:
         - ITEM_PICKUP
 ````
 
-# Action Flags
+# Flags
+## Action Flags
 Actions flags represent players actions. Each flag has their own bypass and toggle permission, which is required for players to toggle the flag. The wilderness bypass permission allows a player to bypass flags set in the wilderness via `/lands admin menu`.
 
 * **BLOCK_PLACE**\
@@ -159,12 +160,12 @@ Allows the role to ignite blocks / set blocks on fire.\
 *Wilderness bypass permission: lands.bypass.wilderness.block_ignite*
 
 * **ATTACK_PLAYER**\
-Should the role be able to attack players? This flag may not always take effect, if combat-tag is enabled in the config.
-* If disabled: The role won't be able to attack anyone.
-* If enabled: The role will be able to attack other players that are also allowed to attack this role in the given claim.\
+Should the role be able to attack players? This flag may not always take effect, if combat-tag is enabled in the config.\
 *Toggle permission: lands.role.setting.attack_player*\
 *Bypass permission: lands.bypass.attack_player*\
-*Wilderness bypass permission: lands.bypass.wilderness.attack_player*
+*Wilderness bypass permission: lands.bypass.wilderness.attack_player*\
+  * If disabled: The role won't be able to attack anyone.
+  * If enabled: The role will be able to attack other players that are also allowed to attack this role in the given claim.
 
 * **ATTACK_ANIMAL**\
 Allows the role to attack animals.\
@@ -240,13 +241,13 @@ Players of the role won't get any damage from any damage cause. This flag is hid
 *Bypass permission: None*\
 *Wilderness bypass permission: None*
 
-# Management Flags
+## Management Flags
 Management flags will allow players to edit flags and options for the land. Each flag has their own toggle permission, which is required for players to be able to toggle the flag. The bypass permission allows server admins to execute these management operations for other lands.
 
 * **PLAYER_TRUST**\
 Allow the role to trust other players.\
 *Toggle permission: lands.role.setting.player_trust*\
-*Bypass permission: lands.bypass.player_trust
+*Bypass permission: lands.bypass.player_trust*
 
 * **PLAYER_SETROLE**\
 Allow the role to set roles for trusted players.
@@ -317,5 +318,5 @@ Declare war with your land or surrender in the war of the land.\
 *Toggle permission: lands.role.setting.war_manage*\
 *Bypass permission: lands.bypass.war_manage*
 
-## Bypass Role Priority
+### Bypass Role Priority
 With the permission `lands.bypass.priority` a player can bypass role priorities. That means theat they can for example untrust players with higher roles, if they have the permission to untrust any player. If they don't have this bypass permission, they won't be able to edit players with a higher role priority.
