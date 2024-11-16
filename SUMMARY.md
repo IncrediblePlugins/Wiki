@@ -7,7 +7,7 @@
 * [Frequently asked Questions](players/Frequently-asked-Questions.md)
 * [Start as a Player](players/How-to-Start-as-a-Player.md)
 * [Commands](players/Commands.md)
-* [About Sub Areas](players/Subareas)
+* [About Sub Areas](players/Subareas.md)
 * [Rent and Sell System](players/Rent-System.md)
 * [Nations](players/Nations.md)
 * [Wars](players/Wars.md)
