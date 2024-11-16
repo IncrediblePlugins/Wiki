@@ -1,13 +1,13 @@
 # Table of contents
 
-* [Home](README.md)
+* [Info](README.md)
 
 ## For Players
 
 * [Frequently asked Questions](players/Frequently-asked-Questions.md)
 * [Start as a Player](players/How-to-Start-as-a-Player.md)
 * [Commands](players/Commands.md)
-* [About Sub Areas](players/Sub-Areas.md)
+* [About Sub Areas](players/Subareas)
 * [Rent and Sell System](players/Rent-System.md)
 * [Nations](players/Nations.md)
 * [Wars](players/Wars.md)
@@ -15,7 +15,7 @@
 ## Configuration
 
 * [Installation](configuration/Installation.md)
-* [Frequently asked Questions](configuration/Frequently-asked-Config-Questions.md)
+* [Frequently asked Questions](configuration/Frequently-asked-Questions.md)
 * [Database](configuration/Database.md)
 * [Playtime Rewards](configuration/Playtime-Rewards.md)
 * [Leaderboards](configuration/Leaderboards.md)
@@ -42,8 +42,8 @@
 * [Other Permissions](permissions/Permissions.md)
 * [Luckperms Context](permissions/Luckperms-Context.md)
 
-## Admin & Moderation Tools
-* [Edit other lands etc.](admins/Admin-Tools.md)
+## Admin & Moderation
+* [Tools](admins/Tools.md)
 
 ## Developer API
 
