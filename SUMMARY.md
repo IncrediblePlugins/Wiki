@@ -47,6 +47,6 @@
 
 ## Developer API
 
-* [Setup](api/README.md)
-* [Levels](api/Levels.md)
-* [Update](api/API-Update.md)
+* [Setup](developers/API.md)
+* [Levels](developers/Levels.md)
+* [Update](developers/Update.md)
