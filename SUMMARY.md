@@ -18,3 +18,4 @@
 
 ## Developers
 * [API](developers/API.md)
+* [ItemStacker](developers/ItemStacker.md)
