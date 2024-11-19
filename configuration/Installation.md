@@ -7,9 +7,7 @@
 
 Please always stop your server before installing updates. The config and locale files automatically remove new entries and remove no longer existing entries.
 
-***
-
-# Optional:
+# Import Claims
 You can import claimed chunks and trusted members from other plugins. Just execute `/lands admin import <plugin>`.\
 Currently supported plugins: 
 * Towny
