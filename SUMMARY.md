@@ -3,6 +3,7 @@
 
 ## For Players
 * [Commands](players/Commands.md)
+* [Usage](players/Usage.md)
 
 ## Config
 * [Installation](config/Installation.md)
