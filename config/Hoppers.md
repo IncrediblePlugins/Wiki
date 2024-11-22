@@ -1,4 +1,4 @@
-This page explains common questions about the ``hoppers.yml`` file.
+This page explains common asked questions about the ``hoppers.yml`` file.
 
 # Configure Crafting Recipe
 Allow players to craft this a hopper type. Example:
