@@ -18,7 +18,7 @@ Closed tickets will be deleted after a specified amount of time. Formats: d, h, 
 Example: `1d`
 
 ## Create Ticket Types
-* ``/config type update``\
+* ``/config type upsert``\
 Create a ticket type or update an existing type.
 * ``/config field create``\
 Create fields that a user has to fill out when submitting a ticket of this type.
