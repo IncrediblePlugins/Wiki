@@ -12,3 +12,9 @@ Runs the Discord bot.
 `/discordbridge invite`\
 Get invite to thh Discord server. Only available if ``invite-url`` is configured in the module config.\
 _Permission: discordbridge.command.invite_
+
+# PlaceholderAPI Placeholders
+Requires [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) to be installed.
+
+`%discordbridge_module_bot_boosters_amount%`\
+Returns the amount of guild boosters.

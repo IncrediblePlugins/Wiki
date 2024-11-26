@@ -29,3 +29,15 @@ Returns `true` if the player has their account linked and `false`, if their acco
 
 `%discordbridge_module_linking_state%`\
 Whether the account is linked. Returns entry from the locale file.
+
+`%discordbridge_module_linking_user_id%`\
+Returns the ID of the linked Discord user.
+
+`%discordbridge_module_linking_user_name%`\
+Returns the name of the linked Discord user.
+
+`%discordbridge_module_linking_user_booster%`\
+Returns whether user has boosted any server that the bot is added to.
+
+`%discordbridge_module_linking_user_booster_bool%`\
+Returns `true` if the player has boosted any server that the bot is added to and `false`, if they didn't boost any server.
