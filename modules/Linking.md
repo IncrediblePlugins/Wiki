@@ -24,10 +24,13 @@ _Permission: discordbridge.admin.command.account.admin.migrate_
 # PlaceholderAPI Placeholders
 Requires [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) to be installed.
 
-`%discordbridge_module_linking_state_bool%`\
+`%discordbridge_module_linking_amount%`\
+The amount of players that have linked their accounts.
+
+`%discordbridge_module_linking_user_state_bool%`\
 Returns `true` if the player has their account linked and `false`, if their account isn't linked.
 
-`%discordbridge_module_linking_state%`\
+`%discordbridge_module_linking_user_state%`\
 Whether the account is linked. Returns entry from the locale file.
 
 `%discordbridge_module_linking_user_id%`\
