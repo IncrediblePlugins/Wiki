@@ -31,6 +31,6 @@ Just execute ``/lands spawn <land> <area> <player> <wait>``.
 ### Examples
 In these examples the ``<player>`` and ``<wait>`` parameters aren't replaced. You need to change them accordingly.
 
-* Teleport to the players land spawn: ``/lands spawn none none <player> <wait>``
+* Teleport to the players edit land spawn: ``/lands spawn none none <player> <wait>``
 * Teleport to a specific land spawn: ``/lands spawn <land> none <player> <wait>``
 * Teleport to a specific area of a specific land: ``/lands spawn <land> <area> <player> <wait>``
