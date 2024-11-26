@@ -84,6 +84,7 @@ Edit the `swear-words` list in your chat locale file.
 ## How can I disable the selection or info tool?
 * If you want to prevent players from using the tool at all, just set ``usage`` to ``false`` in the config file.
 * If you want to disable them receiving the item when they join for the first time, set ``slot`` to a value lower than 1.
+* If you want the tool to be unique and therefore not responding to vanilla items, assign a random `model-data` in the GUI file to the item: [Link](https://wiki.incredibleplugins.com/general/menus/gui-menus#set-custom-model-data)
 
 The relevant config section:
 ````yaml
@@ -113,11 +114,6 @@ The relevant config section:
       amount_4: 1
       usage_4: true
 ````
-
-b. If you want the tool to be unique and therefore not responding to vanilla items, assign a random `model-data` in the GUI file to the item: https://wiki.incredibleplugins.com/general/menus/gui-menus#set-custom-model-data
-
-c. If you want to disable the tool usage completely:
-[Disable the item in the GUI language file.](https://wiki.incredibleplugins.com/general/menus/gui-menus#disable-items)
 
 ***
 
