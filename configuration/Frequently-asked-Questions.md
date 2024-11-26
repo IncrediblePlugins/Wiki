@@ -82,29 +82,36 @@ Edit the `swear-words` list in your chat locale file.
 ***
 
 ## How can I disable the selection or info tool?
-a. Prevent players receiving the tools at first server join:
+* If you want to prevent players from using the tool at all, just set ``usage`` to ``false`` in the config file.
+* If you want to disable them receiving the item when they join for the first time, set ``slot`` to a value lower than 1.
+
+The relevant config section:
 ````yaml
   # Give players items at first join.
-  # Setting the slot or the amount of an item to a value lower than 1, will not give the item on first join.
-  # But this does not disable those items completely. To completely disable those items
-  # follow the instructions here: https://wiki.incredibleplugins.com/general/menus/gui-menus#disable-items
+  # The item appearance can be edited in the GUI language file.
   first-join-items:
     # The selection tool allows them to claim.
     selection:
+      # Setting the slot or the amount of an item to a value lower than 1, will not give the item on first join.
       slot_4: 1
       amount: 1
+      # If disabled, players won't be able to use this item at all.
+      usage: true
     # The info tool shows information about a claim when clicking on it.
     info:
       slot_5: 2
       amount_2: 1
+      usage_2: true
     # The camp block creates a temporary claim at placement.
     camp:
       slot_6: 3
       amount_3: 1
+      usage_3: true
     # Claim blocks claim the chunk they were placed into permanently, until the player unclaims the chunk.
-    claimblock:
+    claim_block:
       slot_7: 4
       amount_4: 1
+      usage_4: true
 ````
 
 b. If you want the tool to be unique and therefore not responding to vanilla items, assign a random `model-data` in the GUI file to the item: https://wiki.incredibleplugins.com/general/menus/gui-menus#set-custom-model-data
