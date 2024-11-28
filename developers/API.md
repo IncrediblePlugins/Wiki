@@ -1,7 +1,7 @@
 [![](https://jitpack.io/v/Angeschossen/LandsAPI.svg)](https://jitpack.io/#Angeschossen/LandsAPI)
 
 # Javadoc
-The JavaDoc can be found here: [JitPack](https://jitpack.io/com/github/angeschossen/LandsAPI/latest/javadoc)
+The JavaDoc can be found here: [JitPack](http://jitpack.io/com/github/angeschossen/LandsAPI/7.10.13/javadoc)
 
 # API Usage explained
 
