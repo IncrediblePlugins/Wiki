@@ -5,8 +5,6 @@ Allow users to create tickets in your Discord server.
 Complete the following steps to setup the ticket module.
 
 ## Set Config Values for the Discord Server:
-* ``/config set tickets_category_open``\
-Open tickets will go here.
 * ``/config set tickets_category_closed``\
 Closed tickets will go here, before they get deleted.
 * ``/config set tickets_member_max_tickets``\
