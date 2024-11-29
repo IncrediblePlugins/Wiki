@@ -1,4 +1,4 @@
-**First of all, please make sure to read ["How to start as a Player"](../basics/How-to-Start-as-a-Player.md) first.**
+**First of all, please make sure to read ["How to start as a Player"](../basics/Start) first.**
 
 ## I have multiple lands. How can I claim for a specific one?
 Answer can be found here: [Link](https://wiki.incredibleplugins.com/lands/for-players/commands#current-edit-land)

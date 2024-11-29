@@ -3,7 +3,7 @@
 * [Info](README.md)
 
 ## Basics
-* [Start as a Player](basics/How-to-Start-as-a-Player.md)
+* [Start as a Player](basics/Start.md)
 * [Commands](basics/Commands.md)
 
 ## Advanced
