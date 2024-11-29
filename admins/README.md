@@ -1,1 +1,1 @@
-Here you can find information about Lands for server administrators. If you're a player, you can find relevant information here: [Link](../players)
+Here you can find information about Lands for server administrators. If you're a player, you can find relevant information here: [Link](https://wiki.incredibleplugins.com/lands/for-players)
