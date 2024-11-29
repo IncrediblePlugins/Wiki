@@ -8,7 +8,7 @@
 
 ## Advanced
 * [About Sub Areas](advanced/Subareas.md)
-* [Rent and Sell System](advanced/Rental)
+* [Rent and Sell System](advanced/Rental.md)
 
 ## General
 * [Frequently asked Questions](general/Frequently-asked-Questions.md)
