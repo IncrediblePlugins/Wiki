@@ -6,9 +6,9 @@
 * [Start as a Player](basics/How-to-Start-as-a-Player.md)
 * [Commands](basics/Commands.md)
 
-## Sub Areas & Rental
-* [About Sub Areas](subareas-and-rental/Subareas.md)
-* [Rent and Sell System](subareas-and-rental/Rental)
+## Advanced
+* [About Sub Areas](advanced/Subareas.md)
+* [Rent and Sell System](advanced/Rental)
 
 ## General
 * [Frequently asked Questions](general/Frequently-asked-Questions.md)
