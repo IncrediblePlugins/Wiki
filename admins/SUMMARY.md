@@ -27,7 +27,7 @@
 ## Permissions
 
 * [Recommendation](permissions/Recommended-Permission-Setup.md)
-* [Player Commands](../players/Commands.md)
+* [Player Commands](../players/basics/Commands.md)
 * [Admin Commands](Commands.md)
 * [Other Permissions](permissions/Permissions.md)
 * [Luckperms Context](permissions/Luckperms-Context.md)

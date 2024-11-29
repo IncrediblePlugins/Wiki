@@ -3,14 +3,14 @@
 * [Info](README.md)
 
 ## Basics
-* [Start as a Player](How-to-Start-as-a-Player.md)
-* [Commands](Commands.md)
+* [Start as a Player](basics/How-to-Start-as-a-Player.md)
+* [Commands](basics/Commands.md)
 
 ## Sub Areas & Rental
-* [About Sub Areas](Subareas.md)
-* [Rent and Sell System](Rent-System.md)
+* [About Sub Areas](subareas-and-rental/Subareas.md)
+* [Rent and Sell System](subareas-and-rental/Rental)
 
 ## General
-* [Frequently asked Questions](Frequently-asked-Questions.md)
-* [Nations](Nations.md)
-* [Wars](Wars.md)
+* [Frequently asked Questions](general/Frequently-asked-Questions.md)
+* [Nations](general/Nations.md)
+* [Wars](general/Wars.md)
