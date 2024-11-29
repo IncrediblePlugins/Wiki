@@ -1,1 +1,1 @@
-Here you can find information about Lands.
+Here you can find information on how to use Lands.
