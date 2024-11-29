@@ -112,7 +112,7 @@ Permissions for toggleing personal flags can be found [here](configuration/Playe
 These permissions should only be set for your staff.
 
 ## Admin Commands
-See [here](../admins/Commands.md).
+See [here](../Commands.md).
 
 ## Bypass Permissions
 These permissions allow you to edit other players lands etc.

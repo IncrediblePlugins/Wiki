@@ -11,7 +11,7 @@ _View all permissions: [Link](https://wiki.incredibleplugins.com/lands/permissio
 * `lands.command.*`\
 Description: That gives players access to all player related commands.
 If you want to remove some commands, you either need to negate the specific command permission or you need to set each command permission specifically.\
-_View all permissions: [Link](../players/Commands.md)_
+_View all permissions: [Link](../../players/Commands.md)_
 
 * `nations.command.*`\
 Description: Use all player related `/nations <cmd>` commands.\
