@@ -15,11 +15,11 @@ _View all permissions: [Link](../../players/basics/Commands.md)_
 
 * `nations.command.*`\
 Description: Use all player related `/nations <cmd>` commands.\
-_View all permissions: [Link](https://wiki.incredibleplugins.com/lands/for-players/commands#nations)_
+_View all permissions: [Link](https://wiki.incredibleplugins.com/lands/players/basics/commands#nations)_
 
 * `wars.command.*`\
 Description: Allow players to use all player related `/wars <cmd>` commands.\
-_View all permissions: [Link](https://wiki.incredibleplugins.com/lands/for-players/commands#wars)_
+_View all permissions: [Link](https://wiki.incredibleplugins.com/lands/players/basics/commands#wars)_
 
 # Teleportation
 `lands.teleport.*`\

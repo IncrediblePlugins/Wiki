@@ -1,12 +1,12 @@
 **First of all, please make sure to read ["How to start as a Player"](../basics/Start) first.**
 
 ## I have multiple lands. How can I claim for a specific one?
-Answer can be found here: [Link](https://wiki.incredibleplugins.com/lands/for-players/commands#current-edit-land)
+Answer can be found here: [Link](https://wiki.incredibleplugins.com/lands/players/basics/commands#current-edit-land)
 
 ***
 
 ## I have multiple lands. How can I select the land I want to use for my commands that I don't have to specify it in the commands every time.
-Same as the previous question: [Link](https://wiki.incredibleplugins.com/lands/for-players/commands#current-edit-land)
+Same as the previous question: [Link](https://wiki.incredibleplugins.com/lands/players/basics/commands#current-edit-land)
 
 ***
 
