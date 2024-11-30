@@ -15,7 +15,7 @@ To rent a area, just click on the sign or hologram. To add more time to your ren
 ## Purchase a Area
 Just click on the sell sign or hologram.
 
-## Brose Listings
+## Browse Listings
 Use `/lands rent list` to view all areas and lands that can be rented or bought. There you can also filter and sort these offers.
 
 ## Cancel Rental
