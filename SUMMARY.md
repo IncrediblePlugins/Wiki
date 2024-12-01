@@ -6,6 +6,7 @@
 
 ## Configuration
 * [Installation](config/Installation.md)
+* [Entities](config/Entities.md)
 * [GUI Menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus)
 * [Bedrock Forms](https://wiki.incredibleplugins.com/general/gui-menus/bedrock-forms)
 * [Messages](https://wiki.incredibleplugins.com/general/messages-and-config/messages)
