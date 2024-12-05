@@ -11,3 +11,6 @@ Welcome to our wiki pages.
 
 ## General
 * [Locale & Menus](https://wiki.incredibleplugins.com/general)
+
+## Contributing to the Wiki
+You can fork the [wiki](https://github.com/IncrediblePlugins/Wiki/fork) at GitHub, make your changes and create a pull request to get your changes merged. Please make sure to make the changes in the correct branch. Each plugin has their own branch.
