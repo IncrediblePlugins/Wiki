@@ -6,6 +6,7 @@
 
 ## Configuration
 * [Installation](config/Installation.md)
+* [PlaceholderAPI](config/PlaceholderAPI.md)
 * [GUI Menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus)
 * [Messages](https://wiki.incredibleplugins.com/general/messages-and-config/messages)
 * [Translations](https://wiki.incredibleplugins.com/general/messages-and-config/translations)
