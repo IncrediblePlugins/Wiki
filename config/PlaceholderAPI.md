@@ -24,10 +24,10 @@ You need to replace ``<server>`` with the name of the server given in the Redis 
 You can use ``total`` as the server name to display information for all servers combined, such as the player count on all servers combined.
 The ``<placeholder>`` argument needs to be replaced with the specific placeholder.
 
-#### Placeholde[BotModule.java](../../discordbridge-plugin/src/main/java/me/angeschossen/discordbridge/module/bot/BotModule.java)rs
+#### Placeholders
 `%discordbridge_server_<server>_players_online%`\
 Returns the amount of players online.
 
 Example usage:
-* ``%discordbridge_server_total_players_online%`` -> returns the combined amount of players on all servers
-* ``%discordbridge_server_server-1_players_online%`` -> returns the amount of players on ``server-1``.
+* ``%discordbridge_server_total_players_online%`` -> Returns the combined amount of players on all servers
+* ``%discordbridge_server_server-1_players_online%`` -> Returns the amount of players on ``server-1``.
