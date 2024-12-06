@@ -26,7 +26,7 @@ The ``<placeholder>`` argument needs to be replaced with the specific placeholde
 Returns the amount of members.
 Example usage:
 * ``%discordbridge_module_bot_server_total_members_amount%`` -> Returns the combined amount of members on all servers.
-* ``%discordbridge_module_bot_server_server-1_members_amount%`` -> Returns the amount of members on the server with the ID ``1234567891012131415``.
+* ``%discordbridge_module_bot_server_1234567891012131415_members_amount%`` -> Returns the amount of members on the server with the ID ``1234567891012131415``.
   
 `%discordbridge_module_bot_server_<server>_boosters_amount%`\
 Returns the amount of guild boosters.
