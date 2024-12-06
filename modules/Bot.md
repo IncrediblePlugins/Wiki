@@ -16,5 +16,23 @@ _Permission: discordbridge.command.invite_
 # PlaceholderAPI Placeholders
 Requires [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) to be installed.
 
-`%discordbridge_module_bot_boosters_amount%`\
+## Format
+The format is always as follows: `%discordbridge_module_bot_server_<server>_<placeholder>`\
+You need to replace ``<server>`` with the ID of the server. You can retrieve the server ID by enabling the developer mode in Discord.
+You can use ``total`` as the server ID to display information for all servers combined, such as the user count on all servers combined.
+The ``<placeholder>`` argument needs to be replaced with the specific placeholder.
+
+`%discordbridge_module_bot_server_<server>_members_amount%`\
+Returns the amount of members.
+Example usage:
+* ``%discordbridge_module_bot_server_total_members_amount%`` -> Returns the combined amount of members on all servers.
+* ``%discordbridge_module_bot_server_server-1_members_amount%`` -> Returns the amount of members on the server with the ID ``1234567891012131415``.
+  
+`%discordbridge_module_bot_server_<server>_boosters_amount%`\
 Returns the amount of guild boosters.
+
+`%discordbridge_module_bot_server_<server>_boosters_contains_<userId>%`\
+Returns whether user with the ID ``<userId>`` has boosted the server or any server if ``<server>`` equals ``total``.
+
+`%discordbridge_module_bot_server_<server>_boosters_contains_<userId>_bool%`\
+Returns ``true``, if the user with the ID ``<userId>`` has boosted the server or any server if ``<server>`` equals ``total``. Otherwise, returns ``false``.
