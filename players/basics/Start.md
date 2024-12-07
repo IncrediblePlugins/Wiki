@@ -1,20 +1,19 @@
-1. Optional: Create a land by executing `/lands create <name>`.
+# Claiming
+## General
+Just executing ``/lands claim`` will claim an initial area for you. If you want to
+choose a name for your land, you need to execute ``/lands create <name>`` before that.
 
-2. Optional: Enter the selection mode by executing `/lands selection` or use the selection tool, if provided by the server.
+## Selection
+The selection mode allows you to claim large areas with ease. Just execute ``/lands selection``, select both corners by just clicking, and
+execute ``/lands claim``.
 
-3. Optional: Select both corners of the area you want to claim. Use left and right click to do so.
+# Management
+You can manage your land in the menu by executing ``/lands`` or by using the commands. To see a list of available commands,
+just execute ``/lands help``.
 
-4. Use `/lands claim` to claim the area.
-* If no selection made, it will claim the chunk you're standing on.
-* If no land has been created before, it will automatically create a land with your name.
-
-5. Open the lands menu to manage your land by executing `/lands`.
-
-6. To use the commands for a different land execute `/lands edit <land>`. All following commands will be executed for this land.
-
-# Select a Land for Editing
-Command: `/lands edit <land>`\
-Allow following commands will be executed for this land.
+## Multiple Lands
+If you're part of multiple lands, you can decide for which land commands are executed, by executing the ``/lands edit <land>`` command once.
+Allow following commands will be executed for this land. Editing lands in the GUI menu doesn't require this.
 
 # Trust Players
 Command: `/lands trust <player> [area]`\
@@ -36,3 +35,7 @@ Alternatively, open your land menu (`/lands`), navigate to the players menu and 
 2. Navigate to the players menu.
 3. Click on the player's item.
 4. Use `shift + left click` to promote and `shift + right click` to demote them.
+
+# Video
+The following video shows the basics of Lands.\
+{% embed url="https://www.youtube.com/watch?v=E4kLehw34y8" %}
