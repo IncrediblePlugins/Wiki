@@ -1,4 +1,8 @@
+This page explains how you get started with your claim.
+
 # Claiming
+Creating your own claim is really easy. You can either claim induvidual chunks or areas using the selection mode.
+
 ## General
 Just executing ``/lands claim`` will claim an initial area for you with your players name as the land name. 
 * If you want to choose a name for your land, you need to execute ``/lands create <name>`` before that.
