@@ -7,6 +7,8 @@
 
 Please always stop your server before installing updates. The config and locale files automatically remove new entries and remove no longer existing entries.
 
+## Video
+The following video shows the initial steps of the setup to get you started.\
 {% embed url="https://www.youtube.com/watch?v=YH9FwoY54O8" %}
 
 # Basic Mode
