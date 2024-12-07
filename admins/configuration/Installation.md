@@ -7,6 +7,8 @@
 
 Please always stop your server before installing updates. The config and locale files automatically remove new entries and remove no longer existing entries.
 
+{% embed url="https://www.youtube.com/watch?v=YH9FwoY54O8" %}
+
 # Basic Mode
 If you want to turn all advanced features off and only want to have simple claiming features, you can
 enable ``basic-mode`` in the config. This option disables all advanced features.
