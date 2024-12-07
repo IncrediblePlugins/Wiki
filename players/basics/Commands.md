@@ -155,9 +155,9 @@ Set the spawn for your land.\
 Teleport to a land spawn. If you don't provide a land, it will teleport you to the spawn of your current `/lands edit <land>` land.\
 *Permission: lands.command.spawn*
 
-`/lands top`\
-View the top lands. They can be sorted by different criteria in the GUI menu.\
-*Permission: lands.command.top*
+`/lands list`\
+View all lands created on the server. They can be sorted by different criteria in the GUI menu.\
+*Permission: lands.command.list*
 
 `/lands storage`\
 Open the virtual item storage for your land. Modifying the storage will be logged in the land inbox. So other land members will be able to see what you took or put into the storage.\
@@ -239,15 +239,15 @@ Send a message to all players of your nation. If the `[nation]` argument is not 
 
 `/nations info [nation]`\
 View information about a nation. If the `[nation]` argument isn't provided, it will show information about the nation of your current land.\
-*Permission: nations.command.top*
+*Permission: nations.command.info*
 
 `/nations level`\
 View the level progress of your nation.\
-*Permission: nations.command.top*
+*Permission: nations.command.level*
 
-`/nations top`\
-View top nations. They can be sorted by different criteria in the GUI meu.\
-*Permission: nations.command.top*
+`/nations list`\
+View all nations created on the server. They can be sorted by different criteria in the GUI meu.\
+*Permission: nations.command.list*
 
 ## Wars
 `/wars menu`\
