@@ -11,8 +11,8 @@ Please always stop your server before installing updates. The config and locale 
 If you want to turn all advanced features off and only want to have simple claiming features, you can
 enable ``basic-mode`` in the config. This option disables all advanced features.
 
-If you want to use a specific features with basic mode, please don't post a suggestion on our Discord to have it included
-in basic mode. Basic mode is meant to be basic. You can create your own basic mode by just disabling the inbuilt basic mode and
+If you want a specific feature to be enabled with basic mode:
+Basic mode is meant to be basic. You can create your own basic mode by just disabling the inbuilt basic mode and
 disabling all features that you don't want. The inbuilt basic mode does nothing else other than disabling options in the config.
 
 # Import Claims
