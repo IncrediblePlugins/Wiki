@@ -43,5 +43,5 @@ Alternatively, open your land menu (`/lands`), navigate to the players menu and 
 4. Use `shift + left click` to promote and `shift + right click` to demote them.
 
 # Video
-The following video shows the basics of Lands.\
+The following video shows the basics of Lands.
 {% embed url="https://www.youtube.com/watch?v=E4kLehw34y8" %}
