@@ -14,6 +14,8 @@ enable ``basic-mode`` in the config. This option disables all advanced features.
 If you want a specific feature to be enabled with basic mode:
 Basic mode is meant to be basic. You can create your own basic mode by just disabling the inbuilt basic mode and
 disabling all features that you don't want. The inbuilt basic mode does nothing else other than disabling options in the config.
+Enabling basic mode once and then disabling it will keep the features disabled until manually enabled again. So you can use the inbuilt basic mode as a preset for your
+own basic mode.
 
 # Import Claims
 You can import claimed chunks and trusted members from other plugins. Just execute `/lands admin import <plugin>`.\
