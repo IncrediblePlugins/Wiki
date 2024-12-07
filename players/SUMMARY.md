@@ -5,6 +5,7 @@
 ## Basics
 * [Start](basics/Start.md)
 * [Commands](basics/Commands.md)
+* [Chat](basics/Chat.md)
 
 ## Advanced
 * [Sub Areas](advanced/Subareas.md)
