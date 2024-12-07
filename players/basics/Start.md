@@ -1,7 +1,8 @@
 # Claiming
 ## General
-Just executing ``/lands claim`` will claim an initial area for you with your players name as the land name. If you want to
-choose a name for your land, you need to execute ``/lands create <name>`` before that.
+Just executing ``/lands claim`` will claim an initial area for you with your players name as the land name. 
+* If you want to choose a name for your land, you need to execute ``/lands create <name>`` before that.
+* If you're already part of a land, ``/lands claim`` will claim for the land you're already part of.
 
 ## Selection
 The selection mode allows you to claim large areas with ease. Just execute ``/lands selection``, select both corners by just clicking, and
