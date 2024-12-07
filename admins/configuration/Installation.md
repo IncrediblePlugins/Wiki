@@ -27,6 +27,6 @@ Currently supported plugins:
 * RedProtect
 * Factions
 
-You can join our [Discord Server](https://discord.incredibleplugins.com), if you plugin isn't listed.
+You can join our [Discord Server](https://discord.incredibleplugins.com), if your current claim plugin isn't listed.
 
 ***
