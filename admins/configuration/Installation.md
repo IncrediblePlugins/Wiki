@@ -21,6 +21,23 @@ disabling all features that you don't want. The inbuilt basic mode does nothing 
 Enabling basic mode once and then disabling it will keep the features disabled until manually enabled again. So you can use the inbuilt basic mode as a preset for your
 own basic mode.
 
+# Disable Claming for Regular Players
+The ``claim-worlds`` option in the config file defines a list of world where claiming should be disabled. There you can add worlds and still decide whether 
+regular players should be able to claim there or just server admins. Read the comments in the config file for that option to understand how you can achieve that:
+````yaml
+  # Worlds where players should be able to claim. You can add all worlds by adding * to the list.
+  # You can also set optional parameters such as, if claiming should be enabled for regular players without admin perms (permission: lands.admin.disabled-features)
+  # and the minimum and maximum claim height. The format is a follows: <worldname>:<claiming>:<min-height>:<max-height>
+  # NOTE: Minimum height can't be lower than your server's min height and maximum height can't be higher than your servers maximum height. The claim height of admin lands will always be maxed out.
+  # NOTE: This setting requires server reload / restart.
+  # Examples:
+  #   'world' -> This results in the max claim height and claiming enabled for players.
+  #   'world:true:30:319' -> This results in a claim height of 30 to 319 and claiming enabled for players.
+  #   'world:false' -> Only server admins can claim in this world to create admin lands etc.
+  claim-worlds_list:
+    - 'world'
+````
+
 # Import Claims
 You can import claimed chunks and trusted members from other plugins. Just execute `/lands admin import <plugin>`.\
 Currently supported plugins: 
