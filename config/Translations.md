@@ -15,3 +15,9 @@ The default English (en-US) language is already included in the plugin's file an
   # To access translations, other than en-US, execute /translations in the Discord server.
   language: 'de'
 ````
+
+# Locale File not Applying
+If you made changes to the locale files, but they are not visible ingame, then one of these mistakes were made:
+* Make sure to reload the locale files: ``/<plugin> admin reload`` -> For Lands it would be ``/lands admin reload``
+* Check for any YAML format mistakes that you might have made. You can use any online YAML validator to check that or just check your servers startup log for any errors related to parsing a YAML file. If the file has a YAML format mistake, the plugin automatically falls back to the default English locale.
+* You have multiple locale files in the ``Language`` folder and your client locale doesn't match with the one you want to see. The plugin supports multiple locales and sets the locale depending on the players locale and which locales are placed in the ``Language`` folder.
