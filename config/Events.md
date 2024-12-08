@@ -1,14 +1,14 @@
-# If there's an error at when a condition is checked, you most likely have a mistake in your condition (syntax).
+**If there's an error at when a condition is checked, you most likely have a mistake in your condition (syntax).**
 
 # Concept
 All available events in the plugin's API are able to get some commands attached. These commands can be bound to conditions.
 
 ## Event
-Each event has its own section in the events.yml file. An event can have a parent condition attached. This condition must be passed in order for the other conditions even to be checked.
+Each event has its own section in the `events.yml` file. An event can have a parent condition attached. This condition must be passed in order for the other conditions even to be checked.
 
 ### Available Events
 [Click here for a list of all events of Lands.](https://github.com/Angeschossen/LandsAPI/tree/master/src/main/java/me/angeschossen/lands/api/events)
-Whenever a new event gets added, you need to manually configure it in events.yml, if you want to execute commands for it.
+Whenever a new event gets added, you need to manually add it in events.yml, if you want to execute commands for it.
 
 # Condition Operators
 A condition supports the following operators:
@@ -24,9 +24,9 @@ A condition supports the following operators:
 * `<=` Smaller or equals (only applicable with numbers)
 * `<` Smaller (only applicable with numbers)
 
-### Checking if Variable is set
-Some events are called for different entities, where some variables might be null. Example: The "LandOwnerChangeEvent" can be called for an area, but also for a land. When called for a land, then all `area_...` variables will be null. This allows you to differentiate if the owner was changed for a land or just an area (rental). Example:
-```
+### Checking if Variable is Set
+Some events are called for different entities, where some variables might be null. Example: The `LandOwnerChangeEvent` can be called for an area, but also for a land. When called for a land, then all `area_...` variables will be null. This allows you to differentiate if the owner was changed for a land or just an area (rental). Example:
+```yaml
 condition: 'area_name != null' # called for an area
 ```
 
@@ -47,7 +47,7 @@ condition: 'area_name != null' # called for an area
 
 ### Comparing Text
 Text must be enclosed by quotation marks. Example:
-```
+```yaml
 condition: 'player_name=="Steve"'
 ```
 
@@ -63,7 +63,7 @@ You can define a list of objects (including logical expressions) by surrounding 
 * `tolowercase(["aBc"])` Turns `["aBc"]` into `["abc"] `
 
 Example:
-```
+```yaml
 condition: '["abc", "def"] contains(["abc"])' # = true
 condition: '["abc", "def"] equals ["abc", "fed"]' = false
 ```
@@ -73,7 +73,7 @@ condition: '["abc", "def"] equals ["abc", "fed"]' = false
 You can execute commands for different groups of players. These players may not be online at command execution.
 Each player group can have multiple conditions with multiple commands attached. The condition is checked for every individual player that is part of this group. You can get the player's name or UUID by using `this_name` and `this_uuid` as a variable. Example:
 
-```
+```yaml
       land_online:
         1:
           condition: 'player_lands_own >= 0'
@@ -86,7 +86,7 @@ Each player group can have multiple conditions with multiple commands attached. 
 ```
 
 ### Execute as Console
-[Click here.](https://github.com/Angeschossen/General/wiki/GUI-Menus#execute-command-as-console)
+[Click here.](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus#optional-item-parameters)
 
 # Event Cancellation
 You can cancel an event by setting the condition at the `cancel` option. Later, you can check if the event has been cancelled.
@@ -97,7 +97,7 @@ You might not want to run certain commands, when the event has been cancelled. T
 * `cancelled_self` - will equal true, if the event has been cancelled by your condition.
 
 # Example:
-```
+```yaml
 LandOwnerChangeEvent:
   cancel: 'reason=="UPKEEP"'
   commands:
