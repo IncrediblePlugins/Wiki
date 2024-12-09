@@ -28,24 +28,26 @@ types:
 ````
 
 # Custom Item Drops
-You can define custom item drops by adding a ``item-drops`` list as seen below.
+You can define custom item drops by adding a ``items`` list as seen below. Must be placed in the ``drops`` section. If it isn't there by default, just add it as seen below.
 
 ````yaml
   blaze:
     name: Blaze
     cost: 5000.0
     skull: skin:b78ef2e4cf2c41a2d14bfde9caff10219f5b1bf5b35a49eb51c6467882cb5f0
-    item-drops:
-      - 'BLAZE_ROD:0:1' # drops min zero and max 1 blaze rod
+    drops:
+      items:
+       - 'BLAZE_ROD:50:1:2' # has a 50% chance of dropping mimium 1 and maximum 2 blaze rods
 ````
 
 # Custom Experience Drop
-You can define custom exp drops by adding a ``exp-drops`` option as seen below.
+You can define custom exp drops by adding a ``exp`` option as seen below. Must be placed in the ``drops`` section. If it isn't there by default, just add it as seen below.
 
 ````yaml
   blaze:
     name: Blaze
     cost: 5000.0
     skull: skin:b78ef2e4cf2c41a2d14bfde9caff10219f5b1bf5b35a49eb51c6467882cb5f0
-    exp-drop: '0:1' # drops min zero and max 1 experience orb
+    drops:
+      exp: '50:1:1' # has a 50% chance of dropping minimum and maximum one blaze rod
 ````
