@@ -37,8 +37,15 @@ You can define custom item drops by adding a ``items`` list as seen below. Must 
     skull: skin:b78ef2e4cf2c41a2d14bfde9caff10219f5b1bf5b35a49eb51c6467882cb5f0
     drops:
       items:
-       - 'BLAZE_ROD:50:1:2' # has a 50% chance of dropping mimium 1 and maximum 2 blaze rods
+        blaze_rod:
+          material: BLAZE_ROD
+          data:
+            chance: 50 # has a 50% chance of dropping
+            min: 1 # minimum 1 blaze rod
+            max: 2 # maximum 2 blaze rods
 ````
+
+You can also apply more item paramters as seen here: [Link](https://wiki.incredibleplugins.com/general/menus/gui-menus#optional-item-parameters)
 
 # Custom Experience Drop
 You can define custom exp drops by adding a ``exp`` option as seen below. Must be placed in the ``drops`` section. If it isn't there by default, just add it as seen below.
@@ -49,5 +56,5 @@ You can define custom exp drops by adding a ``exp`` option as seen below. Must b
     cost: 5000.0
     skull: skin:b78ef2e4cf2c41a2d14bfde9caff10219f5b1bf5b35a49eb51c6467882cb5f0
     drops:
-      exp: '50:1:1' # has a 50% chance of dropping minimum and maximum one blaze rod
+      exp: '50:1:1' # has a 50% chance of dropping minimum and maximum 1 experience orb
 ````
