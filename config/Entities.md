@@ -27,7 +27,23 @@ types:
     no-conditions: true
 ````
 
-# Custom Item Drops
+# Custom Drops
+You can define custon item and experience drops. By default, these drops are additive and don't replace the current ones.
+To make them replace the current ones just addd ``replace: true`` to the drops section as seen below:
+
+````yaml
+  blaze:
+    name: Blaze
+    cost: 5000.0
+    skull: skin:b78ef2e4cf2c41a2d14bfde9caff10219f5b1bf5b35a49eb51c6467882cb5f0
+    drops:
+      replace: true # replaces existing default drops
+      items:
+        blaze_rod:
+          material: BLAZE_ROD
+````
+
+## Custom Item Drops
 You can define custom item drops by adding a ``items`` list as seen below. Must be placed in the ``drops`` section. If it isn't there by default, just add it as seen below.
 
 ````yaml
@@ -47,7 +63,7 @@ You can define custom item drops by adding a ``items`` list as seen below. Must 
 
 You can also apply more item paramters as seen here: [Link](https://wiki.incredibleplugins.com/general/menus/gui-menus#optional-item-parameters)
 
-# Custom Experience Drop
+## Custom Experience Drop
 You can define custom exp drops by adding a ``exp`` option as seen below. Must be placed in the ``drops`` section. If it isn't there by default, just add it as seen below.
 
 ````yaml
