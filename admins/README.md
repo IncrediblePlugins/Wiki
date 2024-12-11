@@ -1,4 +1,4 @@
-Here you can find information about WildRegeneration for server administrators.
+With WildRegeneration you can keep your world nice and clean. You can configure a time that a chunk needs to be untouched (any interaction, including breaking blocks and opening doors etc.) before it gets regenerated. This plugin distributes the load in order to keep your server's performance up. Also, you can regenerate unclaimed land of the plugin [Lands](https://www.spigotmc.org/resources/53313/).
 
 # Disclaimer
 WildRegeneration does regenerate chunks back to its original state. No snapshots are taken. This only works with the default Minecraft world generation. FastAsyncWorldEdit or WorldEdit needs to be installed. It's recommended to take regular backups of your world in case you want to revert a regeneration, or you accidentally misconfigure something.
