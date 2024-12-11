@@ -14,6 +14,13 @@ The land owner has lands.chunks.* or op.
 
 ***
 
+## Claim Costs not Working
+If you configured claim costs in config.yml, but they don't apply, it's because one of these reasons:
+* They have free chunks via the ``lands.free.chunks.<number>`` permission or they have op.
+* Their claim amount is lower than the initial claim-radius in config.yml
+
+***
+
 ## How can I restrict fly to players claims?
 Just give them access to your /fly command and make sure to not give them fly bypass permissions.\
 Also the fly flag needs to be enabled for their flag in their claim. To toggle fly in wilderness, use `/lands admin menu`.

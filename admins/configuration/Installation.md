@@ -1,7 +1,7 @@
 1. Stop your server.
 2. Place the Lands.jar file in your plugins folder.
 3. Start your server.
-4. Edit the configurations to your liking. You can find explanations in the comments located in your config file. The config can be found in the plugin's folder (`/plugins/Lands`). A important configuration is the `claim-worlds_list`, which defines in which worlds players should be allowed to claim. However, you could still retrict this with per world permissions for the claim commands. 
+4. Edit the configurations to your liking. You can find explanations in the comments located in your config file. The config can be found in the plugin's folder (`/plugins/Lands`). A important configuration is the `claim-worlds_list`, which defines in which worlds players should be allowed to claim.
 5. [Setup permissions.](../permissions/Recommended-Permission-Setup.md)
 6. Restart your server
 
