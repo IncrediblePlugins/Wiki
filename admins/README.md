@@ -1,0 +1,1 @@
+Here you can find information about WildRegeneration for server administrators.
