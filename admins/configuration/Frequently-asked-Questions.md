@@ -17,7 +17,8 @@ The land owner has lands.chunks.* or op.
 ## Claim Costs not Working
 If you configured claim costs in config.yml, but they don't apply, it's because one of these reasons:
 * They have free chunks via the ``lands.free.chunks.<number>`` permission or they have op.
-* Their claim amount is lower than the initial claim-radius in config.yml
+* Their claim amount is lower than the initial claim-radius in config.yml.
+* Claimblocks that claim when being placed down will always claim for free.
 
 ***
 
