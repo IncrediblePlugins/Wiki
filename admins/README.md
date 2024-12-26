@@ -2,3 +2,4 @@ With WildRegeneration you can keep your world nice and clean. You can configure 
 
 # Disclaimer
 WildRegeneration does regenerate chunks back to its original state. No snapshots are taken. This only works with the default Minecraft world generation. FastAsyncWorldEdit or WorldEdit needs to be installed. It's recommended to take regular backups of your world in case you want to revert a regeneration, or you accidentally misconfigure something.
+Protected lands from the [Lands](https://www.spigotmc.org/resources/53313) plugin and WorldGuard regions won't be regenerated.
