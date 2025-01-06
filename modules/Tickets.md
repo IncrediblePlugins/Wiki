@@ -18,8 +18,8 @@ Example: `1d`
 ## Create Ticket Types
 * ``/config type upsert``\
 Create a ticket type or update an existing type.
-* ``/config field create``\
-Create fields that a user has to fill out when submitting a ticket of this type.
+* ``/config field upsert``\
+Create or update fields that a user has to fill out when submitting a ticket of this type.
 * Optional: ``/config info create``\
 Allows you to predefine info to request in some cases after the ticket was created.
 * Optional: ``/config reason create``\
