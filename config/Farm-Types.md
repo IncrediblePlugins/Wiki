@@ -22,8 +22,18 @@ recipe:
   - 'AIR,IRON_INGOT,AIR'
 ````
 
-# Armorstand
-If configured and enabled, an armor stand with the given configuration will be placed instead of the farm item. Although, the farm item will still be given at `/farm get` or `/farm admin give`.
+# Minion NPC
+If configured and enabled, a minion with the given configuration will be placed instead of the farm block. Although, the farm item will still be given at `/farm get` or `/farm admin give`.
+````yaml
+    # Place a small minion npc (armor stand) instead of the actual farm block.
+    minion:
+      enabled: true
+      helmet: 'skin:925a32560831c295b00527926255e608a039776f3523b92edf788149aae67d6a'
+      chestplate: 'LEATHER_CHESTPLATE'
+      leggings: 'LEATHER_LEGGINGS'
+      boots: 'LEATHER_BOOTS'
+      tool: 'IRON_HOE'
+````
 
 # Fuel
 Requires farms to be charged with specific items to add more fuel to them. Fuel results in time the farm will be active.\
