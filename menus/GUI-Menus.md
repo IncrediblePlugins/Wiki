@@ -212,3 +212,15 @@ item:
 
 You can find the URL on pages like [minecraft-heads.com](https://minecraft-heads.com/). Example:
 ![](https://imgur.com/nENavTq.png)
+
+# Nexo Custom Items, Blocks and Furniture
+You can use nexo items, blocks and furniture for any item by setting the ``material`` of the item as follows:
+````yaml
+item:
+  name: 'Name'
+  lore:
+   - 'Lore'
+  material: nexo:arm_chair
+````
+The example uses the default ``arm_chair`` item from Nexo. Upon placement the furniture will be placed.
+The same works for Nexo items and blocks.
