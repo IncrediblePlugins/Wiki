@@ -3,10 +3,16 @@ Runs the Discord bot.
 
 # Setup
 1. Create an application in your [Discord developer portal](https://discord.com/developers/applications).
-    * The bot needs to following scopes: applications.command, bot
-    * The bot needs to following bot permissions: Manage Channels, Manage Webhooks, Read Messages/View Channels, Send Messages, Manage Messages, Embed Links, Attach Files, Read Message History, Add Reactions
-    * Alternatively you can use the following URL to add the bot with the required permissions. Just make sure to replace ``CLIENT_ID`` with your bots client ID: https://discord.com/api/oauth2/authorize?client_id=CLIENT_ID&permissions=2684480592&scope=bot+applications.commands
-2. Copy the bot token and paste it at the ``token`` option in DiscordBridge/Modules/bot.yml.
+2. Required privileged gateway intents: Server Members Intent, Message Content Intent
+   [Imgur](https://imgur.com/xA33xFm)
+3. Required scopes: applications.command, bot
+   [Imgur](https://imgur.com/N7UdnBY)
+4. The bot needs to following bot permissions: Manage Channels, Manage Webhooks, Read Messages/View Channels, Send Messages, Manage Messages, Embed Links, Attach Files, Read Message History, Add Reactions
+   [Imgur](https://imgur.com/RjCCYCK)
+   Alternatively you can use the following URL to add the bot with the required permissions. Just make sure to replace ``CLIENT_ID`` with your bots client ID: https://discord.com/api/oauth2/authorize?client_id=CLIENT_ID&permissions=2684480592&scope=bot+applications.commands
+
+
+5. Copy the bot token and paste it at the ``token`` option in DiscordBridge/Modules/bot.yml.
 
 # Ingame Commands
 `/discordbridge invite`\
