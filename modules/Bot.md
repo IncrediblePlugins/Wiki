@@ -8,7 +8,7 @@ Runs the Discord bot.
 3. Required scopes: ``applications.command, bot``
    ![Scopes](https://i.imgur.com/N7UdnBY.png)
 4. The bot needs to following bot permissions: Manage Channels, Manage Webhooks, Read Messages/View Channels, Send Messages, Manage Messages, Embed Links, Attach Files, Read Message History, Add Reactions
-   ![Permissions](i.https://imgur.com/RjCCYCK.png)
+   ![Permissions](https://i.imgur.com/RjCCYCK.png)
    Alternatively you can use the following URL to add the bot with the required permissions. Just make sure to replace ``CLIENT_ID`` with your bots client ID: https://discord.com/api/oauth2/authorize?client_id=CLIENT_ID&permissions=2684480592&scope=bot+applications.commands
 5. Copy the bot token and paste it at the ``token`` option in DiscordBridge/Modules/bot.yml.
 
