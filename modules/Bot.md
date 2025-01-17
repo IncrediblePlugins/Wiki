@@ -1,6 +1,8 @@
 # Usage
 Runs the Discord bot.
 
+![Intents](https://i.imgur.com/MPMo0Df.png)
+
 # Setup
 1. Create an application in your [Discord developer portal](https://discord.com/developers/applications).
 2. Required privileged gateway intents: Server Members Intent, Message Content Intent\
