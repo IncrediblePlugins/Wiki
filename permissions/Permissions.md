@@ -23,7 +23,7 @@ Example for LuckPerms: ``/luckperms group default permission set uhoppers.telepo
 The value `false` is important here.
 
 ### Teleportation Permissions
-`uhoppers.teleport.protection`\
+`uhoppers.teleport.hopper`\
 Allow teleportation to hoppers through the `/hoppers list` menu. This permission is set by default.
 
 # Admin Permissions
