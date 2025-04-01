@@ -4,7 +4,7 @@ The plugin supports multiple locales. If you place multiple locale files in the 
 # Downloading Community Translations
 1. Community translations can be found in our Discord, by executing the `/translations` command in the Discord server. Your Discord account needs to be verified/linked to a Spigot or Polymart account.
 2. If you haven't created a translations account yet, you'll be asked to sign up at the translations page, to start translating and downloading language files.
-3. Execute `/link translations` in the Discord server and provide the requested parameters to complete the account setup. If you don't do this, the locale files won't be visiable to you. We require you linking your account to prevent unauthorized users griefing the locale files, since we allow community contributions.
+3. Execute `/link translations` in the Discord server and provide the requested parameters to complete the account setup. If you don't do this, the locale files won't be visiable to you. We require that you link your verified Discord account with the Translation account to prevent unauthorized users griefing the locale files, since we allow community contributions.
 4. After linking your Discord account with your Translations account and reloading the translations page, the translations become visible to you. You can view all translations [here](https://translations.incredibleplugins.com/projects).
 
 The default English (en-US) language is already included in the plugin's file and doesn't need to be downloaded.
