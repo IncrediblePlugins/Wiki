@@ -4,6 +4,7 @@
 ## Locale & Config
 * [Messages](config/Messages.md)
 * [Translations](config/Translations.md)
+* [Currency](config/Currency.md)
 * [Events](config/Events.md)
 * [New-Head-Textures](config/New-Head-Textures.md)
 

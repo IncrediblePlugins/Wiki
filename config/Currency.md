@@ -1,0 +1,2 @@
+You can configure the plugin to use Vault, items or experience in ``config.yml`` in the economy section.
+If you use the item economy, you can change the currency item in the GUI locale file. The item is called "currency" in the GUI locale file.
