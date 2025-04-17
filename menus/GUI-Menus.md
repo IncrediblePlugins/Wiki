@@ -124,6 +124,14 @@ carrot:
   material: 'CARROT'
 ````
 
+## Tooltips
+### Disable Tooltip
+Add `hide-tooltip: true` to the item.
+
+### Tooltip Style
+Add `tooltip-style: <space>:<key>` to the item and replace `<space>` with the namespace and `<key>` with the key.
+
+
 ## Click Sound
 Play a sound when a player clicks on the item.
 The `<volume>` and `<pitch>` parameters are optional and may be replaced with the sound's preferred volume and pitch.
