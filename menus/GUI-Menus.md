@@ -104,6 +104,9 @@ Here are some optional item parameters, which can be added to items:
 ## Disable Items:
 Add `enabled: false` to the item.
 
+## Set Item Model
+Add `item-model: modelkey` to the item.
+
 ## Set custom Model-Data:
 Add `model-data: NUMBER` to the item.
 
