@@ -1,6 +1,6 @@
 This page explains some options from the furnaces.yml configuration file.
 
-# Furnace Flags
+# Flags
 You can apply special flags to furnace types in furnaces.yml.
 
 * **EXPLOSION_DAMAGE**\
