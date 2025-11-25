@@ -107,6 +107,21 @@ Add `enabled: false` to the item.
 ## Set Item Model
 Add `item-model: modelkey` to the item.
 
+### Apply Item Model to all Items
+You can apply a specific item model to all items in all menus with just a simple entry in the GUI locale file.
+For that you need to add a "custom" item section the common_item-model section.
+
+````yaml
+common_item-model:
+  items:
+    custom: # Add this section
+      # This is just an example that displays each player head as a 2D head model of the 3rd party plugin Nexo.
+      player_head:
+        enabled: true
+        material: 'PLAYER_HEAD'
+        item-model: "nexo:2d_player_head"
+````
+
 ## Set custom Model-Data:
 Add `model-data: NUMBER` to the item.
 
