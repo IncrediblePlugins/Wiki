@@ -7,6 +7,9 @@ Allows players to link their Minecraft and Discord account.
 3. You can setup roles to be given to linked players in Discord, by executing ``/config linking_roles add`` in the Discord server. If you add a role, it will be given to existing linked players as well. This might take a while though, since updates are scheduled to improve the experience for large servers. If you remove a role, you need to manually remove this role from its members, if you wish to.
 4. You can setup [LuckPerms](https://www.spigotmc.org/resources/luckperms.28140/) groups to be given to linked players in-game, by executing ``/config linking_groups add`` in the Discord server. If you add a group, it will be given to existing linked players as well. This might take a while though, since updates are scheduled to improve the experience for large servers. If you remove a group, you need to manually remove this group from its members, if you wish to.
 
+## Name Sync Exclude Users
+You can exclude users from name sync with the ``/config linking_name_sync_ignore_roles add <role>`` command in the Discord server. If a user has any of these roles, their name won't be synchronized with the in-game player.
+
 # Ingame Commands
 `/discordbridge acccount link`\
 Link Discord and Minecraft account.\
