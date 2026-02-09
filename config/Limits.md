@@ -1,4 +1,4 @@
-The ``player-limits.yml`` file is used to modify numbered limits such as max lands etc. for the Lands plugin or other limits for my other plugins.
+The ``player-limits.yml`` file is used to modify numbered limits such as max lands etc. for the Lands plugin or other limits such as placed hoppers etc. for my other plugins.
 
 # Limit Packs
 In the file you can configure limit packs in the ``packs`` section. You can assign a required permission to each pack.

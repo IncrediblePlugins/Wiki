@@ -2,6 +2,7 @@
 * [Home](README.md)
 
 ## Locale & Config
+* [Limits](config/Limits.md)
 * [Messages](config/Messages.md)
 * [Translations](config/Translations.md)
 * [Currency](config/Currency.md)
