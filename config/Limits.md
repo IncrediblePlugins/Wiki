@@ -11,3 +11,4 @@ played on the server. The configuration for that is in the ``playtime-rewards`` 
 
 # Total Limit
 The total limit for a player is the result of: ``the limit pack + manually given limit through admin command + time rewards``
+Limits in the Lands plugin might also be increased by land and nation levels.
