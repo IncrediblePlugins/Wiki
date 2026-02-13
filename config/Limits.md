@@ -12,3 +12,8 @@ played on the server. The configuration for that is in the ``playtime-rewards`` 
 # Total Limit
 The total limit for a player is the result of: ``the limit pack + manually given limit through admin command + time rewards``
 Limits in the Lands plugin might also be increased by land and nation levels.
+
+# Disabling Limits
+Limits can be disabled. Disabled limits basically mean that the player has an unlimited amount of something.
+This might be abused by players in some way specific to the plugin and case. However, if you're sure about disabling a limit,
+just set it's value to -1 to disable the limit.
