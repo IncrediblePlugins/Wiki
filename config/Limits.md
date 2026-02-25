@@ -7,8 +7,10 @@ In the file you can configure limit packs in the ``packs`` section. You can assi
 If the player has the required permission, the pack will be assigned to them. A player will get the first pack they have
 the permission for assigned.
 The packs are being checked in the order they're added to the ``packs`` section. Because of that you should order them
-like this in the packs section: owner, admin, someRank, member, default. This is just an example, but you get the idea. :)
-By default the pack called "default" has no required permission, so that players will get the pack if they have no permission for any other pack.
+like this in the packs section: owner, admin, someRank, member, default. This is just an example, but you get the
+idea. :)
+By default the pack called "default" has no required permission, so that players will get the pack if they have no
+permission for any other pack.
 
 # Playtime Rewards
 
