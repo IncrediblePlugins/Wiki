@@ -1,7 +1,7 @@
 # Javadoc
 The Javadoc can be found here: [repo.incredibleplugins.com](https://repo.incredibleplugins.com/javadoc/releases/com/github/angeschossen/LandsAPI/latest)
 
-# API Usage explained
+# API Usage Explained
 
 Include the API using Gradle:
 ```groovy
