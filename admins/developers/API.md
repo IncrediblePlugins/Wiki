@@ -2,7 +2,8 @@
 The Javadoc can be found here: [repo.incredibleplugins.com](https://repo.incredibleplugins.com/javadoc/releases/com/github/angeschossen/LandsAPI/latest)
 
 # API Usage Explained
-First, include the API in your build file: [Maven, Gradle, SBT](https://repo.incredibleplugins.com/#/releases/com/github/angeschossen/LandsAPI)
+First, include the API in your build file. Example snippets for your build file can be found here: [Maven, Gradle, SBT](https://repo.incredibleplugins.com/#/releases/com/github/angeschossen/LandsAPI)
+> You can also download the API file from there, if you want to add it to your libraries manually.
 
 The API is accessible through an implementation of the ``LandsIntegration`` interface.
 It is recommended to bind this instance to a variable of a singleton class, if possible.
