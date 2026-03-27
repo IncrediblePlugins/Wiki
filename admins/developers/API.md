@@ -2,38 +2,7 @@
 The Javadoc can be found here: [repo.incredibleplugins.com](https://repo.incredibleplugins.com/javadoc/releases/com/github/angeschossen/LandsAPI/latest)
 
 # API Usage Explained
-
-Include the API using Gradle:
-```groovy
-repositories {
-   maven { url 'https://jitpack.io' }
-}
-
-dependencies {
-    compileOnly "com.github.angeschossen:LandsAPI:version"
-}
-```
-Replace `version` with the version that you want to use.
-
-Include the API using Maven:
-```xml
-<repositories>
-	<repository>
-		<id>jitpack.io</id>
-		<url>https://jitpack.io</url>
-	</repository>
-</repositories>
-
-<dependencies>
-    <dependency>
-        <groupId>com.github.angeschossen</groupId>
-        <artifactId>LandsAPI</artifactId>
-        <version>version</version>
-        <scope>provided</scope>
-    </dependency>
-</dependencies>
-```
-Replace `version` with the version that you want to use.
+First, include the API in your build file: [Maven, Gradle, SBT](https://repo.incredibleplugins.com/#/releases/com/github/angeschossen/LandsAPI)
 
 The API is accessible through an implementation of the ``LandsIntegration`` interface.
 It is recommended to bind this instance to a variable of a singleton class, if possible.
