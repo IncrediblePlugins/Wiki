@@ -1,5 +1,5 @@
 # Javadoc
-The Javadoc can be found here: [repo.incredibleplugins.com](https://repo.incredibleplugins.com/javadoc/releases/com/github/angeschossen/LandsAPI/latest)
+The Javadoc can be found here: [repo.incredibleplugins.com](https://repo.incredibleplugins.com/javadoc/releases/com/incredibleplugins/lands-api/latest)
 
 # API Usage Explained
 First, include the API in your build file. Example snippets for your build file can be found here: [Maven, Gradle, SBT](https://repo.incredibleplugins.com/#/releases/com/github/angeschossen/LandsAPI)
