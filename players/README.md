@@ -1,1 +1,1 @@
-Here you can find information on how to use Lands.
+Here you can find information on how to use Lands. Use the navigation sidebar to look at specific sections of the wiki.
