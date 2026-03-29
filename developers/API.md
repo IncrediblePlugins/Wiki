@@ -1,3 +1,10 @@
+<div align="center">
+
+# ChestProtect API
+[![Package](https://img.shields.io/maven-metadata/v?metadataUrl=https://repo.incredibleplugins.com/releases/com/incredibleplugins/chestprotect-api/maven-metadata.xml)](https://repo.incredibleplugins.com/#/releases/com/incredibleplugins/chestprotect-api)
+</div>
+
+
 # Javadoc
 The Javadoc can be found here: [repo.incredibleplugins.com](https://repo.incredibleplugins.com/javadoc/releases/com/incredibleplugins/chestprotect-api/latest)
 
