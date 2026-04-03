@@ -39,6 +39,9 @@ Time until upkeep is collected on the server. This will be the same as `%lands_n
 `%lands_affiliation%`\
 Combination of land and nation name. You can edit the format in your language file.
 
+`%affiliation_name_or_tag%`\
+Combination of land and nation tag. If the land or nation has no tag set, the name will be used instead. You can edit the format in your language file.
+
 `%lands_affiliation_color%`\
 Get the color of the nation, the player is in. If the land isn't part of any nation, the land color will be returned
 instead.
