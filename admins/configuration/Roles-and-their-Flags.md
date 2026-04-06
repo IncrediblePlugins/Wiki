@@ -186,6 +186,12 @@ Allow the role to use elytras within an area.\
 *Bypass permission: lands.bypass.elytra*\
 *Wilderness bypass permission: lands.bypass.wilderness.elytra*
 
+* **WIND_BURST**\
+  Allow the role to use the wind burst enchantment with a mace attack or wind charge items.\
+  *Toggle permission: lands.role.setting.wind_burst*\
+  *Bypass permission: lands.bypass.wind_burst*\
+  *Wilderness bypass permission: lands.bypass.wilderness.wind_burst*
+
 * **LAND_ENTER**\
 Allows the role to enter a area.\
 *Toggle permission: lands.role.setting.land_enter*\
