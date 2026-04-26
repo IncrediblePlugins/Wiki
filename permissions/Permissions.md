@@ -3,28 +3,6 @@ To assign permissions to players you must install a permissions plugin, like [Lu
 # Player Permissions
 These permissions are safe to set for your players.
 
-## Numbered Permissions
-**Replace `<number>` with a number and `<farmtype>` with the configuration key of a farm type (`farms.yml` file).**\
-Example:
-````yaml
-crop:
-  enabled: true
-````
-Results in `betterfarming.crop.10`. Whereas `10` represents the maximum farms of this farm type.
-
-`betterfarming.total.<number>`\
-How many farms should the player be able to create in total? Below, you can control individual farm type limits. Both permissions need to be set in order to create any farm. Replace `number` with an actual number.
-
-`betterfarming.<farmtype>.<number>`\
-How many crop farms should the player be able to create? Replace `number` with an actual number.\
-Example: `betterfarming.crop.5`, `betterfarming.tree.5`, `betterfarming.ore.5`
-
-`betterfarming.roles.<number>`\
-How many player roles should the player be able to create per farm? Replace `number` with an actual number.
-
-`betterfarming.members.<number>`\
-How many players should the farm owner be able to trust at the farm? Replace `number` with an actual number.
-
 ## General Permissions
 `betterfarming.upgrade`\
 Only allow players with this permission to upgrade any farm, if config option `upgrade-perm` enabled.

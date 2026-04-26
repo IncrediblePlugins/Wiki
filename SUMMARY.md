@@ -7,6 +7,7 @@
 
 ## Config
 * [Installation](config/Installation.md)
+* [Limits](https://wiki.incredibleplugins.com/general/locale-and-config/limits)
 * [Farm Types](config/Farm-Types.md)
 * [Roles & Flags](config/Role-Flags.md)
 * [GUI Menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus)
