@@ -42,7 +42,7 @@ LandsIntegration api = LandsIntegration.of(plugin);
         }
     }
     ````
-3. Registering your own Flags\
+3. Registering custom Flags\
    This one is simple as well. Just use the factory methods of the needed flag type's interface: [RoleFlag.of(...)](https://javadoc.jitpack.io/com/github/angeschossen/LandsAPI/7.10.6/javadoc/me/angeschossen/lands/api/flags/type/RoleFlag.html#of(me.angeschossen.lands.api.LandsIntegration,me.angeschossen.lands.api.flags.enums.FlagTarget,me.angeschossen.lands.api.flags.enums.RoleFlagCategory,java.lang.String)), [NaturalFlag.of(...)](https://javadoc.jitpack.io/com/github/angeschossen/LandsAPI/7.10.6/javadoc/me/angeschossen/lands/api/flags/type/NaturalFlag.html#of(me.angeschossen.lands.api.LandsIntegration,me.angeschossen.lands.api.flags.enums.FlagTarget,java.lang.String)) etc.
    Please note that flags need to registered after Lands was loaded, but before Lands enables. You can ensure that, by using this method in your `onLoad` method of your plugins main class: [LandsIntegration#onLoad](https://javadoc.jitpack.io/com/github/angeschossen/LandsAPI/7.10.6/javadoc/me/angeschossen/lands/api/LandsIntegration.html#onLoad(java.lang.Runnable))
 
