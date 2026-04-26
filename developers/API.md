@@ -5,19 +5,6 @@ The API is in our repository: [repo.incredibleplugins.com](https://repo.incredib
 # Javadoc
 The Javadoc can be found here: [repo.incredibleplugins.com](https://repo.incredibleplugins.com/javadoc/releases/com/incredibleplugins/chestprotect-api/latest)
 
-# API Usage Explained
-First, include the API in your build file. Example snippets for your build file can be found here: [Maven, Gradle, SBT](https://repo.incredibleplugins.com/#/releases/com/incredibleplugins/chestprotect-api)
-> You can also download the API file from there, if you want to add it to your libraries manually.
-
-Declare ChestProtect as a dependency in your `plugin.yml` so Bukkit loads it before your plugin:
-
-```yaml
-depend:
-  - ChestProtect
-```
-
-Use `softdepend` instead if ChestProtect is optional for your plugin.
-
 ## Getting the API instance
 
 The API is accessible through an implementation of the [ChestProtectAPI](https://repo.incredibleplugins.com/javadoc/releases/com/incredibleplugins/chestprotect-api/latest/.cache/unpack/me/angeschossen/chestprotect/api/ChestProtectAPI.html) interface. Access it after ChestProtect is loaded (e.g. in `onEnable`):
