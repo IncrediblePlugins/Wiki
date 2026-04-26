@@ -1,6 +1,6 @@
 [![Package](https://img.shields.io/maven-metadata/v?metadataUrl=https://repo.incredibleplugins.com/releases/com/incredibleplugins/betterfarming-api/maven-metadata.xml)](https://repo.incredibleplugins.com/#/releases/com/incredibleplugins/betterfarming-api)
 
-The API is in our repository: [repo.incredibleplugins.com](https://repo.incredibleplugins.com/releases/com/incredibleplugins/betterfarming-api/)
+The API is in our repository: [repo.incredibleplugins.com](https://repo.incredibleplugins.com/#/releases/com/incredibleplugins/betterfarming-api)
 
 # Javadoc
 The Javadoc can be found here: [repo.incredibleplugins.com](https://repo.incredibleplugins.com/javadoc/releases/com/incredibleplugins/betterfarming-api/latest)
