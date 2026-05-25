@@ -45,9 +45,14 @@ Should animals spawn? This does not include spawners.\
 *Toggle permission: lands.setting.animal_spawn*
 
 * **WATERFLOW_ALLOW**\
-Allow water to flow?
+Allow water to flow from wilderness or other claims?
 This should be set to false, since it protects against griefing from other players.\
 *Toggle permission: lands.setting.waterflow_allow*
+
+* **LAVAFLOW_ALLOW**\
+  Allow lava to flow from wilderness or other claims?
+  This should be set to false, since it protects against griefing from other players.\
+  *Toggle permission: lands.setting.lavaflow_allow*
 
 * **FIRE_SPREAD**\
 Should fire spread? Fire can not spread from wilderness into lands, even without this flag being set.\
