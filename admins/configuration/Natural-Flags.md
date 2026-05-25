@@ -48,7 +48,7 @@ Should animals spawn? This does not include spawners.\
 Allow water to flow from wilderness or other claims?
 This should be set to false, since it protects against griefing from other players.\
 *Toggle permission: lands.setting.waterflow_allow*
-d
+
 * **LAVAFLOW_ALLOW**\s
   Allow lava to flow from wilderness or other claims?
   This should be set to false, since it protects against griefing from other players.\
