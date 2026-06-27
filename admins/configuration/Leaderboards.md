@@ -2,7 +2,7 @@
 # Parameter Explanation
 Parameters:
 * `<context>` needs to be replaced with either `land` or `nation`. 
-* `<sorting>` needs to be replaced with `balance`, `chunks`, `members`, `level`, `ratio_kd` (kills/deaths in wars ratio) or `ratio_wl` (won/lost wars ratio). 
+* `<sorting>` needs to be replaced with `balance`, `chunks`, `members`, `level`, `ratio-kd` (kills/deaths in wars ratio) or `ratio-wl` (won/lost wars ratio). 
 * `<place>` needs to be replaced with the place. Example: `1`
 
 ## Sign Lines

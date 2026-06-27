@@ -9,10 +9,10 @@ Areas can be setup for rental or to be purchased via the GUI menu or by using a 
 # When the Setup is Done
 The rent or sell sign or hologram is setup and players can now access it.
 
-## Reant & Extend Time
-To rent a area, just click on the sign or hologram. To add more time to your rental, just click again on the sign or hologram.
+## Rent & Extend Time
+To rent an area, just click on the sign or hologram. To add more time to your rental, just click again on the sign or hologram.
 
-## Purchase a Area
+## Purchase an Area
 Just click on the sell sign or hologram.
 
 ## Browse Listings

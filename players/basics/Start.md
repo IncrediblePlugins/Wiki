@@ -1,7 +1,7 @@
 This page explains how you get started with your claim.
 
 # Claiming
-Creating your own claim is really easy. You can either claim induvidual chunks or areas using the selection mode.
+Creating your own claim is really easy. You can either claim individual chunks or areas using the selection mode.
 
 ## General
 Just executing ``/lands claim`` will claim an initial area for you with your players name as the land name. 
@@ -18,7 +18,7 @@ just execute ``/lands help``.
 
 ## Multiple Lands
 If you're part of multiple lands, you can decide for which land commands are executed, by executing the ``/lands edit <land>`` command once.
-Allow following commands will be executed for this land. Editing lands in the GUI menu doesn't require this.
+All following commands will be executed for this land. Editing lands in the GUI menu doesn't require this.
 Some servers may let you execute commands automatically for the land you're currently standing in.
 
 # Trust Players

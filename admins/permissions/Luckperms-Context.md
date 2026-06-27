@@ -22,7 +22,7 @@ Returns `true`, if the player owns or is part of a land. If you append `_here`, 
 Returns `true`, if the player is trusted. Append `_here` to get the result for the land at the player's current position.
 
 `lands_combat_tag_bool=true or false`\
-Returns whevter or not the player is in combat.
+Returns whether or not the player is in combat.
 
 `lands_land_level=number`\
 Set permission if land has level x. You can append `_here` too.
@@ -40,4 +40,4 @@ Example: `lands_trusted_in=test`: The player will receive the permission if they
 * Giving a permission only in wilderness: `/lp user Luck permission set test.permission lands_land_name_here=wilderness`
 You can also remove permission if they're in wilderness by setting a negated (-) permission.
 * Giving a permission only in claims where the player is trusted:
-`/lp user Luck permission set test.permission lands_land_trusted_bool=yes`
+`/lp user Luck permission set test.permission lands_land_trusted_bool=true`
