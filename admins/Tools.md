@@ -11,8 +11,8 @@ This will enter the edit mode for the land and all following commands will be ex
 *Permission: lands.admin.command.edit*
 
 # Chat Spy
-`/lands admin chatspy <land or nation>`\
-Spy the chat of a land. You can spy the chat of multiple lands at the same time. To remove a land from the chat spy, just execute the command again with the land parameter. To disable chat spy for all lands, just execute `/lands chatspy`.\
+`/lands admin chatspy <land | nation | *>`\
+Spy the chat of a land or nation. Use `*` to spy all lands and nations at once. You can spy multiple lands/nations simultaneously — executing the command again with the same name removes it from the spy list. To disable chat spy for all lands and nations at once, execute `/lands admin chatspy` with no arguments.\
 *Permission: lands.admin.command.chatspy*
 
 # Teleport other Players
