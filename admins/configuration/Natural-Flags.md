@@ -49,7 +49,7 @@ Allow water to flow from wilderness or other claims?
 This should be set to false, since it protects against griefing from other players.\
 *Toggle permission: lands.setting.waterflow_allow*
 
-* **LAVAFLOW_ALLOW**\s
+* **LAVAFLOW_ALLOW**\
   Allow lava to flow from wilderness or other claims?
   This should be set to false, since it protects against griefing from other players.\
   *Toggle permission: lands.setting.lavaflow_allow*

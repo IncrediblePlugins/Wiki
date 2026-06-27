@@ -26,7 +26,7 @@ If your server allows spaces in land names, the command will have the arguments 
 *Permission: lands.command.create*
 
 `/lands createcamp <name>`\
-Create a temporary land that will be deleted after a specific period. The perdiod depends on your servers configuration.\
+Create a temporary land that will be deleted after a specific period. The period depends on your servers configuration.\
 *Permission: lands.command.createcamp*
 
 `/lands delete <land | here>`\
@@ -52,6 +52,10 @@ View all claimed chunks for your land.\
 `/lands unclaim`\
 Unclaim the chunk you're standing in. If you created a selection via `/lands selection`, it will unclaim the selection instead. You can also execute `/lands unclaim radius` to unclaim chunks in a specific radius or `/lands unclaim auto` to unclaim chunks you're walking into. `/lands unclaim all` will unclaim all chunks for your current `/lands edit <land>` land.\
 *Permission: lands.command.unclaim*
+
+`/lands unclaimall`\
+Unclaim all chunks for your current land at once. Requires confirmation.\
+*Permission: lands.command.unclaimall*
 
 `/lands assign <area>`\
 Resize an existing subarea or create a new one.\
@@ -118,7 +122,7 @@ View all received invitations and ownership requests.\
 *Permission: lands.command.invites*
 
 `/lands leave <land | here>`\
-Leave a land. If you provide hereˋ as the argument, you'll leave the (sub)area at your current position.\
+Leave a land. If you provide `here` as the argument, you'll leave the (sub)area at your current position.\
 *Permission: lands.command.leave*
 
 `/lands chat [land] <message>`\
@@ -161,6 +165,10 @@ Teleport to a land spawn. If you don't provide a land, it will teleport you to t
 View all lands created on the server. They can be sorted by different criteria in the GUI menu.\
 *Permission: lands.command.list*
 
+`/lands top`\
+View a sorted list of all lands on the server.\
+*Permission: lands.command.top*
+
 `/lands storage`\
 Open the virtual item storage for your land. Modifying the storage will be logged in the land inbox. So other land members will be able to see what you took or put into the storage.\
 *Permission: lands.command.storage*
@@ -181,14 +189,19 @@ Teleport to a random location.\
 With this command you can [manage rentals](players/Rent-System.md). It allows you to cancel your current rental or remove tenants in exchange for a compensation etc.\
 *Permission: lands.command.rent*
 
+`/lands rent list`\
+Open the GUI menu listing all rentable areas and lands set up for purchase.\
+*Permission: lands.command.rent.list*
+
 `/lands confirmtp`\
 Confirm an unsafe teleport destination.\
 *Permission: None*
 
 ## Nations
-`/nations menu`\
-Open the nation menu of your current land.\
-*Permission: nations.command.menu*
+`/nations menu [nation]`\
+Open the nation menu of your current land. Providing `[nation]` opens the menu for a specific nation and requires an additional permission.\
+*Permission: nations.command.menu*\
+*Permission to view other nations: nations.command.menu.others*
 
 `/nations create [name]`\
 Create a new nation. Depending on the server you can also use color codes, including hex color.\
@@ -208,6 +221,10 @@ Set the capital of your nation.\
 
 `/nations relations`\
 Add/remove allies and enemies of your nation.\
+*Permission: nations.command.relations*
+
+`/nations relations`\
+Manage relations of your nation. You can add/remove allies and enemies.\
 *Permission: nations.command.relations*
 
 `/nations trust <land>`\
@@ -234,7 +251,7 @@ Leave the nation of your current land.\
 Teleport to the spawn of your nations capital.\
 *Permission: nations.command.spawn*
 
-`nations chat [nation] <message>`\
+`/nations chat [nation] <message>`\
 Send a message to all players of your nation. If the `[nation]` argument is not provided it will send a message to the nation of your current land.\
 *Permission: nations.command.chat*
 
@@ -247,7 +264,7 @@ View the level progress of your nation.\
 *Permission: nations.command.level*
 
 `/nations list`\
-View all nations created on the server. They can be sorted by different criteria in the GUI meu.\
+View all nations created on the server. They can be sorted by different criteria in the GUI menu.\
 *Permission: nations.command.list*
 
 ## Wars
@@ -260,11 +277,11 @@ Declare war against a land or nation. If the server has mutual declarations enab
 *Permission: wars.command.declare*
 
 `/wars deny`\
-Deny mutual war declaration. This commands is only available if the server has mutual declarations enabled.\
+Deny mutual war declaration. This command is only available if the server has mutual declarations enabled.\
 *Permission: wars.command.deny*
 
 `/wars info`\
-View information about the current or upcoming war./
+View information about the current or upcoming war.\
 *Permission: wars.command.info*
 
 `/wars spawn`\

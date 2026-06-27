@@ -26,35 +26,38 @@ Caution: Executing this command can lead to lands having this role multiple time
   display:
     - BLOCK_PLACE
     - BLOCK_BREAK
+    - BLOCK_IGNITE
     - PLANT
     - HARVEST
-    - BLOCK_IGNITE
+    - TRAMPLE_FARMLAND
+    - SHEAR
+    - ITEM_PICKUP
     - INTERACT_GENERAL
     - INTERACT_CONTAINER
     - INTERACT_DOOR
     - INTERACT_TRAPDOOR
     - INTERACT_MECHANISM
     - INTERACT_VILLAGER
+    - VEHICLE_USE
     - ATTACK_PLAYER
     - ATTACK_ANIMAL
     - ATTACK_MONSTER
+    - WIND_BURST
+    - LAND_ENTER
     - FLY
+    - ELYTRA
     - SPAWN_TELEPORT
     - ENDER_PEARL
-    - LAND_ENTER
-    - VEHICLE_USE
-    - ITEM_PICKUP
-    - TRAMPLE_FARMLAND
+    - PLAYER_TRUST
+    - PLAYER_SETROLE
+    - PLAYER_UNTRUST
+    - PLAYER_BAN
     - LAND_CLAIM
     - LAND_CLAIM_BORDER
     - SPAWN_SET
     - BALANCE_WITHDRAW
     - AREA_ASSIGN
     - WAR_MANAGE
-    - PLAYER_TRUST
-    - PLAYER_SETROLE
-    - PLAYER_UNTRUST
-    - PLAYER_BAN
     - SETTING_EDIT_LAND
     - SETTING_EDIT_ROLE
     - SETTING_EDIT_TAXES
@@ -220,7 +223,7 @@ Allows the role to pick up dropped items.\
 Allows the role to use ender pearls.\
 *Toggle permission: lands.role.setting.ender_pearl*\
 *Bypass permission: lands.bypass.ender_pearl*\
-*Wilderness bypass permission: lands.bypass.wilderness.enter_pearl*
+*Wilderness bypass permission: lands.bypass.wilderness.ender_pearl*
 
 * **SHEAR**\
 Allows the role to shear animals.\
@@ -324,5 +327,10 @@ Declare war with your land or surrender in the war of the land.\
 *Toggle permission: lands.role.setting.war_manage*\
 *Bypass permission: lands.bypass.war_manage*
 
+* **NATION_EDIT**\
+Allow the role to edit nation settings.\
+*Toggle permission: lands.role.setting.nation_edit*\
+*Bypass permission: lands.bypass.nation_edit*
+
 ### Bypass Role Priority
-With the permission `lands.bypass.priority` a player can bypass role priorities. That means theat they can for example untrust players with higher roles, if they have the permission to untrust any player. If they don't have this bypass permission, they won't be able to edit players with a higher role priority.
+With the permission `lands.bypass.priority` a player can bypass role priorities. That means that they can for example untrust players with higher roles, if they have the permission to untrust any player. If they don't have this bypass permission, they won't be able to edit players with a higher role priority.
