@@ -1,180 +1,130 @@
-To assign permissions to players you must install a permissions plugin, like [Luckperms](https://www.spigotmc.org/resources/28140). Below you find a list of permissions that you can assign to players or their permission groups. Please note that if a player has `/op`, they will have all permissions.
+# Permissions
 
-# Recommended Permission Setup
-You can find a recommended permission setup for players here: [Recommended Permission Setup](https://wiki.incredibleplugins.com/lands/permissions/recommended-permission-setup)
+Use a permission plugin such as LuckPerms to assign Lands permissions. Players with operator status usually have every permission, so test with real permission groups when possible.
 
-# Looking for max Chunks etc.?
-Limits such as max lands, chunks etc. are now edited in the ``player-limits.yml`` file. Read more [here](https://wiki.incredibleplugins.com/general/locale-and-config/limits).
+Limits such as max lands, chunks, members, and upkeep limits are configured in `player-limits.yml`. See the general limits guide for those.
 
-# Player Permissions
-These permissions are safe to set for your players.
+# Command Permissions
 
-## Command Permissions
-[Commands wiki page](players/Commands.md)
+| Permission | Gives access to |
+| --- | --- |
+| `lands.command.*` | All player `/lands` commands. |
+| `nations.command.*` | All player `/nations` commands. |
+| `wars.command.*` | All player `/wars` commands. |
+| `lands.admin.command.*` | All `/lands admin` commands. Staff only. |
+| `wars.admin.command.*` | All `/wars admin` commands. Staff only. |
 
-## Teleportation
-The following permissions limit all teleportation initiated by Lands. Players have them by default. However, in some cases the teleportation is initiated by executing a command. In such case they need the permission to use the command as well.
+For the exact admin command list, see [Admin Commands](../Commands.md).
 
-### Disabling Teleportation
-If you want to disable a teleportation you need to unset the permission in your permissions plugin.
-Example for LuckPerms: `/luckperms group default permission set lands.teleport.sub_area false`\
-The value `false` is important here.
+For player commands, see [Player Commands](../../players/basics/Commands.md).
 
-### Teleportation Permissions
-`lands.teleport.chunk`\
-Allow teleportation to claimed chunks via `/lands claimlist`. This permission is set by default.
+# Flag Permissions
 
-`lands.teleport.rentable`\
-Allow teleportation to rentable areas or lands setup for purchase. This permission is set by default.
+Flags have their own permission nodes.
 
-`lands.teleport.land_spawn`\
-Allow to teleport to a land spawn. This permission is set by default.
+| Flag type | Permission format | Full list |
+| --- | --- | --- |
+| Natural flag toggle permissions | `lands.setting.<flag>` | [Natural Flags](../configuration/Natural-Flags.md) |
+| Land role flag toggle permissions | `lands.role.setting.<flag>` | [Roles and Role Flags](../configuration/Roles-and-their-Flags.md) |
+| Land role flag bypass permissions | `lands.bypass.<flag>` | [Roles and Role Flags](../configuration/Roles-and-their-Flags.md) |
+| Protected wilderness role bypass permissions | `lands.bypass.wilderness.<flag>` | [Roles and Role Flags](../configuration/Roles-and-their-Flags.md) |
+| Nation role flag toggle permissions | `nations.setting.<flag>` | [Roles and Role Flags](../configuration/Roles-and-their-Flags.md) |
+| Nation role flag bypass permissions | `nations.bypass.<flag>` | [Roles and Role Flags](../configuration/Roles-and-their-Flags.md) |
+| Personal setting toggle permissions | `lands.player.setting.<flag>` | [Player Personal Settings](../configuration/Player-Personal-Settings.md) |
 
-`lands.teleport.random_teleport`\
-Allow to random teleport via `/lands wild`. This permission is set by default.
+# Teleport Permissions
 
-`lands.teleport.war`\
-Allow to teleport to war spawn via `/wars spawn`. This permission is set by default.
+These permissions limit teleport actions started by Lands. They are set to `true` by default in `plugin.yml`. If you want to block one of them, set the permission to `false` in your permission plugin.
 
-`lands.teleport.sub_area`\
-Allow to teleport to a sub area. This permission is set by default.
+Example with LuckPerms:
 
-`lands.teleport.unstuck`\
-Allow to teleport via `/lands unstuck`. This permission is set by default.
+`/lp group default permission set lands.teleport.sub_area false`
 
-## Toggle Natural Flags
-Permissions for toggleing natural flags can be found [here](../configuration/Natural-Flags.md).
+| Permission | Allows |
+| --- | --- |
+| `lands.teleport.chunk` | Teleporting to claimed chunks from `/lands claimlist`. |
+| `lands.teleport.rentable` | Teleporting to rentable areas or areas for sale. |
+| `lands.teleport.land_spawn` | Teleporting to a land spawn. |
+| `lands.teleport.random_teleport` | Random teleporting with `/lands wild`. |
+| `lands.teleport.war` | Teleporting to a war spawn with `/wars spawn`. |
+| `lands.teleport.sub_area` | Teleporting to a sub area. |
+| `lands.teleport.unstuck` | Teleporting with `/lands unstuck`. |
 
-## Toggle Role Flags
-Permissions for toggleing role flags can be found [here](../configuration/Roles-and-their-Flags.md).
+# General Bypass Permissions
 
-## Toggle Personal Flags
-Permissions for toggleing personal flags can be found [here](../configuration/Player-Personal-Settings.md).
+| Permission | Allows |
+| --- | --- |
+| `lands.bypass.*` | All Lands bypass permissions. Staff only. |
+| `lands.bypass.selection` | Bypass other plugins cancelling a Lands selection. |
+| `lands.bypass.land_claim_border` | Bypass the configured claim distance to other lands. |
+| `lands.bypass.shape` | Bypass the configured claim shape restriction. |
+| `lands.bypass.encirclement` | Bypass encirclement prevention. |
+| `lands.bypass.member.untrust` | Untrust players or remove invites in other players' lands. |
+| `lands.bypass.spawn.private` | Teleport to private land spawns. |
+| `lands.bypass.expiration` | Bypass land expiration. Requires LuckPerms support. |
+| `lands.bypass.priority` | Ignore role priority checks when managing members or roles. |
+| `lands.bypass.wilderness.worldedit` | Use WorldEdit in worlds protected by wilderness restrictions. |
 
-# Staff Permissions
-These permissions should only be set for your staff.
+# Cooldown Bypass Permissions
 
-## Admin Commands
-See [here](../Commands.md).
+| Permission | Allows |
+| --- | --- |
+| `lands.bypass.cooldown.wild` | Bypass `/lands wild` cooldown. |
+| `lands.bypass.cooldown.rename_land` | Bypass `/lands rename` cooldown. |
+| `lands.bypass.cooldown.teleport` | Bypass chunk teleport cooldown. |
+| `lands.bypass.cooldown.spawn` | Bypass `/lands spawn` cooldown. |
+| `lands.bypass.cooldown.unstuck` | Bypass `/lands unstuck` cooldown. |
+| `nations.bypass.cooldown.rename_nation` | Bypass `/nations rename` cooldown. |
 
-## Bypass Permissions
-These permissions allow you to edit other players lands etc.
+# War Bypass Permissions
 
-### Action Bypass
-Bypass land protections such as block break, entering etc.: [here](../configuration/Roles-and-their-Flags.md#action-flags)
+| Permission | Allows |
+| --- | --- |
+| `lands.bypass.war.trust` | Trust players during war. |
+| `lands.bypass.war.claim` | Claim chunks during war. |
+| `lands.bypass.war.unclaim` | Unclaim chunks during war. |
+| `lands.bypass.cmd.war` | Bypass the command blacklist from `wars.yml`. |
 
-### Selection
-`lands.bypass.selection`\
-Bypass other plugins, such as WorldGuard, cancelling a selection creation.
+# Command Blacklist Bypass Permissions
 
-### Teleport Cooldowns
-`lands.bypass.cooldown.wild`\
-Bypass the `/lands wild` cooldown.
+| Permission | Allows |
+| --- | --- |
+| `lands.bypass.cmd.untrusted.*` | Bypass the untrusted-player command blacklist from `config.yml`. |
+| `lands.bypass.cmd.untrusted.<command>` | Bypass the untrusted-player blacklist for one command. |
+| `lands.bypass.cmd.general.*` | Bypass the general command blacklist from `config.yml`. |
+| `lands.bypass.cmd.general.<command>` | Bypass the general blacklist for one command. |
 
-`lands.bypass.cooldown.rename_land`\
-Bypass the `/lands rename` cooldown.
+Replace `<command>` with the command name without `/`.
 
-`lands.bypass.cooldown.teleport`\
-Bypass the chunk teleport cooldown via `/lands claimlist`.
+# Teleport Bypass Permissions
 
-`lands.bypass.cooldown.spawn`\
-Bypass the `/lands spawn` cooldown.
+| Permission | Allows |
+| --- | --- |
+| `lands.bypass.teleport.delay` | Skip teleport delay. |
+| `lands.bypass.teleport.cmd` | Execute commands while waiting for teleportation. |
 
-`lands.bypass.cooldown.unstuck`\
-Bypass the `/lands unstuck` cooldown.
+# Non-command Admin Permissions
 
-`nations.bypass.cooldown.rename_nation`\
-Bypass the `/nations rename` cooldown.
+| Permission | Allows |
+| --- | --- |
+| `lands.admin.*` | All Lands admin actions. Staff only. |
+| `lands.admin.disabled-features` | Use some features that are disabled for regular players, such as claiming in disabled worlds or setting rental areas while rent is disabled. |
+| `lands.admin.command.edit` | Edit other lands through `/lands edit <land>` and admin command contexts. |
+| `lands.admin.land_delete` | Delete other players' lands or unclaim chunks from them. |
+| `lands.admin.land_setowner` | Use `/lands setowner` for lands the player does not own. |
+| `lands.admin.setting_edit_land` | Edit natural flags of other players' lands. |
+| `lands.admin.setting_edit_role` | Edit role flags of other players' lands. |
+| `lands.admin.setting_edit_taxes` | Edit tax settings of other players' lands. |
+| `lands.admin.sign.top` | Create and edit leaderboard signs. |
+| `nations.admin.nation_edit` | Edit other players' nations from the `/lands edit <land>` context. |
+| `nations.command.menu.others` | Open the menu of a specific nation with `/nations menu <nation>`. |
 
-### War
-`lands.bypass.war.trust`\
-Allow trusting other players during war.
+# Wildcard Groups
 
-`lands.bypass.war.claim`\
-Allow claiming during war.
+Wildcard groups are useful for staff, but use them carefully.
 
-`lands.bypass.war.unclaim`\
-Allow unclaiming chunks during war.
-
-### Claiming
-`lands.bypass.shape`\
-Bypass the configured claim shape restriction from `config.yml`.
-
-`lands.bypass.encirclement`\
-Bypass the encirclement prevention that stops players from fully surrounding another land's chunks.
-
-### Members
-`lands.bypass.member.untrust`\
-Untrust players or remove invites in other players' lands.
-
-### Spawn
-`lands.bypass.spawn.private`\
-Teleport to private land spawns.
-
-### Wilderness
-`lands.bypass.wilderness.worldedit`\
-Use WorldEdit in worlds where wilderness protection is enabled (`disallow-wilderness_list` in `config.yml`).
-
-### Options
-`lands.bypass.option.force-near`\
-Bypass the `force-near` option from `config.yml`.
-
-### Command Blacklist
-`lands.bypass.cmd.untrusted.*`\
-Bypass blacklisted commands for untrusted players from `config.yml`. Use `lands.bypass.cmd.untrusted.<command>` while replacing `<command>` with a command to bypass the restriction for a specific command.
-
-`lands.bypass.cmd.general.*`\
-Bypass blacklisted commands for untrusted **and trusted** players from `config.yml`. Use `lands.bypass.cmd.general.<command>` while replacing `<command>` with a command to bypass the restriction for a specific command.
-
-`lands.bypass.cmd.war`\
-Bypass the war command blacklist from `wars.yml`.
-
-### Expiration
-`lands.bypass.expiration`\
-Bypass land expiration. This only works, if you use LuckPerms for your permission management.
-
-### Teleportation
-`lands.bypass.teleport.delay`\
-Bypass the wait time before teleportation.
-
-`lands.bypass.teleport.cmd`\
-Execute commands while waiting for the teleportation to start.
-
-## Admin & Moderator Utilities
-See [here](../Tools.md).
-
-## Non-command Admin Permissions
-These permissions extend admin capabilities beyond direct command execution.
-
-`lands.admin.disabled-features`\
-Allow using features that are disabled for regular players, such as setting areas up for rental or claiming in worlds where it is disabled in `config.yml`.
-
-`lands.admin.command.wild`\
-Execute `/lands wild <world> <player>` to random-teleport another player.
-
-`lands.admin.land_delete`\
-Delete other players' lands or unclaim chunks from them.
-
-`lands.admin.land_setowner`\
-Execute `/lands setowner` for lands the player does not own.
-
-`lands.admin.setting_edit_land`\
-Edit natural flag settings of other players' lands.
-
-`lands.admin.setting_edit_role`\
-Edit role settings of other players' lands.
-
-`lands.admin.setting_edit_taxes`\
-Edit tax settings of other players' lands.
-
-`lands.admin.sign.top`\
-Create and edit [leaderboard signs](../configuration/Leaderboards.md).
-
-`lands.mod.command.chatspy`\
-Access `/lands chatspy` to spy on land and nation chats. See [Tools](../Tools.md) for usage.
-
-`nations.admin.nation_edit`\
-Edit other players' nations from the `/lands edit <land>` context.
-
-`nations.command.menu.others`\
-Open the nation menu for a specific nation via `/nations menu <nation>`.
+| Permission | Gives |
+| --- | --- |
+| `lands.*` | All Lands permissions listed under the Lands permission tree. |
+| `nations.*` | All Nations permissions listed under the Nations permission tree. |
+| `wars.*` | All Wars permissions listed under the Wars permission tree. |

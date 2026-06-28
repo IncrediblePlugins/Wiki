@@ -1,336 +1,104 @@
-Lands has a feature packed role system which allows each land to adjust flags for each role and create new roles for your land.
-Players can change role flags by opening their land menu (`/lands`) and then navigating to the roles menu. 
-You as an administrator can edit/add default roles. Wilderness flags can be edited in the `/lands admin wilderness` menu.
+# Roles and Role Flags
 
-Whenever a new flag is added to Lands, all existing Lands will apply the flag, if specified by the flag author.              
-But for future land creations, you need to configure it correctly here. Lands will always send you a popup in console and on  
-admin in game accounts, if there is a new flag available.       
+Roles decide what players can do in lands, areas, and nations. Land owners edit these in the land menu. Server admins configure the default roles in `roles.yml`.
 
-# Reset flag(s) to their defined state from roles.yml
-`/lands admin land <land | *> resetFlag <flag | all>`\
-Keep in mind that changes to the roles.yml file require a server restart or reload.
-This only affects the following roles: owner, member, visitor, nation, ally
+Role flags are split into action flags and management flags.
 
-# Set flag states
-`/lands admin land <land | *> setflag <flag> <state> <apply-to-visitors>`\
-This also affects roles created by players. If apply-to-visitors is false, it won't set the flag for the visitor role.
-             
-# Add a custom role from roles.yml to a land or all existing lands
->/lands admin land <land | *> addRole <role>\
-Caution: Executing this command can lead to lands having this role multiple times. For example, if an existing land already got this role assigned at land creation or if you execute this command multiple times with the same role. Since lands can change the name of a role, there is no unique identification possible by name.
+Action flags control gameplay actions, such as breaking blocks or opening containers.
 
-# Hide / show flags from the flags menu
-```yaml
-  # Which flags should be displayed in the role settings menu?
-  # You can still set default values below and hide them by removing them from this list.
-  display:
-    - BLOCK_PLACE
-    - BLOCK_BREAK
-    - BLOCK_IGNITE
-    - PLANT
-    - HARVEST
-    - TRAMPLE_FARMLAND
-    - SHEAR
-    - ITEM_PICKUP
-    - INTERACT_GENERAL
-    - INTERACT_CONTAINER
-    - INTERACT_DOOR
-    - INTERACT_TRAPDOOR
-    - INTERACT_MECHANISM
-    - INTERACT_VILLAGER
-    - VEHICLE_USE
-    - ATTACK_PLAYER
-    - ATTACK_ANIMAL
-    - ATTACK_MONSTER
-    - WIND_BURST
-    - LAND_ENTER
-    - FLY
-    - ELYTRA
-    - SPAWN_TELEPORT
-    - ENDER_PEARL
-    - PLAYER_TRUST
-    - PLAYER_SETROLE
-    - PLAYER_UNTRUST
-    - PLAYER_BAN
-    - LAND_CLAIM
-    - LAND_CLAIM_BORDER
-    - SPAWN_SET
-    - BALANCE_WITHDRAW
-    - AREA_ASSIGN
-    - WAR_MANAGE
-    - SETTING_EDIT_LAND
-    - SETTING_EDIT_ROLE
-    - SETTING_EDIT_TAXES
-    - SETTING_EDIT_VARIOUS
-```
+Management flags control land management, such as trusting players, setting roles, changing taxes, or declaring war.
 
-# Edit / add default Roles
-You can find the configuration options in your `roles.yml` located in `/plugins/lands`. In this file you can edit existing default roles or add your own default roles. These roles will apply to new land creations.
+# Configuration
 
-Example Configuration of a custom default role:
-````yaml
-    yourCustomDefaultRole:
-      name: '&eCustomDefaultRole'
-      # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
-      icon: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFhZGZkZjA3MTE3NWFkYWQ2NDRmZTRiM2E5NzMxYWM2YThmYTQ3NTExNjJlODEzOGM4OTlmYmFhNWZmMGI5In19fQ=='
-      # Default flag values. Please note that these only apply to new land creations. Players will be able to change them later in their land menu if the flag is listed under 'display' above.
-      default:
-        - BLOCK_PLACE
-        - BLOCK_BREAK
-        - INTERACT_GENERAL
-        - INTERACT_DOOR
-        - INTERACT_CONTAINER
-        - INTERACT_MECHANISM
-        - INTERACT_VILLAGER
-        - BLOCK_IGNITE
-        - ATTACK_PLAYER
-        - ATTACK_ANIMAL
-        - FLY
-        - LAND_ENTER
-        - SPAWN_TELEPORT
-        - VEHICLE_USE
-        - ITEM_PICKUP
-````
+Default roles are configured in `roles.yml`.
 
-# Flags
-## Action Flags
-Actions flags represent players actions. Each flag has their own bypass and toggle permission, which is required for players to toggle the flag. The wilderness bypass permission allows a player to bypass flags set in the wilderness via `/lands admin menu`.
+`display` controls which role flags appear in the role menu.
 
-* **BLOCK_PLACE**\
-Allows the role to place blocks.\
-*Toggle permission: lands.role.setting.block_place*\
-*Bypass permission: lands.bypass.block_place*\
-*Wilderness bypass permission: lands.bypass.wilderness.block_place*
+Each default role has a `default` list. These flags are enabled when a new land is created. Existing lands are not changed until you reset or edit them.
 
-* **BLOCK_BREAK**\
-Allows the role to break blocks.\
-*Toggle permission: lands.role.setting.block_break*\
-*Bypass permission: lands.bypass.block_break*\
-*Wilderness bypass permission: lands.bypass.wilderness.block_break*
+Changing `roles.yml` requires a reload or restart.
 
-* **PLANT**\
-Allows the role to plant crops, saplings, etc.\
-*Toggle permission: lands.role.setting.plant*\
-*Bypass permission: lands.bypass.plant*\
-*Wilderness bypass permission: lands.bypass.wilderness.plant*
+# Admin Commands
 
-* **HARVEST**\
-Allows the role to harvest crops, etc.\
-*Toggle permission: lands.role.setting.harvest*\
-*Bypass permission: lands.bypass.harvest*\
-*Wilderness bypass permission: lands.bypass.wilderness.harvest*
+| Command | What it does | Permission |
+| --- | --- | --- |
+| `/lands admin land <land | *> setflag <flag> <true | false> <visitor>` | Sets a role flag or natural flag in one land, or all lands with `*`. | `lands.admin.command.land.setflag` |
+| `/lands admin land <land | *> resetflag <flag | all>` | Resets one flag or all flags to config defaults. | `lands.admin.command.land.resetflag` |
+| `/lands admin land <land | *> addrole <role>` | Adds a custom role from `roles.yml` to one land or all lands. | `lands.admin.command.land.addrole` |
 
-* **INTERACT_GENERAL**\
-Allows all types of interaction that are not covered by the other `INTERACT_<type>` flags.\
-*Toggle permission: lands.role.setting.interact_general*\
-*Bypass permission: lands.bypass.interact_general*\
-*Wilderness bypass permission: lands.bypass.wilderness.interact_general*
+Be careful with `addrole`: player-created lands can rename roles, so running it multiple times can add duplicate roles.
 
-* **INTERACT_CONTAINER**\
-Allows the role to open containers like chests, etc.\
-*Toggle permission: lands.role.setting.interact_container*\
-*Bypass permission: lands.bypass.interact_container*\
-*Wilderness bypass permission: lands.bypass.wilderness.interact_container*
+# Permission Format
 
-* **INTERACT_DOOR**\
-Allows the role to open and close doors.\
-*Toggle permission: lands.role.setting.interact_door*\
-*Bypass permission: lands.bypass.interact_door*\
-*Wilderness bypass permission: lands.bypass.wilderness.interact_door*
+| Type | Format |
+| --- | --- |
+| Allow players to toggle a land role flag | `lands.role.setting.<flag>` |
+| Bypass a land role flag in claimed land | `lands.bypass.<flag>` |
+| Bypass a land role flag in protected wilderness | `lands.bypass.wilderness.<flag>` |
+| Allow players to toggle a nation role flag | `nations.setting.<flag>` |
+| Bypass a nation role flag | `nations.bypass.<flag>` |
 
-* **INTERACT_TRAPDOOR**\
-Allows the role to open and close trapdoors.\
-*Toggle permission: lands.role.setting.interact_trapdoor*\
-*Bypass permission: lands.bypass.interact_trapdoor*\
-*Wilderness bypass permission: lands.bypass.wilderness.interact_trapdoor*
-  
-* **INTERACT_MECHANISM**\
-Allows the role to use redstone, levers, pressure plates, etc.\
-*Toggle permission: lands.role.setting.interact_mechanism*\
-*Bypass permission: lands.bypass.interact_mechanism*\
-*Wilderness bypass permission: lands.bypass.wilderness.interact_mechanism*
+`lands.bypass.priority` lets staff ignore role priority checks. Without it, a player can only manage members with a lower role priority when the action uses role priority.
 
-* **INTERACT_VILLAGER**\
-Allows the role to interact and trade with villagers.\
-*Toggle permission: lands.role.setting.interact_villager*\
-*Bypass permission: lands.bypass.interact_villager*\
-*Wilderness bypass permission: lands.bypass.wilderness.interact_villager*
+# Action Flags
 
-* **BLOCK_IGNITE**\
-Allows the role to ignite blocks / set blocks on fire.\
-*Toggle permission: lands.role.setting.block_ignite*\
-*Bypass permission: lands.bypass.block_ignite*\
-*Wilderness bypass permission: lands.bypass.wilderness.block_ignite*
+| Flag | What it allows | Toggle permission | Bypass permission | Wilderness bypass |
+| --- | --- | --- | --- | --- |
+| `BLOCK_BREAK` | Break blocks. | `lands.role.setting.block_break` | `lands.bypass.block_break` | `lands.bypass.wilderness.block_break` |
+| `BLOCK_PLACE` | Place blocks. | `lands.role.setting.block_place` | `lands.bypass.block_place` | `lands.bypass.wilderness.block_place` |
+| `ATTACK_PLAYER` | Attack players. | `lands.role.setting.attack_player` | `lands.bypass.attack_player` | `lands.bypass.wilderness.attack_player` |
+| `ATTACK_ANIMAL` | Attack animals. | `lands.role.setting.attack_animal` | `lands.bypass.attack_animal` | `lands.bypass.wilderness.attack_animal` |
+| `ATTACK_MONSTER` | Attack monsters. If disabled, monsters also cannot damage players of that role. | `lands.role.setting.attack_monster` | `lands.bypass.attack_monster` | `lands.bypass.wilderness.attack_monster` |
+| `BLOCK_IGNITE` | Ignite blocks and place fire. | `lands.role.setting.block_ignite` | `lands.bypass.block_ignite` | `lands.bypass.wilderness.block_ignite` |
+| `INTERACT_GENERAL` | Use interactions not covered by a more specific interaction flag. | `lands.role.setting.interact_general` | `lands.bypass.interact_general` | `lands.bypass.wilderness.interact_general` |
+| `INTERACT_MECHANISM` | Use redstone, levers, pressure plates, and similar blocks. | `lands.role.setting.interact_mechanism` | `lands.bypass.interact_mechanism` | `lands.bypass.wilderness.interact_mechanism` |
+| `INTERACT_CONTAINER` | Open containers such as chests. | `lands.role.setting.interact_container` | `lands.bypass.interact_container` | `lands.bypass.wilderness.interact_container` |
+| `INTERACT_DOOR` | Open and close doors. | `lands.role.setting.interact_door` | `lands.bypass.interact_door` | `lands.bypass.wilderness.interact_door` |
+| `INTERACT_TRAPDOOR` | Open and close trapdoors. | `lands.role.setting.interact_trapdoor` | `lands.bypass.interact_trapdoor` | `lands.bypass.wilderness.interact_trapdoor` |
+| `INTERACT_VILLAGER` | Trade with villagers. | `lands.role.setting.interact_villager` | `lands.bypass.interact_villager` | `lands.bypass.wilderness.interact_villager` |
+| `FLY` | Fly in the area if flight control is enabled in config. | `lands.role.setting.fly` | `lands.bypass.fly` | `lands.bypass.wilderness.fly` |
+| `ELYTRA` | Use elytras in the area. | `lands.role.setting.elytra` | `lands.bypass.elytra` | `lands.bypass.wilderness.elytra` |
+| `SPAWN_TELEPORT` | Teleport to the land spawn. | `lands.role.setting.spawn_teleport` | `lands.bypass.spawn_teleport` | `lands.bypass.wilderness.spawn_teleport` |
+| `LAND_ENTER` | Enter the land area. | `lands.role.setting.land_enter` | `lands.bypass.land_enter` | `lands.bypass.wilderness.land_enter` |
+| `VEHICLE_USE` | Place and use vehicles. | `lands.role.setting.vehicle_use` | `lands.bypass.vehicle_use` | `lands.bypass.wilderness.vehicle_use` |
+| `ITEM_PICKUP` | Pick up dropped items. | `lands.role.setting.item_pickup` | `lands.bypass.item_pickup` | `lands.bypass.wilderness.item_pickup` |
+| `ENDER_PEARL` | Use ender pearls. | `lands.role.setting.ender_pearl` | `lands.bypass.ender_pearl` | `lands.bypass.wilderness.ender_pearl` |
+| `TRAMPLE_FARMLAND` | Trample farmland. | `lands.role.setting.trample_farmland` | `lands.bypass.trample_farmland` | `lands.bypass.wilderness.trample_farmland` |
+| `HARVEST` | Harvest crops. | `lands.role.setting.harvest` | `lands.bypass.harvest` | `lands.bypass.wilderness.harvest` |
+| `SHEAR` | Shear animals. | `lands.role.setting.shear` | `lands.bypass.shear` | `lands.bypass.wilderness.shear` |
+| `PLANT` | Plant crops and saplings. | `lands.role.setting.plant` | `lands.bypass.plant` | `lands.bypass.wilderness.plant` |
+| `WIND_BURST` | Use wind charges and maces with Wind Burst. | `lands.role.setting.wind_burst` | `lands.bypass.wind_burst` | `lands.bypass.wilderness.wind_burst` |
+| `NO_DAMAGE` | Makes players with the role immune to damage. This flag targets admin use and is hidden by default. | `lands.role.setting.no_damage` | `lands.bypass.no_damage` | `lands.bypass.wilderness.no_damage` |
 
-* **ATTACK_PLAYER**\
-Should the role be able to attack players? This flag may not always take effect, if combat-tag is enabled in the config.\
-*Toggle permission: lands.role.setting.attack_player*\
-*Bypass permission: lands.bypass.attack_player*\
-*Wilderness bypass permission: lands.bypass.wilderness.attack_player*\
-  * If disabled: The role won't be able to attack anyone.
-  * If enabled: The role will be able to attack other players that are also allowed to attack this role in the given claim.
+# Management Flags
 
-* **ATTACK_ANIMAL**\
-Allows the role to attack animals.\
-*Toggle permission: lands.role.setting.attack_animal*\
-*Bypass permission: lands.bypass.attack_animal*\
-*Wilderness bypass permission: lands.bypass.wilderness.attack_animal*
+| Flag | What it allows | Toggle permission | Bypass permission |
+| --- | --- | --- | --- |
+| `PLAYER_TRUST` | Trust players to the land. | `lands.role.setting.player_trust` | `lands.bypass.player_trust` |
+| `PLAYER_UNTRUST` | Untrust players with a lower role priority. | `lands.role.setting.player_untrust` | `lands.bypass.player_untrust` |
+| `PLAYER_SETROLE` | Change roles of players with a lower role priority. | `lands.role.setting.player_setrole` | `lands.bypass.player_setrole` |
+| `LAND_CLAIM` | Claim chunks for the land. | `lands.role.setting.land_claim` | `lands.bypass.land_claim` |
+| `LAND_CLAIM_BORDER` | Claim directly next to another land, ignoring the configured claim distance. | `lands.role.setting.land_claim_border` | `lands.bypass.land_claim_border` |
+| `SPAWN_SET` | Set the land spawn. | `lands.role.setting.spawn_set` | `lands.bypass.spawn_set` |
+| `SETTING_EDIT_LAND` | Edit natural land flags. | `lands.role.setting.setting_edit_land` | `lands.bypass.setting_edit_land` |
+| `SETTING_EDIT_ROLE` | Edit role settings for roles with a lower priority. | `lands.role.setting.setting_edit_role` | `lands.bypass.setting_edit_role` |
+| `SETTING_EDIT_TAXES` | Edit tax settings. Roles with this flag do not pay taxes. | `lands.role.setting.setting_edit_taxes` | `lands.bypass.setting_edit_taxes` |
+| `SETTING_EDIT_VARIOUS` | Rename the land and change its title. | `lands.role.setting.setting_edit_various` | `lands.bypass.setting_edit_various` |
+| `BALANCE_WITHDRAW` | Withdraw money from the land bank. | `lands.role.setting.balance_withdraw` | `lands.bypass.balance_withdraw` |
+| `AREA_ASSIGN` | Create sub areas and assign selections to areas. | `lands.role.setting.area_assign` | `lands.bypass.area_assign` |
+| `PLAYER_BAN` | Ban players from the land. | `lands.role.setting.player_ban` | `lands.bypass.player_ban` |
+| `WAR_MANAGE` | Declare wars, manage wars, and surrender for the land. | `lands.role.setting.war_manage` | `lands.bypass.war_manage` |
 
-* **FLY**\
-Allow the role to fly within an area. Fly will be disabled if the player is not allowed to fly at a given location. If they enter a area where they're allowed to fly, Lands will automatically re-enable their fly (if fly was active before).\
-This is compatible with every fly plugin.\
-*Toggle permission: lands.role.setting.fly*\
-*Bypass permission: lands.bypass.fly*\
-*Wilderness bypass permission: lands.bypass.wilderness.fly*
+# Nation Role Flag
 
-* **ELYTRA**\
-Allow the role to use elytras within an area.\
-*Toggle permission: lands.role.setting.elytra*\
-*Bypass permission: lands.bypass.elytra*\
-*Wilderness bypass permission: lands.bypass.wilderness.elytra*
+| Flag | What it allows | Toggle permission | Bypass permission |
+| --- | --- | --- | --- |
+| `NATION_EDIT` | Edit nation settings. | `nations.setting.nation_edit` | `nations.bypass.nation_edit` |
 
-* **WIND_BURST**\
-  Allow the role to use the wind burst enchantment with a mace attack or wind charge items.\
-  *Toggle permission: lands.role.setting.wind_burst*\
-  *Bypass permission: lands.bypass.wind_burst*\
-  *Wilderness bypass permission: lands.bypass.wilderness.wind_burst*
+The nation flag uses `nations.*` permissions because it belongs to the nation module, not normal land role settings.
 
-* **LAND_ENTER**\
-Allows the role to enter a area.\
-*Toggle permission: lands.role.setting.land_enter*\
-*Bypass permission: lands.bypass.land_enter*\
-*Wilderness bypass permission: lands.bypass.wilderness.land_enter*
+# War Interaction
 
-* **SPAWN_TELEPORT**\
-Allows the role to teleport to the land spawn.\
-*Toggle permission: lands.role.setting.spawn_teleport*\
-*Bypass permission: lands.bypass.spawn_teleport*\
-*Wilderness bypass permission: lands.bypass.wilderness.spawn_teleport*
+`wars.yml` uses role flags in `invading.flags.role-flags_list`. These flags are granted to invaders while they are fighting in enemy land.
 
-* **VEHICLE_USE**\
-Allows the role to use or place vehicles in the area.\
-*Toggle permission: lands.role.setting.vehicle_use*\
-*Bypass permission: lands.bypass.vehicle_use*\
-*Wilderness bypass permission: lands.bypass.wilderness.vehicle_use*
-
-* **ITEM_PICKUP**\
-Allows the role to pick up dropped items.\
-*Toggle permission: lands.role.setting.item_pickup*\
-*Bypass permission: lands.bypass.item_pickup*\
-*Wilderness bypass permission: lands.bypass.wilderness.item_pickup*
-
-* **ENDER_PEARL**\
-Allows the role to use ender pearls.\
-*Toggle permission: lands.role.setting.ender_pearl*\
-*Bypass permission: lands.bypass.ender_pearl*\
-*Wilderness bypass permission: lands.bypass.wilderness.ender_pearl*
-
-* **SHEAR**\
-Allows the role to shear animals.\
-*Toggle permission: lands.role.setting.shear*\
-*Bypass permission: lands.bypass.shear*\
-*Wilderness bypass permission: lands.bypass.wilderness.shear*
-
-* **ATTACK_MONSTER**\
-Allows the role to attack monsters.
-If disabled: Monsters also won't be able to damage the players of the role.\
-*Toggle permission: lands.role.setting.attack_monster*\
-*Bypass permission: lands.bypass.attack_monster*\
-*Wilderness bypass permission: lands.bypass.wilderness.attack_monster*
-
-* **TRAMPLE_FARMLAND**\
-Allows the role to trample farmland.\
-*Toggle permission: lands.role.setting.trample_farmland*\
-*Bypass permission: lands.bypass.trample_farmland*\
-*Wilderness bypass permission: lands.bypass.wilderness.trample_farmland*
-  
-* **NO_DAMAGE**\
-Players of the role won't get any damage from any damage cause. This flag is hidden by default.\
-*Toggle permission: lands.role.setting.no_damage*\
-*Bypass permission: None*\
-*Wilderness bypass permission: None*
-
-## Management Flags
-Management flags will allow players to edit flags and options for the land. Each flag has their own toggle permission, which is required for players to be able to toggle the flag. The bypass permission allows server admins to execute these management operations for other lands.
-
-* **PLAYER_TRUST**\
-Allow the role to trust other players.\
-*Toggle permission: lands.role.setting.player_trust*\
-*Bypass permission: lands.bypass.player_trust*
-
-* **PLAYER_SETROLE**\
-Allow the role to set roles for trusted players.
-They can only edit players which have a lower role (priority) than their own.\
-*Toggle permission: lands.role.setting.player_setrole*\
-*Bypass permission: lands.bypass.player_setrole*
-
-* **PLAYER_UNTRUST**\
-Allow the role to untrust players.
-They can only untrust players which have a lower role (priority) than their own.\
-*Toggle permission: lands.role.setting.player_untrust*\
-*Bypass permission: lands.bypass.player_untrust*
-
-* **PLAYER_BAN**\
-Allow the role to ban players.
-They can only ban players which have a lower role (priority) than their own.\
-*Toggle permission: lands.role.setting.player_ban*\
-*Bypass permission: lands.bypass.player_ban*
-
-* **SETTING_EDIT_LAND**\
-Allow the role to edit natural land flags (like mob spawning etc.)\
-*Toggle permission: lands.role.setting.setting_edit_land*\
-*Bypass permission: lands.bypass.setting_edit_land*
-
-* **SETTING_EDIT_ROLE**\
-Allow the role to edit settings and flags of roles which have a lower priority than their own role.\
-*Toggle permission: lands.role.setting.setting_edit_role*\
-*Bypass permission: lands.bypass.setting_edit_role*
-
-* **SETTING_EDIT_TAXES**\
-Allow the role to edit taxes of the area. Roles with that flag won't pay taxes.
-Note: It is recommended to give this permission only to trustworthy players in your land.\
-*Toggle permission: lands.role.setting.setting_edit_taxes*\
-*Bypass permission: lands.bypass.setting_edit_taxes*
-
-* **SETTING_EDIT_VARIOUS**\
-Allow role to set a new name for the land and to change the title.\
-*Toggle permission: lands.role.setting.setting_edit_various*\
-*Bypass permission: lands.bypass.setting_edit_various*
-
-* **LAND_CLAIM**\
-Allow the role to claim chunks for the land.\
-*Toggle permission: lands.role.setting.land_claim*\
-*Bypass permission: lands.bypass.land_claim*
-
-* **AREA_ASSIGN**\
-Create sub areas and assign a selection to a sub area (`/lands selection assign <area>`).\
-*Toggle permission: lands.role.setting.area_assign*\
-*Bypass permission: lands.bypass.area_assign*
-
-* **LAND_CLAIM_BORDER**\
-The players will be able to claim directly near your land, ignoring the chunk distance from config.\
-*Toggle permission: lands.role.setting.land_claim_border*\
-*Bypass permission: lands.bypass.land_claim_border*
-
-* **SPAWN_SET**\
-Allow the players of the role to change the spawn.\
-*Toggle permission: lands.role.setting.spawn_set*\
-*Bypass permission: lands.bypass.spawn_set*
-
-* **BALANCE_WITHDRAW**\
-Withdraw balance from the land bank (`/lands withdraw`).\
-*Toggle permission: lands.role.setting.balance_withdraw*\
-*Bypass permission: lands.bypass.balance_withdraw*
-
-* **WAR_MANAGE**\
-Declare war with your land or surrender in the war of the land.\
-*Toggle permission: lands.role.setting.war_manage*\
-*Bypass permission: lands.bypass.war_manage*
-
-* **NATION_EDIT**\
-Allow the role to edit nation settings.\
-*Toggle permission: lands.role.setting.nation_edit*\
-*Bypass permission: lands.bypass.nation_edit*
-
-### Bypass Role Priority
-With the permission `lands.bypass.priority` a player can bypass role priorities. That means that they can for example untrust players with higher roles, if they have the permission to untrust any player. If they don't have this bypass permission, they won't be able to edit players with a higher role priority.
+Adding `BLOCK_BREAK` or `BLOCK_PLACE` allows all block breaking or placing during war. To allow only specific blocks, keep those flags out of the list and use `block-break_list` or `block-place_list` instead.

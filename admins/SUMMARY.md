@@ -7,7 +7,6 @@
 * [Limits](https://wiki.incredibleplugins.com/general/locale-and-config/limits)
 * [Frequently asked Questions](configuration/Frequently-asked-Questions.md)
 * [Database](configuration/Database.md)
-* [Playtime Rewards](configuration/Playtime-Rewards.md)
 * [Leaderboards](configuration/Leaderboards.md)
 * [Roles and their Flags](configuration/Roles-and-their-Flags.md)
 * [Natural flags](configuration/Natural-Flags.md)
@@ -29,7 +28,7 @@
 * [Recommendation](permissions/Recommended-Permission-Setup.md)
 * [Player Commands](../players/basics/Commands.md)
 * [Admin Commands](Commands.md)
-* [Other Permissions](permissions/Permissions.md)
+* [Permissions](permissions/Permissions.md)
 * [Luckperms Context](permissions/Luckperms-Context.md)
 
 ## Admin & Moderation

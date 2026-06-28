@@ -1,135 +1,68 @@
-You can configure these flags inside your `config.yml` file.\
-Options: 
-* default_list
-* display_list
+# Natural Flags
 
-Wilderness flags can be edited in the `/lands admin menu` menu.
+Natural flags control land behavior that is not tied to a player role, such as mob spawning, fire spread, water flow, and special admin states.
 
-# Reset flag(s) to their defined state from config.yml:
-`/lands admin land <land | *> resetflag <flag | all>`\
-Keep in mind that changing flags in the configuration files requires a server reload / restart.\
-*Permission: lands.admin.command.land.resetflag*
+Players can toggle visible natural flags in their land menu if they have the matching `lands.setting.<flag>` permission and a role that can edit land settings. Server admins can also edit them from `/lands admin menu` for wilderness settings.
 
-# Flags
-Each flag has a toggle permission, which is required for players to be able to toggle the flag.
+# Configuration
 
-* **ENTITY_GRIEFING**\
-Allow entities to grief blocks?\
-*Toggle permission: lands.setting.entity_griefing*
+Natural flags are configured in `config.yml` under `chunk.land-flags`.
 
-* **TNT_GRIEFING**\
-Allow tnt to destroy blocks?\
-*Toggle permission: lands.setting.tnt_griefing*
+`default_list` sets the natural flags that are enabled for newly created lands.
 
-* **PISTON_GRIEFING**\
-Allow pistons from a wilderness to push into the area?
-This should be set to false, since it protects against griefing from other players.\
-*Toggle permission: lands.setting.piston_griefing*
+`display_list` controls which natural flags appear in the player menu. Hiding a flag from this list does not remove it from the plugin. You can still set its default value in config or change it with admin commands.
 
-* **MONSTER_SPAWN**\
-Should monsters spawn? This does not include spawners by default.
-To include spawners, you need to enable the include-spawners option.\
-*Toggle permission: lands.setting.monster_spawn*
+Changing flag defaults in config requires a reload or restart and only affects new lands, unless you reset existing lands.
 
-* **PHANTOM_SPAWN**\
-Should phantoms spawn? This does not include spawners by default.
-* To include spawners, you need to enable the include-spawners option.\
-*Toggle permission: lands.setting.phantom_spawn*
+# Admin Commands
 
-* **WITHER_ATTACK_ANIMAL**\
-Should withers be able to damage animals? This flags gives you more control over mob farms.\
-*Toggle permission: lands.setting.wither_attack_animal*
+`/lands admin land <land | *> setflag <flag> <true | false> <visitor>`
 
-* **ANIMAL_SPAWN**\
-Should animals spawn? This does not include spawners.\
-*Toggle permission: lands.setting.animal_spawn*
+Sets a role flag or natural flag in one land, or all lands with `*`.
 
-* **WATERFLOW_ALLOW**\
-Allow water to flow from wilderness or other claims?
-This should be set to false, since it protects against griefing from other players.\
-*Toggle permission: lands.setting.waterflow_allow*
+`/lands admin land <land | *> resetflag <flag | all>`
 
-* **LAVAFLOW_ALLOW**\
-  Allow lava to flow from wilderness or other claims?
-  This should be set to false, since it protects against griefing from other players.\
-  *Toggle permission: lands.setting.lavaflow_allow*
+Resets one flag or all flags back to the values from config and `roles.yml`. Admin lands are skipped when resetting all lands.
 
-* **FIRE_SPREAD**\
-Should fire spread? Fire can not spread from wilderness into lands, even without this flag being set.\
-*Toggle permission: lands.setting.fire_spread*
+Required permissions:
 
-* **LEAF_DECAY**\
-Should leaves decay?\
-*Toggle permission: lands.setting.leaf_decay*
+| Command | Permission |
+| --- | --- |
+| Set a flag | `lands.admin.command.land.setflag` |
+| Reset flags | `lands.admin.command.land.resetflag` |
+| Open admin menu for wilderness settings | `lands.admin.command.menu` |
 
-* **PLANT_GROWTH**\
-Should plants (including trees) grow?\
-*Toggle permission: lands.setting.plant_growth*
+# Available Natural Flags
 
-* **SNOW_MELT**\
-Should snow and ice be able to melt?\
-*Toggle permission: lands.setting.snow_melt*
+| Flag | What it controls | Toggle permission |
+| --- | --- | --- |
+| `ENTITY_GRIEFING` | Whether entities such as creepers can grief blocks. | `lands.setting.entity_griefing` |
+| `TNT_GRIEFING` | Whether TNT can destroy blocks. | `lands.setting.tnt_griefing` |
+| `PISTON_GRIEFING` | Whether pistons can push blocks into the land from outside. | `lands.setting.piston_griefing` |
+| `MONSTER_SPAWN` | Whether monsters can spawn. Spawner handling depends on config. | `lands.setting.monster_spawn` |
+| `PHANTOM_SPAWN` | Whether phantoms can spawn. | `lands.setting.phantom_spawn` |
+| `ANIMAL_SPAWN` | Whether animals can spawn. | `lands.setting.animal_spawn` |
+| `WATERFLOW_ALLOW` | Whether water can flow into or inside the land. | `lands.setting.waterflow_allow` |
+| `LAVAFLOW_ALLOW` | Whether lava can flow into or inside the land. | `lands.setting.lavaflow_allow` |
+| `FIRE_SPREAD` | Whether fire can spread in the land. | `lands.setting.fire_spread` |
+| `LEAF_DECAY` | Whether leaves decay naturally. | `lands.setting.leaf_decay` |
+| `PLANT_GROWTH` | Whether plants and trees grow. | `lands.setting.plant_growth` |
+| `SNOW_MELT` | Whether snow and ice can melt. | `lands.setting.snow_melt` |
+| `WITHER_ATTACK_ANIMAL` | Whether withers can damage animals. | `lands.setting.wither_attack_animal` |
+| `BLOCK_SPREADING` | Whether spreading blocks, such as amethyst, can spread in the land. | `lands.setting.block_spreading` |
+| `COPPER_GOLEM` | Whether copper golems from other areas can sort chests in this area. | `lands.setting.copper_golem` |
 
-* **BLOCK_SPREADING**\
-Should blocks, such as amethyst blocks be able to spread into an area? 
-This only affects blocks that are spreading from an area that is part of the same land.
-Blocks from the wilderness can never spread into claims, regardless of whether this flag is set or not.\
-*Toggle permission: lands.setting.block_spreading*
+# System and Admin Natural Flags
 
-* **COPPER_GOLEM**\
-  Allow copper golems from other areas of the land to sort chests in the area?\
-  *Toggle permission: lands.setting.copper_golem*
+These flags exist in source too, but they are not normal player-facing natural flags. Use them only when you intentionally expose them or manage them as an admin.
 
+| Flag | What it controls | Toggle permission |
+| --- | --- | --- |
+| `TITLE_HIDE` | Hides land enter and leave title messages for the land. | `lands.setting.title_hide` |
+| `REQUEST_ACCEPT` | Automatically accepts land join requests. | `lands.setting.request_accept` |
+| `EXPIRATION_SHIELD` | Prevents the land from being removed by expiration. | `lands.setting.expiration_shield` |
+| `PEACEFUL` | Prevents the land from taking part in wars. | `lands.setting.peaceful` |
 
-## Other Land Flags
-These flags might not appear in the natural flag's menu. Instead, they usually have their own menu, where they can be toggled directly.
+# War Interaction
 
-* **TITLE_HIDE**\
-Hide the land enter title?\
-*Toggle permission: None*
-
-* **REQUEST_ACCEPT**\
-Automatically accept new membership requests?\
-*Toggle permission: None*
-
-## Admin Flags
-These flags might only appear in the menus of admin lands or if an server admin is opening the flags menu.
-
-* **PEACEFUL**\
-  If set, the land can't engage in any wars.\
-  *Toggle permission: None*
-
-* **EXPIRATION_SHIELD**\
-  Makes sure the land won't be removed, even if it's inactive.\
-  *Toggle permission: None*
-
-# Config
-Here you configure the default flags and decide which flags should be displayed in the GUI menu to players.
-```yaml
-  # Natural flags configuration. Role flags can be configured in the roles.yml file.
-  # List of available landFlags: https://wiki.incredibleplugins.com/lands/configuration/natural-flags
-  # NOTE: This option requires server reload / restart.
-  land-flags:
-    # Configure DEFAULT natural flags which will apply to new land creations.
-    default_list:
-      - monster_spawn
-      - phantom_spawn
-      - animal_spawn
-      - leaf_decay
-      - plant_growth
-      - snow_melt
-
-    # Natural flags which should be visible in the flags menu.
-    display_list:
-      - entity_griefing
-      - tnt_griefing
-      - piston_griefing
-      - monster_spawn
-      - phantom_spawn
-      - animal_spawn
-      - waterflow_allow
-      - fire_spread
-      - leaf_decay
-      - plant_growth
-      - snow_melt
-```
+`wars.yml` has `land-flags_list`. Flags in that list are enabled for lands during war. For example, if you want TNT damage during wars, add `TNT_GRIEFING` there. If you also want players to ignite TNT, configure the matching role flag in `invading.flags.role-flags_list`.

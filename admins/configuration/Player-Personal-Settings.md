@@ -1,40 +1,35 @@
-You can configure these flags inside your `config.yml` file. Options: 
-* default_2_list
-* display_2_list
+# Player Personal Settings
 
-These flags are applied to new players. Existing players can toggle these flags in their personal settings GUI menu, by executing ``/lands menu main`` and then navigating to the personal settings menu.
-They only control behaviour related to this single player, such as receiving invites.
+Personal settings control behavior for one player only. They do not change a land, role, nation, or war.
+
+Players can edit these settings in their personal settings menu if the flag is displayed and they have the matching `lands.player.setting.<flag>` permission.
+
+# Configuration
+
+Personal flags are configured in `config.yml` under `player.flags`.
+
+`default_2_list` sets the enabled personal flags for new players.
+
+`display_2_list` controls which personal flags appear in the menu. Use `all` to display every personal flag.
 
 # Available Personal Flags
-Each flag has their own toggle permission, which is required for the player to toggle the flag.
 
-* **RECEIVE_INVITES**\
-Allow other lands to invite the player to their land?\
-*Toggle permission: lands.player.setting.receive_invites*
+| Flag | What it controls | Toggle permission |
+| --- | --- | --- |
+| `RECEIVE_INVITES` | Whether the player can receive land invites. | `lands.player.setting.receive_invites` |
+| `ENTER_MESSAGES` | Whether the player sees land enter and leave messages. | `lands.player.setting.enter_messages` |
+| `SHOW_INBOX` | Whether inbox messages are shown in chat. | `lands.player.setting.show_inbox` |
 
-* **ENTER_MESSAGES**\
-Show enter and leave messages when the player enters or leaves a land?\
-*Toggle permission: lands.player.setting.enter_messages*
+# Example
 
-* **SHOW_INBOX**\
-Show inbox messages, from lands the player is part of, in chat?\
-*Toggle permission: lands.player.setting.show_inbox*
-
-# Config
-Here you can configure default flags for new players and decide which flags should be displayed in the GUI menu.
 ```yaml
-# Players can toggle personal flags to customize their experience.
 player:
   flags:
-    # Configure a default list of flags that is enabled.
-    # This only applies to new players, or those who haven't toggeled any flags yet.
     default_2_list:
-      - 'receive_invites'
-      - 'enter_messages'
-      - 'show_inbox'
+      - receive_invites
+      - enter_messages
+      - show_inbox
 
-    # Configure which flags should be displayed in the menu.
-    # ALL = all flags are displayed.
     display_2_list:
-      - 'all'
+      - all
 ```

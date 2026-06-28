@@ -1,74 +1,161 @@
-Lands features a war system which allows other lands to fight against each other. This page only explains the basic options you should start with configuring. There are even more options in the `wars.yml` file. They're all self explanatory (with comments) in the `wars.yml` file located in the `plugins/Lands` folder.
-The full file can be viewed here: https://github.com/IncrediblePlugins/Lands/blob/main/wars.yml
+# Wars
 
-# Before the War
-To declare war against a land or nation execute `/wars declare <land>`.
-Then the defender receives a war declaration with more information, like when the war time starts and the tribute which the attacker set.
-The tribute is paid by the defender to the attacker, in case the defender surrenders. War declarations can be disabled by setting the preparation time to 0 below.
+Wars are configured in `wars.yml`. This page explains the settings that matter for server owners.
 
-## Minimum amount of Players
-Set the minimum amount of trusted players a land needs to have to be allowed to engage in a war.
-`````yaml
-min-players:
-  # Set minimum amount of trusted players for the declaring attacker.
-  attacker: 0
-  # Set minimum amount of trusted players for the defender to receive a war declaration.
-  defender_3: 0
-`````
+For player-facing war gameplay, use the player wiki page. This page is for admins configuring the system.
 
-## War Preparation Time
-How much time do you want to give the defender lands for war preparation, before it will start?
-````yaml
-# Default is one day
-preparation_time: 1d
-````
+# Enable or Restrict Wars
 
-## Mutual War Declarations
-Should war declarations need a mutual acceptation? If enabled, the defender land needs to confirm the declaration before the war can start. They need to do this by executing `/wars declare <attacker>`.
-They can deny a war declaration by executing `/wars deny`.
-````yaml
-mutual:
-  enabled_2: false
-  # Should the declaration be deleted if the enemy did not accept it during the configured period?
-  # You can disable this by setting the value to 0.
-  declaration-timeout_time: 5d
-````
+| Option | What it does |
+| --- | --- |
+| `enabled` | Enables or disables wars. Requires reload or restart. |
+| `only-nations` | If `true`, wars can only happen between nations. Single lands cannot fight alone. |
 
-# During War
+# Declaration Rules
 
-## Max War Time
-Set the max time a war can hold on. When this time is over the team with the most points will win. If both teams have the same amount of points, it will end in a draw and no team will be rewarded.
-````yaml
-war-timeout_time: 36h
-````
+Declaration settings live under `declaration`.
 
-## Flags during War
-````yaml
-  # Limit what invading enemies are able to do.
-  flags:
-    # Allow players doing the following things in the enemy land (only during war).
-    # Available actions: https://wiki.incredibleplugins.com/lands/configuration/roles-and-their-flags#action-flags
-    # NOTE: Adding BLOCK_PLACE or BLOCK_BREAK to this list will allow invaders to break, place ALL blocks. If you want to specify blocks, please use the lists below.
-    # NOTE: In war the attackers and defenders also have the flags of the untrusted role of the area they're invading.
-    # NOTE: If you want to allow players to ignite and explode tnt blocks you need to add BLOCK_IGNITE to this list and TNT_GRIEFING to land-flags_list above.
-    role-flags_list:
-      - ITEM_PICKUP
-      - ATTACK_PLAYER
-      - LAND_ENTER
+| Option | What it controls |
+| --- | --- |
+| `min-players.attacker` | Minimum trusted players the attacker needs. |
+| `min-players.defender_3` | Minimum trusted players the defender needs before they can be declared against. |
+| `send-time.days_range` | Days of the week when declarations can be sent. `1` is Monday, `7` is Sunday. |
+| `send-time.hours_range` | Hours when declarations can be sent, using 24-hour time. |
+| `preparation_time` | Time between declaration and war start. Use `0s` to start immediately. |
+| `online` | Requires at least one defender player to be online. |
+| `broadcast` | Broadcasts declarations to the server. |
+| `mutual.enabled_2` | Requires the defender to accept the declaration. |
+| `mutual.declaration-timeout_time` | Deletes unaccepted mutual declarations after this time. Use `0` to disable timeout. |
+| `min-balance.attacker_2` | Minimum attacker land or nation balance. |
+| `min-balance.defender_2` | Minimum defender land or nation balance. |
+| `min-age.attacker_time` | Minimum age of the attacker land or nation. |
+| `min-age.defender_time` | Minimum age of the defender land or nation. |
 
-    # Allow the placement of specific blocks if the land part of a war.
-    # NOTE: This is only needed if BLOCK_PLACE is NOT in the role-flags_list above.
-    # Values: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
-    block-place_list:
-      - LADDER
-      - VINE
-      - SCAFFOLDING
+The source also checks `declaration.min-chunks.attacker` and `declaration.min-chunks.defender` if those paths exist in your `wars.yml`. They can be used to require a minimum claimed chunk amount.
 
-    # Allow breaking of specific blocks if the land part of a war.
-    # NOTE: This is only needed if BLOCK_BREAK is NOT in the role-settings_list above.
-    # Values: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
-    block-break_list:
-      - LADDER
-      - VINE
-      - SCAFFOLDING
-````
+# Points and Winning
+
+Settings live under `points`.
+
+| Option | What it controls |
+| --- | --- |
+| `kill` | Points per kill. |
+| `capture-block.capture` | Points for capturing a capture flag. |
+| `capture-block.break` | Points for breaking an enemy capture flag. |
+| `capture-block.explode` | Points for exploding an enemy capture flag. |
+| `towin.per-player` | Required points are based on the smaller team size multiplied by this value. |
+| `towin.min_2` | Minimum required points even if the per-player calculation is lower. |
+
+If the war timeout is reached, the team with the most points wins. Equal points end in a draw.
+
+# Capture Flags
+
+Settings live under `capture`.
+
+| Option | What it controls |
+| --- | --- |
+| `enabled_3` | Enables capture flags. Capture flags are disabled on MultiPaper by source checks. |
+| `recipe_list` | Crafting recipe for capture flag items. |
+| `max` | Maximum active capture flags per team. |
+| `place-cooldown_time` | Cooldown between placing capture flags. |
+| `restrict-placement` | If `true`, only players with the `WAR_MANAGE` role flag can place capture flags. |
+| `radius` | Chunk radius affected by the capture flag. Keep this within view distance. |
+| `unclaim` | Captured chunks become unclaimed. |
+| `claim` | Captured chunks become claimed by the enemy. |
+| `hold_time` | Time invaders must hold the flag area. |
+| `firework_time` | Firework interval while players are in the capture area. |
+| `drop` | Drops the capture flag item when removed. |
+| `invaders-break` | Allows the team that placed the flag to break it too. |
+| `y.min` and `y.max_2` | Height range where capture flags can be placed. |
+
+Capture flag durability is configured under `capture.durability`. It can give the flag health, damage from block breaks or explosions, and optional point rewards based on health thresholds.
+
+Server admins can give capture flag items with:
+
+`/lands admin player <player> give captureflag <amount> [silent]`
+
+Permission:
+
+`lands.admin.command.give.captureflag`
+
+# War Status and Display
+
+| Option | What it controls |
+| --- | --- |
+| `status-interval_time` | How often active war status messages are sent. |
+| `war-timeout_time` | Maximum war length. |
+| `hide-player` | Hides players in war from Dynmap. This does not apply to BlueMap. |
+| `nametag` | Shows enemy or ally nametags for players in the same war. |
+| `cmd-blacklist_list` | Commands blocked while a player is in war. Bypass with `lands.bypass.cmd.war`. |
+
+# Surrender, Shields, and Rewards
+
+| Option | What it controls |
+| --- | --- |
+| `surrender.tribute.force` | Requires tribute before the opposite team can surrender. |
+| `surrender.tribute.max.defender` | Maximum tribute attackers can set for defender surrender. Supports fixed money or `%`. |
+| `surrender.tribute.max.attacker` | Money attackers pay if they surrender. Supports fixed money or `%`. |
+| `shield.activation.shield_creation_time` | Shield for new lands or nations. |
+| `shield.activation.shield_surrender_time` | Shield after surrender. |
+| `shield.activation.declaration.min-tribute` | Minimum tribute needed for declaration surrender shield. |
+| `shield.activation.declaration.shield_declaration_time` | Shield after surrendering before the war starts. |
+| `shield.activation.shield_end_time` | Shield after a war ends. |
+| `end.winner.winner-cmds_list` | Commands executed for the winner. |
+| `end.loser.loser-cmds_list` | Commands executed for the loser. |
+| `end.robbery` | Money the loser pays at war end. Supports fixed money or `%`. |
+
+Admins can set or modify shields with:
+
+| Command | Permission |
+| --- | --- |
+| `/lands admin land <land | *> shield set <time>` | `lands.admin.command.land.shield.set` |
+| `/lands admin land <land | *> shield modify <time>` | `lands.admin.command.land.shield.modify` |
+
+# War Settings Players Can Change
+
+`settings.friendly_fire.default_2` sets the default for friendly fire. Friendly fire kills do not count toward war kill stats.
+
+# War Natural Flags
+
+`land-flags_list` enables natural flags during war.
+
+Example:
+
+```yaml
+land-flags_list:
+  - TNT_GRIEFING
+```
+
+If you want TNT to be used in wars, you usually also need to allow `BLOCK_IGNITE` in `invading.flags.role-flags_list`.
+
+See [Natural Flags](Natural-Flags.md) for all natural flags.
+
+# Keep Inventory
+
+`keep-inventory.enabled_4` enables Lands war keep-inventory handling.
+
+`keep-inventory.mode` controls whether drops are kept. If another plugin controls keep inventory, test this carefully.
+
+# Invading Rules
+
+Settings live under `invading`.
+
+| Option | What it controls |
+| --- | --- |
+| `restrictions.min-players` | Required online defender players before enemies can interact in that land. Use `0` to allow pillaging without defenders online. |
+| `restrictions.cooldown_logging_time` | Time enemies can still interact after the last defender logs out. |
+| `allies-war-field` | Allows fighting in allied lands of both sides, not only the direct war participants. |
+| `flags.role-flags_list` | Role flags granted to invaders during war. |
+| `flags.block-place_list` | Specific blocks invaders may place if `BLOCK_PLACE` is not granted. |
+| `flags.block-break_list` | Specific blocks invaders may break if `BLOCK_BREAK` is not granted. |
+
+See [Roles and Role Flags](Roles-and-their-Flags.md) for all role flags.
+
+# Admin War Commands
+
+| Command | What it does | Permission |
+| --- | --- | --- |
+| `/wars admin start <attacker> <defender> <tribute> <preparation_time>` | Forcefully declares or starts a war. | `wars.admin.command.start` |
+| `/wars admin end <land | nation>` | Ends an upcoming or active war without winner rewards. | `wars.admin.command.end` |
+
+`preparation_time` accepts time values such as `0s`, `10m`, `1h`, or `1d`.

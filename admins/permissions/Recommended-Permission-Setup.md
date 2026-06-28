@@ -1,59 +1,51 @@
-This page is a list of recommended permissions for players on your server. Please note that this is a general recommendation and might not reflect your server's needs. Also, most features of Lands can be disabled. Therefore, this recommendation might include permissions that are not required for your setup. For managing permissions, you can use a permission plugin like [LuckPerms](https://www.spigotmc.org/resources/luckperms.28140/).
+# Recommended Permission Setup
 
-# Looking for max Chunks etc.?
-Limits such as max lands, chunks etc. are now edited in the ``player-limits.yml`` file. Read more [here](https://wiki.incredibleplugins.com/general/locale-and-config/limits).
+This is a starting point for a normal survival server. Adjust it to your server's rules and disabled features.
 
-# Command Permissions
+Use a permission plugin such as LuckPerms. If you want to block one permission that is granted by a wildcard, set the specific permission to `false`.
 
-* `lands.command.*`\
-Description: That gives players access to all player related commands.
-If you want to remove some commands, you either need to negate the specific command permission or you need to set each command permission specifically.\
-_View all permissions: [Link](../../players/basics/Commands.md)_
+# Regular Players
 
-* `nations.command.*`\
-Description: Use all player related `/nations <cmd>` commands.\
-_View all permissions: [Link](https://wiki.incredibleplugins.com/lands/players/basics/commands#nations)_
+Recommended broad permissions:
 
-* `wars.command.*`\
-Description: Allow players to use all player related `/wars <cmd>` commands.\
-_View all permissions: [Link](https://wiki.incredibleplugins.com/lands/players/basics/commands#wars)_
+```text
+lands.command.*
+nations.command.*
+wars.command.*
+lands.teleport.*
+lands.setting.*
+lands.role.setting.*
+lands.player.setting.*
+nations.setting.*
+```
 
-# Teleportation
-`lands.teleport.*`\
-Description: This allows players to teleport to individual claimed chunks of their land etc. This does not include spawn teleportation, as this is covered by `lands.command.spawn`. If you want to limit teleportation, you'll need to set permissions accordingly.
+These allow players to use the normal player commands, teleport features, and the land/nation settings that are meant to be player-editable.
 
-_View all permissions: [Link](https://wiki.incredibleplugins.com/lands/permissions/permissions#teleportation)_
+# Optional Player Permissions
 
-# Toggle Role Flags
-`lands.role.setting.*`\
-Description: This allows players to toggle all role flags for their land.
+Give these only if the matching feature should be available:
 
-_View all permissions: [Link](https://wiki.incredibleplugins.com/lands/configuration/roles-and-their-flags#flags)_
+| Permission | Use when |
+| --- | --- |
+| `nations.command.*` | Nations are enabled. |
+| `wars.command.*` | Wars are enabled. |
+| `lands.command.rent` | Renting or selling areas is enabled. |
+| `lands.command.createcamp` | Camps are enabled. |
+| `lands.command.storage` | Land storage is enabled. |
 
-# Toggle Natural Flags
-`lands.setting.*`\
-Description: This allows players to toggle all natural flags (like monster spawning etc.) for their land.
+# Staff
 
-_View all permissions: [Link](https://wiki.incredibleplugins.com/lands/configuration/natural-flags#flags)_
+Do not give staff wildcards to regular players.
 
+| Permission | Use |
+| --- | --- |
+| `lands.admin.command.*` | All Lands admin commands. |
+| `wars.admin.command.*` | All Wars admin commands. |
+| `lands.admin.command.chatspy` | Chat moderation. |
+| `lands.bypass.*` | All Lands bypass permissions. Give only to trusted staff. |
+| `lands.admin.*` | All non-command admin actions. Give only to trusted staff. |
+| `nations.admin.*` | Nation admin actions. |
 
-# Toggle Personal Flags
-`lands.player.setting.*`\
-Description: Allow players to toggle all their personal flags.
+# More Detail
 
-_View all permissions: [Link](https://wiki.incredibleplugins.com/lands/configuration/player-personal-settings#available-personal-flags)_
-
-
-# List of recommended Permissions for regular Players
-This list isn't meant to be a standard. Each server is different. This is just an example. 
-
-## Command Permissions
-* lands.command.*
-* wars.command.*
-* nations.command.*
-## Teleportation
-* lands.teleport.*
-## Toggle Flags
-* lands.setting.*
-* lands.role.setting.*
-* lands.player.setting.*
+See [Permissions](Permissions.md) for the full permission reference and [Admin Commands](../Commands.md) for all admin command permissions.
