@@ -36,9 +36,7 @@ Flags have their own permission nodes.
 
 These permissions limit teleport actions started by Lands. They are set to `true` by default in `plugin.yml`. If you want to block one of them, set the permission to `false` in your permission plugin.
 
-Example with LuckPerms:
-
-`/lp group default permission set lands.teleport.sub_area false`
+Example with LuckPerms: `/lp group default permission set lands.teleport.sub_area false`
 
 | Permission | Allows |
 | --- | --- |

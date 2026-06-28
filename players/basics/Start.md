@@ -10,9 +10,7 @@ If you want to choose the land name first, use `/lands create` before claiming.
 
 # 2. Select the Land You Want to Edit
 
-Many commands use your current edit land. Set it with:
-
-`/lands edit <land>`
+Many commands use your current edit land. Set it with `/lands edit <land>`.
 
 You can also use `/lands edit` while standing inside a land you are trusted in. After that, commands like `/lands claim`, `/lands trust`, and `/lands menu` use that land.
 

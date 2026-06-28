@@ -2,13 +2,9 @@
 
 Admin commands are for server staff. Do not give these permissions to regular players.
 
-Most `/lands admin` subcommands use this permission format:
+Most `/lands admin` subcommands use the permission format `lands.admin.command.<subcommand>`.
 
-`lands.admin.command.<subcommand>`
-
-Nested commands add the full path:
-
-`/lands admin land <land> resetflag` uses `lands.admin.command.land.resetflag`.
+Nested commands add the full path. For example, `/lands admin land <land> resetflag` uses `lands.admin.command.land.resetflag`.
 
 `/lands admin player <player> delete` uses `lands.admin.command.player.delete`.
 

@@ -72,13 +72,9 @@ Settings live under `capture`.
 
 Capture flag durability is configured under `capture.durability`. It can give the flag health, damage from block breaks or explosions, and optional point rewards based on health thresholds.
 
-Server admins can give capture flag items with:
+Server admins can give capture flag items with `/lands admin player <player> give captureflag <amount> [silent]`.
 
-`/lands admin player <player> give captureflag <amount> [silent]`
-
-Permission:
-
-`lands.admin.command.give.captureflag`
+Permission: `lands.admin.command.give.captureflag`
 
 # War Status and Display
 

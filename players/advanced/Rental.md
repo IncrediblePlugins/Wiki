@@ -22,31 +22,23 @@ Subareas can be sold. Whole lands can also be sold if the offer is set on the de
 
 # Cancel Your Rental
 
-Stand inside the rented area and use:
-
-`/lands rent cancel`
+Stand inside the rented area and use `/lands rent cancel`.
 
 # Remove an Offer
 
-If you manage the area, stand inside it and use:
-
-`/lands rent remove offer`
+If you manage the area, stand inside it and use `/lands rent remove offer`.
 
 This removes the rent or sell offer.
 
 # Remove a Tenant
 
-If you manage the area, stand inside it and use:
-
-`/lands rent remove tenant`
+If you manage the area, stand inside it and use `/lands rent remove tenant`.
 
 Depending on the server, you may need to pay compensation to the tenant.
 
 # Check Rental Info
 
-Stand inside the area and use:
-
-`/lands rent info`
+Stand inside the area and use `/lands rent info`.
 
 This shows the current rent or sell information for that area.
 

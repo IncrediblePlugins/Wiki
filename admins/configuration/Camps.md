@@ -6,13 +6,9 @@ Camps do not pay upkeep. They expire after the configured time unless expiration
 
 Note: The option list on this page highlights the most important camp config options. It is not a complete list; check your generated config file for every available option.
 
-Give camp items with:
+Give camp items with `/lands admin player <player> give camp <radius> <amount> [silent]`.
 
-`/lands admin player <player> give camp <radius> <amount> [silent]`
-
-You can also give all enabled first-join items with:
-
-`/lands admin player <player> give first-join-items`
+You can also give all enabled first-join items with `/lands admin player <player> give first-join-items`.
 
 # Configuration
 

@@ -87,9 +87,7 @@ Important options:
 * `land.claimblock.ignore-max`: claim blocks do not count against the player's chunk limit.
 * `land.claimblock.refund`: refund the claim block when a claim-block chunk is unclaimed.
 
-Give claim blocks with:
-
-`/lands admin player <player> give claimblock <radius> <amount> [silent]`
+Give claim blocks with `/lands admin player <player> give claimblock <radius> <amount> [silent]`.
 
 If you do not want command claiming, remove `lands.command.claim`. If you do not want claim-block claiming, do not give players claim blocks.
 
@@ -119,9 +117,7 @@ Available item groups:
 
 Set the slot or amount below `1` to stop giving an item on first join. Set `usage` to `false` to disable that item type.
 
-Use this command to give enabled first-join items again:
-
-`/lands admin player <player> give first-join-items`
+Use `/lands admin player <player> give first-join-items` to give enabled first-join items again.
 
 # Map and Visualization
 
@@ -160,13 +156,9 @@ Important options:
 
 Make sure each random-teleport world has a useful `/setworldspawn`, because distances are measured from world spawn.
 
-Staff can random-teleport another player with:
+Staff can random-teleport another player with `/lands wild <world> <player> [skip-cooldown]`.
 
-`/lands wild <world> <player> [skip-cooldown]`
-
-Permission:
-
-`lands.admin.command.wild`
+Permission: `lands.admin.command.wild`
 
 # Unstuck
 
@@ -183,9 +175,7 @@ Important options:
 
 Land storage is configured with `land.storage`.
 
-If enabled, players can use:
-
-`/lands storage`
+If enabled, players can use `/lands storage`.
 
 They can also access storage through the land main block barrel.
 
@@ -195,9 +185,7 @@ Disabling storage deletes all stored items, so take care when changing this opti
 
 Lands registers the WorldGuard flag `lands-claim`.
 
-Use it to allow or deny claiming in a WorldGuard region:
-
-`/region flag <region> lands-claim <allow or deny>`
+Use `/region flag <region> lands-claim <allow or deny>` to allow or deny claiming in a WorldGuard region.
 
 Relevant options:
 

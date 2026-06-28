@@ -1,8 +1,6 @@
 # Current Edit Land
 
-Most land commands use your current edit land. Select it with:
-
-`/lands edit <land>`
+Most land commands use your current edit land. Select it with `/lands edit <land>`.
 
 You can also use `/lands edit` while standing inside a land you are trusted in.
 

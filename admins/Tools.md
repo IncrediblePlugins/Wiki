@@ -6,17 +6,13 @@ These tools are for server staff.
 
 `/lands edit <land>` selects a land for admin editing. Many normal player commands then run against that selected land.
 
-Permission:
-
-`lands.admin.command.edit`
+Permission: `lands.admin.command.edit`
 
 # Open Another Player's Menu
 
 `/lands menu <player>` opens the Lands menu view for a player.
 
-Permission:
-
-`lands.admin.command.menu`
+Permission: `lands.admin.command.menu`
 
 # Chat Spy
 
@@ -24,29 +20,19 @@ Permission:
 
 Run `/lands admin chatspy` without an argument to disable all selected chat spy targets.
 
-Permission:
-
-`lands.admin.command.chatspy`
+Permission: `lands.admin.command.chatspy`
 
 # Teleport Other Players
 
-Random teleport another player:
+Random teleport another player with `/lands wild <world> <player> [skip-cooldown]`.
 
-`/lands wild <world> <player> [skip-cooldown]`
+Permission: `lands.admin.command.wild`
 
-Permission:
-
-`lands.admin.command.wild`
-
-Teleport another player to a spawn:
-
-`/lands spawn <land or none> <area or none> <player> <wait>`
+Teleport another player to a spawn with `/lands spawn <land or none> <area or none> <player> <wait>`.
 
 Use `none` for the land to use the player's current edit land. Use `none` for the area to use the land spawn instead of a sub-area spawn.
 
-Permission:
-
-`lands.admin.command.edit`
+Permission: `lands.admin.command.edit`
 
 # Leaderboard Holograms
 
@@ -62,8 +48,6 @@ A supported hologram provider must be installed.
 
 `/lands admin listperms <player>` lists permissions detected for a player.
 
-Permission:
-
-`lands.admin.command.listperms`
+Permission: `lands.admin.command.listperms`
 
 This is useful when a wildcard or inherited group gives a player access that is hard to spot.

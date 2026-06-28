@@ -4,83 +4,39 @@ Lands has a few tools that help you understand claims around you.
 
 # Map
 
-Use:
+Use `/lands map` to open the claim map.
 
-`/lands map`
+Use `/lands map chat` to show the map in chat.
 
-to open the claim map.
-
-Use:
-
-`/lands map chat`
-
-to show the map in chat.
-
-Use:
-
-`/lands map link`
-
-to get the web map link, if your server has one.
+Use `/lands map link` to get the web map link, if your server has one.
 
 Some servers let you claim by clicking chunks in the map.
 
 # View Borders
 
-Use:
+Use `/lands view` to show nearby land borders.
 
-`/lands view`
+Use `/lands view here` to show the area you are standing in.
 
-to show nearby land borders.
+Use `/lands view stay` to toggle whether the border height follows you.
 
-Use:
-
-`/lands view here`
-
-to show the area you are standing in.
-
-Use:
-
-`/lands view stay`
-
-to toggle whether the border height follows you.
-
-Use:
-
-`/lands view disable`
-
-to hide the border particles.
+Use `/lands view disable` to hide the border particles.
 
 If you do not see borders, check that particles are enabled in your Minecraft settings.
 
 # Selection Tool
 
-Use:
-
-`/lands selection`
-
-to turn selection mode on or off.
+Use `/lands selection` to turn selection mode on or off.
 
 Select two corners, then use `/lands claim` to claim the selected chunks.
 
-Use:
+Use `/lands selection expand` to toggle full-height selection.
 
-`/lands selection expand`
-
-to toggle full-height selection.
-
-You can also use:
-
-`/lands selection expand <down> <up>`
-
-to expand the selection by a specific amount.
+You can also use `/lands selection expand <down> <up>` to expand the selection by a specific amount.
 
 # Claim List
 
-Use:
-
-`/lands claimlist`
-
-to view the chunks of your current edit land.
+Use `/lands claimlist` to view the chunks of your current edit land.
 
 # First Join Items
 
@@ -97,46 +53,22 @@ Your server decides which items exist and how they work.
 
 # Storage
 
-Use:
-
-`/lands storage`
-
-to open shared land storage, if your server enabled it.
+Use `/lands storage` to open shared land storage, if your server enabled it.
 
 The storage belongs to your current edit land.
 
 # Invites and Inbox
 
-Use:
+Use `/lands invites` to view land invites and ownership requests.
 
-`/lands invites`
-
-to view land invites and ownership requests.
-
-Use:
-
-`/lands menu inbox`
-
-to view land news and logs.
+Use `/lands menu inbox` to view land news and logs.
 
 # Personal Settings
 
-Use:
-
-`/lands menu personal-settings`
-
-to change personal options such as invite messages, land enter messages, and inbox notices.
+Use `/lands menu personal-settings` to change personal options such as invite messages, land enter messages, and inbox notices.
 
 # Safety Teleports
 
-Use:
+Use `/lands unstuck` if you are trapped inside a claim. It teleports you to nearby wilderness.
 
-`/lands unstuck`
-
-if you are trapped inside a claim. It teleports you to nearby wilderness.
-
-Use:
-
-`/lands wild`
-
-to random teleport, if your server enabled it.
+Use `/lands wild` to random teleport, if your server enabled it.

@@ -28,23 +28,15 @@ Use `/lands selection expand` if you want the area to use the full height. If yo
 
 # Open a Subarea Menu
 
-Stand inside the subarea and use:
-
-`/lands menu here`
+Stand inside the subarea and use `/lands menu here`.
 
 You can also open the areas list from `/lands` and choose the area there.
 
 # Trust Players in a Subarea
 
-Use:
+Use `/lands trust <player> <area>` to give the player access only to that area, unless they are also trusted in the whole land.
 
-`/lands trust <player> <area>`
-
-This gives the player access only to that area, unless they are also trusted in the whole land.
-
-To remove them from that area, use:
-
-`/lands untrust <player> <area>`
+To remove them from that area, use `/lands untrust <player> <area>`.
 
 # Area Roles and Flags
 

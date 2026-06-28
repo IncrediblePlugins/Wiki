@@ -92,9 +92,7 @@ Important options:
 * `taxes.untrust-member`: untrust a member from the area if they cannot pay.
 * `taxes.taxes-announcement_time`: how often players are warned about upcoming taxes.
 
-Player command:
-
-`/lands taxes`
+Player command: `/lands taxes`
 
 Taxes can be edited through the land menu by players with the required role permissions.
 
@@ -110,9 +108,7 @@ Important options:
 * `upkeep.nopay_time`: grace period for newly created lands.
 * `upkeep.upkeep-reminder_time`: reminder interval while a land has insufficient funds.
 
-Player command:
-
-`/lands upkeep`
+Player command: `/lands upkeep`
 
 # Nation Economy
 
