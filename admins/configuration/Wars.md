@@ -4,6 +4,8 @@ Wars are configured in `wars.yml`. This page explains the settings that matter f
 
 For player-facing war gameplay, use the player wiki page. This page is for admins configuring the system.
 
+Note: The option tables on this page list the most important config options. They are not a complete copy of `wars.yml`; check your generated config file for every available option.
+
 # Enable or Restrict Wars
 
 | Option | What it does |

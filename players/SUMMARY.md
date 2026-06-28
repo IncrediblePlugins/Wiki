@@ -1,17 +1,21 @@
 # Table of contents
 
-* [Info](README.md)
+* [🏠 Player Guide](README.md)
 
-## Basics
+## 🚀 Getting Started
 * [Start](basics/Start.md)
 * [Commands](basics/Commands.md)
 * [Chat](basics/Chat.md)
+* [Map and Tools](basics/Map-and-Tools.md)
 
-## Advanced
+## 🏡 Land Management
 * [Sub Areas](advanced/Subareas.md)
 * [Rent & Sell System](advanced/Rental.md)
+* [Economy](advanced/Economy.md)
 
-## General
-* [Frequently asked Questions](general/FAQ.md)
+## ⚔️ Nations and Wars
 * [Nations](general/Nations.md)
 * [Wars](general/Wars.md)
+
+## ❓ Help
+* [Frequently Asked Questions](general/FAQ.md)

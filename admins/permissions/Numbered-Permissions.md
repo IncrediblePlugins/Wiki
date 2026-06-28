@@ -1,9 +1,10 @@
 ## Numbered Permissions
-Warning: For new servers we highly recommend using the new player-limits.yml file instead: [Link](https://wiki.incredibleplugins.com/general/locale-and-config/limits)
+Warning: For new servers we highly recommend using the new `player-limits.yml` file instead: [Link](https://wiki.incredibleplugins.com/general/locale-and-config/limits)
 
 Important:
 * **Replace `<number>` with an actual number.** Example: `lands.lands.<number>` -> lands.lands.5
-* If you make changes to numbered permissions and want to synchronize these changes to lands of which the owners are offline: Execute `/lands admin land * syncPermissions`. Please note that this is not required. Without executing this command, the limits will automatically update if the land owner is online or once the land owner logs in again.
+* Numbered permissions are legacy. Use `/lands admin limits migrate confirm` to migrate old numbered limit permissions into `player-limits.yml`.
+* Use `/lands admin limits refresh` after changing `player-limits.yml` to synchronize limit packs in the background.
 
 ### Numbered Permission Nodes
 `lands.lands.<number>`\

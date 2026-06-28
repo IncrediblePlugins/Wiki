@@ -1,6 +1,6 @@
 ## My players can't claim or trust members, because it says that their limit is 0. What is wrong?
 If it says that, then this is definitely the case. Please make sure your permissions plugin is setup correctly (eg. groups, inheritance).
-You can get a list of Lands permissions a player has by executing `/lands listperms <player>`.
+You can get a list of Lands permissions a player has by executing `/lands admin listperms <player>`.
 
 ***
 
@@ -78,8 +78,8 @@ By default this flag will be set to deny.
 
 ***
 
-## How can I set claim (permission) limits per world?
-Toggle the `claim-limits-per-world` option in config.
+## How can I set claim limits per world?
+Toggle `land.claim-limits-per-world` in config.
 Example: If you set the permission lands.chunks.5 for your players, they will be able to claim 5 chunks in each claim world instead of 5 chunks in general. This then can be combined with your permissions plugin per world permissions, which would allow you to set different claim limits per world. This only applies for claim permissions: lands.chunks.NUMBER, lands.ownlands.NUMBER
 
 ***

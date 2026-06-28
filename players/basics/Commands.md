@@ -212,6 +212,18 @@ Open your land storage, if storage is enabled.
 
 Show nearby land borders. Make sure particles are enabled in your Minecraft settings.
 
+`/lands view here`
+
+Show the area you are standing in.
+
+`/lands view stay`
+
+Toggle whether border particles stay at one height or follow your height.
+
+`/lands view disable`
+
+Hide border particles.
+
 `/lands unstuck`
 
 Teleport to the nearest wilderness location if you are trapped in a claim.
@@ -323,6 +335,14 @@ View information about a nation.
 `/nations level`
 
 View nation level progress.
+
+`/nations menu effects`
+
+Open nation effects, if your server has nation level effects enabled.
+
+`/nations menu taxes`
+
+Open nation taxes, if your server enabled nation taxes.
 
 `/nations list`
 

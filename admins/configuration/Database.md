@@ -2,23 +2,26 @@
 * SQLite-v2: Doesn't require any database server and works without setting anything up.
 * MySQL: Use MySQL-v2 instead. This database mode is deprecated.
 * MySQL-v2: We recommend using MySQL, if you need to connect your database to an external system, or you use a backup system that requires it. If you want to use MySQL: Make sure that your MySQL server is set up correctly (up-to-date MySQL server version, connection limits, utf8mb4_0900_as_cs as table encoding, etc.). This also supports [synchronizing claim data across multiple servers](https://wiki.incredibleplugins.com/lands/configuration/database#synchronizing-claims-across-servers) in combination with Redis.\
-Please make sure to configure the table-prefix correctly:  
+Please make sure to configure the table-prefix correctly:
   ````yaml
     # It is highly recommended to set a unique table prefix if the plugin
     # shares a database with other plugins or Lands instances.
-    table-prefix: 'lands_'
+    table-prefix_2: 'lands_'
     ````
-  
-We recommend using MySQL-v2 over SQLite, if possible. 
+
+We recommend using MySQL-v2 over SQLite, if possible.
 
 # Backups
-If you want to take backups of your database, you may want to use MySQL-v2 and set up a backup service or just a simple script of your choice. This is specific to your environment. 
+If you want to take backups of your database, you may want to use MySQL-v2 and set up a backup service or just a simple script of your choice. This is specific to your environment.
 
 # Migrate your Database to MySQL-v2, SQLite-v2
 1. If you use MySQL, please create a new database that you want to new database to be saved to.
 2. Also, if you want to migrate to MySQL, make sure the credentials and database name is set up correctly in your Lands config.
 3. Make sure to take a backup of your current database.
-After you have followed these steps, execute this command: `/lands admin migratedb [sqlite, mysql]`
+After you have followed these steps, execute one of these commands:
+
+* `/lands admin migratedb sqlite-v2 confirm`
+* `/lands admin migratedb mysql-v2 confirm`
 
 # Synchronizing Claims across Servers
 A MySQL database and Redis instance is required. It won't work properly without Redis! Also each connected server must have the same time zone configured for your Minecraft server.
@@ -53,7 +56,7 @@ It is very important to properly configure the `server-name` and `master` option
     # This should be the name that you configured for this server in your BungeeCord or Velocity config.
     server-name: "server-1"
     # This option should only be enabled on ONE of the servers that are connected to the same Lands database and Redis.
-    # If true: This server will execute tasks, such as upkeep, taxes etc. for all lands across all servers that are 
+    # If true: This server will execute tasks, such as upkeep, taxes etc. for all lands across all servers that are
     # connected to the same Lands database and Redis.
     master: true
 ````

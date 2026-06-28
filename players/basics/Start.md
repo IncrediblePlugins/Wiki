@@ -32,6 +32,10 @@ Use `/lands` or `/lands menu` to open the Lands menu.
 
 The menu lets you manage members, roles, areas, relations, taxes, inbox messages, and other settings that are enabled on your server.
 
+If your server uses money, also read [Economy](../advanced/Economy.md).
+
+If you want to see borders, maps, invites, storage, or safety teleports, read [Map and Tools](Map-and-Tools.md).
+
 # 5. Trust Players
 
 Use `/lands trust <player>` to invite or trust a player in your land.

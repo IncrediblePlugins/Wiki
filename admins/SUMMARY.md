@@ -1,40 +1,48 @@
 # Table of contents
 
-* [Info](README.md)
+* [🏠 Admin Guide](README.md)
 
-## Configuration
+## 🚀 Setup
 * [Installation](configuration/Installation.md)
-* [Limits](https://wiki.incredibleplugins.com/general/locale-and-config/limits)
-* [Frequently asked Questions](configuration/Frequently-asked-Questions.md)
 * [Database](configuration/Database.md)
+* [Limits](https://wiki.incredibleplugins.com/general/locale-and-config/limits)
+* [Frequently Asked Questions](configuration/Frequently-asked-Questions.md)
+
+## 🧱 Claims and Worlds
+* [Claiming and Worlds](configuration/Claiming-and-Worlds.md)
+* [Camps](configuration/Camps.md)
+* [Regeneration](configuration/Unclaim-and-Wilderness-Regeneration.md)
 * [Leaderboards](configuration/Leaderboards.md)
-* [Roles and their Flags](configuration/Roles-and-their-Flags.md)
-* [Natural flags](configuration/Natural-Flags.md)
+
+## 💰 Economy and Progression
+* [Economy](configuration/Economy.md)
+* [Levels](configuration/Levels.md)
+* [PlaceholderAPI Placeholders](configuration/PlaceholderAPI-Placeholders.md)
+
+## 🛡️ Rules, Flags, and Gameplay
+* [Roles and Role Flags](configuration/Roles-and-their-Flags.md)
+* [Natural Flags](configuration/Natural-Flags.md)
 * [Player Personal Settings](configuration/Player-Personal-Settings.md)
 * [Wars](configuration/Wars.md)
-* [Levels](configuration/Levels.md)
-* [Regeneration](configuration/Unclaim-and-Wilderness-Regeneration.md)
+
+## 🔐 Permissions and Staff Tools
+
+* [Recommendation](permissions/Recommended-Permission-Setup.md)
+* [Player Commands](../players/basics/Commands.md)
+* [Admin Commands](Commands.md)
+* [Permissions](permissions/Permissions.md)
+* [LuckPerms Context](permissions/Luckperms-Context.md)
+* [Tools](Tools.md)
+
+## 🧩 Integrations and UI
 * [Discord Bot](https://wiki.incredibleplugins.com/discordbridge/modules/lands)
-* [PlaceholderAPI Placeholders](configuration/PlaceholderAPI-Placeholders.md)
-* [Camps](configuration/Camps.md)
 * [GUI Menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus)
 * [Bedrock Forms](https://wiki.incredibleplugins.com/general/gui-menus/bedrock-forms)
 * [Messages](https://wiki.incredibleplugins.com/general/messages-and-config/messages)
 * [Translations](https://wiki.incredibleplugins.com/general/messages-and-config/translations)
 * [Events](https://wiki.incredibleplugins.com/general/messages-and-config/events)
 
-## Permissions
-
-* [Recommendation](permissions/Recommended-Permission-Setup.md)
-* [Player Commands](../players/basics/Commands.md)
-* [Admin Commands](Commands.md)
-* [Permissions](permissions/Permissions.md)
-* [Luckperms Context](permissions/Luckperms-Context.md)
-
-## Admin & Moderation
-* [Tools](Tools.md)
-
-## Developers
+## 🧑‍💻 Developers
 
 * [Setup](developers/API.md)
 * [Levels](developers/Levels.md)

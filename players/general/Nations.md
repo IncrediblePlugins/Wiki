@@ -42,6 +42,10 @@ Open the nation menu with:
 
 `/nations`
 
+Nation owners can open the nation taxes menu with:
+
+`/nations menu taxes`
+
 If you are in multiple lands and want to manage a different nation, select the land first:
 
 `/lands edit <land>`
@@ -67,3 +71,7 @@ Use:
 `/nations level`
 
 to view the current progress.
+
+If your server gives potion effects or similar benefits through nation levels, open:
+
+`/nations menu effects`
