@@ -28,7 +28,7 @@
 ## 🔐 Permissions and Staff Tools
 
 * [Recommendation](permissions/Recommended-Permission-Setup.md)
-* [Player Command Permissions](permissions/Player-Commands.md)
+* [Player Commands](permissions/Player-Commands.md)
 * [Admin Commands](Commands.md)
 * [Permissions](permissions/Permissions.md)
 * [LuckPerms Context](permissions/Luckperms-Context.md)

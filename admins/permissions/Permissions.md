@@ -16,7 +16,7 @@ Limits such as max lands, chunks, members, and upkeep limits are configured in `
 
 For the exact admin command list, see [Admin Commands](../Commands.md).
 
-For player command permission nodes, see [Player Command Permissions](Player-Commands.md).
+For player command permission nodes, see [Player Commands](Player-Commands.md).
 
 # Flag Permissions
 

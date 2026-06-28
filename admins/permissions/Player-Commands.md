@@ -1,4 +1,4 @@
-# Player Command Permissions
+# Player Commands
 
 This page is for server admins who assign permissions for player-facing Lands, Nations, and Wars commands.
 

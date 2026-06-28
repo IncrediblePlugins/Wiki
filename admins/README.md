@@ -22,7 +22,7 @@ Pages:
 | Rules, Flags, and Gameplay | [Player Personal Settings](configuration/Player-Personal-Settings.md) | Personal player flags and their permissions. |
 | Rules, Flags, and Gameplay | [Wars](configuration/Wars.md) | War configuration, capture flags, shields, rewards, and admin war commands. |
 | Permissions and Staff Tools | [Recommendation](permissions/Recommended-Permission-Setup.md) | Suggested permission setup for normal players and staff. |
-| Permissions and Staff Tools | [Player Command Permissions](permissions/Player-Commands.md) | Player-facing command permissions for server admins. |
+| Permissions and Staff Tools | [Player Commands](permissions/Player-Commands.md) | Player-facing command permissions for server admins. |
 | Permissions and Staff Tools | [Admin Commands](Commands.md) | `/lands admin` and `/wars admin` commands. |
 | Permissions and Staff Tools | [Permissions](permissions/Permissions.md) | Command, flag, bypass, teleport, and staff permissions. |
 | Permissions and Staff Tools | [LuckPerms Context](permissions/Luckperms-Context.md) | LuckPerms contexts provided by Lands. |
