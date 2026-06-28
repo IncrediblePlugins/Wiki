@@ -149,6 +149,9 @@ These permissions extend admin capabilities beyond direct command execution.
 `lands.admin.disabled-features`\
 Allow using features that are disabled for regular players, such as setting areas up for rental or claiming in worlds where it is disabled in `config.yml`.
 
+`lands.admin.command.wild`\
+Execute `/lands wild <world> <player>` to random-teleport another player.
+
 `lands.admin.land_delete`\
 Delete other players' lands or unclaim chunks from them.
 
