@@ -20,7 +20,7 @@ Permission:
 
 # Chat Spy
 
-`/lands admin chatspy <land | nation | *>` toggles chat spy for one land, one nation, or all lands and nations.
+`/lands admin chatspy <land or nation or *>` toggles chat spy for one land, one nation, or all lands and nations.
 
 Run `/lands admin chatspy` without an argument to disable all selected chat spy targets.
 
@@ -40,7 +40,7 @@ Permission:
 
 Teleport another player to a spawn:
 
-`/lands spawn <land | none> <area | none> <player> <wait>`
+`/lands spawn <land or none> <area or none> <player> <wait>`
 
 Use `none` for the land to use the player's current edit land. Use `none` for the area to use the land spawn instead of a sub-area spawn.
 

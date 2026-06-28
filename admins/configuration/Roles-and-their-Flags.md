@@ -22,9 +22,9 @@ Changing `roles.yml` requires a reload or restart.
 
 | Command | What it does | Permission |
 | --- | --- | --- |
-| `/lands admin land <land | *> setflag <flag> <true | false> <visitor>` | Sets a role flag or natural flag in one land, or all lands with `*`. | `lands.admin.command.land.setflag` |
-| `/lands admin land <land | *> resetflag <flag | all>` | Resets one flag or all flags to config defaults. | `lands.admin.command.land.resetflag` |
-| `/lands admin land <land | *> addrole <role>` | Adds a custom role from `roles.yml` to one land or all lands. | `lands.admin.command.land.addrole` |
+| `/lands admin land <land or *> setflag <flag> <true or false> <visitor>` | Sets a role flag or natural flag in one land, or all lands with `*`. | `lands.admin.command.land.setflag` |
+| `/lands admin land <land or *> resetflag <flag or all>` | Resets one flag or all flags to config defaults. | `lands.admin.command.land.resetflag` |
+| `/lands admin land <land or *> addrole <role>` | Adds a custom role from `roles.yml` to one land or all lands. | `lands.admin.command.land.addrole` |
 
 Be careful with `addrole`: player-created lands can rename roles, so running it multiple times can add duplicate roles.
 

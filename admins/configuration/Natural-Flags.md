@@ -16,11 +16,11 @@ Changing flag defaults in config requires a reload or restart and only affects n
 
 # Admin Commands
 
-`/lands admin land <land | *> setflag <flag> <true | false> <visitor>`
+`/lands admin land <land or *> setflag <flag> <true or false> <visitor>`
 
 Sets a role flag or natural flag in one land, or all lands with `*`.
 
-`/lands admin land <land | *> resetflag <flag | all>`
+`/lands admin land <land or *> resetflag <flag or all>`
 
 Resets one flag or all flags back to the values from config and `roles.yml`. Admin lands are skipped when resetting all lands.
 

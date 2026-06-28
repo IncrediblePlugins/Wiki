@@ -108,8 +108,8 @@ Admins can set or modify shields with:
 
 | Command | Permission |
 | --- | --- |
-| `/lands admin land <land | *> shield set <time>` | `lands.admin.command.land.shield.set` |
-| `/lands admin land <land | *> shield modify <time>` | `lands.admin.command.land.shield.modify` |
+| `/lands admin land <land or *> shield set <time>` | `lands.admin.command.land.shield.set` |
+| `/lands admin land <land or *> shield modify <time>` | `lands.admin.command.land.shield.modify` |
 
 # War Settings Players Can Change
 
@@ -156,6 +156,6 @@ See [Roles and Role Flags](Roles-and-their-Flags.md) for all role flags.
 | Command | What it does | Permission |
 | --- | --- | --- |
 | `/wars admin start <attacker> <defender> <tribute> <preparation_time>` | Forcefully declares or starts a war. | `wars.admin.command.start` |
-| `/wars admin end <land | nation>` | Ends an upcoming or active war without winner rewards. | `wars.admin.command.end` |
+| `/wars admin end <land or nation>` | Ends an upcoming or active war without winner rewards. | `wars.admin.command.end` |
 
 `preparation_time` accepts time values such as `0s`, `10m`, `1h`, or `1d`.
