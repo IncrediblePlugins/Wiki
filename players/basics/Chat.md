@@ -1,29 +1,29 @@
-Chatting with your land and nation members may be crucial.
+Lands has private chat channels for land and nation members.
 
 # Land Chat
-The easiest way to chat with land members is by just sending a message in the normal chat with the following format: ``@land <message>``
-Just make sure to replace ``<message>`` with the message of your choice.
 
-If you want to send a message to a specific land, just add the land name before the message: ``@land <land> <message>``
+Use `/lands chat` to turn land chat mode on or off.
 
-Examples:
-* ``@land Hello my fellow land members!`` -> Sends a message to your current edit land.
-* ``@land Test Hello my fellow land members of land Test!`` -> Sends a message to the land named ``Test``.
+When land chat mode is on, normal chat messages are sent to your current edit land instead of global chat.
 
-## Alternative Command
-If you want to send messages using a command, just execute ``/lands chat [land] <message>``. The ``[land]`` parameter is optional and the behaviour is the same as with the chat tag above.
+You can also send one message without changing your chat mode:
+
+`/lands chat <message>`
+
+If you are trusted in multiple lands, you can send a message to a specific land:
+
+`/lands chat <land> <message>`
 
 # Nation Chat
-The easiest way to chat with nation members is by just sending a message in the normal chat with the following format: ``@nation <message>``
-Just make sure to replace ``<message>`` with the message of your choice.
 
-If you want to send a message to a specific nation, just add the nation name before the message: ``@nation <nation> <message>``
+Use `/nations chat` to turn nation chat mode on or off.
 
-Examples:
-* ``@nation Hello my fellow nation members!`` -> Sends a message to the nation of your current edit land.
-* ``@nation Test Hello my fellow nation members of nation Test!`` -> Sends a message to the nation named ``Test``.
+When nation chat mode is on, normal chat messages are sent to the nation of your current edit land.
 
-## Alternative Command
-If you want to send messages using a command, just execute ``/nations chat [nation] <message>``. The ``[nation]`` parameter is optional and the behaviour is the same as with the chat tag above.
+You can also send one message without changing your chat mode:
 
+`/nations chat <message>`
 
+If you are part of multiple nations through different lands, you can send a message to a specific nation:
+
+`/nations chat <nation> <message>`

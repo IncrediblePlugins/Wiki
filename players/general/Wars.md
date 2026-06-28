@@ -1,27 +1,80 @@
-This page explains how the war system of Lands works from the perspective of a player.
+This page explains wars from a player's point of view.
 
-# 1. Declare War
-1. To declare war against your enemy, simply execute `/wars declare <land>`.
-2. Now a menu will open which asks you about setting a tribute. This tribute will be paid by the enemy (defender) in case they surrender later.
-3. After you clicked on the send button, the enemy will receive your war declaration with information, like when the war starts and which tribute you set in case they want to surrender.
+# 1. Starting a War
 
-# 2. War Preparation Time
-After the declaration is sent, the war preparation time starts. During this time, the defender has time to prepare against for the upcoming fight. How long the preparation time is depends on your server's configuration. All players of both lands will get a notification periodically. By executing `/wars info` or `/wars` you can get information about the upcoming war.
+To start a war, use `/wars declare <land or nation>`.
 
-# 3. The War Starts
-When the war preparation time is over, all players of both lands are able to fight against their enemy. There may be certain options enabled on your server that prevent invading the enemies land, while their players are offline. By executing `/wars menu` you can view which actions, like block breaking etc., you can do in the enemies lands.
+You can only declare war if your role is allowed to manage wars. Your server may also require both sides to have enough members, claims, money, or age. Some servers only allow wars at certain times, or only between nations.
 
-## 3.1 What Happens if a Player is Part of Multiple Lands? Which Team Will They Join?
-Defending lands are prioritized and the team is calculated once and stays the same.
+The target must be marked as an enemy first. If they have a war shield, they cannot be attacked until the shield ends.
 
-## 3.2 Allies
-Direct allies (a land or lands of a nation) will be able to support you in your war. They'll also be visible in the `/wars` menu. They also can be attacked by the enemy.
+After using the command, a menu opens where you can set a tribute. The tribute is the money the defender must pay if they surrender later. If the tribute is set to `0`, surrender may be disabled, depending on the server.
 
-# 4. During the War
-During the wartime, you may be able to invade the enemies land and steal items from their containers, but this fully depends on your server's configuration. You may even be able to break and place certain or all blocks. Again, this depends on the server you're playing on. Also, the server may have configured a minimum amount of members of the enemy which need to be online, before you can invade their land.
+Some servers use mutual war declarations. In that case, the defender must accept the request with `/wars declare <attacker>` before the normal preparation time starts. They can deny it with `/wars deny`.
 
-## 4.1 Capture Flags
-Capture flags can be crafted or are given to you by the server. You can view the crafting recipe during the war in the `/wars` menu. You must place them in the outskirts of the enemies land. After that, you must clear all enemy presence in this area and hold the capture point for a specific time. You'll be able to view a progress bar at the top of your screen. Be aware that the defenders get notified once you place a capture point! Depending on your server's configuration, your land may claim the captured area after you held it successfully. 
+# 2. Preparation Time
 
-# 5. The War is over
-Your server has a configured maximum wartime, which will be visible for you during the war. The team with the most points wins the war. Points are given for kills and captured flags etc. The winner will be rewarded with a robbery money amount with is taken from the defender's balance (usually their land bank; this depends on your server's configuration). Your server may also have set up custom rewards. If both teams have the same amount of kills, the war will end in a draw and no team will be rewarded. Depending on your server's configuration, you may receive a war shield after the war.
+After a declaration is sent or accepted, the war enters preparation time. During this time, both sides can prepare, but the fight has not started yet.
+
+Use `/wars info` or `/wars menu` to see:
+
+- who is fighting
+- when the war starts
+- how many points are needed to win
+- the tribute
+- the capture flag recipe, if capture flags are enabled
+
+The length of preparation time depends on the server.
+
+# 3. When the War Starts
+
+When preparation time ends, both teams can fight each other.
+
+Use `/wars menu` to see the current war status. It shows both teams, kills, captures, points, the remaining time, and the actions that may be allowed in enemy land.
+
+Use `/wars spawn` to teleport near the enemy side, if your server can find a safe war spawn.
+
+Your server decides what players can do in enemy claims during war. For example, you may be able to enter enemy land, fight players, place ladders, break certain blocks, open containers, or do none of these. Usually this only applies to the main lands that started the war, but servers can also include allied lands as war zones. Always check `/wars menu` for what is allowed on your server.
+
+Some servers require defenders to be online before enemies can invade or capture land.
+
+# 4. Teams and Allies
+
+If you are part of multiple lands that are in the same war, your team is chosen once and stays the same for the whole war. Defending lands are prioritized.
+
+Allies may be able to help in war. For example, lands in the same nation can fight together. Allies that join the war can also be attacked by the enemy.
+
+# 5. Capture Flags
+
+Capture flags are special war blocks. You can craft them or receive them from the server. If crafting is enabled, the recipe is shown in `/wars menu`.
+
+Place a capture flag on a border chunk of enemy war land during the war. If the flag is too far inside the claim, too close to another capture flag, outside the allowed height, or on cooldown, it cannot be placed.
+
+To capture the area, your team must hold the flag until the progress bar fills. Progress only moves forward when the invaders have more players in the area than the defenders. If defenders enter the area, they can stop or push back the capture progress.
+
+Defenders are notified when a capture flag is placed. They can try to defend the area or destroy the flag. Destroying an enemy capture flag may give points. Depending on the server, a captured area may become unclaimed or may be claimed by the invaders.
+
+# 6. Points and Winning
+
+Wars are won with points. Points can come from kills, captured flags, destroyed capture flags, and sometimes other server settings.
+
+The war ends when a team reaches the required points or when the war time runs out. If time runs out, the team with the most points wins. If both teams have the same score, the war ends in a draw.
+
+The winner may receive money from the loser and other rewards set by the server. After the war, one or both sides may receive a war shield, depending on the server.
+
+# 7. Surrender
+
+The player surrendering for a land or nation needs permission to manage wars.
+
+If defenders surrender, they pay the tribute that was set by the attackers. If attackers surrender, they may also need to pay a server-defined tribute to the defenders.
+
+Surrender is done from `/wars menu`. If the required tribute is `0`, surrender may be blocked. If your land or nation cannot afford the tribute, you cannot surrender until enough money is available.
+
+# 8. Useful Commands
+
+- `/wars menu` - open the war menu
+- `/wars info` - show information about your current or upcoming war
+- `/wars declare <land or nation>` - declare or accept a war
+- `/wars deny` - deny a mutual war declaration
+- `/wars spawn` - teleport near the enemy during war
+- `/wars list` - list active wars

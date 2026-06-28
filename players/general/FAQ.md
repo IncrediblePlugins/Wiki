@@ -1,17 +1,45 @@
-**First of all, please make sure to read ["How to start as a Player"](../basics/Start) first.**
+Read [Start](../basics/Start.md) first if you are new to Lands.
 
-## I have multiple lands. How can I claim for a specific one?
-Answer can be found here: [Link](https://wiki.incredibleplugins.com/lands/players/basics/commands#current-edit-land)
+# I have multiple lands. How do I choose which one my commands use?
 
-***
+Use:
 
-## I have multiple lands. How can I select the land I want to use for my commands that I don't have to specify it in the commands every time.
-Same as the previous question: [Link](https://wiki.incredibleplugins.com/lands/players/basics/commands#current-edit-land)
+`/lands edit <land>`
 
-***
+After that, most land commands use that land.
 
-## I'm part of multiple lands. At least two of them are now engaged in a war. Which team do I join?
-Defending lands are prioritized and the team is calculated once and stays the same during the whole duration of the war.
+You can also use `/lands edit` while standing inside a land you are trusted in.
 
+# How do I claim for a specific land?
 
- 
+Select the land first:
+
+`/lands edit <land>`
+
+Then claim with:
+
+`/lands claim`
+
+# How do I open the menu for the area I am standing in?
+
+Use:
+
+`/lands menu here`
+
+This opens the menu for the current subarea or default area, if you are allowed to access it.
+
+# I am part of multiple lands in the same war. Which team do I join?
+
+Your team is chosen once and stays the same for the whole war.
+
+If you are trusted in lands on both sides, defending lands are prioritized.
+
+# How do I leave a rented area?
+
+Stand inside the rented area and use:
+
+`/lands rent cancel`
+
+If you are only trusted in an area and it is not rented, use:
+
+`/lands leave here`

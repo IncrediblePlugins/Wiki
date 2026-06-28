@@ -1,1 +1,3 @@
-Here you can find information on how to use Lands. Use the navigation sidebar to look at specific sections of the wiki.
+This section explains Lands from a player's point of view.
+
+Start with the basics if you are new to claiming land. Use the other pages when you want to manage members, areas, rentals, nations, or wars.

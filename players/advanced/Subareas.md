@@ -1,21 +1,59 @@
-Subareas are inside a land. These areas are three dimensional. That means that they are not bound to chunks, but instead to blocks. You can trust players to specific areas and apply flags to them, like you would do for a land. The land also has a default area which contains every block that isn't part of a subarea. This is the area that you're normally modifying in the menu of your land.
+Subareas are smaller areas inside a land.
 
-# Create a new Area
-1. First open your land menu with `/lands menu` and click on the areas item. Depending on your servers configuration the item positions may vary.\
-![Click on the areas item.](https://imgur.com/7SxMfck.png)
+Unlike normal claims, subareas are based on blocks, not chunks. This means a subarea can cover only part of a chunk and can have its own height range.
 
+Each land also has a default area. The default area is everything in the land that is not inside a subarea.
 
-2. Now click on the add area button. After this you will need to enter the area name in chat.\
-![Click on the add area item.](https://imgur.com/8Ldk0go.png) 
+# What Subareas Are For
 
+Use subareas when different parts of your land need different members or permissions.
 
-3. After that you will notice that the area will popup in the menu and give you instructions on how to set select the boundaries of the area.\
-![Execute `/lands selection` and mark the lower and upper corner with left and right click.](https://imgur.com/6Fsnywv.png)
+For example, you can make:
 
-4. The selection is set. It will display it to you live. You can make changes as you wish. Then just execute `/lands selection assign <area>`. After that everything is setup. The GUI menu of the area can be opened via `/lands` or by standing inside it and executing `/lands menu here`.\
-![](https://imgur.com/KnF2iWl.png)
+- a private storage room
+- a farm that only some players can use
+- a shop area
+- a rented room
+- a town plot
 
-# Trust Players and set Flags
-By opening the areas menu and clicking on the area, you can trust players to this specific area and edit flags. You can do everything for this specific area, just like for the default area.\
-![This is the area menu. Click on the items to perform actions.](https://imgur.com/JyEu516.png)
+# Create or Resize a Subarea
 
+1. Use `/lands selection`.
+2. Select the two corners of the area.
+3. Use `/lands assign <area>`.
+
+If the area does not exist yet, Lands creates it. If it already exists, Lands resizes it to your selection.
+
+Use `/lands selection expand` if you want the area to use the full height. If your selection is very short, Lands may ask you to confirm or expand it.
+
+# Open a Subarea Menu
+
+Stand inside the subarea and use:
+
+`/lands menu here`
+
+You can also open the areas list from `/lands` and choose the area there.
+
+# Trust Players in a Subarea
+
+Use:
+
+`/lands trust <player> <area>`
+
+This gives the player access only to that area, unless they are also trusted in the whole land.
+
+To remove them from that area, use:
+
+`/lands untrust <player> <area>`
+
+# Area Roles and Flags
+
+Each subarea can have its own roles and flags. Open the area menu to decide what players can do there.
+
+This is useful when one player should build in a farm but not open storage, or when a tenant should only control their rented room.
+
+# Rentals
+
+Subareas can be rented or sold if your server has rentals enabled.
+
+See [Rent & Sell System](Rental.md) for details.
