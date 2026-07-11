@@ -21,6 +21,7 @@ Command permissions are defined in `plugin.yml`. Some commands only exist if the
 | `/lands` | `lands.command.menu` | Opens the main Lands menu. |
 | `/lands menu [menu] [args]` | `lands.command.menu` | Menu entry points do not have separate permission nodes. |
 | `/lands help [page]` | `lands.command.help` | Shows command help. |
+| `/lands edit [land]` | `lands.command.edit` | Selects the player's current edit land. Without a name, it selects the land they are standing in if they are trusted there. |
 | `/lands create [name]` | `lands.command.create` | Feature and cost settings can still block creation. |
 | `/lands createcamp [name]` | `lands.command.createcamp` | Only registered if camps are enabled. |
 | `/lands claim` | `lands.command.claim` | Role flags, claim worlds, limits, costs, and claim rules still apply. |

@@ -15,6 +15,7 @@ Some commands only exist if your server enabled that feature. Your server may al
 | `/lands` | Opens the main Lands menu. |
 | `/lands menu [menu] [args]` | Opens the Lands menu. Useful menu entries include `here`, `land`, `areas`, `claims`, `relations`, `map`, `inbox`, `level`, `rentable`, `all-lands`, `lands`, `nations`, and `personal-settings`. |
 | `/lands help [page]` | Shows command help. |
+| `/lands edit [land]` | Selects the land that most land commands should use. Without a name, it selects the land you are standing in if you are trusted there. |
 | `/lands create [name]` | Creates a land. If you do not enter a name, Lands may ask for one in chat or in a dialog. |
 | `/lands createcamp [name]` | Creates a temporary camp, if camps are enabled. |
 | `/lands claim` | Claims the chunk you are standing in, or claims your current selection. |
@@ -115,5 +116,6 @@ Some commands only exist if your server enabled that feature. Your server may al
 | `/wars declare <land or nation>` | Declares war, or accepts a mutual war request. |
 | `/wars deny` | Denies a mutual war request. |
 | `/wars info` | Shows information about your current or upcoming war. |
+| `/wars info captureflag` | Shows the capture flag recipe or capture flag information. |
 | `/wars spawn` | Teleports near the enemy side during war. |
 | `/wars list` | Shows active wars. |

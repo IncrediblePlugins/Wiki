@@ -12,8 +12,10 @@
 * [Sub Areas](advanced/Subareas.md)
 * [Rent & Sell System](advanced/Rental.md)
 * [Economy](advanced/Economy.md)
+* [Land Discovery and Categories](general/Land-Discovery-and-Categories.md)
 
 ## ⚔️ Nations and Wars
+* [Relations](general/Relations.md)
 * [Nations](general/Nations.md)
 * [Wars](general/Wars.md)
 

@@ -12,7 +12,9 @@ Pages:
 | Setup | [Frequently Asked Questions](configuration/Frequently-asked-Questions.md) | Common admin questions and fixes. |
 | Claims and Worlds | [Claiming and Worlds](configuration/Claiming-and-Worlds.md) | Claim worlds, land creation, claim rules, player tools, and random teleport. |
 | Claims and Worlds | [Camps](configuration/Camps.md) | Temporary camp lands and camp items. |
-| Claims and Worlds | [Regeneration](configuration/Unclaim-and-Wilderness-Regeneration.md) | Regenerating unclaimed land or wilderness. |
+| Claims and Worlds | [Land Categories](configuration/Land-Categories.md) | Configuring categories shown in `/lands list` and land menus. |
+| Claims and Worlds | [Expiration and Cleanup](configuration/Expiration.md) | Inactive owners, inactive members, cleanup commands, and expiration safety. |
+| Claims and Worlds | [Regeneration](configuration/Unclaim-and-Wilderness-Regeneration.md) | How to handle unclaim or wilderness regeneration with external tools. |
 | Claims and Worlds | [Leaderboards](configuration/Leaderboards.md) | Top signs, holograms, sorting types, and leaderboard permissions. |
 | Economy and Progression | [Economy](configuration/Economy.md) | Banks, claim costs, taxes, upkeep, rent payments, and nation economy. |
 | Economy and Progression | [Levels](configuration/Levels.md) | Land and nation levels in `levels.yml`. |
@@ -28,14 +30,11 @@ Pages:
 | Permissions and Staff Tools | [LuckPerms Context](permissions/Luckperms-Context.md) | LuckPerms contexts provided by Lands. |
 | Permissions and Staff Tools | [Tools](Tools.md) | Moderation and staff utility commands. |
 | Integrations and UI | [Discord Bot](https://wiki.incredibleplugins.com/discordbridge/modules/lands) | DiscordBridge integration for Lands. |
+| Integrations and UI | [Web Maps](configuration/Web-Maps.md) | Dynmap, BlueMap, squaremap, Pl3xMap, and `/lands map link`. |
 | Integrations and UI | [GUI Menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus) | Customizing GUI menus. |
 | Integrations and UI | [Bedrock Forms](https://wiki.incredibleplugins.com/general/gui-menus/bedrock-forms) | Bedrock form menus. |
 | Integrations and UI | [Messages](https://wiki.incredibleplugins.com/general/messages-and-config/messages) | Editing messages and locale text. |
 | Integrations and UI | [Translations](https://wiki.incredibleplugins.com/general/messages-and-config/translations) | Translation files and community translations. |
-| Integrations and UI | [Events](https://wiki.incredibleplugins.com/general/messages-and-config/events) | Configured event actions and messages. |
-| Developers | [Setup](developers/API.md) | Setting up the Lands API. |
-| Developers | [Levels](developers/Levels.md) | Developer notes for custom level requirements. |
-| Developers | [Update](developers/Update.md) | Developer update notes. |
-| Developers | [Custom Wars](developers/Custom-Wars.md) | Developer notes for custom war integrations. |
+| Integrations and UI | [Lands Events](configuration/Events.md) | Lands-specific `events.yml` events, groups, and cancellation hooks. |
 
 Player-facing gameplay explanations are in the player wiki.

@@ -31,7 +31,7 @@ Also the fly flag needs to be enabled for their flag in their claim. To toggle f
 ## How can I set visualisations to display permanently?
 Set the visualisation duration to -1 and if you want to automatically enable it on server join, make sure to enable the join option too:
 ```yaml
-# /lands view visualization
+# config.yml -> visualization.view
 view:
   # Should Lands display land borders automatically once the player joins?
   # NOTE: You can set duration_9 (below) to -1 to make the visualization permanent.
