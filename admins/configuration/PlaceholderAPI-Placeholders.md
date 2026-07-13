@@ -160,9 +160,6 @@ Displays the taxes that the player has to pay to the land or the current area if
 `%lands_land_upkeep%`\
 The upkeep costs of the land.
 
-`%lands_land_chunk_cost_next%`\
-The cost of the next claim.
-
 `%lands_land_level%`\
 The name of the current level.
 
