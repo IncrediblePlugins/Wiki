@@ -43,3 +43,9 @@
 * [Messages](https://wiki.incredibleplugins.com/general/messages-and-config/messages)
 * [Translations](https://wiki.incredibleplugins.com/general/messages-and-config/translations)
 * [Lands Events](configuration/Events.md)
+
+## Developers
+* [Setup](developers/API.md)
+* [Levels](developers/Levels.md)
+* [Update](developers/Update.md)
+* [Custom Wars](developers/Custom-Wars.md)
