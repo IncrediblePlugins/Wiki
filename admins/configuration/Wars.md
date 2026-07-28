@@ -151,9 +151,13 @@ See [Roles and Role Flags](Roles-and-their-Flags.md) for all role flags.
 
 # Admin War Commands
 
+There is no standalone `/wars` command; war commands live under the land and nation command trees
+(`/land <land> war ...` / `/nation <nation> war ...`, see the player wiki). Forcing a war is an
+admin-only extension of that, reached through `/lands admin land`:
+
 | Command | What it does | Permission |
 | --- | --- | --- |
-| `/wars admin start <attacker> <defender> <tribute> <preparation_time>` | Forcefully declares or starts a war. | `wars.admin.command.start` |
-| `/wars admin end <land or nation>` | Ends an upcoming or active war without winner rewards. | `wars.admin.command.end` |
+| `/lands admin land <land> war start <attacker> <defender> <tribute> <preparation_time>` | Forcefully declares or starts a war. | `lands.admin.command.land.war.start` |
+| `/lands admin land <land> war end` | Ends an upcoming or active war without winner rewards. | `lands.admin.command.land.war.end` |
 
 `preparation_time` accepts time values such as `0s`, `10m`, `1h`, or `1d`.

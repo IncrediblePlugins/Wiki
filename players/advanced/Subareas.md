@@ -20,7 +20,7 @@ For example, you can make:
 
 1. Use `/lands selection`.
 2. Select the two corners of the area.
-3. Use `/lands assign <area>`.
+3. Use `/land <land> area <area> resize`.
 
 If the area does not exist yet, Lands creates it. If it already exists, Lands resizes it to your selection.
 
@@ -34,9 +34,9 @@ You can also open the areas list from `/lands` and choose the area there.
 
 # Trust Players in a Subarea
 
-Use `/lands trust <player> <area>` to give the player access only to that area, unless they are also trusted in the whole land.
+Use `/land <land> member add <player> <area>` to give the player access only to that area, unless they are also trusted in the whole land.
 
-To remove them from that area, use `/lands untrust <player> <area>`.
+To remove them from that area, use `/land <land> member remove <player> <area>`.
 
 # Area Roles and Flags
 

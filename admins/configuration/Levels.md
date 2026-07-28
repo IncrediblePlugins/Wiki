@@ -8,7 +8,7 @@ You can individually disable / enable land or nation levels. Please note that so
 
 # Configuring Land Levels
 ## Requirements
-For each level you must configure requirements. If a land passes these requirements they will level up. If they later do no longer pass these, their level will get lowered again. The requirement `balance` represents the bank balance of the land (/lands balance).
+For each level you must configure requirements. If a land passes these requirements they will level up. If they later do no longer pass these, their level will get lowered again. The requirement `balance` represents the bank balance of the land (`/land <land> bank balance`).
 ```yaml
       requirements:
         members: 5

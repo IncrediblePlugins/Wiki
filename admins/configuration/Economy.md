@@ -37,15 +37,15 @@ Land banks are configured in `land.bank`.
 
 Important options:
 
-* `land.bank.enabled_13`: enables land banks and the `/lands deposit`, `/lands withdraw`, and `/lands balance` commands.
+* `land.bank.enabled_13`: enables land banks and the `/land <land> bank deposit`, `/land <land> bank withdraw`, and `/land <land> bank balance` commands.
 * `land.bank.max-balance`: maximum money a land can hold. `0` disables the cap.
 * `land.bank.fallback-personal`: lets Lands use the player's personal balance if the land bank cannot pay an action.
 
 Useful commands:
 
-* `/lands balance [land]`
-* `/lands deposit <amount> [land]`
-* `/lands withdraw <amount> [land]`
+* `/land <land> bank balance`
+* `/land <land> bank deposit <amount>`
+* `/land <land> bank withdraw <amount>`
 * `/lands admin land <land or *> bank set <amount>`
 * `/lands admin land <land or *> bank modify <amount>`
 
@@ -78,7 +78,7 @@ Common cost options in `config.yml`:
 * `land.spawn.teleport.costs.value_3`: cost to teleport to a land spawn.
 * `land.setowner.costs_6`: cost to transfer land ownership.
 * `chunk.teleport.costs_3`: cost to teleport to a chunk from the claims menu.
-* `random-teleport.costs_4`: cost for `/lands wild`.
+* `random-teleport.costs_4`: cost for `/lands rtp`.
 
 # Taxes
 
@@ -92,7 +92,7 @@ Important options:
 * `taxes.untrust-member`: untrust a member from the area if they cannot pay.
 * `taxes.taxes-announcement_time`: how often players are warned about upcoming taxes.
 
-Player command: `/lands taxes`
+Player command: `/lands eco taxes`
 
 Taxes can be edited through the land menu by players with the required role permissions.
 
@@ -108,7 +108,7 @@ Important options:
 * `upkeep.nopay_time`: grace period for newly created lands.
 * `upkeep.upkeep-reminder_time`: reminder interval while a land has insufficient funds.
 
-Player command: `/lands upkeep`
+Player command: `/lands eco upkeep`
 
 # Nation Economy
 

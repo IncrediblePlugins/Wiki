@@ -53,25 +53,34 @@ Nested commands add the full path:
 
 `<land or *>` means that `*` applies the command to all lands where the command supports it.
 
+There is no `/lands edit` command anymore. Admins with `lands.admin.command.edit` can manage
+*any* land or nation directly through the normal player commands - `/land <land> ...` /
+`/lands land <land> ...` and `/nation <nation> ...` / `/nations nation <nation> ...` - without
+being an owner or member. That permission also bypasses restrictions like max member counts for
+some commands.
+
 # Other Staff Commands
 
 | Command | What it does | Permission |
 | --- | --- | --- |
-| `/lands edit <land>` | Selects another land for admin editing. | `lands.admin.command.edit` |
 | `/lands menu <player>` | Opens another player's Lands menu. | `lands.admin.command.menu` |
-| `/lands wild <world> <player> [skip-cooldown]` | Random-teleports another player. | `lands.admin.command.wild` |
-| `/lands spawn <land or none> <area or none> <player> <wait>` | Teleports another player to a land or area spawn. | `lands.admin.command.edit` |
+| `/lands rtp <world> <player> [skip-cooldown]` | Random-teleports another player. | `lands.admin.command.wild` |
 
 # Wars Admin Commands
 
-`/wars admin` uses this permission format:
-
-`wars.admin.command.<subcommand>`
+War commands moved under the land/nation command trees - see [Commands](../players/basics/Commands.md)
+and [Nations](../players/general/Nations.md) for the regular `war` subcommand. Force-starting or
+force-ending a war is an admin-only extension of that same subcommand, reached through
+`/lands admin land <land> war ...`:
 
 | Command | What it does | Permission |
 | --- | --- | --- |
-| `/wars admin start <attacker> <defender> <tribute> <preparation_time>` | Forcefully declares or starts a war. | `wars.admin.command.start` |
-| `/wars admin end <land or nation>` | Ends an upcoming or active war without winner rewards. | `wars.admin.command.end` |
+| `/lands admin land <land> war start <attacker> <defender> <tribute> <preparation_time>` | Forcefully declares or starts a war. | `lands.admin.command.land.war.start` |
+| `/lands admin land <land> war end` | Ends an upcoming or active war without winner rewards. | `lands.admin.command.land.war.end` |
+
+This only exists under `/lands admin land`; there is no separate admin subcommand for nations and
+no `wars.admin.*` permission tree anymore. A nation at war is really its lands being at war, so
+ending the relevant land's war also ends it for the nation.
 
 # Related Permissions
 

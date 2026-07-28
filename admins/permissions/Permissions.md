@@ -8,11 +8,14 @@ Limits such as max lands, chunks, members, and upkeep limits are configured in `
 
 | Permission | Gives access to |
 | --- | --- |
-| `lands.command.*` | All player `/lands` commands. |
-| `nations.command.*` | All player `/nations` commands. |
-| `wars.command.*` | All player `/wars` commands. |
+| `lands.command.*` | All player `/lands` commands (including `/land`, `/claim`). |
+| `nations.command.*` | All player `/nations` commands (including `/nation`). |
 | `lands.admin.command.*` | All `/lands admin` commands. Staff only. |
-| `wars.admin.command.*` | All `/wars admin` commands. Staff only. |
+
+There is no standalone `/wars` command or `wars.*` permission tree - war commands live under
+`/land <land> war ...` and `/nation <nation> war ...`, covered by `lands.command.*` /
+`nations.command.*` above. Force-starting or force-ending a war is covered by
+`lands.admin.command.*` (`/lands admin land <land> war start`/`end`).
 
 For the exact admin command list, see [Admin Commands](../Commands.md).
 
@@ -40,11 +43,11 @@ Example with LuckPerms: `/lp group default permission set lands.teleport.sub_are
 
 | Permission | Allows |
 | --- | --- |
-| `lands.teleport.chunk` | Teleporting to claimed chunks from `/lands claimlist`. |
+| `lands.teleport.chunk` | Teleporting to claimed chunks from `/land <land> claim list`. |
 | `lands.teleport.rentable` | Teleporting to rentable areas or areas for sale. |
 | `lands.teleport.land_spawn` | Teleporting to a land spawn. |
-| `lands.teleport.random_teleport` | Random teleporting with `/lands wild`. |
-| `lands.teleport.war` | Teleporting to a war spawn with `/wars spawn`. |
+| `lands.teleport.random_teleport` | Random teleporting with `/lands rtp`. |
+| `lands.teleport.war` | Teleporting to a war spawn with `/land <land> war spawn` or `/nation <nation> war spawn`. |
 | `lands.teleport.sub_area` | Teleporting to a sub area. |
 | `lands.teleport.unstuck` | Teleporting with `/lands unstuck`. |
 
@@ -67,12 +70,12 @@ Example with LuckPerms: `/lp group default permission set lands.teleport.sub_are
 
 | Permission | Allows |
 | --- | --- |
-| `lands.bypass.cooldown.wild` | Bypass `/lands wild` cooldown. |
-| `lands.bypass.cooldown.rename_land` | Bypass `/lands rename` cooldown. |
+| `lands.bypass.cooldown.wild` | Bypass `/lands rtp` cooldown. |
+| `lands.bypass.cooldown.rename_land` | Bypass `/land <land> rename` cooldown. |
 | `lands.bypass.cooldown.teleport` | Bypass chunk teleport cooldown. |
-| `lands.bypass.cooldown.spawn` | Bypass `/lands spawn` cooldown. |
+| `lands.bypass.cooldown.spawn` | Bypass `/land <land> spawn` cooldown. |
 | `lands.bypass.cooldown.unstuck` | Bypass `/lands unstuck` cooldown. |
-| `nations.bypass.cooldown.rename_nation` | Bypass `/nations rename` cooldown. |
+| `nations.bypass.cooldown.rename_nation` | Bypass `/nation <nation> rename` cooldown. |
 
 # War Bypass Permissions
 
@@ -107,15 +110,14 @@ Replace `<command>` with the command name without `/`.
 | --- | --- |
 | `lands.admin.*` | All Lands admin actions. Staff only. |
 | `lands.admin.disabled-features` | Use some features that are disabled for regular players, such as claiming in disabled worlds or setting rental areas while rent is disabled. |
-| `lands.admin.command.edit` | Edit other lands through `/lands edit <land>` and admin command contexts. |
+| `lands.admin.command.edit` | Manage any land through `/land <land>` / `/lands land <land>`, even if not a member. May also ignore requirements such as max members for some commands. |
 | `lands.admin.land_delete` | Delete other players' lands or unclaim chunks from them. |
-| `lands.admin.land_setowner` | Use `/lands setowner` for lands the player does not own. |
+| `lands.admin.land_setowner` | Use `/land <land> member setowner` for lands the player does not own. |
 | `lands.admin.setting_edit_land` | Edit natural flags of other players' lands. |
 | `lands.admin.setting_edit_role` | Edit role flags of other players' lands. |
 | `lands.admin.setting_edit_taxes` | Edit tax settings of other players' lands. |
 | `lands.admin.sign.top` | Create and edit leaderboard signs. |
-| `nations.admin.nation_edit` | Edit other players' nations from the `/lands edit <land>` context. |
-| `nations.command.menu.others` | Open the menu of a specific nation with `/nations menu <nation>`. |
+| `nations.admin.nation_edit` | Manage any nation through `/nation <nation>` / `/nations nation <nation>` as if trusted in it, and bypass nation level requirements when creating a nation. |
 
 # Wildcard Groups
 
@@ -123,6 +125,5 @@ Wildcard groups are useful for staff, but use them carefully.
 
 | Permission | Gives |
 | --- | --- |
-| `lands.*` | All Lands permissions listed under the Lands permission tree. |
+| `lands.*` | All Lands permissions listed under the Lands permission tree (includes war commands/bypasses). |
 | `nations.*` | All Nations permissions listed under the Nations permission tree. |
-| `wars.*` | All Wars permissions listed under the Wars permission tree. |

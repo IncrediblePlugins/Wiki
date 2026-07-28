@@ -8,19 +8,17 @@ Money can be used for land creation, claiming, teleporting, rent, taxes, upkeep,
 
 A land can have its own bank. The land bank can pay for land actions, taxes, and upkeep if your server enabled it.
 
-Use `/lands balance [land]` to view the bank balance.
+Use `/land <land> bank balance` to view the bank balance.
 
-Use `/lands deposit <amount> [land]` to put money into the bank.
+Use `/land <land> bank deposit <amount>` to put money into the bank.
 
-Use `/lands withdraw <amount> [land]` to take money from the bank. You need permission from your land role to withdraw.
-
-If you do not enter a land name, the command uses your current edit land.
+Use `/land <land> bank withdraw <amount>` to take money from the bank. You need permission from your land role to withdraw.
 
 # Taxes
 
 Taxes are payments from trusted players to the land or area they are trusted in.
 
-Use `/lands taxes` to see taxes you may need to pay.
+Use `/lands eco taxes` to see taxes you may need to pay.
 
 Land owners and players with the right role permissions can change taxes in the land menu.
 
@@ -30,7 +28,7 @@ If you cannot pay taxes, your server may remove you from the area.
 
 Upkeep is a regular payment that land owners may need to pay to keep their claims.
 
-Use `/lands upkeep` to see upcoming upkeep for your lands.
+Use `/lands eco upkeep` to see upcoming upkeep for your lands.
 
 Keep enough money in the land bank before upkeep is collected. If a land cannot pay, your server may remove claims or apply other server-defined rules.
 
@@ -40,7 +38,7 @@ If your land is in a nation, your server may make your land pay the nation inste
 
 Nation owners can manage nation taxes in the nation menu.
 
-Open it with `/nations`.
+Open it with `/nation <nation>`.
 
 # Claim Costs
 

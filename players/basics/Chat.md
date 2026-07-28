@@ -2,20 +2,20 @@ Lands has private chat channels for land and nation members.
 
 # Land Chat
 
-Use `/lands chat` to turn land chat mode on or off.
+Use `/land <land> chat` to turn land chat mode on or off for that land.
 
-When land chat mode is on, normal chat messages are sent to your current edit land instead of global chat.
+When land chat mode is on, normal chat messages are sent to that land instead of global chat.
 
-You can also send one message without changing your chat mode with `/lands chat <message>`.
+You can also send one message without changing your chat mode with `/land <land> chat <message>`.
 
-If you are trusted in multiple lands, you can send a message to a specific land with `/lands chat <land> <message>`.
+If you are trusted in multiple lands, just use the name of the land you want to chat with.
 
 # Nation Chat
 
-Use `/nations chat` to turn nation chat mode on or off.
+Use `/nation <nation> chat` to turn nation chat mode on or off for that nation.
 
-When nation chat mode is on, normal chat messages are sent to the nation of your current edit land.
+When nation chat mode is on, normal chat messages are sent to that nation instead of global chat.
 
-You can also send one message without changing your chat mode with `/nations chat <message>`.
+You can also send one message without changing your chat mode with `/nation <nation> chat <message>`.
 
-If you are part of multiple nations through different lands, you can send a message to a specific nation with `/nations chat <nation> <message>`.
+If you are part of multiple nations through different lands, just use the name of the nation you want to chat with.

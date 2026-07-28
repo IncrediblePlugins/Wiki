@@ -1,14 +1,14 @@
 Read [Start](../basics/Start.md) first if you are new to Lands.
 
-# I have multiple lands. How do I choose which one my commands use?
+# I have multiple lands. How do I make sure my commands use the right one?
 
-Use `/lands edit <land>`. After that, most land commands use that land.
-
-You can also use `/lands edit` while standing inside a land you are trusted in.
+Land commands are reached through `/land <land> ...` (also available as `/lands land <land> ...`) -
+just name the land you mean as the first argument. You can also use `here` in place of the land
+name to act on the land you are currently standing in.
 
 # How do I claim for a specific land?
 
-Select the land first with `/lands edit <land>`, then claim with `/lands claim`.
+Use `/land <land> claim` (or `/land here claim` while standing in that land).
 
 # How do I open the menu for the area I am standing in?
 
@@ -22,6 +22,6 @@ If you are trusted in lands on both sides, defending lands are prioritized.
 
 # How do I leave a rented area?
 
-Stand inside the rented area and use `/lands rent cancel`.
+Stand inside the rented area and use `/lands rental cancel`.
 
-If you are only trusted in an area and it is not rented, use `/lands leave here`.
+If you are only trusted in an area and it is not rented, use `/land here leave`.

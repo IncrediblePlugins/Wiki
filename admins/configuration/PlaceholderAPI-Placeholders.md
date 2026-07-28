@@ -66,7 +66,7 @@ and lands that they own.
 Returns the amount of chunks the player has left. It's the same as subtracting %lands_player_chunks_claimed% from %lands_player_limit_player_chunks%.
 
 `%lands_player_chat%`\
-Displays whether the player has /lands chat or /nations chat toggled to send every message into land or nation chat.
+Displays whether the player has land or nation chat mode toggled to send every message into land or nation chat.
 
 `%lands_player_chat_bool%`\
 Displays "true" if the player has enabled that all chat messages of them end up in land or nation chat. Otherwise
@@ -81,7 +81,7 @@ Same as `%lands_combat-tag%`, but returns fixed values: `true` or `false`.
 ## Lands
 
 `%lands_land_name%`\
-The name of the edit land, including formatting and color. If you want to display the land at the players current
+The name of the player's land, including formatting and color. If you want to display the land at the players current
 location: [append _here to it](#important-display-for-current-location).
 
 `%lands_land_name_plain%`\
@@ -195,12 +195,12 @@ Returns the item type of the lands icon. Will return "AIR", if there's no land.
 
 ### _any Option
 
-Display placeholders for any nation the player is in. So not just their current /edit land or the land at their
+Display placeholders for any nation the player is in. So not just their current land or the land at their
 position.
 Just append `_any` to the placeholder, to display the information for any nation the player is in.
 
 `%lands_nation_name%`\
-The name of the nation that belongs to the edit land. This includes formatting and color. If you want to display the
+The name of the nation that belongs to the player's land. This includes formatting and color. If you want to display the
 nation at the players current location: [append _here to it](#important-display-for-current-location).
 
 `%lands_nation_name_plain%`\

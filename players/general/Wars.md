@@ -1,8 +1,12 @@
 This page explains wars from a player's point of view.
 
+War commands are reached through `/land <land> war ...` (also available as `/lands land <land> war ...`),
+or `/nation <nation> war ...` if the fight involves your nation instead of just your land. Replace
+`<land>`/`<nation>` with the land or nation on your side of the war throughout this page.
+
 # 1. Starting a War
 
-To start a war, use `/wars declare <land or nation>`.
+To start a war, use `/land <land> war declare <land or nation>`.
 
 You can only declare war if your role is allowed to manage wars. Your server may also require both sides to have enough members, claims, money, or age. Some servers only allow wars at certain times, or only between nations.
 
@@ -10,13 +14,13 @@ The target must be marked as an enemy first. If they have a war shield, they can
 
 After using the command, a menu opens where you can set a tribute. The tribute is the money the defender must pay if they surrender later. If the tribute is set to `0`, surrender may be disabled, depending on the server.
 
-Some servers use mutual war declarations. In that case, the defender must accept the request with `/wars declare <attacker>` before the normal preparation time starts. They can deny it with `/wars deny`.
+Some servers use mutual war declarations. In that case, the defender must accept the request with `/land <land> war declare <attacker>` before the normal preparation time starts. They can deny it with `/land <land> war decline`.
 
 # 2. Preparation Time
 
 After a declaration is sent or accepted, the war enters preparation time. During this time, both sides can prepare, but the fight has not started yet.
 
-Use `/wars info` or `/wars menu` to see:
+Use `/land <land> war info` or `/land <land> war menu` to see:
 
 - who is fighting
 - when the war starts
@@ -30,11 +34,11 @@ The length of preparation time depends on the server.
 
 When preparation time ends, both teams can fight each other.
 
-Use `/wars menu` to see the current war status. It shows both teams, kills, captures, points, the remaining time, and the actions that may be allowed in enemy land.
+Use `/land <land> war menu` to see the current war status. It shows both teams, kills, captures, points, the remaining time, and the actions that may be allowed in enemy land.
 
-Use `/wars spawn` to teleport near the enemy side, if your server can find a safe war spawn.
+Use `/land <land> war spawn` to teleport near the enemy side, if your server can find a safe war spawn.
 
-Your server decides what players can do in enemy claims during war. For example, you may be able to enter enemy land, fight players, place ladders, break certain blocks, open containers, or do none of these. Usually this only applies to the main lands that started the war, but servers can also include allied lands as war zones. Always check `/wars menu` for what is allowed on your server.
+Your server decides what players can do in enemy claims during war. For example, you may be able to enter enemy land, fight players, place ladders, break certain blocks, open containers, or do none of these. Usually this only applies to the main lands that started the war, but servers can also include allied lands as war zones. Always check the war menu for what is allowed on your server.
 
 Some servers require defenders to be online before enemies can invade or capture land.
 
@@ -46,7 +50,7 @@ Allies may be able to help in war. For example, lands in the same nation can fig
 
 # 5. Capture Flags
 
-Capture flags are special war blocks. You can craft them or receive them from the server. If crafting is enabled, the recipe is shown in `/wars menu`.
+Capture flags are special war blocks. You can craft them or receive them from the server. If crafting is enabled, the recipe is shown in the war menu (`/land <land> war info captureflag`).
 
 Place a capture flag on a border chunk of enemy war land during the war. If the flag is too far inside the claim, too close to another capture flag, outside the allowed height, or on cooldown, it cannot be placed.
 
@@ -68,13 +72,15 @@ The player surrendering for a land or nation needs permission to manage wars.
 
 If defenders surrender, they pay the tribute that was set by the attackers. If attackers surrender, they may also need to pay a server-defined tribute to the defenders.
 
-Surrender is done from `/wars menu`. If the required tribute is `0`, surrender may be blocked. If your land or nation cannot afford the tribute, you cannot surrender until enough money is available.
+Surrender is done from the war menu (`/land <land> war menu`). If the required tribute is `0`, surrender may be blocked. If your land or nation cannot afford the tribute, you cannot surrender until enough money is available.
 
 # 8. Useful Commands
 
-- `/wars menu` - open the war menu
-- `/wars info` - show information about your current or upcoming war
-- `/wars declare <land or nation>` - declare or accept a war
-- `/wars deny` - deny a mutual war declaration
-- `/wars spawn` - teleport near the enemy during war
-- `/wars list` - list active wars
+- `/land <land> war menu` - open the war menu
+- `/land <land> war info` - show information about your current or upcoming war
+- `/land <land> war declare <land or nation>` - declare or accept a war
+- `/land <land> war decline` - deny a mutual war declaration
+- `/land <land> war spawn` - teleport near the enemy during war
+
+If your nation is fighting instead of just your land, use the same subcommands under
+`/nation <nation> war ...`.

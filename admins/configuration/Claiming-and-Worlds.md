@@ -147,8 +147,8 @@ Random teleport is configured in `random-teleport`.
 
 Important options:
 
-* `random-teleport.wild-worlds_list`: worlds and distance ranges for `/lands wild`.
-* `random-teleport.world-perms`: use world-specific permissions such as `lands.command.wild.world`.
+* `random-teleport.wild-worlds_list`: worlds and distance ranges for `/lands rtp`.
+* `random-teleport.world-perms`: use world-specific permissions such as `lands.command.rtp.world`.
 * `random-teleport.backup`: fallback world if the player's current world is not configured.
 * `random-teleport.rtp-cooldown_time`: command cooldown.
 * `random-teleport.costs_4`: teleport cost.
@@ -156,7 +156,7 @@ Important options:
 
 Make sure each random-teleport world has a useful `/setworldspawn`, because distances are measured from world spawn.
 
-Staff can random-teleport another player with `/lands wild <world> <player> [skip-cooldown]`.
+Staff can random-teleport another player with `/lands rtp <world> <player> [skip-cooldown]`.
 
 Permission: `lands.admin.command.wild`
 
@@ -175,7 +175,7 @@ Important options:
 
 Land storage is configured with `land.storage`.
 
-If enabled, players can use `/lands storage`.
+If enabled, players can use `/land <land> storage`.
 
 They can also access storage through the land main block barrel.
 

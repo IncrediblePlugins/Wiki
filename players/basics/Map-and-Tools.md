@@ -28,7 +28,7 @@ If you do not see borders, check that particles are enabled in your Minecraft se
 
 Use `/lands selection` to turn selection mode on or off.
 
-Select two corners, then use `/lands claim` to claim the selected chunks.
+Select two corners, then use `/land <land> claim` to claim the selected chunks.
 
 Use `/lands selection expand` to toggle full-height selection.
 
@@ -36,7 +36,7 @@ You can also use `/lands selection expand <down> <up>` to expand the selection b
 
 # Claim List
 
-Use `/lands claimlist` to view the chunks of your current edit land.
+Use `/land <land> claim list` to view the chunks of a land.
 
 # First Join Items
 
@@ -53,13 +53,11 @@ Your server decides which items exist and how they work.
 
 # Storage
 
-Use `/lands storage` to open shared land storage, if your server enabled it.
-
-The storage belongs to your current edit land.
+Use `/land <land> storage` to open a land's shared storage, if your server enabled it.
 
 # Invites and Inbox
 
-Use `/lands invites` to view land invites and ownership requests.
+Use `/lands invites menu` to view land invites and ownership requests.
 
 Use `/lands menu inbox` to view land news and logs.
 
@@ -71,4 +69,4 @@ Use `/lands menu personal-settings` to change personal options such as invite me
 
 Use `/lands unstuck` if you are trapped inside a claim. It teleports you to nearby wilderness.
 
-Use `/lands wild` to random teleport, if your server enabled it.
+Use `/lands rtp` to random teleport, if your server enabled it.

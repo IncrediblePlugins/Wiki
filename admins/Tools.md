@@ -2,11 +2,12 @@
 
 These tools are for server staff.
 
-# Edit Other Lands
+# Manage Other Lands and Nations
 
-`/lands edit <land>` selects a land for admin editing. Many normal player commands then run against that selected land.
-
-Permission: `lands.admin.command.edit`
+There is no `/lands edit` command anymore. With `lands.admin.command.edit`, the normal player
+commands work directly against any land or nation, even if you are not a member -
+`/land <land> ...` / `/lands land <land> ...` and `/nation <nation> ...` / `/nations nation <nation> ...`.
+That permission may also ignore requirements such as max members for some commands.
 
 # Open Another Player's Menu
 
@@ -24,15 +25,9 @@ Permission: `lands.admin.command.chatspy`
 
 # Teleport Other Players
 
-Random teleport another player with `/lands wild <world> <player> [skip-cooldown]`.
+Random teleport another player with `/lands rtp <world> <player> [skip-cooldown]`.
 
 Permission: `lands.admin.command.wild`
-
-Teleport another player to a spawn with `/lands spawn <land or none> <area or none> <player> <wait>`.
-
-Use `none` for the land to use the player's current edit land. Use `none` for the area to use the land spawn instead of a sub-area spawn.
-
-Permission: `lands.admin.command.edit`
 
 # Leaderboard Holograms
 
