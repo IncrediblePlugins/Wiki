@@ -1,5 +1,9 @@
 # Economy
 
+> This page describes the latest plugin version. If these commands don't work on your server, it
+> may still be running an older version where you select a land first with `/lands edit <land>`
+> before running commands against it.
+
 Some servers use money in Lands. Your server decides which costs are enabled.
 
 Money can be used for land creation, claiming, teleporting, rent, taxes, upkeep, renaming, and changing ownership.

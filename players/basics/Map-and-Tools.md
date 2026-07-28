@@ -1,5 +1,9 @@
 # Map and Tools
 
+> This page describes the latest plugin version. If these commands don't work on your server, it
+> may still be running an older version where you select a land first with `/lands edit <land>`
+> before running commands against it.
+
 Lands has a few tools that help you understand claims around you.
 
 # Map

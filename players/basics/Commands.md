@@ -1,5 +1,9 @@
 # Land and Nation Commands
 
+> This page describes the latest plugin version. If these commands don't work on your server, it
+> may still be running an older version where you select a land first with `/lands edit <land>`
+> before running commands against it.
+
 Most land commands are reached through `/land <land> ...` (also available as `/lands land <land> ...`).
 `<land>` is the name of the land you want to manage - if you are trusted in more than one land, name
 the one you mean.

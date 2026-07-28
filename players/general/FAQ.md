@@ -1,5 +1,9 @@
 Read [Start](../basics/Start.md) first if you are new to Lands.
 
+> This page describes the latest plugin version. If these commands don't work on your server, it
+> may still be running an older version where you select a land first with `/lands edit <land>`
+> before running commands against it.
+
 # I have multiple lands. How do I make sure my commands use the right one?
 
 Land commands are reached through `/land <land> ...` (also available as `/lands land <land> ...`) -

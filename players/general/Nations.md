@@ -1,5 +1,9 @@
 # What Is a Nation?
 
+> This page describes the latest plugin version. If these commands don't work on your server, it
+> may still be running an older version where you select a land first with `/lands edit <land>`
+> before running commands against it.
+
 A nation is a group of lands.
 
 The land that creates the nation becomes the capital. The nation can then invite other lands to join.

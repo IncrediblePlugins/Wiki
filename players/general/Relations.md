@@ -1,5 +1,9 @@
 # Relations
 
+> This page describes the latest plugin version. If these commands don't work on your server, it
+> may still be running an older version where you select a land first with `/lands edit <land>`
+> before running commands against it.
+
 Relations decide whether another land or nation is neutral, allied, or an enemy.
 
 # Allies

@@ -1,5 +1,9 @@
 Lands has private chat channels for land and nation members.
 
+> This page describes the latest plugin version. If these commands don't work on your server, it
+> may still be running an older version where you select a land first with `/lands edit <land>`
+> before running commands against it.
+
 # Land Chat
 
 Use `/land <land> chat` to turn land chat mode on or off for that land.

@@ -1,5 +1,9 @@
 Subareas are smaller areas inside a land.
 
+> This page describes the latest plugin version. If these commands don't work on your server, it
+> may still be running an older version where you select a land first with `/lands edit <land>`
+> before running commands against it.
+
 Unlike normal claims, subareas are based on blocks, not chunks. This means a subarea can cover only part of a chunk and can have its own height range.
 
 Each land also has a default area. The default area is everything in the land that is not inside a subarea.

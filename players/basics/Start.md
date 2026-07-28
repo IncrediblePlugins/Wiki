@@ -1,5 +1,9 @@
 This page explains the first steps for using Lands.
 
+> This page describes the latest plugin version. If these commands don't work on your server, it
+> may still be running an older version where you select a land first with `/lands edit <land>`
+> before running commands against it.
+
 Most commands for an existing land are reached through `/land <land> ...` (also available as
 `/lands land <land> ...`) - replace `<land>` with the land's name.
 

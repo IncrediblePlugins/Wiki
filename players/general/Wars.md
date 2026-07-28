@@ -1,5 +1,9 @@
 This page explains wars from a player's point of view.
 
+> This page describes the latest plugin version. If these commands don't work on your server, it
+> may still be running an older version where wars used a standalone `/wars` command and you
+> selected a land first with `/lands edit <land>` before running commands against it.
+
 War commands are reached through `/land <land> war ...` (also available as `/lands land <land> war ...`),
 or `/nation <nation> war ...` if the fight involves your nation instead of just your land. Replace
 `<land>`/`<nation>` with the land or nation on your side of the war throughout this page.
