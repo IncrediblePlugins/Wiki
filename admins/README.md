@@ -23,6 +23,7 @@ Pages:
 | Rules, Flags, and Gameplay | [Natural Flags](configuration/Natural-Flags.md) | All natural flags and their toggle permissions. |
 | Rules, Flags, and Gameplay | [Player Personal Settings](configuration/Player-Personal-Settings.md) | Personal player flags and their permissions. |
 | Rules, Flags, and Gameplay | [Wars](configuration/Wars.md) | War configuration, capture flags, shields, rewards, and admin war commands. |
+| Permissions and Staff Tools | [Command Tree Changes](permissions/Command-Tree-Changes.md) | What changed in the command restructure and why your permissions may need updating. |
 | Permissions and Staff Tools | [Recommendation](permissions/Recommended-Permission-Setup.md) | Suggested permission setup for normal players and staff. |
 | Permissions and Staff Tools | [Player Commands](permissions/Player-Commands.md) | Player-facing command permissions for server admins. |
 | Permissions and Staff Tools | [Admin Commands](Commands.md) | `/lands admin` commands, including force-starting/ending wars. |

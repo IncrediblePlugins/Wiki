@@ -28,6 +28,7 @@
 * [Wars](configuration/Wars.md)
 
 ## Permissions and Staff Tools
+* [Command Tree Changes](permissions/Command-Tree-Changes.md)
 * [Recommendation](permissions/Recommended-Permission-Setup.md)
 * [Player Commands](permissions/Player-Commands.md)
 * [Admin Commands](Commands.md)
