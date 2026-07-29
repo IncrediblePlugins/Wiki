@@ -39,9 +39,9 @@ If you want to see borders, maps, invites, storage, or safety teleports, read [M
 
 # 4. Trust Players
 
-Use `/land <land> member add <player>` to invite or trust a player in your land.
+Use `/land <land> member add <player>` to invite or trust a player in your whole land.
 
-Use `/land <land> member add <player> <area>` to trust them only in a specific area.
+Use `/land <land> area <area> member add <player>` to trust them only in a specific area.
 
 You can also trust players from the menu:
 
@@ -51,9 +51,9 @@ You can also trust players from the menu:
 
 # 5. Remove Players
 
-Use `/land <land> member remove <player>` to remove a player from your land.
+Use `/land <land> member remove <player>` to remove a player from your whole land.
 
-Use `/land <land> member remove <player> <area>` to remove them only from a specific area.
+Use `/land <land> area <area> member remove <player>` to remove them only from a specific area.
 
 # 6. Manage Permissions
 

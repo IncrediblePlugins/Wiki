@@ -63,12 +63,12 @@ These are reached through `/land <land> ...` or `/lands land <land> ...`.
 | `/land <land> leave` | `lands.command.land.leave` | May require confirmation if leaving removes supplied claims. |
 | `/land <land> rename <name>` | `lands.command.land.rename` | Rename cost and cooldown can still apply. |
 | `/land <land> member menu` | `lands.command.land.member.menu` | Opens member management menu. |
-| `/land <land> member add <player> [area]` | `lands.command.land.member.add` | Role flags and invite settings still apply. |
-| `/land <land> member remove <player> [area]` | `lands.command.land.member.remove` | Role flags still apply. |
-| `/land <land> member setrole <player> <area or *> <role>` | `lands.command.land.member.setrole` | Role priority and role flags still apply. |
+| `/land <land> member add <player>` | `lands.command.land.member.add` | Trusts land-wide. Role flags and invite settings still apply. Use `/land <land> area <area> member add <player>` to trust only in one area. |
+| `/land <land> member remove <player>` | `lands.command.land.member.remove` | Removes land-wide. Role flags still apply. Use `/land <land> area <area> member remove <player>` to remove from only one area. |
+| `/land <land> member setrole <player> <role>` | `lands.command.land.member.setrole` | Sets the role land-wide. Role priority and role flags still apply. Use `/land <land> area <area> member setrole <player> <role>` to set the role in only one area. |
 | `/land <land> member setowner <player>` | `lands.command.land.member.setowner` | Ownership transfer settings and cost still apply. |
-| `/land <land> member ban <player> [area] [silent]` | `lands.command.land.member.ban` | Not registered in basic mode. |
-| `/land <land> member unban <player> [area]` | `lands.command.land.member.unban` | Not registered in basic mode. |
+| `/land <land> member ban <player> [silent]` | `lands.command.land.member.ban` | Bans land-wide. Not registered in basic mode. Use `/land <land> area <area> member ban <player> [silent]` to ban from only one area. |
+| `/land <land> member unban <player>` | `lands.command.land.member.unban` | Unbans land-wide. Not registered in basic mode. Use `/land <land> area <area> member unban <player>` to unban from only one area. |
 | `/land <land> spawn` | `lands.command.land.spawn.teleport` | Teleporting also uses `lands.teleport.land_spawn`. |
 | `/land <land> spawn set` | `lands.command.land.spawn.set` | Role flags and spawn costs still apply. |
 | `/land <land> claim` | `lands.command.land.claim` | Role flags, claim worlds, limits, costs, and claim rules still apply. |

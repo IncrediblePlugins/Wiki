@@ -61,12 +61,12 @@ These use `/land <land> ...`, also available as `/lands land <land> ...`.
 | `/land <land> leave` | Leaves the land, or the area you are standing in with `here`. |
 | `/land <land> rename <name>` | Renames the land. |
 | `/land <land> member menu` | Opens member management. |
-| `/land <land> member add <player> [area]` | Trusts a player in the whole land, or in one area. |
-| `/land <land> member remove <player> [area]` | Removes a player from the whole land, or from one area. |
-| `/land <land> member setrole <player> <area or *> <role>` | Sets a player's role in one area, or in all areas with `*`. |
+| `/land <land> member add <player>` | Trusts a player in the whole land. To trust them in only one area, use `/land <land> area <area> member add <player>` instead. |
+| `/land <land> member remove <player>` | Removes a player from the whole land. To remove them from only one area, use `/land <land> area <area> member remove <player>` instead. |
+| `/land <land> member setrole <player> <role>` | Sets a player's role for the whole land. To set their role in only one area, use `/land <land> area <area> member setrole <player> <role>` instead. |
 | `/land <land> member setowner <player>` | Asks a member to become the new owner of the land. |
-| `/land <land> member ban <player> [area] [silent]` | Bans a player from the land or an area. |
-| `/land <land> member unban <player> [area]` | Removes a player ban. |
+| `/land <land> member ban <player> [silent]` | Bans a player from the whole land. To ban them from only one area, use `/land <land> area <area> member ban <player> [silent]` instead. |
+| `/land <land> member unban <player>` | Removes a player ban from the whole land. To unban them from only one area, use `/land <land> area <area> member unban <player>` instead. |
 | `/land <land> spawn` | Teleports to the land spawn. |
 | `/land <land> spawn set` | Sets the land spawn. |
 | `/land <land> claim` | Claims the chunk you are standing in, or claims your current selection. |

@@ -38,9 +38,9 @@ You can also open the areas list from `/lands` and choose the area there.
 
 # Trust Players in a Subarea
 
-Use `/land <land> member add <player> <area>` to give the player access only to that area, unless they are also trusted in the whole land.
+Use `/land <land> area <area> member add <player>` to give the player access only to that area, unless they are also trusted in the whole land.
 
-To remove them from that area, use `/land <land> member remove <player> <area>`.
+To remove them from that area, use `/land <land> area <area> member remove <player>`.
 
 # Area Roles and Flags
 
