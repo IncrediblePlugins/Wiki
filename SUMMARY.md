@@ -5,6 +5,7 @@
 * [Text Formatting](config/Text-Formatting.md)
 * [Limits](config/Limits.md)
 * [Messages](config/Messages.md)
+* [Dialogs](config/Dialogs.md)
 * [Translations](config/Translations.md)
 * [Currency](config/Currency.md)
 * [Events](config/Events.md)
