@@ -5,7 +5,6 @@
 * [Text Formatting](config/Text-Formatting.md)
 * [Limits](config/Limits.md)
 * [Messages](config/Messages.md)
-* [Dialogs](config/Dialogs.md)
 * [Translations](config/Translations.md)
 * [Currency](config/Currency.md)
 * [Events](config/Events.md)
@@ -14,3 +13,4 @@
 ## Menus
 * [Menus](menus/GUI-Menus.md)
 * [Bedrock Forms](menus/Bedrock-Forms.md)
+* [Dialogs](menus/Dialogs.md)

@@ -11,10 +11,10 @@ the `/plugins/<plugin>/Locale` folder.
 > **Requirements:** dialogs are only used on **Paper** (or a Paper fork),
 > version **1.21.9 or newer**. On Spigot, older Paper versions, or for Bedrock
 > players (via Geyser/Floodgate), the plugin falls back to chat input or a
-> [Bedrock form](../menus/Bedrock-Forms.md)/GUI instead — so the `_dialogs.yml`
+> [Bedrock form](Bedrock-Forms.md)/GUI instead — so the `_dialogs.yml`
 > file simply isn't loaded there.
 
-All text is written in **MiniMessage** — see [Text Formatting](Text-Formatting.md)
+All text is written in **MiniMessage** — see [Text Formatting](../config/Text-Formatting.md)
 for colors, theme tokens (`<t:...>`) and placeholders (`<v:...>`). Dialogs render
 on a dark panel, so `theme.yml`'s `theme.dialog` section adjusts the tokens for
 that surface automatically; you use the same `<t:regular>` tags as everywhere
@@ -57,7 +57,7 @@ dialogs:
 |---|---|
 | `text` | The body text (MiniMessage). |
 | `enabled` | Set to `false` to hide this body. Defaults to `true`. |
-| `item` | *(optional)* An icon shown next to the text. Uses the same item format as [GUI items](../menus/GUI-Menus.md) (`material`, `hide-tooltip`, etc.). Add `decorations: true` to show the item's tooltip decorations. |
+| `item` | *(optional)* An icon shown next to the text. Uses the same item format as [GUI items](GUI-Menus.md) (`material`, `hide-tooltip`, etc.). Add `decorations: true` to show the item's tooltip decorations. |
 
 ```yaml
 bodies:
