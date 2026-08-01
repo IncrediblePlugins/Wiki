@@ -1,16 +1,18 @@
 # General
-The GUI file is located under `/plugins/<plugin>/Language` whereas `<plugin>` needs to be replaced with the plugin name. For Bedrock client forms, please see [this page](Bedrock-Forms.md).
-You can place multiple locales in the plugin's Language folder to display different locales depending on the player's locale.
+The GUI file is located under `/plugins/<plugin>/Locale` whereas `<plugin>` needs to be replaced with the plugin name (the folder was previously called `Language`). Java Edition menus are in the `..._gui.yml` file (e.g. `en-US_gui.yml`). For Bedrock client forms, please see [this page](Bedrock-Forms.md).
+You can place multiple locales in the folder to display different locales depending on the player's locale.
+
+# Colors, Formatting & Placeholders
+Item names and lore are written in **MiniMessage** — see [Text Formatting](../config/Text-Formatting.md) for colors (`<red>`, `<#4287f5>`), decorations (`<b>`, `<i>`, …), theme tokens (`<t:...>`), line breaks (`<newline>`) and placeholders (`<v:...>`).
+
+> The old `&`/`§` color codes and the `#4287f5Text` hex-prefix format no longer work — use MiniMessage tags instead.
 
 # PlaceholderAPI Placeholders
-PlaceholderAPI placeholders are supported in all menus, titles, items and commands.
+PlaceholderAPI placeholders (`%placeholder%`) are supported in all menus, titles, items and commands.
 
 # Remove a Menu from `/<cmd> menu`
 Add `menu-cmd: false` to the menu.
-If you want to disable an item, look [here](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus#disable-items).
-
-# Hex Colors
-You can use hex colors everywhere. Example: `#4287f5Test` - `Test` will be colored with `#4287f5`
+If you want to disable an item, look [here](#disable-items).
 
 # Slots
 You can combine slot ranges. This includes slots for items and slots for list entries. Example:
@@ -53,14 +55,14 @@ common_sounds:
     # You can still override the "sound_set" for any item in their sections.
     failure: ENTITY_VILLAGER_NO
   # Play a sound when the item is clicked.
-  set:
+  click:
     failure: ENTITY_VILLAGER_NO
 ````
 
 # Common Items Section
 The common section lets you define items that will apply to every menu.
 Items in the default configuration may not apply to every menu. Only menus that they're meant to apply. In the default configuration, all menus have the same size of 45. Therefore, this size is specified here. You can override any item or setting of the common section in the menu of your choice, by following the instructions here:
-[How to add your own items.](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus#add-your-own-items-to-a-menu)
+[How to add your own items.](#add-your-own-items-to-a-menu)
 
 ````yaml
 common:
@@ -74,22 +76,22 @@ common:
   items:
     default:
       back:
-        name: '&c&lBack'
+        name: '<t:error><b>Back'
         lore:
-        - '&8✖ &7Go back to'
-        - '   &7{back}.'
+        - '<t:decoration>✖ </t><t:regular>Go back to'
+        - '   <t:regular_value><v:back></t>.'
         material: RED_STAINED_GLASS_PANE
         slots: 37
       refresh_page_previous:
-        name: '&c&lPrevious Page'
+        name: '<t:error><b>Previous Page'
         lore:
-        - '&8✖ &7Go to previous page:&3 {previous}'
+        - '<t:decoration>✖ </t><t:regular>Go to previous page: <t:regular_value><v:previous></t>'
         material: ARROW
         slots: 39
       refresh_page_next:
-        name: '&a&lNext Page'
+        name: '<t:success><b>Next Page'
         lore:
-        - '&8✖ &7Go to next page:&3 {next}'
+        - '<t:decoration>✖ </t><t:regular>Go to next page: <t:regular_value><v:next></t>'
         material: ARROW
         slots: 44
       placeholder_1:
@@ -136,7 +138,7 @@ The format is as follows: `namespace:enchantment:level`\
 Whereas, `namespace` is either "minecraft" for vanilla enchantments or a custom namespace for enchantments from 3rd party plugins. A custom namespace depends on which one the 3rd party plugin developer chose. `enchantment` equals the enchantment name. `level` is optional.
 ````yaml
 carrot:
-  name: 'A sharp Carrot'
+  name: '<t:regular_heading>A sharp Carrot'
   enchants:
    - 'minecraft:sharpness'
   material: 'CARROT'
@@ -194,22 +196,22 @@ If you want to close a menu for a player, you can use the `/<plugin> menu close`
 
 # Add your own Items to a Menu
 1. Add the `custom` section to the menu in your GUI file.
-2. Configure the in the same format as default items. You can also override items from the [common section](https://github.com/Angeschossen/General/wiki/GUI-Menus/#common-section).
+2. Configure the item in the same format as default items. You can also override items from the common section.
 ````yaml
 main:
-  title: '&8Main Menu'
+  title: '<t:menu_title>Main Menu'
   items:
     default:
       lands:
-        name: '&2&lYour Lands'
+        name: '<t:entity_land><b>Your Lands'
         lore:
-         - '&8✖ &7Manage your lands:'
-         - '   &7This includes your own lands'
-         - '   &7and lands, in which you''re'
-         - '   &7trusted.'
+         - '<t:decoration>✖ </t><t:regular>Manage your lands:'
+         - '   <t:regular>This includes your own lands'
+         - '   <t:regular>and lands, in which you''re'
+         - '   <t:regular>trusted.'
          - ''
-         - '    &8• &7Own: {own}'
-         - '    &8• &7Trusted: {trusted}'
+         - '    <t:decoration>• </t><t:regular>Own: <t:regular_value><v:own></t>'
+         - '    <t:decoration>• </t><t:regular>Trusted: <t:regular_value><v:trusted></t>'
         material: GRASS_BLOCK
         slots: 20
         

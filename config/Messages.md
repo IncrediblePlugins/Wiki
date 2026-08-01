@@ -1,103 +1,138 @@
-Messages file: `/plugins/<plugin>/Language`
-You can place multiple locales in the plugin's Language folder to display different locales depending on the player's client locale.
+# Messages
+
+Message files live in `/plugins/<plugin>/Locale` (the folder was previously
+called `Language`). The chat/command messages are in the main locale file, e.g.
+`en-US.yml`. You can place multiple locales in the folder to display different
+languages depending on the player's client locale.
+
+All values are written in **MiniMessage** format — see
+[Text Formatting](Text-Formatting.md) for colors, decorations, theme tokens
+(`<t:...>`) and placeholders (`<v:...>`). This page covers the message-specific
+tags: titles, action bars, boss bars, clickable text and prefix control.
 
 # Display a Message
+
+By default a value is sent as a normal chat message. A tag at the start of the
+value changes how it is delivered instead.
+
 ## As a Title
-Just add `#t#` in front of the message.\
-Example: 
-````yaml
-pvp-warning: '#t#[config]in:10,stay:60,out:5[/config]&cYou entered a pvp zone.[newline]Subtitle (optional)[newline]Actionbar (optional)'
-````
 
-Whereas `in` is the fade in time, `stay` the stay time and `out` the fade out time. These are provided in ticks (20 ticks = 1 second) and are optional. This title would fade in half a second, stay for 3 seconds and fade out for 0.25 seconds. The times in this example are the default ones.
+Start the value with `<title>` (optionally with fade timings
+`<title:in:stay:out>`). Use `<subtitle>` and `<actionbar>` inside the same value
+to split it into the title, subtitle and action-bar parts.
 
-## As an Actionbar
-Just add `#a#` in front of the message.\
-Example: 
 ```yaml
-pvp-warning: '#a#&cYou entered a pvp zone.'
+pvp-warning: '<title:10:60:5><t:error>You entered a pvp zone.<subtitle><t:regular>Watch out!'
 ```
 
-## As a Bossbar
-Just add `#b#` in front of the message.
-```yaml
-pvp-warning: '#b#[config]color:green,style:solid,time:6[/config]&cYou entered a pvp zone.'
-```
-Whereas color, style and time are optional configuration options. This bossbar would be solid, green and would last 6 seconds. Click [here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarColor.html) to see a list of available colors.
+`in` is the fade-in time, `stay` the stay time and `out` the fade-out time,
+given in ticks (20 ticks = 1 second) and optional. This example fades in over
+half a second, stays for 3 seconds and fades out over 0.25 seconds.
 
-# Hex Colors
-You can use hex colors by just adding the hex color code in front of any text.\
-Example: `#4287f5SomeFancyName` where `#4287f5` is the hex color code and `SomeFancyName` the colored text.
+## As an Action Bar
+
+Start the value with `<actionbar>`:
+
+```yaml
+pvp-warning: '<actionbar><t:error>You entered a pvp zone.'
+```
+
+## As a Boss Bar
+
+Start the value with `<bossbar:color:style:time>`:
+
+```yaml
+pvp-warning: '<bossbar:green:solid:6><t:error>You entered a pvp zone.'
+```
+
+`color`, `style` and `time` (seconds) are optional. This boss bar is green,
+solid and lasts 6 seconds. See the list of
+[bar colors](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarColor.html)
+and [bar styles](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarStyle.html).
+
+# Colors & Placeholders
+
+Colors, hex colors, theme tokens (`<t:...>`) and placeholders (`<v:...>`,
+`%papi%`) all work in messages — see [Text Formatting](Text-Formatting.md).
 
 # PlaceholderAPI
-You can use placeholders from 3rd party plugins via PlaceholderAPI in chat messages and [GUI menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus#placeholderapi-placeholders).
+
+You can use placeholders from 3rd party plugins via PlaceholderAPI in chat
+messages and [GUI menus](GUI-Menus.md), with the usual `%placeholder%` syntax.
 
 # Clickable Chat Messages
-You can make every chat message clickable. Means you can set a hover, command or suggested command (copy to cmd input). Please note that this is not applicable to general strings like prefix etc.
 
-## Configure Custom Text:
-* Syntax for custom text:
+Make text clickable or hoverable with MiniMessage's `<click>` and `<hover>`
+tags. (Note: this doesn't apply to plain strings like the prefix.)
+
+* **Hover text:**
+  ```yaml
+  msg: '<hover:show_text:"<t:regular>This is a hover"><t:cmd>Hover me</hover>'
+  ```
+* **Run a command on click:**
+  ```yaml
+  msg: '<click:run_command:"/lands help"><t:cmd>Click to run</click>'
+  ```
+* **Suggest a command (put it in the chat box):**
+  ```yaml
+  msg: '<click:suggest_command:"/lands help"><t:cmd>Click to suggest</click>'
+  ```
+* **Open a URL:**
+  ```yaml
+  msg: '<click:open_url:"https://example.com"><t:cmd>Open link</click>'
+  ```
+
+You can nest them, and combine with colors/placeholders:
+
 ```yaml
-[T]Custom text[/T]
-```
-* Hover:
-```yaml
-[T]Custom text[H]This is a hover[/H][/T]
-```
-* Execute command:
-```yaml
-[T]Custom text[H]This is a hover[/H][C]Lands help[/C][/T]
-```
-* Suggest command:
-```yaml
-[T]Custom text[H]This is a hover[/H][SC]Lands help[/SC][/T]
+invite: |-
+  <t:regular>Player <t:regular_value><v:player></t> invited you to join
+  <t:entity_land><v:land></t>.
+  <hover:show_text:"<t:regular>Click to accept."><click:run_command:"/lands accept <v:land>"><t:success>[Accept]</click></hover>
+  <hover:show_text:"<t:regular>Click to deny."><click:run_command:"/lands deny <v:land>"><t:error>[Deny]</click></hover>
 ```
 
-***
+> The text **inside the quotes** of `run_command` / `suggest_command` /
+> `open_url` is a literal command/URL — don't wrap it in color tags. Only the
+> visible text between `>` and `</click>` is styled.
 
-#### Example Usage:
-```yaml
-[T]&7Player&3 {player} &7invited you to join their land&2 {land}&7.[H]&7Click to open your invites menu.[/H][C]lands invites[/C][/T] &7Taxes:&c 
-${tax}
+# Disable a Message
 
-  [T]&2Accept &8[&8CLICK&8][H]&7Click here to accept this invite.[/H][C]lands accept {land}[/C][/T]
-  [T]&cDeny &8[&8CLICK&8][H]&7Click here to deny this invite.[/H][C]lands deny {land}[/C][/T]
-```
+Set the value to an empty string. For example, to disable the land enter/leave
+title messages:
 
-#### Will display as:
-![Result of the example above.](https://i.imgur.com/BeOkyZs.png)
-
-# Disable messages
-For example disabling land enter messages in Lands:
-```yaml
-enter:
-  land: '#t#&2&l{land}[newline]&3{title}'
-  safezone: '#t#&2&l{land}[newline]{title}'
-```
-Set them to an empty string:
 ```yaml
 enter:
   land: ''
   safezone: ''
 ```
-The welcome messages won't display anymore.
 
-# Disable the prefix for a specific Message
-Just insert `[noprefix]` in front of the message. Example:
+The messages won't display anymore.
+
+# Disable the Prefix for a specific Message
+
+Put `<noprefix>` at the very start of the value:
+
 ```yaml
-info: |
-  [NoPrefix]
-  &7&m━━━━━━━━━<━&r &5&lRent Area &7&m━>━━━━━━━━━
-  [T]&7Land:&a {land} &8[&8CLICK&8][H]&7Click here to visualize this area.[/H][C]lands view here[/C][/T]
-   &7Area:&6 {area}
-   &7Cost:&c {cost} &7each {time}
-   &8Max time: {max}
-  &7&m━━━━━━━━━<━&r &5&lRent Area &7&m━>━━━━━━━━━
+info: |-
+  <noprefix><t:decoration><st>━━━━━━━━━<━</st> <t:regular_heading>Rent Area</t> <t:decoration><st>━>━━━━━━━━━</st>
+  <hover:show_text:"<t:regular>Click to visualize."><click:run_command:"/lands view here"><t:regular>Land: <t:regular_value><v:land></click></hover>
+  <t:regular>Cost: <t:cost><v:cost></t> each <t:time><v:time></t>
 ```
 
+# Verbose / In-game-only content
+
+* `<verbose>...</verbose>` — only shown when verbose mode is enabled for the
+  recipient.
+* `<ingame>...</ingame>` — only shown to in-game recipients (never in external
+  outputs like a Discord bridge).
+
+Keep these tag pairs; the text inside is normal message text.
+
 # Filter Swear Words and forbidden Names
-Edit the `swear-words` list in your language file. They are case-insensitive.
-Example:
+
+Edit the `swear-words` list in your locale file. Entries are case-insensitive.
+
 ```yaml
 swear-words:
   - 'test'
