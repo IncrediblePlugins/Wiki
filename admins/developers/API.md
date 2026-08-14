@@ -17,7 +17,7 @@ LandsIntegration api = LandsIntegration.of(plugin);
 
 #### Common Use-Cases
 1. Checking Role-Flag States for Players\
-   Using [LandWorld](https://javadoc.jitpack.io/com/github/angeschossen/LandsAPI/7.10.6/javadoc/me/angeschossen/lands/api/land/LandWorld.html) to check flag states has the benefit that it also checks wilderness flags. Some use cases might not intent that. In this case you can use [LandsIntegration#getArea(location)](https://javadoc.jitpack.io/com/github/angeschossen/LandsAPI/7.10.6/javadoc/me/angeschossen/lands/api/LandsIntegration.html#getArea(org.bukkit.Location)) and check the flag state of the area instead.
+   Using ``LandWorld`` to check flag states has the benefit that it also checks wilderness flags. Some use cases might not intent that. In this case you can use ``LandsIntegration#getArea(location)`` and check the flag state of the area instead.
     ````java
     LandWorld world = api.getWorld(world);
     if (world != null) { // Lands is enabled in this world
@@ -30,8 +30,8 @@ LandsIntegration api = LandsIntegration.of(plugin);
     ````
 
 2. Checking Natural-Flag States\
-   [LandWorld](https://javadoc.jitpack.io/com/github/angeschossen/LandsAPI/7.10.6/javadoc/me/angeschossen/lands/api/land/LandWorld.html) does check wilderness and claimed lands if applicable. If you want to
-   limit the check to claimed land, use [LandsIntegration#getArea(location)](https://javadoc.jitpack.io/com/github/angeschossen/LandsAPI/7.10.6/javadoc/me/angeschossen/lands/api/LandsIntegration.html#getArea(org.bukkit.Location)) instead of getting the world.
+   ``LandWorld`` does check wilderness and claimed lands if applicable. If you want to
+   limit the check to claimed land, use ``LandsIntegration#getArea(location)`` instead of getting the world.
     ````java
     LandWorld world = api.getWorld(world);
     if (world != null) { // Lands is enabled in this world
@@ -43,8 +43,8 @@ LandsIntegration api = LandsIntegration.of(plugin);
     }
     ````
 3. Registering custom Flags\
-   This one is simple as well. Just use the factory methods of the needed flag type's interface: [RoleFlag.of(...)](https://javadoc.jitpack.io/com/github/angeschossen/LandsAPI/7.10.6/javadoc/me/angeschossen/lands/api/flags/type/RoleFlag.html#of(me.angeschossen.lands.api.LandsIntegration,me.angeschossen.lands.api.flags.enums.FlagTarget,me.angeschossen.lands.api.flags.enums.RoleFlagCategory,java.lang.String)), [NaturalFlag.of(...)](https://javadoc.jitpack.io/com/github/angeschossen/LandsAPI/7.10.6/javadoc/me/angeschossen/lands/api/flags/type/NaturalFlag.html#of(me.angeschossen.lands.api.LandsIntegration,me.angeschossen.lands.api.flags.enums.FlagTarget,java.lang.String)) etc.
-   Please note that flags need to registered after Lands was loaded, but before Lands enables. You can ensure that, by using this method in your `onLoad` method of your plugins main class: [LandsIntegration#onLoad](https://javadoc.jitpack.io/com/github/angeschossen/LandsAPI/7.10.6/javadoc/me/angeschossen/lands/api/LandsIntegration.html#onLoad(java.lang.Runnable))
+   This one is simple as well. Just use the factory methods of the needed flag type's interface: ``RoleFlag.of(...)``, ``NaturalFlag.of(...)`` etc.
+   Please note that flags need to registered after Lands was loaded, but before Lands enables. You can ensure that, by using this method in your `onLoad` method of your plugins main class: ``LandsIntegration#onLoad``
 
     ````java
     RoleFlag flag = RoleFlag.of(api, FlagTarget.PLAYER, RoleFlagCategory.ACTION, "flag_name");
