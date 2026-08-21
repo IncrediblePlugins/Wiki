@@ -1,90 +1,160 @@
-This page explains wars from a player's point of view.
+This page explains wars from a player's point of view: how to start one, what happens during it, and
+how a war is won or lost.
 
-> This page describes the latest plugin version. If these commands don't work on your server, it
-> may still be running an older version where wars used a standalone `/wars` command and you
-> selected a land first with `/lands edit <land>` before running commands against it.
+> This page describes the latest plugin version. If these commands don't work on your server, it may
+> still be running an older version where wars used a standalone `/wars` command and you selected a
+> land first with `/lands edit <land>` before running commands against it.
 
 War commands are reached through `/land <land> war ...` (also available as `/lands land <land> war ...`),
 or `/nation <nation> war ...` if the fight involves your nation instead of just your land. Replace
-`<land>`/`<nation>` with the land or nation on your side of the war throughout this page.
+`<land>` / `<nation>` with the land or nation on your side of the war throughout this page.
 
-# 1. Starting a War
+# 1. How a War Works, in Short
 
-To start a war, use `/land <land> war declare <land or nation>`.
+1. You mark the other side as an **enemy**, then **declare war**.
+2. When declaring, you choose a **war mode** (how the war is scored and won) and a **war goal** (what
+   the winner gets when it ends). See [War Modes and Goals](War-Modes-and-Goals.md).
+3. There is a **preparation time**, then the war **starts** and both teams can fight.
+4. The war ends when one side reaches the points needed to win, or when time runs out. The goal you
+   picked then decides the reward - robbed money, unclaimed land, vassalage, a raid window, and so on.
+5. At any point a side can **surrender** to end it early on gentler terms.
 
-You can only declare war if your role is allowed to manage wars. Your server may also require both sides to have enough members, claims, money, or age. Some servers only allow wars at certain times, or only between nations.
+# 2. Before You Can Declare
 
-The target must be marked as an enemy first. If they have a war shield, they cannot be attacked until the shield ends.
+The other side must be marked as an **enemy** first (see [Relations](Relations.md)). You also need a
+role that is allowed to manage wars.
 
-After using the command, a menu opens where you can set a tribute. The tribute is the money the defender must pay if they surrender later. If the tribute is set to `0`, surrender may be disabled, depending on the server.
+Your server may add extra requirements before a war can be declared, such as:
 
-Some servers use mutual war declarations. In that case, the defender must accept the request with `/land <land> war declare <attacker>` before the normal preparation time starts. They can deny it with `/land <land> war decline`.
+- both sides having enough members, claimed chunks, money, or age,
+- only allowing wars between nations,
+- only allowing declarations on certain days or hours,
+- limiting how far apart in level the two sides may be.
 
-# 2. Preparation Time
+If the enemy has an active **war shield**, they can't be attacked until it runs out. Shields are given
+after events like creating a land, surrendering, or finishing a war.
 
-After a declaration is sent or accepted, the war enters preparation time. During this time, both sides can prepare, but the fight has not started yet.
+# 3. Declaring a War
+
+Start with:
+
+```
+/land <land> war declare <enemy land or nation>
+```
+
+A short menu then walks you through the declaration:
+
+1. **Pick a war mode** - how the war is fought and scored (a straight skirmish, or a King of the Hill
+   contest). Some modes are only offered when the server has set them up.
+2. **Pick a war goal** - what actually happens to the loser (money robbed, land unclaimed, vassalized,
+   raided...). Some goals are only available in certain situations - for example, vassalizing requires
+   your side to be a nation.
+3. **Confirm** the declaration.
+
+Read [War Modes and Goals](War-Modes-and-Goals.md) for what each mode and goal does.
+
+**Mutual declarations.** Some servers require the defender to accept first. The defender accepts by
+running `/land <land> war declare <attacker>`, or refuses with `/land <land> war decline`. Preparation
+time only begins once they accept.
+
+# 4. Preparation Time
+
+After a declaration is sent (or accepted), the war enters **preparation time**. Both sides can get
+ready, but no fighting counts yet.
 
 Use `/land <land> war info` or `/land <land> war menu` to see:
 
-- who is fighting
-- when the war starts
-- how many points are needed to win
-- the tribute
-- the capture flag recipe, if capture flags are enabled
+- who is fighting,
+- the war mode and goal,
+- when the war starts,
+- how many points are needed to win,
+- the capture flag recipe, if capture flags are used.
 
-The length of preparation time depends on the server.
+If you chose the **King of the Hill (Player Lands)** mode, this is when each team sets its point - see
+[War Modes and Goals](War-Modes-and-Goals.md#king-of-the-hill-player-lands).
 
-# 3. When the War Starts
+# 5. When the War Starts
 
-When preparation time ends, both teams can fight each other.
+When preparation ends, both teams can fight. Use `/land <land> war menu` to follow the current status:
+both teams, their points, the remaining time, and what you're allowed to do in enemy land.
 
-Use `/land <land> war menu` to see the current war status. It shows both teams, kills, captures, points, the remaining time, and the actions that may be allowed in enemy land.
+Use `/land <land> war spawn` to teleport near the enemy, if your server can find a safe war spawn.
+(In a King of the Hill arena war, this sends you to your team's arena spawn instead.)
 
-Use `/land <land> war spawn` to teleport near the enemy side, if your server can find a safe war spawn.
+**What you can do in enemy claims** depends entirely on the server. You might be able to enter enemy
+land, fight players, place ladders, break certain blocks, open containers - or none of these. Usually
+this only applies to the main lands that started the war, but some servers also turn allied lands into
+war zones. Always check the war menu for what's allowed.
 
-Your server decides what players can do in enemy claims during war. For example, you may be able to enter enemy land, fight players, place ladders, break certain blocks, open containers, or do none of these. Usually this only applies to the main lands that started the war, but servers can also include allied lands as war zones. Always check the war menu for what is allowed on your server.
+Some servers require defenders to be **online** before enemies can invade or capture.
 
-Some servers require defenders to be online before enemies can invade or capture land.
+# 6. Teams and Allies
 
-# 4. Teams and Allies
+If you belong to several lands that end up in the same war, your team is chosen once and stays the same
+for the whole war (defending lands are prioritized).
 
-If you are part of multiple lands that are in the same war, your team is chosen once and stays the same for the whole war. Defending lands are prioritized.
+Allies can help fight - for example, lands in the same nation fight together. Allies that join a war can
+also be attacked by the enemy.
 
-Allies may be able to help in war. For example, lands in the same nation can fight together. Allies that join the war can also be attacked by the enemy.
+# 7. Capture Flags
 
-# 5. Capture Flags
+Capture flags are special war blocks used by the standard **Skirmish** mode. You craft them (the recipe
+is shown in `/land <land> war info captureflag`) or receive them from the server.
 
-Capture flags are special war blocks. You can craft them or receive them from the server. If crafting is enabled, the recipe is shown in the war menu (`/land <land> war info captureflag`).
+Place a capture flag on a **border chunk** of enemy war land during the war. It can't be placed if it's
+too far inside the claim, too close to another flag, outside the allowed height, or on cooldown.
 
-Place a capture flag on a border chunk of enemy war land during the war. If the flag is too far inside the claim, too close to another capture flag, outside the allowed height, or on cooldown, it cannot be placed.
+To capture the area, your team holds the flag until its progress bar fills. Progress only moves forward
+while the invaders have **more players in the area than the defenders** - defenders standing in the area
+stop, and can push back, the progress. Defenders are warned when a flag is placed and may fight for the
+area or destroy the flag. Depending on the server, a captured area becomes unclaimed or is claimed by
+the invaders, and destroying an enemy flag can award points.
 
-To capture the area, your team must hold the flag until the progress bar fills. Progress only moves forward when the invaders have more players in the area than the defenders. If defenders enter the area, they can stop or push back the capture progress.
+> King of the Hill wars use their own fixed points instead of craftable flags - see
+> [War Modes and Goals](War-Modes-and-Goals.md).
 
-Defenders are notified when a capture flag is placed. They can try to defend the area or destroy the flag. Destroying an enemy capture flag may give points. Depending on the server, a captured area may become unclaimed or may be claimed by the invaders.
+# 8. Points and Winning
 
-# 6. Points and Winning
+Every war mode is scored in **points**; the mode decides where points come from (kills and captures in
+Skirmish, or holding a point over time in King of the Hill).
 
-Wars are won with points. Points can come from kills, captured flags, destroyed capture flags, and sometimes other server settings.
+A war ends when a team reaches the required points, or when the war time runs out. If time runs out, the
+team with the most points wins - but if the scores are tied (or too close, in King of the Hill), it's a
+**draw**. A draw has no winner, so the goal's reward does not apply.
 
-The war ends when a team reaches the required points or when the war time runs out. If time runs out, the team with the most points wins. If both teams have the same score, the war ends in a draw.
+When there is a winner, the **war goal** decides what happens to the loser, and both sides may receive a
+war shield afterwards.
 
-The winner may receive money from the loser and other rewards set by the server. After the war, one or both sides may receive a war shield, depending on the server.
+# 9. Surrender
 
-# 7. Surrender
+A side can surrender to end the war early - during preparation or once it's active. Surrendering still
+applies the war goal, but usually on **gentler terms** than losing the fight outright (for example, less
+money is robbed). You need permission to manage wars to surrender for your land or nation.
 
-The player surrendering for a land or nation needs permission to manage wars.
+Surrender from the war menu (`/land <land> war menu`). There is no tribute to negotiate - the cost is
+whatever the server configured for that goal's surrender.
 
-If defenders surrender, they pay the tribute that was set by the attackers. If attackers surrender, they may also need to pay a server-defined tribute to the defenders.
+# 10. Independence (Vassals)
 
-Surrender is done from the war menu (`/land <land> war menu`). If the required tribute is `0`, surrender may be blocked. If your land or nation cannot afford the tribute, you cannot surrender until enough money is available.
+If your land has been **vassalized** by a nation (see the Vassal goal), you can fight to break free:
 
-# 8. Useful Commands
+```
+/land <land> war independence
+```
+
+This starts an independence war against your overlord. Win it and your land becomes free again. Lose it
+(or draw) and you stay a vassal and can't try again until a cooldown passes.
+
+# 11. Useful Commands
 
 - `/land <land> war menu` - open the war menu
 - `/land <land> war info` - show information about your current or upcoming war
+- `/land <land> war info captureflag` - show the capture flag recipe
 - `/land <land> war declare <land or nation>` - declare or accept a war
 - `/land <land> war decline` - deny a mutual war declaration
-- `/land <land> war spawn` - teleport near the enemy during war
+- `/land <land> war spawn` - teleport near the enemy (or to your arena spawn) during war
+- `/land <land> war koth set` - place your team's King of the Hill point in your own land
+- `/land <land> war independence` - a vassal declares an independence war
 
 If your nation is fighting instead of just your land, use the same subcommands under
 `/nation <nation> war ...`.

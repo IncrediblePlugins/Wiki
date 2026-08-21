@@ -14,8 +14,8 @@ Limits such as max lands, chunks, members, and upkeep limits are configured in `
 
 There is no standalone `/wars` command or `wars.*` permission tree - war commands live under
 `/land <land> war ...` and `/nation <nation> war ...`, covered by `lands.command.*` /
-`nations.command.*` above. Force-starting or force-ending a war is covered by
-`lands.admin.command.*` (`/lands admin land <land> war start`/`end`).
+`nations.command.*` above. Wars are started through the normal `declare` command; admin-only war
+actions are covered by `lands.admin.command.*` (`/lands admin war end` and `/lands admin war koth ...`).
 
 For the exact admin command list, see [Admin Commands](../Commands.md).
 

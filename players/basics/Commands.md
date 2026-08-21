@@ -99,6 +99,8 @@ These use `/land <land> ...`, also available as `/lands land <land> ...`.
 | `/land <land> war info` | Shows information about the current or upcoming war. |
 | `/land <land> war info captureflag` | Shows the capture flag recipe or capture flag information. |
 | `/land <land> war spawn` | Teleports near the enemy side during war. |
+| `/land <land> war koth set` | Places (or moves) your King of the Hill point during a KoTH (Player Lands) war's preparation. |
+| `/land <land> war independence` | Declares an independence war to break free from the nation this land is a vassal of. |
 | `/land <land> war decline` | Denies a mutual war request. |
 
 # Nations Commands
@@ -127,4 +129,5 @@ reached through `/nation <nation> ...` (also available as `/nations nation <nati
 | `/nation <nation> war info` | Shows information about the current or upcoming war. |
 | `/nation <nation> war info captureflag` | Shows the capture flag recipe or capture flag information. |
 | `/nation <nation> war spawn` | Teleports near the enemy side during war. |
+| `/nation <nation> war koth set` | Places (or moves) your King of the Hill point during a KoTH (Player Lands) war's preparation. |
 | `/nation <nation> war decline` | Denies a mutual war request. |

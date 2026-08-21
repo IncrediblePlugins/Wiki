@@ -18,6 +18,7 @@
 * [Relations](general/Relations.md)
 * [Nations](general/Nations.md)
 * [Wars](general/Wars.md)
+* [War Modes and Goals](general/War-Modes-and-Goals.md)
 
 ## ❓ Help
 * [Frequently Asked Questions](general/FAQ.md)

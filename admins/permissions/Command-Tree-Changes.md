@@ -8,8 +8,9 @@ manage permissions by hand, read this before assuming your old permission setup 
 - `/lands edit <land>` is gone. Commands now take the land or nation directly:
   `/land <land> ...` / `/lands land <land> ...` and `/nation <nation> ...` / `/nations nation <nation> ...`.
 - There is no standalone `/wars` command or `wars.*` permission tree anymore. War commands live
-  under `/land <land> war ...` and `/nation <nation> war ...`. Admin force-start/force-end moved to
-  `/lands admin land <land> war start`/`end`.
+  under `/land <land> war ...` and `/nation <nation> war ...`. Wars are started through the normal
+  `declare` command (admins use the `lands.admin.command.edit` bypass); admin-only actions are
+  `/lands admin war end <land or nation>` and the `/lands admin war koth ...` arena commands.
 - Staff who need to manage lands/nations they're not a member of now use the
   `lands.admin.command.edit` bypass permission instead of a separate edit command.
 

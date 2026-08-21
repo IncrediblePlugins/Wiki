@@ -26,6 +26,7 @@
 * [Natural Flags](configuration/Natural-Flags.md)
 * [Player Personal Settings](configuration/Player-Personal-Settings.md)
 * [Wars](configuration/Wars.md)
+* [War Modes and Goals](configuration/War-Modes-and-Goals.md)
 
 ## Permissions and Staff Tools
 * [Command Tree Changes](permissions/Command-Tree-Changes.md)

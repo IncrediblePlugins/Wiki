@@ -48,7 +48,6 @@ Nested commands add the full path:
 | `/lands admin player <player> give camp <radius> <amount> [silent]` | Gives camp items. | `lands.admin.command.give.camp` |
 | `/lands admin player <player> give captureflag <amount> [silent]` | Gives war capture flag items. | `lands.admin.command.give.captureflag` |
 | `/lands admin player <player> give first-join-items` | Gives all enabled first-join items. | `lands.admin.command.give.first-join-items` |
-| `/lands admin koth create` | Creates a KoTH arena in the sub area you are standing in. Only exists when KoTH support is enabled. | `lands.admin.command.koth.create` |
 | `/lands admin listperms <player>` | Lists permissions detected for a player. | `lands.admin.command.listperms` |
 
 `<land or *>` means that `*` applies the command to all lands where the command supports it.
@@ -68,19 +67,24 @@ some commands.
 
 # Wars Admin Commands
 
-War commands moved under the land/nation command trees - see [Commands](../players/basics/Commands.md)
-and [Nations](../players/general/Nations.md) for the regular `war` subcommand. Force-starting or
-force-ending a war is an admin-only extension of that same subcommand, reached through
-`/lands admin land <land> war ...`:
+War commands moved under the land/nation command trees - see the player wiki's
+[Wars](../players/general/Wars.md) page for the regular `war` subcommand. Wars are **started** through
+the normal `/land <land> war declare ...` command, which admins can run on any land/nation using the
+`lands.admin.command.edit` bypass. Admin-only war actions live under `/lands admin war`:
 
 | Command | What it does | Permission |
 | --- | --- | --- |
-| `/lands admin land <land> war start <attacker> <defender> <tribute> <preparation_time>` | Forcefully declares or starts a war. | `lands.admin.command.land.war.start` |
-| `/lands admin land <land> war end` | Ends an upcoming or active war without winner rewards. | `lands.admin.command.land.war.end` |
+| `/lands admin war end <land or nation>` | Force-ends an upcoming or active war cleanly, without applying the goal or winner rewards. | `lands.admin.command.war.end` |
+| `/lands admin war koth create` | Designates the sub-area you're standing in as a KoTH arena. | `lands.admin.command.war.koth.create` |
+| `/lands admin war koth setflag` | Places the arena's control point at your position. | `lands.admin.command.war.koth.setflag` |
+| `/lands admin war koth setspawn <attacker\|defender>` | Sets a team's arena spawn at your position. | `lands.admin.command.war.koth.setspawn` |
+| `/lands admin war koth remove` | Removes the arena you're standing in. | `lands.admin.command.war.koth.remove` |
+| `/lands admin war koth list` | Lists KoTH arenas. | `lands.admin.command.war.koth.list` |
 
-This only exists under `/lands admin land`; there is no separate admin subcommand for nations and
-no `wars.admin.*` permission tree anymore. A nation at war is really its lands being at war, so
-ending the relevant land's war also ends it for the nation.
+There is no `wars.admin.*` permission tree anymore, and no separate nation war-admin command - a
+nation's war belongs to its capital land, so `/lands admin war end` takes either a land or a nation.
+See [War Modes and Goals](configuration/War-Modes-and-Goals.md) for the KoTH arena setup workflow and
+caveats.
 
 # Related Permissions
 
