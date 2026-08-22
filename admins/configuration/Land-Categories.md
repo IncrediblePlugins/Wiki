@@ -36,6 +36,7 @@ Fields:
 | Setting | What it does |
 | --- | --- |
 | `enabled` | Shows or hides the category. |
+| `default` | If `true`, new lands start with this category instead of none. At most one category should be marked default. |
 | `name` | Display name in menus. |
 | `description` | Lore shown for the category. |
 
