@@ -13,6 +13,9 @@ How many upgradeable hoppers can a player place? Replace `number` with an actual
 ## Player Commands
 See here: [Link](../players/Commands.md)
 
+`uhoppers.command.confirmtp`\
+Allow using `/upgradeablehoppers confirmtp` to confirm unsafe teleport destinations.
+
 ## Teleportation
 The following permissions limit all teleportation initiated by UpgradeableHoppers. Players have them by default. However, in some cases
 the teleportation is initiated by executing a command. In such case they need the permission to use the command as well.

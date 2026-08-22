@@ -3,6 +3,10 @@
 * [Info](README.md)
 
 ## For Players
+* [Info](players/README.md)
+* [Getting Started](players/Getting-Started.md)
+* [Managing Hoppers](players/Managing-Hoppers.md)
+* [Links and Filters](players/Links-and-Filters.md)
 * [Commands](players/Commands.md)
 
 ## Configuration
