@@ -56,6 +56,9 @@ Read [Entity Types](Entity-Types.md) for details.
 The status item in the spawner menu shows whether the spawner is running or paused. If it is paused,
 the menu explains why.
 
+Read [Status and Limits](../general/Status-and-Limits.md) if you want to know what each pause
+reason means.
+
 Butcher mode instantly handles spawned entities and drops their loot instead of keeping visible
 entities around the spawner. Read [Butcher Mode and Hoppers](../general/Butcher-Mode-and-Hoppers.md)
 before using it.

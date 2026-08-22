@@ -9,6 +9,7 @@
 ## Spawner Management
 * [Upgrades](basics/Upgrades.md)
 * [Entity Types](basics/Entity-Types.md)
+* [Status and Limits](general/Status-and-Limits.md)
 * [Butcher Mode and Hoppers](general/Butcher-Mode-and-Hoppers.md)
 
 ## Tools

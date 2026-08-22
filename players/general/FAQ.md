@@ -4,15 +4,8 @@ Read [Start](../basics/Start.md) first if you are new to UpgradeableSpawners.
 
 # Why is my spawner paused?
 
-Open the spawner menu and look at the status item. Common reasons are:
-
-* No player is close enough.
-* Too many nearby entities of the same type.
-* The spawner reached its spawn limit for the current period.
-* Too many UpgradeableSpawners entities are already in the surrounding area.
-* The spawner was paused manually.
-* The spawner is powered by redstone and your server pauses spawners on redstone signal.
-* Butcher mode requires a hopper, but no upgradeable hopper is connected.
+Open the spawner menu and look at the status item. Read
+[Status and Limits](Status-and-Limits.md) for the common pause reasons and fixes.
 
 # Why can I not place a spawner?
 
