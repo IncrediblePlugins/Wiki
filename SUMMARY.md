@@ -11,6 +11,13 @@
 * [Commands](players/Commands.md)
 * [Frequently Asked Questions](players/FAQ.md)
 
+## For Admins
+* [Admin Guide](admins/README.md)
+* [Installation](config/Installation.md)
+* [Discord Configuration](admins/Discord-Configuration.md)
+* [Admin Commands](admins/Commands.md)
+* [Permissions](permissions/Permissions.md)
+
 ## Configuration
 * [Installation](config/Installation.md)
 * [PlaceholderAPI](config/PlaceholderAPI.md)

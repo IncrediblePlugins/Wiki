@@ -1,6 +1,8 @@
 You can display placeholders of DiscordBridge in other plugins with the help of [PlaceholderAPI](https://www.spigotmc.org/resources/6245).
 DiscordBridge itself also supports PlaceholderAPI in its locale files etc.
 
+Add `_nocolor` to the end of a placeholder to strip color codes from supported text outputs.
+
 # Placeholders
 You can find the placeholders of each module on their own page. Here are only placeholders listed
 that don't belong to any module.
@@ -23,6 +25,8 @@ The format is always as follows: `%discordbridge_server_<server>_<placeholder>`\
 You need to replace ``<server>`` with the name of the server given in the Redis section of the config or in the ``server-name.txt`` file in the DiscordBridge plugin folder.
 You can use ``total`` as the server name to display information for all servers combined, such as the player count on all servers combined.
 The ``<placeholder>`` argument needs to be replaced with the specific placeholder.
+
+On a single server without Redis, the current server's live data is used. In a Redis network, data can include every DiscordBridge instance that publishes server data.
 
 #### Placeholders
 `%discordbridge_server_<server>_players_online%`\

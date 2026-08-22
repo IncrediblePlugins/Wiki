@@ -1,7 +1,11 @@
 # Usage
-Runs the Discord bot.
+
+Runs the Discord bot and registers Discord slash commands.
+
+The bot module is required for Discord-side features such as `/config`, `/online`, chat forwarding, tickets, events, and Lands Discord channels.
 
 # Setup
+
 You can click on the images to make them larger.
 
 1. Create an application in your [Discord developer portal](https://discord.com/developers/applications). 
@@ -9,14 +13,29 @@ You can click on the images to make them larger.
    ![Intents](https://i.imgur.com/GhPA0So.png)
 3. Required scopes: ``applications.command, bot``\
    ![Scopes](https://i.imgur.com/N7UdnBY.png)
-4. The bot needs to following bot permissions: Manage Channels, Manage Webhooks, Read Messages/View Channels, Send Messages, Manage Messages, Embed Links, Attach Files, Read Message History, Add Reactions\
+4. The bot needs the following bot permissions: Manage Channels, Manage Webhooks, Read Messages/View Channels, Send Messages, Manage Messages, Embed Links, Attach Files, Read Message History, Add Reactions\
    ![Permissions](https://i.imgur.com/RjCCYCK.png)\
-   Alternatively you can use the following URL to add the bot with the required permissions. Just make sure to replace ``CLIENT_ID`` with your bots client ID. Link: [Link](https://discord.com/api/oauth2/authorize?client_id=CLIENT_ID&permissions=2684480592&scope=bot+applications.commands)
+   Alternatively you can use the following URL to add the bot with the required permissions. Replace ``CLIENT_ID`` with your bot's client ID: [Invite Link](https://discord.com/api/oauth2/authorize?client_id=CLIENT_ID&permissions=2684480592&scope=bot+applications.commands)
 5. Copy the bot token and paste it at the ``token`` option in DiscordBridge/Modules/bot.yml.
+6. Restart the server. Slash commands are registered after the bot logs in.
+
+# Multiple Servers
+
+In a Redis setup, only the master DiscordBridge instance should run the bot module. Set `database.redis.master: true` on the bot instance and keep the Bot module disabled on non-bot instances.
+
+Without Redis, each server can run its own bot instance.
+
+# Discord Commands
+
+| Command | What it does |
+| --- | --- |
+| `/config` | Configures DiscordBridge settings for the current Discord server. |
+| `/online` | Shows online Minecraft players. |
 
 # Ingame Commands
+
 `/discordbridge invite`\
-Get invite to thh Discord server. Only available if ``invite-url`` is configured in the module config.\
+Get the Discord server invite. Only available if ``invite-url`` is configured in the module config.\
 _Permission: discordbridge.command.invite_
 
 # PlaceholderAPI Placeholders
