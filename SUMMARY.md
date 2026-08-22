@@ -2,8 +2,9 @@
 * [Home](README.md)
 
 ## For Players
-* [Commands](players/Commands.md)
+* [Player Guide](players/README.md)
 * [Usage](players/Usage.md)
+* [Commands](players/Commands.md)
 
 ## Configuration
 * [Installation](config/Installation.md)
