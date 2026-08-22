@@ -39,6 +39,10 @@ Time until upkeep is collected on the server. This will be the same as `%lands_n
 `%lands_affiliation%`\
 Combination of land and nation name. You can edit the format in your language file.
 
+`%lands_affiliation_tab%`\
+Same as `%lands_affiliation%`, but returns an empty string instead of "None" if the player has no
+affiliation. Intended for use in a tab list, where an empty value looks cleaner than a "None" label.
+
 `%affiliation_name_or_tag%`\
 Combination of land and nation tag. If the land or nation has no tag set, the name will be used instead. You can edit the format in your language file.
 
