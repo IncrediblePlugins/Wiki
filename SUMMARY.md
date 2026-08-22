@@ -2,7 +2,14 @@
 * [Info](README.md)
 
 ## For Players
+* [Player Guide](players/README.md)
+* [Start](players/basics/Start.md)
 * [Commands](players/Commands.md)
+* [Upgrades](players/basics/Upgrades.md)
+* [Entity Types](players/basics/Entity-Types.md)
+* [Butcher Mode and Hoppers](players/general/Butcher-Mode-and-Hoppers.md)
+* [Spawner List and Teleport](players/general/Spawner-List-and-Teleport.md)
+* [Frequently Asked Questions](players/general/FAQ.md)
 
 ## Configuration
 * [Installation](config/Installation.md)
