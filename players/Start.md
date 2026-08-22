@@ -32,6 +32,8 @@ By default, common protectable objects include containers such as chests, barrel
 shulker boxes, plus doors, hoppers, item frames, armor stands, and some entities. Your server can
 enable or disable each type.
 
+If locking fails because of money or limits, read [Limits and Costs](Limits-and-Costs.md).
+
 # 3. Open a Locked Object
 
 Right-click a protection to use it.
@@ -57,6 +59,8 @@ You can also trust players from the protection menu:
 3. Choose the trust option.
 
 Trusted players receive a role. Roles decide what they can do at the protection.
+
+If you want to share the same players across many protections, read [Groups](Groups.md).
 
 # 6. Stop a Click Mode
 

@@ -16,6 +16,7 @@ Only commands you have permission to use are shown in command help.
 | `/chestprotect untrust <player>` | Enters untrust mode. Click a protection to remove that player. | `chestprotect.command.untrust` |
 | `/chestprotect view` | Shows nearby protections with particles. Run it again to turn the view off. | `chestprotect.command.view` |
 | `/chestprotect exit` | Leaves lock, unlock, trust, or untrust mode. | `chestprotect.command.exit` |
+| `/chestprotect confirmtp` | Confirms an unsafe teleport destination after ChestProtect corrects or blocks a menu teleport. | None |
 | `/chestprotect help [page]` | Shows the commands available to you. | `chestprotect.command.help` |
 
 # Click Modes

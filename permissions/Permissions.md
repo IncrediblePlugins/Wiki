@@ -1,67 +1,101 @@
-To assign permissions to players you must install a permissions plugin, like [Luckperms](https://www.spigotmc.org/resources/28140). Below you find a list of permissions that you can assign to players or their permission groups. Please note that if a player has `/op`, they will have all permissions.
+# Permissions
 
-# Player Permissions
-These permissions are safe to set for your players.
+Use a permissions plugin such as [LuckPerms](https://www.spigotmc.org/resources/28140) to assign
+permissions to players and groups.
 
-## Numbered Permissions
-Important: 
-* **Replace `<number>` with an actual number.** Example: `chestprotect.blocks.<number>` -> chestprotect.blocks.5
+Players with `/op` usually have all permissions.
 
-`chestprotect.blocks.<number>`\
-How many blocks can a player protect? Replace `number` with an actual number.
+# Player Command Permissions
 
-`chestprotect.entities.<number>`\
-How many entities can a player protect? Replace `number` with an actual number.
+See [Commands](../players/Commands.md) for the command list.
 
-`chestprotect.members.<number>`\
-How many trusted players can a player have per protection. Replace `number` with an actual number.
+| Permission | What it allows |
+| --- | --- |
+| `chestprotect.command.menu` | Open the main menu. |
+| `chestprotect.command.lock` | Use lock mode. |
+| `chestprotect.command.unlock` | Use unlock mode. |
+| `chestprotect.command.trust` | Use trust mode. |
+| `chestprotect.command.untrust` | Use untrust mode. |
+| `chestprotect.command.view` | Visualize nearby protections. |
+| `chestprotect.command.exit` | Exit the active click mode. |
+| `chestprotect.command.help` | View command help. |
+| `chestprotect.command.*` | All player command permissions. |
 
-`chestprotect.groups.<number>`\
-How many groups can a player create? Replace `number` with an actual number.
+# Admin-Aware Player Commands
 
-`chestprotect.free.blocks.<number>`\
-Set the amount of free block protections. Replace `number` with an actual number.
+| Permission | What it allows |
+| --- | --- |
+| `chestprotect.admin.lock` | Use `/chestprotect lock <player>` or `/chestprotect lock Server` to create a protection owned by another player or the server owner ID. |
 
-`chestprotect.free.entities.<number>`\
-Set the amount of free entity protections. Replace `number` with an actual number.
+# Limit Permissions
 
-## Player Commands
-See here: [Link](../players/Commands.md)
+See [Limits](../config/Limits.md) for limit configuration details.
 
-## Role Flags Toggle Permissions
-See here: [Link](../config/Roles-and-Flags.md)
+Replace `<number>` with an actual number.
 
-## Protection Flags Toggle Permissions
-See here: [Link](../config/Protection-Flags.md)
+| Permission | What it sets |
+| --- | --- |
+| `chestprotect.blocks.<number>` | Block protection limit. |
+| `chestprotect.entities.<number>` | Entity protection limit. |
+| `chestprotect.groups.<number>` | Group limit. |
+| `chestprotect.members.<number>` | Trusted members per protection or group. |
+| `chestprotect.free.blocks.<number>` | Free block protections, and currently free entity protections in the plugin build. |
 
-## Personal Flags Toggle Permissions
-See here: [Link](../config/Personal-Flags.md)
+# Setting Toggle Permissions
 
-## Teleportation
-The following permissions limit all teleportation initiated by ChestProtect. Players have them by default. However, in some cases
-the teleportation is initiated by executing a command. In such case they need the permission to use the command as well.
+| Permission | What it allows |
+| --- | --- |
+| `chestprotect.setting.open` | Toggle the `OPEN` role flag. |
+| `chestprotect.setting.hopper_transfer` | Toggle the `HOPPER_TRANSFER` role flag. |
+| `chestprotect.setting.player_trust` | Toggle the `PLAYER_TRUST` role flag. |
+| `chestprotect.setting.player_untrust` | Toggle the `PLAYER_UNTRUST` role flag. |
+| `chestprotect.setting.player_setrole` | Toggle the `PLAYER_SETROLE` role flag. |
+| `chestprotect.setting.unlock` | Toggle the `UNLOCK` role flag. |
+| `chestprotect.setting.edit_flags` | Toggle the `EDIT_FLAGS` role flag. |
+| `chestprotect.setting.player.auto_lock` | Toggle auto lock. |
+| `chestprotect.setting.player.persistent_lock` | Toggle persistent lock and unlock mode. |
+| `chestprotect.setting.player.persistent_trust` | Toggle persistent trust and untrust mode. |
+| `chestprotect.setting.player.notifications` | Toggle opening notifications. |
+| `chestprotect.setting.*` | All setting permissions. |
 
-### Disabling Teleportation
-If you want to disable a teleportation you need to unset the permission in your permissions plugin.
-Example for LuckPerms: ``/luckperms group default permission set chestprotect.teleport.protection false``
-The value ``false`` is important here.
+# Teleportation
 
-### Teleportation Permissions
-`chestprotect.teleport.protection`\
-Allow teleportation to protections. This permission is set by default.
+`chestprotect.teleport.protection` allows teleportation to protections from the menu. It is set by
+default.
+
+To disable it with LuckPerms:
+
+```text
+/luckperms group default permission set chestprotect.teleport.protection false
+```
+
+The `false` value is important.
 
 # Admin Permissions
-These permissions should only be given to staff or server admins.
 
-## Admin Commands
-See here: [Link](../admins/Commands.md)
+See [Admin Commands](../admins/Commands.md) for command-specific admin permissions.
 
-## Bypass Permissions
-`chestprotect.bypass.edit`\
-Edit protections of other players.
+| Permission | What it allows |
+| --- | --- |
+| `chestprotect.admin.command` | Use `/chestprotect admin`. |
+| `chestprotect.admin.command.*` | Use all admin commands. |
+| `chestprotect.admin.edit` | Edit other players' protections in menus. |
+| `chestprotect.admin.priority` | Bypass role priority restrictions. |
+| `chestprotect.admin.lock` | Lock objects for another player or for the server owner ID. |
+| `chestprotect.admin.*` | All admin permissions. |
 
-`chestprotect.bypass.open`\
-Open protection of other players.
+# Bypass Permissions
 
-`chestprotect.bypass.unlock`\
-Unlock protections of other players.
+Bypass permissions should only be given to staff or trusted admin groups.
+
+| Permission | What it bypasses |
+| --- | --- |
+| `chestprotect.bypass.open` | Open other players' protections. |
+| `chestprotect.bypass.hopper_transfer` | Hopper transfer role checks. |
+| `chestprotect.bypass.player_trust` | Trust role checks. |
+| `chestprotect.bypass.player_untrust` | Untrust role checks. |
+| `chestprotect.bypass.player_setrole` | Role-change checks. |
+| `chestprotect.bypass.unlock` | Unlock other players' protections. |
+| `chestprotect.bypass.edit_flags` | Edit-flag checks. |
+| `chestprotect.bypass.untrust` | Command-mode untrust bypass check. |
+| `chestprotect.bypass.*` | All bypass permissions. |

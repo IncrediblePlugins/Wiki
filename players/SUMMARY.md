@@ -10,6 +10,7 @@
 * [Managing Protections](Managing-Protections.md)
 * [Sharing and Roles](Sharing-and-Roles.md)
 * [Groups](Groups.md)
+* [Limits and Costs](Limits-and-Costs.md)
 
 ## Settings
 * [Personal Settings](Personal-Settings.md)
