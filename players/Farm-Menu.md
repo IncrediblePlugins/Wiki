@@ -1,6 +1,6 @@
 # Farm Menu
 
-Open the farm menu by left-clicking the placed farm item. You can also use `/farm list` and select one of your farms.
+Open the farm menu by left-clicking the placed farm item if your role can upgrade or manage that farm. You can also use `/farm list` and select one of your own farms.
 
 Right-clicking the placed farm opens storage directly.
 
@@ -57,7 +57,9 @@ Only configured blocks placed inside the farm radius are tracked. If a farm says
 
 # Public Access
 
-The **Public** option lets other players use basic public actions on the farm, such as planting, harvesting, and interacting. It does not give them management access, upgrades, deletion, or permission to change trusted players.
+The **Public** option lets other players use public farm actions: planting, harvesting, and interacting. Opening the farm uses the interact action, so keep a farm private if you do not want other players to use farm interactions such as storage access on a default setup.
+
+Public access does not give players management access, upgrades, deletion, or permission to change trusted players.
 
 # Hopper Output
 

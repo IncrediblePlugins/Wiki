@@ -1,12 +1,12 @@
 The roles and their flags can be edited in the `roles.yml` file. These flags can't be toggled in game. However, each farm can set roles for their players.
 
 * **BLOCK_BREAK**\
-Allow a role to break blocks. This does not include crops or saplings.\
+Allow a role to break non-harvestable blocks. In the current plugin code, non-harvestable block placement inside a farm is checked through this flag as well.\
 _Toggle permission: betterfarming.role.setting.block_break_\
 _Bypass permission: betterfarming.bypass.block_break_
 
 * **BLOCK_PLACE**\
-Allow a role to place blocks. This does not include crops or saplings.\
+Registered as a role flag for block placement. Current placement checks use `PLANT` for harvestable blocks and `BLOCK_BREAK` for other blocks.\
 _Toggle permission: betterfarming.role.setting.block_place_\
 _Bypass permission: betterfarming.bypass.block_place_
 
@@ -21,12 +21,12 @@ _Toggle permission: betterfarming.role.setting.plant_\
 _Bypass permission: betterfarming.bypass.plant_
 
 * **INTERACT**\
-Allow a role to interact with doors etc.\
+Allow a role to interact with farm-area blocks and open farm storage by right-clicking the farm.\
 _Toggle permission: betterfarming.role.setting.interact_\
 _Bypass permission: betterfarming.bypass.interact_
 
 * **UPGRADE**\
-Allow a role to upgrade the farm.\
+Allow a role to open the main farm menu and upgrade the farm.\
 _Toggle permission: betterfarming.role.setting.upgrade_\
 _Bypass permission: betterfarming.bypass.upgrade_
 

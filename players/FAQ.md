@@ -32,7 +32,7 @@ If your server uses UpgradeableHoppers, an upgradeable hopper placed directly un
 
 # Why can't I edit or remove a farm?
 
-You need the correct farm role. The owner can trust you, change your role, or remove you from the farm.
+You need the correct farm role. Opening the management menu requires upgrade access, and removing a farm requires interaction access plus delete access. The owner can trust you, change your role, or remove you from the farm.
 
 Server staff may also have bypass permissions, but normal players are controlled by the farm's trusted-player roles.
 

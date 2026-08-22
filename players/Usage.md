@@ -10,7 +10,9 @@ Use:
 
 `/farm get [type] [amount]`
 
-If you do not enter a type, the server's default farm type is used. Depending on the server, getting a farm item may cost money, experience, levels, or configured currency items.
+If you do not enter a type, the server's default farm type is used. If you want more than one farm item, include the type before the amount, such as `/farm get Crop-Farm 3`.
+
+Depending on the server, getting a farm item may cost money, experience, levels, or configured currency items.
 
 If your server requires purchase confirmation, click the confirm message or repeat the command with `confirm` when prompted.
 
@@ -63,7 +65,7 @@ If your server uses UpgradeableHoppers integration, placing an upgradeable hoppe
 
 # 6. Upgrade the Farm
 
-Left-click the farm to open the farm menu. You can also open your farms from `/farm list`.
+Left-click the farm to open the farm menu if your role can upgrade or manage that farm. You can also open your own farms from `/farm list`.
 
 Depending on your permissions and the server economy, you may be able to upgrade:
 
@@ -79,4 +81,4 @@ Collect anything you still want from the farm storage before removing the farm.
 
 Sneak and left-click the farm item to remove it.
 
-You need permission through ownership, role access, or a server bypass permission. Removing a valid loaded farm gives the farm item back to you, or drops it at the farm if your inventory is full.
+You need interaction access and delete access through ownership, role access, or a server bypass permission. Removing a valid loaded farm gives the farm item back to you, or drops it at the farm if your inventory is full.

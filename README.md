@@ -4,4 +4,4 @@ BetterFarming adds placeable farm items that can grow, harvest, and store config
 
 If you play on a server with BetterFarming installed, start with the [Player Guide](players/README.md).
 
-If you run a server, use the config, permissions, admin, and developer sections in this wiki.
+If you run a server, start with the [Admin Guide](admins/README.md).

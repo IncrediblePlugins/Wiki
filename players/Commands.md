@@ -10,10 +10,12 @@ Some commands may be hidden from you if you do not have permission. Use `/farm h
 | `/farm get [type] [amount] confirm` | Confirms a farm purchase when your server requires purchase confirmation. | `betterfarming.command.get` |
 | `/farm list` | Opens the list of farms you placed. From this menu you can open a farm menu or teleport to a farm if teleporting is enabled. | `betterfarming.command.list` |
 | `/farm help [page]` | Shows BetterFarming command help. Only commands you can use are shown. | `betterfarming.command.help` |
-| `/farm confirmtp` | Confirms an unsafe farm teleport destination after BetterFarming asks for confirmation. | Server dependent |
+| `/farm confirmtp` | Confirms an unsafe farm teleport destination after BetterFarming asks for confirmation. | `betterfarming.command.confirmtp` |
 
 # Command Tips
 
-Farm type names come from the server's `farms.yml`. If `/farm get crop` does not work, use `/farm help` or ask staff which farm types are enabled.
+Farm type names come from the server's `farms.yml`. BetterFarming uses the farm display name with spaces replaced by dashes and color removed. If `/farm get crop` does not work, use `/farm help` or ask staff which farm types are enabled.
+
+If you want more than one farm item, include the type before the amount, such as `/farm get Crop-Farm 3`.
 
 Teleporting from `/farm list` can have a cost or a short wait time. If BetterFarming warns that the destination is unsafe, only confirm when you are sure you want to teleport there.

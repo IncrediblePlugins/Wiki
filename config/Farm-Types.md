@@ -1,89 +1,209 @@
-In BetterFarming you can create an unlimited amount of custom farms. They can be added/configured in the `farms.yml` file. This page does explain various options you can configure for each farm type.
+# Farm Types
 
-# Name
-The name of the farm type. Please note that `/farm get <type>` only allows the farm type to have one word. Example: `name: 'Crop Farm'` will result in `/farm get crop`.
+Farm types are configured in `farms.yml` under `types`.
+
+Most farm-type changes should be made while the server is stopped, followed by a restart. Existing placed farms store their current level values and may not update cleanly if a type is removed or heavily restructured while the server is running.
+
+At least one farm type must be enabled and valid. BetterFarming disables itself on startup if no farm types are configured.
+
+# Type Key and Name
+
+Each entry under `types` has a key:
+
+```yaml
+types:
+  crop:
+    enabled: true
+    name: "&eCrop Farm"
+```
+
+The key is used for the generated limit ID, such as `player_farms_crop`.
+
+The player command uses the display name with spaces replaced by dashes and color removed. For example, `name: "&eCrop Farm"` is obtained with:
+
+`/farm get Crop-Farm`
+
+Names are case-insensitive.
+
+The first enabled farm type that loads successfully becomes the default type for `/farm get` when no type is entered.
+
+# Farm Mode
+
+`type` controls the farm behavior:
+
+| Type | Use it for |
+| --- | --- |
+| `NORMAL` | Crops or blocks that BetterFarming grows by age or interval. |
+| `TREE` | Saplings and tree-like growth handled through tree growth events. |
 
 # Item
-This item will be given to players when using `/farm get` or `/farm admin give`. If an armor stand is configured, then the armor stand will instead spawn at the placement of this block.
+
+`item` defines the farm item given by `/farm get` and `/farm admin give`.
+
+The item supports names, lore, materials, custom heads, custom model data, and compatible custom item providers used by PluginFramework.
 
 # Farmland
-If not set to `AIR`, the farm will automatically replace the blocks at the lowest y level of the farm with this material. A filter can be configured in `config.yml` -> `farm-land.filter`.
 
-# Cost
-The cost of one farm item. Used at `/farm get`.
+`farmland` controls whether BetterFarming replaces the ground around the farm.
 
-# Recipe
-Allow players to craft this farm type.
-Example:
-````yaml
-recipe:
-  - 'IRON_INGOT,CHEST,IRON_INGOT'
-  - 'IRON_INGOT,REDSTONE,IRON_INGOT'
-  - 'AIR,IRON_INGOT,AIR'
-````
+Set it to `AIR` to disable farmland creation.
 
-# Minion NPC
-If configured and enabled, a minion with the given configuration will be placed instead of the farm block. Although, the farm item will still be given at `/farm get` or `/farm admin give`.
-````yaml
-    # Place a small minion npc instead of the actual farm block.
-    minion:
-      enabled: true
-      helmet: 'skin:925a32560831c295b00527926255e608a039776f3523b92edf788149aae67d6a'
-      chestplate: 'LEATHER_CHESTPLATE'
-      leggings: 'LEATHER_LEGGINGS'
-      boots: 'LEATHER_BOOTS'
-      tool: 'IRON_HOE'
-````
+The replacement filter is configured in `config.yml` under `farm.creation.farm-land.filter`.
+
+# Cost and Economy
+
+`cost` is the price of one farm item from `/farm get`.
+
+The active economy comes from `config.yml`: Vault, experience, levels, or item currency.
 
 # Fuel
-Requires farms to be charged with specific items to add more fuel to them. Fuel results in time the farm will be active.\
-![Fuel Example](https://i.imgur.com/1SZGbDQ.png)\
-[You can also apply model-data and more.](https://github.com/Angeschossen/BetterFarming/wiki/Farm-Types#model-data)
+
+Enable `fuel` if farms should pause when they run out of time.
+
+```yaml
+fuel:
+  enabled: true
+  initial: 6h
+  max: 7d
+  items:
+    bone_meal:
+      material: "BONE_MEAL"
+      strict: false
+      data:
+        seconds: 25
+```
+
+`initial` is the fuel time a new farm starts with. `max` is the maximum stored fuel time. Each fuel item adds the configured number of seconds per item.
+
+If `strict` is true, the item name and lore must match too. Otherwise, BetterFarming compares the item more loosely.
 
 # Levels
-Each level key must be unique.
 
-# Blocks
-Here you can define which blocks should be harvestable and which items should be given at the harvest.
-Example:
-````yaml
-carrots:
-block: 'CARROTS'
-item:
-  name: 'Carrot'
-  material: 'CARROT'
-harvest:
-  carrot:
-    name: 'Carrot'
-    material: 'CARROT'
-    data:
-      min: 1
-      max: 1
-````
-Whereas the section name `carrots` is the material of the block when placed. Alternatively, you can specify a `block` option to define the block. `item` is the item that is being planted. `harvest` contains a list of items that are harvested each time a crop is read to be harvested. `min` and `max` define the minimum and maximum amount of items of this type given when harvested by the farm.
+Farm levels define upgrade paths.
 
-![The menu where the harvestable blocks can be viewed.](https://i.imgur.com/gGicanE.png)
+BetterFarming supports these level types:
 
-This results in minimum one and maximum one carrot item at harvest. An example configuration can be found here: [Link](https://github.com/IncrediblePlugins/BetterFarming/blob/master/farms.yml)
+| Level | What it controls |
+| --- | --- |
+| `interval` | Seconds between growth cycles. Lower values are better, so they are sorted from slowest to fastest. |
+| `storage` | Internal storage slots. |
+| `radius` | Horizontal farm radius. |
 
-# Model-Data, Enchantments
-You can apply [mode-data](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus#set-custom-model-data) and [enchantments](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus#specific-enchantments) to items.
+Each level key must be unique. The first sorted level is used for newly created farm items.
 
-# Model Data
-You can specify persistent data holders, like player heads, to generate items with model-data. This player head with a pineapple texture will generate 1-4 items named "Pineapple Slice" with the model data 1000 each time it's harvested. You can apply model-data, names, lores etc. to [fuel items](https://wiki.incredibleplugins.com/betterfarming/config/farm-types#fuel) as well.
-````yaml
-somehead:
-  block: 'PLAYER_HEAD'
-  item:
-    name: 'Pineapple'
-    # Custom head texture.
-    material: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTdjNWU5MjVhOTQ5ZTU1ZGIyYzI1ZWZhYWQ2NDUxMmViNmRhYjc0YWZmYjJlOWYzMDRjMzg1YjRmNGIzMGJhNSJ9fX0='
-  harvest:
+```yaml
+levels:
+  interval:
     1:
-      name: 'Pineapple Slice'
-      material: 'PAPER'
-      model-data: 1000
-      data:
-        min: 1
-        max: 4
-````
+      value: 120
+      cost: 0
+    2:
+      value: 60
+      cost: 7500.0
+  storage:
+    1:
+      value: 9
+      cost: 0
+  radius:
+    1:
+      value: 1
+      cost: 0
+```
+
+# Growth
+
+`growth.visualization.enabled` controls whether BetterFarming visually updates block growth stages.
+
+`growth.visualization.instant` controls whether visual growth updates happen immediately.
+
+`growth.stages` controls whether crops use multiple growth stages. If enabled, total time until harvest is based on the interval and the crop's stages.
+
+# Owner Online Requirement
+
+`require-owner-online` pauses farms of this type while their owner is offline.
+
+# World Blacklist
+
+`world-blacklist` blocks a specific farm type from being placed in listed worlds.
+
+The global list of worlds where any farm can be created is configured in `config.yml` under `general.worlds_list`.
+
+# Recipe
+
+Use `recipe` to allow players to craft a farm item.
+
+```yaml
+recipe:
+  - "IRON_INGOT,CHEST,IRON_INGOT"
+  - "IRON_INGOT,REDSTONE,IRON_INGOT"
+  - "AIR,IRON_INGOT,AIR"
+```
+
+Use an empty list to disable crafting.
+
+# Minion NPC
+
+If `minion.enabled` is true, BetterFarming places the configured armor stand instead of the farm block.
+
+```yaml
+minion:
+  enabled: true
+  helmet: "skin:925a32560831c295b00527926255e608a039776f3523b92edf788149aae67d6a"
+  chestplate: "LEATHER_CHESTPLATE"
+  leggings: "LEATHER_LEGGINGS"
+  boots: "LEATHER_BOOTS"
+  tool: "IRON_HOE"
+```
+
+# Harvestable Blocks
+
+`blocks` defines what the farm can track, grow, and harvest.
+
+The section key is used as the material unless you set `block`.
+
+```yaml
+blocks:
+  carrots:
+    item:
+      name: ""
+      material: "CARROT"
+    harvest:
+      carrot:
+        name: ""
+        material: "CARROT"
+        data:
+          min: 1
+          max: 1
+          chance: 100
+```
+
+`item` is the item players place or plant. `harvest` is the list of item drops the farm adds to storage when the block is harvested.
+
+`min` and `max` randomize the drop amount. `chance` controls the drop chance.
+
+Set a harvest item to `enabled: false` to disable that drop. For enabled harvest items, chance values are treated as percentages.
+
+# Custom Items and Model Data
+
+You can apply custom model data, names, lore, enchantments, and custom heads to farm items, fuel items, planted items, and harvest drops.
+
+Example custom head harvest:
+
+```yaml
+blocks:
+  somehead:
+    block: "PLAYER_HEAD"
+    item:
+      name: "Pineapple"
+      material: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTdjNWU5MjVhOTQ5ZTU1ZGIyYzI1ZWZhYWQ2NDUxMmViNmRhYjc0YWZmYjJlOWYzMDRjMzg1YjRmNGIzMGJhNSJ9fX0="
+    harvest:
+      pineapple_slice:
+        name: "Pineapple Slice"
+        material: "PAPER"
+        model-data: 1000
+        data:
+          min: 1
+          max: 4
+```
+
+General item options are documented in [GUI Menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus).

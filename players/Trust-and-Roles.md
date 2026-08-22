@@ -35,6 +35,8 @@ Region-trusted players are shown separately in the trusted-player menu. To chang
 
 # Public Farms
 
-The **Public** option in the farm menu allows all players to use public farm actions, such as planting, harvesting, and interacting.
+The **Public** option in the farm menu allows all players to use public farm actions: planting, harvesting, and interacting.
+
+Opening a farm uses the interact action, so public farms can also allow basic farm interaction such as storage access on a default setup.
 
 Public access does not make them farm managers. They still cannot upgrade, delete, configure the farm, or manage trusted players unless they also have the required role or server permission.
