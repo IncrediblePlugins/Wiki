@@ -2,7 +2,14 @@
 * [Info](README.md)
 
 ## For Players
+* [Player Guide](players/README.md)
+* [Getting Started](players/Start.md)
+* [Account Linking](players/Account-Linking.md)
+* [Chat Bridge](players/Chat.md)
+* [Tickets](players/Tickets.md)
+* [Lands Integration](players/Lands.md)
 * [Commands](players/Commands.md)
+* [Frequently Asked Questions](players/FAQ.md)
 
 ## Configuration
 * [Installation](config/Installation.md)
