@@ -19,6 +19,11 @@ If the current radius is set to `0`, the hopper uses vanilla suction behavior in
 
 You can also toggle suction visualization from this menu to see the pickup area.
 
+## Redstone
+Servers can configure powered hoppers to stop transferring items.
+
+If your hopper stops moving items when powered by redstone, remove the signal or ask a server admin whether redstone pause is enabled.
+
 ## Name
 Use the name item in the hopper menu to set a custom name. This name is shown in menus such as your hopper list.
 

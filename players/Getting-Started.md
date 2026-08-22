@@ -18,6 +18,8 @@ Place the hopper item like a normal hopper. The hopper becomes yours after place
 
 Some servers may restrict where you can place upgradeable hoppers. For example, placement might only be allowed in specific worlds or inside claims where you are trusted.
 
+If your hopper item has an owner stored on it, only that owner can place it. Server admins can also give unbound hopper items that become owned by whoever places them.
+
 # Open the Hopper
 Left-click an upgradeable hopper without sneaking to open its upgrade menu.
 
@@ -38,3 +40,8 @@ Servers can configure their own hopper types. By default, UpgradeableHoppers inc
 Normal hoppers use a block-based suction radius.
 
 Chunk hoppers can use a chunk-based suction radius, depending on the server configuration.
+
+# Claim Restrictions
+If the server uses a supported claim plugin, hoppers and linked containers may require claim trust.
+
+On some servers, hoppers can only be placed inside claims. On others, hoppers can be placed anywhere, but links and item pickup may still be blocked in claims where you are not trusted.

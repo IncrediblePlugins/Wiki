@@ -9,17 +9,17 @@
 * [Links and Filters](players/Links-and-Filters.md)
 * [Commands](players/Commands.md)
 
-## Configuration
+## For Admins
+* [Info](admins/README.md)
 * [Installation](config/Installation.md)
-* [Hoppers](config/Hoppers.md)
+* [Configuration Overview](admins/Configuration.md)
+* [Hopper Types](config/Hoppers.md)
+* [Performance and Compatibility](admins/Performance-and-Compatibility.md)
+* [Commands](admins/Commands.md)
+* [Permissions](permissions/Permissions.md)
 * [GUI Menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus)
 * [Messages](https://wiki.incredibleplugins.com/general/messages-and-config/messages)
 * [Translations](https://wiki.incredibleplugins.com/general/messages-and-config/translations)
-
-## Permissions
-* [Player Commands](players/Commands.md)
-* [Admin Commands](admins/Commands.md)
-* [Other Permissions](permissions/Permissions.md)
 
 ## Developers
 * [API](developers/API.md)
