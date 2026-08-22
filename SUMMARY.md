@@ -2,8 +2,12 @@
 * [Info](README.md)
 
 ## For Players
+* [Player Guide](players/README.md)
 * [Commands](players/Commands.md)
 * [Usage](players/Usage.md)
+* [Farm Menu](players/Farm-Menu.md)
+* [Trust and Roles](players/Trust-and-Roles.md)
+* [Frequently Asked Questions](players/FAQ.md)
 
 ## Config
 * [Installation](config/Installation.md)
