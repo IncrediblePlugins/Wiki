@@ -4,7 +4,14 @@
 
 ## For Players
 
+* [Player Guide](players/README.md)
+* [Start](players/Start.md)
 * [Commands](players/Commands.md)
+* [Managing Protections](players/Managing-Protections.md)
+* [Sharing and Roles](players/Sharing-and-Roles.md)
+* [Groups](players/Groups.md)
+* [Personal Settings](players/Personal-Settings.md)
+* [Frequently Asked Questions](players/FAQ.md)
 
 ## Configuration
 

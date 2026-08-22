@@ -1,35 +1,38 @@
-`/chestprotect`
-Open the main menu. Executing `/chestprotect menu` has the same effect.\
-_Permission: chestprotect.command.menu_
+# Commands
 
-`/chestprotect menu`\
-Open the main menu.\
-_Permission: chestprotect.command.menu_
+Most examples use `/chestprotect`. Many servers also enable `/cp`, `/protect`, and `/protection`
+as aliases. Your server may also enable the direct shortcuts `/lock`, `/unlock`, `/trust`, and
+`/untrust`.
 
-`/chestprotect lock`\
-Enter lock mode and lock something by interacting with it.\
-_Permission: chestprotect.command.lock_
+Only commands you have permission to use are shown in command help.
 
-`/chestprotect unlock`\
-Enter unlock mode and unlock a protection by interacting with it.\
-_Permission: chestprotect.command.unlock_
+| Command | What it does | Permission |
+| --- | --- | --- |
+| `/chestprotect` | Opens the main menu. This is the same as `/chestprotect menu`. | `chestprotect.command.menu` |
+| `/chestprotect menu` | Opens the main menu. | `chestprotect.command.menu` |
+| `/chestprotect lock` | Enters lock mode. Click a protectable object to lock it. | `chestprotect.command.lock` |
+| `/chestprotect unlock` | Enters unlock mode. Click one of your protections to unlock it. | `chestprotect.command.unlock` |
+| `/chestprotect trust <player>` | Enters trust mode. Click a protection to trust that player. | `chestprotect.command.trust` |
+| `/chestprotect untrust <player>` | Enters untrust mode. Click a protection to remove that player. | `chestprotect.command.untrust` |
+| `/chestprotect view` | Shows nearby protections with particles. Run it again to turn the view off. | `chestprotect.command.view` |
+| `/chestprotect exit` | Leaves lock, unlock, trust, or untrust mode. | `chestprotect.command.exit` |
+| `/chestprotect help [page]` | Shows the commands available to you. | `chestprotect.command.help` |
 
-`/chestprotect view`\
-Visualize all nearby permissions.\
-_Permission: chestprotect.command.view_
+# Click Modes
 
-`/chestprotect trust <player>`\
-Enter the trust mode and trust a specific player by interacting with a protection.\
-_Permission: chestprotect.command.trust_
+`lock`, `unlock`, `trust`, and `untrust` do not immediately change a protection. They put you into a
+mode and wait for you to click the target object.
 
-`/chestprotect untrust <player>`\
-Enter the untrust mode and untrust a specific player by interacting with a protection.\
-_Permission: chestprotect.command.untrust_
+Use `/chestprotect exit` if you started the wrong mode. Running the same mode command again can also
+toggle that mode off.
 
-`/chestprotect exit`\
-Exist the lock, unlock, trust or untrust mode.\
-_Permission: chestprotect.command.exit_
+# Shortcuts
 
-`/chestprotect help`\
-View all available commands. Only commands are displayed for which you have permission to execute them.\
-_Permission: chestprotect.command.help_
+If your server enables shortcuts, these commands do the same thing as the matching subcommands:
+
+| Shortcut | Same as |
+| --- | --- |
+| `/lock` | `/chestprotect lock` |
+| `/unlock` | `/chestprotect unlock` |
+| `/trust <player>` | `/chestprotect trust <player>` |
+| `/untrust <player>` | `/chestprotect untrust <player>` |
