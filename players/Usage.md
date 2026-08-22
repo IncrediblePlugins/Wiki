@@ -16,6 +16,8 @@ Examples:
 
 If you do not enter a type, the server's default type is used. Some servers may also give upgradeable furnaces through shops, crates, kits, or staff rewards instead of the command.
 
+If you want more than one item, include the type name before the amount, such as `/fasterfurnaces get furnace 3`.
+
 ## Place and Use a Furnace
 
 Place the upgradeable furnace item like a normal block.
@@ -50,7 +52,7 @@ Default access roles:
 
 | Role | What it can do |
 | --- | --- |
-| Owner | Full access. |
+| Owner | Full access, including opening, managing, and deleting the furnace. |
 | Admin | Manage and open the furnace. |
 | Member | Open the furnace. |
 | Visitor | No access. |
@@ -59,13 +61,13 @@ Your server may allow region members to use furnaces in claimed areas, depending
 
 ## List and Teleport
 
-Use `/fasterfurnaces list` to view your placed furnaces. The list menu can be used to open a furnace's management menu. If teleportation is enabled on your server, the list can also teleport you near a furnace.
+Use `/fasterfurnaces list` to view your placed furnaces. The list menu can be used to open a furnace's management menu. If teleportation is enabled on your server, the list can also teleport you near a furnace. Follow the menu lore or buttons for the available actions.
 
 If a teleport location may be unsafe, FasterFurnaces can ask you to confirm it with `/fasterfurnaces confirmtp`.
 
 ## Remove or Move a Furnace
 
-Sneak and break the furnace to remove it. If you are allowed to manage the furnace, the block is removed and the upgradeable furnace item is returned.
+Sneak and break the furnace to remove it. If you are allowed to delete the furnace, the block is removed and the upgradeable furnace item is returned.
 
 Items stored inside the furnace are dropped at the furnace location. Breaking an upgradeable furnace in creative mode without sneaking is blocked to help prevent accidental removal.
 

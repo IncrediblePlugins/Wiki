@@ -1,34 +1,54 @@
-To assign permissions to players you must install a permissions plugin, like [Luckperms](https://www.spigotmc.org/resources/28140). Below you find a list of permissions that you can assign to players or their permission groups. Please note that if a player has `/op`, they will have all permissions.
+# Permissions
 
-# Player Permissions
-These permissions are safe to set for your players.
+To assign permissions to players, install a permissions plugin such as [LuckPerms](https://www.spigotmc.org/resources/28140). Players with `/op` have all permissions.
 
-## Numbered Permissions
+## Player Permissions
+
+These permissions are safe to give to normal players.
+
+### Numbered Permissions
 Important:
-* **Replace `<number>` with an actual number.** Example: `fasterfurnaces.furnaces.<number>` -> fasterfurnaces.furnaces.5
 
-`fasterfurnaces.furnaces.<number>`\
-Allow players to place a specific amount of furnaces. Replace `number` with an actual number.
+* Replace `<number>` with an actual number.
+* Example: `fasterfurnaces.furnaces.<number>` becomes `fasterfurnaces.furnaces.5`.
 
-## Command Permissions
-See here: [Link](../players/Commands.md)
+| Permission | Description |
+| --- | --- |
+| `fasterfurnaces.furnaces.<number>` | Allows a player to own up to this many placed upgradeable furnaces. |
+| `fasterfurnaces.members.<number>` | Allows a player to trust up to this many players to each furnace or protection entry, depending on the menu being used. |
 
-## Teleportation
-The following permissions limit all teleportation initiated by FasterFurnaces. Players have them by default. However, in some cases
-the teleportation is initiated by executing a command. In such case they need the permission to use the command as well.
+### Command Permissions
 
-### Disabling Teleportation
-If you want to disable a teleportation you
-need to unset the permission in your permissions plugin.
-Example for LuckPerms: ``/luckperms group default permission set fasterfurnaces.teleport.furnace false``
-The value ``false`` is important here.
+See [Player Commands](../players/Commands.md).
 
-### Teleportation Permissions
-`fasterfurnaces.teleport.furnace`\
-Allow teleportation placed furnaces. This permission is set by default.
+### Teleportation
 
-# Admin Permissions
-These permissions should only be given to staff or server admins.
+The following permissions control teleportation initiated by FasterFurnaces. Players have them by default. If teleportation is started through a command, the player also needs permission to use that command.
 
-## Admin Commands
-See here: [Link](../admins/Commands.md)
+| Permission | Description |
+| --- | --- |
+| `fasterfurnaces.teleport.furnace` | Allows teleporting to placed furnaces from the furnace list menu. |
+
+To disable a teleport permission, unset it in your permissions plugin.
+
+LuckPerms example:
+
+```text
+/luckperms group default permission set fasterfurnaces.teleport.furnace false
+```
+
+The `false` value is important.
+
+## Admin Permissions
+
+These permissions should only be given to staff or server administrators.
+
+| Permission | Description |
+| --- | --- |
+| `fasterfurnaces.admin.command` | Allows access to the admin command parent. |
+| `fasterfurnaces.admin.command.give` | Allows `/fasterfurnaces admin give`. |
+| `fasterfurnaces.admin.command.reload` | Allows `/fasterfurnaces admin reload`. |
+| `fasterfurnaces.admin.command.list` | Allows viewing another player's furnaces with `/fasterfurnaces list [player]`. |
+| `fasterfurnaces.admin.no_limits` | Assigns the default `admin` limit pack from `player-limits.yml`, removing most configured limits. |
+
+See [Admin Commands](../admins/Commands.md) for command usage.

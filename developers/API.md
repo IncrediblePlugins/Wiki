@@ -1,43 +1,33 @@
-[![](https://jitpack.io/v/IncrediblePlugins/FasterFurnacesAPI.svg)](https://jitpack.io/#IncrediblePlugins/FasterFurnacesAPI)
+# API
 
-# Javadoc
-Can be found [here](https://jitpack.io/com/github/incredibleplugins/FasterFurnacesAPI/latest/javadoc/).
+The current FasterFurnaces API module is intentionally very small.
 
-# API Usage Explained
-Include the API using Gradle:
+It exposes:
+
+```java
+me.angeschossen.fasterfurnaces.api.Furnace
+```
+
+`Furnace` is a marker interface for upgradeable furnace objects. This source tree does not expose a public `FasterFurnacesAPI` singleton or a higher-level service API.
+
+## Dependency
+
+The API module is built as `fasterfurnaces-api`.
+
+Gradle example:
+
 ```groovy
 repositories {
-	maven { url 'https://jitpack.io' }
+    maven { url 'https://repo.incredibleplugins.com/releases' }
 }
 
 dependencies {
-    compileOnly "com.github.angeschossen:FasterFurnacesAPI:version"
+    compileOnly 'com.github.angeschossen:fasterfurnaces-api:version'
 }
 ```
-Replace `version` with the version that you want to use.
 
-Include the API using Maven:
-```xml
-<repositories>
-	<repository>
-		<id>jitpack.io</id>
-		<url>https://jitpack.io</url>
-	</repository>
-</repositories>
+Replace `version` with the version you want to compile against.
 
-<dependencies>
-    <dependency>
-        <groupId>com.github.angeschossen</groupId>
-        <artifactId>FasterFurnacesAPI</artifactId>
-        <version>version</version>
-        <scope>provided</scope>
-    </dependency>
-</dependencies>
-```
-Replace `version` with the version that you want to use.
+## Notes
 
-The API is accessible through an implementation of the [FasterFurnacesAPI](https://javadoc.jitpack.io/com/github/angeschossen/FasterFurnacesAPI/4.13.10/javadoc/me/angeschossen/fasterfurnaces/api/FasterFurnacesAPI.html) interface.
-FasterFurnaces needs to be loaded before this API can be used. It doesn't need to be enabled though.
-````java
-FasterFurnacesAPI api = FasterFurnacesAPI.getInstance();
-````
+Do not build against relocated plugin internals from the shaded plugin jar. If you need functionality that is not exposed by the API module, request a dedicated API addition instead of relying on implementation classes.
