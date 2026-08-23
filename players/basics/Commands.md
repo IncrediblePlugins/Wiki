@@ -37,6 +37,7 @@ Some commands only exist if your server enabled that feature. Your server may al
 | `/lands confirmtp` | Confirms an unsafe teleport destination. |
 | `/lands rtp` | Teleports to a random location, if enabled. |
 | `/lands list` | Shows lands on the server. |
+| `/lands spawn <land>` | Teleports to a land's spawn. Unlike `/land <land> spawn`, `<land>` lets you pick any land on the server, not just ones you're trusted in. |
 | `/lands unstuck` | Teleports to the nearest wilderness location if you are trapped in a claim. |
 | `/lands eco taxes` | Shows upcoming taxes you may need to pay as a land member. |
 | `/lands eco upkeep` | Shows upcoming upkeep for lands you own. |
@@ -112,6 +113,7 @@ reached through `/nation <nation> ...` (also available as `/nations nation <nati
 | --- | --- |
 | `/nations create <capital> [name] [tag]` | Creates a nation with `<capital>` as the capital land. You must own that land, and it cannot already be in a nation. |
 | `/nations list` | Shows nations on the server. |
+| `/nations spawn <nation>` | Teleports to a nation's capital spawn. Unlike `/nation <nation> spawn`, `<nation>` lets you pick any nation on the server, not just ones you're trusted in. |
 | `/nation <nation>` | Opens the nation menu. |
 | `/nation <nation> info` | Shows information about a nation. |
 | `/nation <nation> chat` | Toggles nation chat mode. |

@@ -39,6 +39,7 @@ war commands live under `/land <land> war ...` and `/nation <nation> war ...`.
 | `/lands confirmtp` | `lands.command.confirmtp` | Confirms unsafe teleport destinations. |
 | `/lands rtp` | `lands.command.rtp` | Random teleport. Teleporting also uses `lands.teleport.random_teleport`. |
 | `/lands list` | `lands.command.list` | Opens the lands list. |
+| `/lands spawn <land>` | `lands.command.spawn` | Teleports to a land's spawn. Unlike `/land <land> spawn`, `<land>` tab-completes every land regardless of trust or whether a spawn is set; role flags and `lands.teleport.land_spawn` still apply when teleporting. |
 | `/lands unstuck` | `lands.command.unstuck` | Teleporting also uses `lands.teleport.unstuck`. |
 | `/lands eco taxes` | `lands.command.eco.taxes` | Only registered if taxes are enabled. |
 | `/lands eco upkeep` | `lands.command.eco.upkeep` | Only registered if upkeep is enabled. |
@@ -114,6 +115,7 @@ reached through `/nation <nation> ...` or `/nations nation <nation> ...`.
 | --- | --- | --- |
 | `/nations create <capital> [name] [tag]` | `nations.command.create` | Nation creation settings and costs still apply. |
 | `/nations list` | `nations.command.list` | Opens the nations list. |
+| `/nations spawn <nation>` | `nations.command.spawn` | Teleports to a nation's capital spawn. Unlike `/nation <nation> spawn`, `<nation>` tab-completes every nation regardless of trust or whether a spawn is set; role flags and `lands.teleport.land_spawn` still apply when teleporting. |
 | `/nation <nation>` | `nations.command.nation` | Opens the nation menu. |
 | `/nation <nation> menu` | `nations.command.nation.menu` | Same, explicit subcommand. |
 | `/nation <nation> info` | `nations.command.nation.info` | Shows information about a nation. |
