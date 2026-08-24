@@ -11,6 +11,8 @@ the one you mean.
 Most nation commands work the same way through `/nation <nation> ...` (also available as
 `/nations nation <nation> ...`).
 
+`/lands`, `/land`, `/nations`, and `/nation` also have short aliases: `/ls`, `/la`, `/ns`, and `/na`.
+
 War commands are not a separate command anymore - they live under `/land <land> war ...` and
 `/nation <nation> war ...`.
 

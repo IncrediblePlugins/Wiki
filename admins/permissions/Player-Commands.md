@@ -11,6 +11,10 @@ the exact same command, just registered under two entry points. The same applies
 `/nation <nation> ...` and `/nations nation <nation> ...`. There is no standalone `/wars` command;
 war commands live under `/land <land> war ...` and `/nation <nation> war ...`.
 
+`/lands`, `/land`, `/nations`, and `/nation` are registered with the aliases `/ls`, `/la`, `/ns`, and
+`/na` respectively (`plugin.yml`). Aliases share the same permission nodes and command tree as the
+full command name - there is nothing extra to configure for them.
+
 # Wildcards
 
 | Permission | Gives access to |
