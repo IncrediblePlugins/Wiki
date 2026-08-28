@@ -15,8 +15,8 @@ For another language, `en-US` is replaced by that language's code across all fil
 
 `theme.yml` defines the shared color scheme (see [Text Formatting](Text-Formatting.md)). It is **not** per-language — there is only one `theme.yml`, shared by every locale. Don't translate or duplicate it.
 
-# Downloading Community Translations
-Community translations are downloaded by executing the `/localedownload` command in our Discord server.
+# Downloading Locale Files
+Locale files are downloaded by executing the `/localedownload` command in our Discord server.
 
 The default English (en-US) language is already included in the plugin's file and doesn't need to be downloaded.
 
