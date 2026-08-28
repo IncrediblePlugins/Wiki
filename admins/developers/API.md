@@ -32,3 +32,15 @@ instead.
   # That way they can for example cancel the hopper picking up items from an untrusted region.
   call-item-pickup-event: true
 ````
+
+# Listening to Item Transfer
+
+Enable the following option in ``config.yml`` and listen to the HopperItemTransferEvent.
+It's called whenever a hopper transfers an item to one of its links, and can be cancelled to
+prevent that specific transfer.
+
+````yaml
+  # If enabled, the plugin calls the HopperItemTransferEvent for 3rd party plugins to listen to.
+  # That way they can for example cancel a hopper transferring an item to one of its links.
+  call-item-transfer-event: true
+````
