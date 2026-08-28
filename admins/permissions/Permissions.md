@@ -13,7 +13,7 @@ How many upgradeable hoppers can a player place? Replace `number` with an actual
 `uhoppers.links.<number>` may appear in `plugin.yml`, but current link limits are controlled by the `links_amount` levels in `hoppers.yml`.
 
 ## Player Commands
-See here: [Link](../players/Commands.md)
+See here: [Link](../../players/Commands.md)
 
 `uhoppers.command.confirmtp`\
 Allow using `/upgradeablehoppers confirmtp` to confirm unsafe teleport destinations.
@@ -55,7 +55,7 @@ Allow teleportation to hoppers through the `/hoppers list` menu. This permission
 These permissions should only be given to staff or server admins.
 
 ## Admin Commands
-See here: [Link](../admins/Commands.md)
+See here: [Link](../Commands.md)
 
 `uhoppers.admin.command`\
 Allow using `/upgradeablehoppers admin`.

@@ -11,16 +11,16 @@
 
 ## For Admins
 * [Info](admins/README.md)
-* [Installation](config/Installation.md)
+* [Installation](admins/config/Installation.md)
 * [Configuration Overview](admins/Configuration.md)
-* [Hopper Types](config/Hoppers.md)
+* [Hopper Types](admins/config/Hoppers.md)
 * [Performance and Compatibility](admins/Performance-and-Compatibility.md)
 * [Commands](admins/Commands.md)
-* [Permissions](permissions/Permissions.md)
+* [Permissions](admins/permissions/Permissions.md)
 * [GUI Menus](https://wiki.incredibleplugins.com/general/gui-menus/gui-menus)
 * [Messages](https://wiki.incredibleplugins.com/general/messages-and-config/messages)
 * [Translations](https://wiki.incredibleplugins.com/general/messages-and-config/translations)
 
 ## Developers
-* [API](developers/API.md)
-* [ItemStacker](developers/ItemStacker.md)
+* [API](admins/developers/API.md)
+* [ItemStacker](admins/developers/ItemStacker.md)

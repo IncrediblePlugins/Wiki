@@ -8,4 +8,4 @@ The plugin is split into two main configuration files:
 Most day-to-day changes are made in `config.yml`. Changes to `hoppers.yml` require a full server restart.
 
 # Recommended Reading
-Start with [Installation](../config/Installation.md), then review [Configuration Overview](Configuration.md), [Hopper Types](../config/Hoppers.md), [Permissions](../permissions/Permissions.md), and [Performance and Compatibility](Performance-and-Compatibility.md).
+Start with [Installation](config/Installation.md), then review [Configuration Overview](Configuration.md), [Hopper Types](config/Hoppers.md), [Permissions](permissions/Permissions.md), and [Performance and Compatibility](Performance-and-Compatibility.md).
