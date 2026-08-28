@@ -16,10 +16,7 @@ For another language, `en-US` is replaced by that language's code across all fil
 `theme.yml` defines the shared color scheme (see [Text Formatting](Text-Formatting.md)). It is **not** per-language — there is only one `theme.yml`, shared by every locale. Don't translate or duplicate it.
 
 # Downloading Community Translations
-1. Community translations can be found in our Discord, by executing the `/translations` command in the Discord server. Your Discord account needs to be verified/linked to a Spigot or Polymart account.
-2. If you haven't created a translations account yet, you'll be asked to sign up at the translations page, to start translating and downloading language files.
-3. Execute `/link translations` in the Discord server and provide the requested parameters to complete the account setup. If you don't do this, the locale files won't be visiable to you and the page will simply be empty. We require you to link your verified Discord account with the Translation account to prevent unauthorized users griefing the locale files, since we allow community contributions.
-4. After linking your Discord account with your Translations account and reloading the translations page, the translations become visible to you. You can view all translations [here](https://translations.incredibleplugins.com/projects).
+Community translations are downloaded by executing the `/localedownload` command in our Discord server.
 
 The default English (en-US) language is already included in the plugin's file and doesn't need to be downloaded.
 
@@ -29,7 +26,7 @@ The default English (en-US) language is already included in the plugin's file an
 ````yaml
   # Default: English (en-US) - no download required.
   # You can access translations maintained by the community in our Discord: https://discord.gg/B4MAJVk
-  # To access translations, other than en-US, execute /translations in the Discord server.
+  # To access translations, other than en-US, execute /localedownload in the Discord server.
   language: 'de-DE'
 ````
 
