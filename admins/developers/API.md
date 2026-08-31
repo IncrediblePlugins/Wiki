@@ -42,5 +42,5 @@ prevent that specific transfer.
 ````yaml
   # If enabled, the plugin calls the HopperItemMoveEvent for 3rd party plugins to listen to.
   # That way they can for example cancel a hopper transferring an item to one of its links.
-  call-item-transfer-event: true
+  call-item-move-event: true
 ````
