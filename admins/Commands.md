@@ -52,11 +52,12 @@ Nested commands add the full path:
 
 `<land or *>` means that `*` applies the command to all lands where the command supports it.
 
-There is no `/lands edit` command anymore. Admins with `lands.admin.command.edit` can manage
-*any* land or nation directly through the normal player commands - `/land <land> ...` /
-`/lands land <land> ...` and `/nation <nation> ...` / `/nations nation <nation> ...` - without
-being an owner or member. That permission also bypasses restrictions like max member counts for
-some commands.
+Admins with `lands.admin.command.edit` can manage *any* land or nation directly through the normal
+player commands - `/land <land> ...` / `/lands land <land> ...` and `/nation <nation> ...` /
+`/nations nation <nation> ...` - without being an owner or member. That permission also bypasses
+restrictions like max member counts for some commands. This works regardless of the server's
+`cmd-land-argument` setting - see [Command Tree Changes](permissions/Command-Tree-Changes.md#lands-edit-and-cmd-land-argument)
+for what that setting controls.
 
 # Other Staff Commands
 

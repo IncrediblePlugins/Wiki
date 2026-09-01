@@ -1,8 +1,7 @@
 # Land and Nation Commands
 
 > This page describes the latest plugin version. If these commands don't work on your server, it
-> may still be running an older version where you select a land first with `/lands edit <land>`
-> before running commands against it.
+> may still be running an older version.
 
 Most land commands are reached through `/land <land> ...` (also available as `/lands land <land> ...`).
 `<land>` is the name of the land you want to manage - if you are trusted in more than one land, name
@@ -10,6 +9,11 @@ the one you mean.
 
 Most nation commands work the same way through `/nation <nation> ...` (also available as
 `/nations nation <nation> ...`).
+
+On some servers, `<land>`/`<nation>` isn't required - commands act on the land you last selected with
+`/lands edit <land>` instead (falling back to your only land if you're only a member of one). This
+depends on your server's `cmd-land-argument` setting; ask your staff which mode your server uses if
+you're unsure.
 
 `/lands`, `/land`, `/nations`, and `/nation` also have short aliases: `/ls`, `/la`, `/ns`, and `/na`.
 
