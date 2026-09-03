@@ -4,10 +4,13 @@ These tools are for server staff.
 
 # Manage Other Lands and Nations
 
-There is no `/lands edit` command anymore. With `lands.admin.command.edit`, the normal player
-commands work directly against any land or nation, even if you are not a member -
-`/land <land> ...` / `/lands land <land> ...` and `/nation <nation> ...` / `/nations nation <nation> ...`.
-That permission may also ignore requirements such as max members for some commands.
+Every `/lands ...`/`/nations ...` command acts on your own edit land/its nation - normally you'd use
+`/lands edit <land>` to switch between your own lands. With `lands.admin.command.edit`, that same
+command also accepts a land you aren't a member of, so `/lands edit <land>` followed by the normal
+player commands (`/lands claim`, `/lands member trust`, `/nations chat`, ...) is how staff manage
+any land or nation on the server. That permission may also ignore requirements such as max members
+for some commands, but never suppresses correctness checks (e.g. a player who's already trusted
+still can't be re-trusted without an error).
 
 # Open Another Player's Menu
 

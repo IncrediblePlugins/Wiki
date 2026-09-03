@@ -6,12 +6,10 @@ You can display a placeholder for a player's current location, by just appending
 
 Land/nation placeholders that aren't suffixed with `_here` (or `_any`, for nation placeholders) need
 to pick one land to represent the player, since a player can own or be trusted in more than one.
-Which land that is depends on the `general.cmd-land-argument` option in `config.yml`:
-
-- **`cmd-land-argument: false`** (the default) - the land the player last selected with
-  `/lands edit <land>` is used, falling back to their only land if they're only a member of one.
-- **`cmd-land-argument: true`** - there's no `/lands edit` selection to fall back to in this mode,
-  so the player's owned land is used, or an arbitrary land they're trusted in if they don't own one.
+That land is always the player's *edit land* - the same land every `/lands ...` command without a
+land argument acts on. If the player never ran `/lands edit <land>`, it defaults to their only land
+if they're a member of just one, or an arbitrary (but sticky, once picked) land among the ones
+they're trusted in.
 
 # Limit the Length of a Placeholder
 

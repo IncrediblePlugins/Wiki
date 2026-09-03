@@ -37,10 +37,10 @@ battlegrounds at once.
 To place your point, stand where you want it in your own main land during preparation and run:
 
 ```
-/land <land> war koth set
+/lands war koth set
 ```
 
-(Use `/nation <nation> war koth set` if a nation is fighting - the point goes in its capital land.)
+(Use `/nations war koth set` if a nation is fighting - the point goes in its capital land.)
 
 - Your own point **can't be broken by hand**. To move it, just run the command again where you want it.
 - You **only score by capturing the enemy's point**, never by sitting on your own - standing on your own
@@ -80,5 +80,5 @@ of blocks, so they can't level everything). A time-limited "spoils of war" inste
 ## Independence
 
 A special goal used only when a **vassal declares independence** from its overlord
-(`/land <land> war independence`). Win and the vassal becomes free; lose or draw and it stays a vassal
+(`/lands war independence`). Win and the vassal becomes free; lose or draw and it stays a vassal
 and can't try again for a while.

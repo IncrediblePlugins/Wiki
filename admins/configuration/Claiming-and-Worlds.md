@@ -175,7 +175,7 @@ Important options:
 
 Land storage is configured with `land.storage`.
 
-If enabled, players can use `/land <land> storage`.
+If enabled, players can use `/lands storage`.
 
 > Land storage is **not available in a multi-server (Redis) setup** — a shared item container can't be synchronized across servers, so the command is disabled when Redis is enabled. See [Database](Database.md#synchronizing-claims-across-servers).
 

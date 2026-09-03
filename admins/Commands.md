@@ -53,11 +53,12 @@ Nested commands add the full path:
 `<land or *>` means that `*` applies the command to all lands where the command supports it.
 
 Admins with `lands.admin.command.edit` can manage *any* land or nation directly through the normal
-player commands - `/land <land> ...` / `/lands land <land> ...` and `/nation <nation> ...` /
-`/nations nation <nation> ...` - without being an owner or member. That permission also bypasses
-restrictions like max member counts for some commands. This works regardless of the server's
-`cmd-land-argument` setting - see [Command Tree Changes](permissions/Command-Tree-Changes.md#lands-edit-and-cmd-land-argument)
-for what that setting controls.
+player commands (`/lands ...` / `/nations ...`, or their `/land`/`/nation` aliases) without being an
+owner or member - use `/lands edit <land>` to point the commands at the land you want to manage.
+That permission also bypasses restrictions like max member counts for some commands, but never
+suppresses correctness checks like "player is already trusted" - see
+[Command Tree Changes](permissions/Command-Tree-Changes.md#lands-edit) for how edit-land resolution
+works.
 
 # Other Staff Commands
 
@@ -68,9 +69,9 @@ for what that setting controls.
 
 # Wars Admin Commands
 
-War commands moved under the land/nation command trees - see the player wiki's
+War commands live under the `/lands`/`/nations` command trees - see the player wiki's
 [Wars](../players/general/Wars.md) page for the regular `war` subcommand. Wars are **started** through
-the normal `/land <land> war declare ...` command, which admins can run on any land/nation using the
+the normal `/lands war declare ...` command, which admins can run on any land/nation using the
 `lands.admin.command.edit` bypass. Admin-only war actions live under `/lands admin war`:
 
 | Command | What it does | Permission |

@@ -66,7 +66,7 @@ of the Hill points reuse the same capture area). Settings live under `capture`.
 | Option | What it controls |
 | --- | --- |
 | `enabled_3` | Enables capture flags. Disabled on MultiPaper by source checks. |
-| `recipe_list` | Crafting recipe for the capture flag item (shown in `/land <land> war info captureflag`). |
+| `recipe_list` | Crafting recipe for the capture flag item (shown in `/lands war info captureflag`). |
 | `max` | Maximum active capture flags per team. |
 | `place-cooldown_time` | Cooldown between placing capture flags. |
 | `restrict-placement` | If `true`, only players with the `WAR_MANAGE` role flag may place flags. |
@@ -158,7 +158,7 @@ whether drops are kept. If another plugin controls keep-inventory, test this car
 # Admin War Commands
 
 There is no standalone `/wars` command; war commands live under the land and nation trees
-(`/land <land> war ...` / `/nation <nation> war ...`, see the player wiki). Wars are now **started
+(`/lands war ...` / `/nations war ...`, see the player wiki). Wars are now **started
 through the normal `declare` command** - which admins can run too, using the
 `lands.admin.command.edit` bypass to act on a land or nation they aren't a member of.
 

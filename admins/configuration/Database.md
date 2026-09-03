@@ -27,7 +27,7 @@ After you have followed these steps, execute one of these commands:
 A MySQL database and Redis instance is required. It won't work properly without Redis! Also each connected server must have the same time zone configured for your Minecraft server.
 If you want to synchronize claim data between servers, make sure to configure the following sections in config.yml.
 
-> **Note:** The `/land <land> storage` command (shared land storage) is **disabled when Redis is enabled**. A shared item container can't be reliably synchronized across servers, so land storage is not available in a multi-server (Redis) setup — regardless of the `land.storage` setting.
+> **Note:** The `/lands storage` command (shared land storage) is **disabled when Redis is enabled**. A shared item container can't be reliably synchronized across servers, so land storage is not available in a multi-server (Redis) setup — regardless of the `land.storage` setting.
 
 # MySQL:
 If you're currently using the old SQL schema, please make sure to migrate to the new one using `/lands admin migratedb mysql-v2`.

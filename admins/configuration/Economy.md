@@ -37,15 +37,15 @@ Land banks are configured in `land.bank`.
 
 Important options:
 
-* `land.bank.enabled_13`: enables land banks and the `/land <land> bank deposit`, `/land <land> bank withdraw`, and `/land <land> bank balance` commands.
+* `land.bank.enabled_13`: enables land banks and the `/lands bank deposit`, `/lands bank withdraw`, and `/lands bank balance` commands.
 * `land.bank.max-balance`: maximum money a land can hold. `0` disables the cap.
 * `land.bank.fallback-personal`: lets Lands use the player's personal balance if the land bank cannot pay an action.
 
 Useful commands:
 
-* `/land <land> bank balance`
-* `/land <land> bank deposit <amount>`
-* `/land <land> bank withdraw <amount>`
+* `/lands bank balance`
+* `/lands bank deposit <amount>`
+* `/lands bank withdraw <amount>`
 * `/lands admin land <land or *> bank set <amount>`
 * `/lands admin land <land or *> bank modify <amount>`
 

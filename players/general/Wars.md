@@ -2,12 +2,13 @@ This page explains wars from a player's point of view: how to start one, what ha
 how a war is won or lost.
 
 > This page describes the latest plugin version. If these commands don't work on your server, it may
-> still be running an older version where wars used a standalone `/wars` command and you selected a
-> land first with `/lands edit <land>` before running commands against it.
+> still be running an older version where wars used a standalone `/wars` command, or where land/nation
+> commands took an explicit `/land <land> ...`/`/nation <nation> ...` argument instead of acting on
+> your edit land/nation automatically.
 
-War commands are reached through `/land <land> war ...` (also available as `/lands land <land> war ...`),
-or `/nation <nation> war ...` if the fight involves your nation instead of just your land. Replace
-`<land>` / `<nation>` with the land or nation on your side of the war throughout this page.
+War commands are reached through `/lands war ...` for your own land, or `/nations war ...` if the
+fight involves your nation instead of just your land. If you're trusted in more than one land, use
+`/lands edit <land>` first to pick which one the commands below act on.
 
 # 1. How a War Works, in Short
 
@@ -39,7 +40,7 @@ after events like creating a land, surrendering, or finishing a war.
 Start with:
 
 ```
-/land <land> war declare <enemy land or nation>
+/lands war declare <enemy land or nation>
 ```
 
 A short menu then walks you through the declaration:
@@ -54,7 +55,7 @@ A short menu then walks you through the declaration:
 Read [War Modes and Goals](War-Modes-and-Goals.md) for what each mode and goal does.
 
 **Mutual declarations.** Some servers require the defender to accept first. The defender accepts by
-running `/land <land> war declare <attacker>`, or refuses with `/land <land> war decline`. Preparation
+running `/lands war declare <attacker>`, or refuses with `/lands war decline`. Preparation
 time only begins once they accept.
 
 # 4. Preparation Time
@@ -62,7 +63,7 @@ time only begins once they accept.
 After a declaration is sent (or accepted), the war enters **preparation time**. Both sides can get
 ready, but no fighting counts yet.
 
-Use `/land <land> war info` or `/land <land> war menu` to see:
+Use `/lands war info` or `/lands war menu` to see:
 
 - who is fighting,
 - the war mode and goal,
@@ -75,10 +76,10 @@ If you chose the **King of the Hill (Player Lands)** mode, this is when each tea
 
 # 5. When the War Starts
 
-When preparation ends, both teams can fight. Use `/land <land> war menu` to follow the current status:
+When preparation ends, both teams can fight. Use `/lands war menu` to follow the current status:
 both teams, their points, the remaining time, and what you're allowed to do in enemy land.
 
-Use `/land <land> war spawn` to teleport near the enemy, if your server can find a safe war spawn.
+Use `/lands war spawn` to teleport near the enemy, if your server can find a safe war spawn.
 (In a King of the Hill arena war, this sends you to your team's arena spawn instead.)
 
 **What you can do in enemy claims** depends entirely on the server. You might be able to enter enemy
@@ -99,7 +100,7 @@ also be attacked by the enemy.
 # 7. Capture Flags
 
 Capture flags are special war blocks used by the standard **Skirmish** mode. You craft them (the recipe
-is shown in `/land <land> war info captureflag`) or receive them from the server.
+is shown in `/lands war info captureflag`) or receive them from the server.
 
 Place a capture flag on a **border chunk** of enemy war land during the war. It can't be placed if it's
 too far inside the claim, too close to another flag, outside the allowed height, or on cooldown.
@@ -131,7 +132,7 @@ A side can surrender to end the war early - during preparation or once it's acti
 applies the war goal, but usually on **gentler terms** than losing the fight outright (for example, less
 money is robbed). You need permission to manage wars to surrender for your land or nation.
 
-Surrender from the war menu (`/land <land> war menu`). There is no tribute to negotiate - the cost is
+Surrender from the war menu (`/lands war menu`). There is no tribute to negotiate - the cost is
 whatever the server configured for that goal's surrender.
 
 # 10. Independence (Vassals)
@@ -139,7 +140,7 @@ whatever the server configured for that goal's surrender.
 If your land has been **vassalized** by a nation (see the Vassal goal), you can fight to break free:
 
 ```
-/land <land> war independence
+/lands war independence
 ```
 
 This starts an independence war against your overlord. Win it and your land becomes free again. Lose it
@@ -147,14 +148,14 @@ This starts an independence war against your overlord. Win it and your land beco
 
 # 11. Useful Commands
 
-- `/land <land> war menu` - open the war menu
-- `/land <land> war info` - show information about your current or upcoming war
-- `/land <land> war info captureflag` - show the capture flag recipe
-- `/land <land> war declare <land or nation>` - declare or accept a war
-- `/land <land> war decline` - deny a mutual war declaration
-- `/land <land> war spawn` - teleport near the enemy (or to your arena spawn) during war
-- `/land <land> war koth set` - place your team's King of the Hill point in your own land
-- `/land <land> war independence` - a vassal declares an independence war
+- `/lands war menu` - open the war menu
+- `/lands war info` - show information about your current or upcoming war
+- `/lands war info captureflag` - show the capture flag recipe
+- `/lands war declare <land or nation>` - declare or accept a war
+- `/lands war decline` - deny a mutual war declaration
+- `/lands war spawn` - teleport near the enemy (or to your arena spawn) during war
+- `/lands war koth set` - place your team's King of the Hill point in your own land
+- `/lands war independence` - a vassal declares an independence war
 
 If your nation is fighting instead of just your land, use the same subcommands under
-`/nation <nation> war ...`.
+`/nations war ...`.

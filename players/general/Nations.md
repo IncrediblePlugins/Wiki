@@ -1,8 +1,9 @@
 # What Is a Nation?
 
 > This page describes the latest plugin version. If these commands don't work on your server, it
-> may still be running an older version where you select a land first with `/lands edit <land>`
-> before running commands against it.
+> may still be running an older version where land/nation commands took an explicit
+> `/land <land> ...`/`/nation <nation> ...` argument instead of acting on your edit land/nation
+> automatically.
 
 A nation is a group of lands.
 
@@ -13,15 +14,15 @@ the capital. You must own that land, and it cannot already be in a nation.
 
 # Invite Lands
 
-Use `/nation <nation> members add <land>` to invite a land to join your nation. If the same player owns the capital and the invited land, the land can join automatically.
+Use `/nations member trust <land>` (or `/nations trust <land>`) to invite a land to join your nation. If the same player owns the capital and the invited land, the land can join automatically.
 
-The invited land can accept with `/land <land> nation accept <nation>` or deny with `/land <land> nation decline <nation>`.
+The invited land's owner can accept with `/lands nation accept <nation>` or deny with `/lands nation decline <nation>` (run against their own edit land).
 
 # Nation Members in Your Land
 
 Lands can give nation members permissions through the nation role.
 
-Open your land menu with `/land <land>`, go to roles, and edit the nation role to decide what members of your nation can do in your land.
+Open your land menu with `/lands`, go to roles, and edit the nation role to decide what members of your nation can do in your land.
 
 # Nation Upkeep
 
@@ -29,11 +30,11 @@ On some servers, lands in a nation pay upkeep to the nation instead of directly 
 
 The nation may also need to pay upkeep to the server. Nation owners can set how much member lands pay in the nation menu.
 
-Open the nation menu with `/nation <nation>`. Nation owners can manage nation taxes from there.
+Open the nation menu with `/nations`. Nation owners can manage nation taxes from there.
 
 # Nations in Wars
 
-Nations can fight other nations or lands with `/nation <nation> war declare <land or nation>`.
+Nations can fight other nations or lands with `/nations war declare <land or nation>`.
 
 When a nation is in a war, its lands fight together. Allies that are part of the war can also be attacked by the enemy.
 
@@ -45,5 +46,5 @@ Nations can level up if your server has nation levels enabled.
 
 Levels can give the nation and its lands extra benefits, such as more claims or other server-defined rewards.
 
-Open `/nation <nation>` and go to the level menu to view the current progress and any potion
+Open `/nations` and go to the level menu to view the current progress and any potion
 effects or similar benefits your server gives through nation levels.

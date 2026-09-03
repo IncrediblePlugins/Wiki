@@ -1,8 +1,8 @@
 Subareas are smaller areas inside a land.
 
 > This page describes the latest plugin version. If these commands don't work on your server, it
-> may still be running an older version where you select a land first with `/lands edit <land>`
-> before running commands against it.
+> may still be running an older version where land commands took an explicit `/land <land> ...`
+> argument instead of acting on your edit land automatically.
 
 Unlike normal claims, subareas are based on blocks, not chunks. This means a subarea can cover only part of a chunk and can have its own height range.
 
@@ -20,13 +20,13 @@ For example, you can make:
 - a rented room
 - a town plot
 
-# Create or Resize a Subarea
+# Create or Assign a Subarea
 
 1. Use `/lands selection`.
 2. Select the two corners of the area.
-3. Use `/land <land> area <area> resize`.
+3. Use `/lands area <area> assign` (or `/assign <area>`).
 
-If the area does not exist yet, Lands creates it. If it already exists, Lands resizes it to your selection.
+If the area does not exist yet, Lands creates it. If it already exists, Lands assigns your selection as its new shape. You can also create an empty area first with `/lands area <name> create` and assign a selection to it later.
 
 Use `/lands selection expand` if you want the area to use the full height. If your selection is very short, Lands may ask you to confirm or expand it.
 
@@ -38,9 +38,9 @@ You can also open the areas list from `/lands` and choose the area there.
 
 # Trust Players in a Subarea
 
-Use `/land <land> area <area> member add <player>` to give the player access only to that area, unless they are also trusted in the whole land.
+Use `/lands area <area> member trust <player>` to give the player access only to that area, unless they are also trusted in the whole land.
 
-To remove them from that area, use `/land <land> area <area> member remove <player>`.
+To remove them from that area, use `/lands area <area> member untrust <player>`.
 
 # Area Roles and Flags
 

@@ -29,8 +29,8 @@ Give these only if the matching feature should be available:
 | Permission | Use when |
 | --- | --- |
 | `nations.command.*` | Nations are enabled. |
-| `lands.command.rent` | Renting or selling areas is enabled. |
-| `lands.command.createcamp` | Camps are enabled. |
+| `lands.command.rental.*` | Renting or selling areas is enabled. |
+| `lands.command.camp` | Camps are enabled. |
 | `lands.command.storage` | Land storage is enabled. |
 
 # Staff

@@ -1,8 +1,8 @@
 # Economy
 
 > This page describes the latest plugin version. If these commands don't work on your server, it
-> may still be running an older version where you select a land first with `/lands edit <land>`
-> before running commands against it.
+> may still be running an older version where land commands took an explicit `/land <land> ...`
+> argument instead of acting on your edit land automatically.
 
 Some servers use money in Lands. Your server decides which costs are enabled.
 
@@ -12,11 +12,11 @@ Money can be used for land creation, claiming, teleporting, rent, taxes, upkeep,
 
 A land can have its own bank. The land bank can pay for land actions, taxes, and upkeep if your server enabled it.
 
-Use `/land <land> bank balance` to view the bank balance.
+Use `/lands bank balance` to view the bank balance.
 
-Use `/land <land> bank deposit <amount>` to put money into the bank.
+Use `/lands bank deposit <amount>` to put money into the bank.
 
-Use `/land <land> bank withdraw <amount>` to take money from the bank. You need permission from your land role to withdraw.
+Use `/lands bank withdraw <amount>` to take money from the bank. You need permission from your land role to withdraw.
 
 # Taxes
 
@@ -42,7 +42,7 @@ If your land is in a nation, your server may make your land pay the nation inste
 
 Nation owners can manage nation taxes in the nation menu.
 
-Open it with `/nation <nation>`.
+Open it with `/nations`.
 
 # Claim Costs
 

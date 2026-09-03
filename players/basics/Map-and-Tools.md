@@ -1,8 +1,8 @@
 # Map and Tools
 
 > This page describes the latest plugin version. If these commands don't work on your server, it
-> may still be running an older version where you select a land first with `/lands edit <land>`
-> before running commands against it.
+> may still be running an older version where land commands took an explicit `/land <land> ...`
+> argument instead of acting on your edit land automatically.
 
 Lands has a few tools that help you understand claims around you.
 
@@ -32,7 +32,7 @@ If you do not see borders, check that particles are enabled in your Minecraft se
 
 Use `/lands selection` to turn selection mode on or off.
 
-Select two corners, then use `/land <land> claim` to claim the selected chunks.
+Select two corners, then use `/lands claim` to claim the selected chunks.
 
 Use `/lands selection expand` to toggle full-height selection.
 
@@ -40,7 +40,7 @@ You can also use `/lands selection expand <down> <up>` to expand the selection b
 
 # Claim List
 
-Use `/land <land> claim list` to view the chunks of a land.
+Use `/lands claim list` to view the chunks of your edit land.
 
 # First Join Items
 
@@ -57,7 +57,7 @@ Your server decides which items exist and how they work.
 
 # Storage
 
-Use `/land <land> storage` to open a land's shared storage, if your server enabled it.
+Use `/lands storage` to open your edit land's shared storage, if your server enabled it.
 
 # Invites and Inbox
 

@@ -77,7 +77,7 @@ Fought over a neutral, admin-built **arena** (see below). Kills score nothing; i
 ## `koth_land` - King of the Hill (player lands)
 
 A two-front variant that needs no admin arena. During preparation each team places one re-arming point
-in its **own** land (`/land <land> war koth set`), and scores by holding the **enemy's** point. Both
+in its **own** land (`/lands war koth set`), and scores by holding the **enemy's** point. Both
 lands become battlegrounds. Same scoring keys as `koth`.
 
 ```yaml
@@ -212,7 +212,7 @@ is a nation. `seize-treasury: true` also transfers the loser's bank balance to t
 
 ## `independence` - a vassal secedes
 
-Applied only via `/land <vassal> war independence` - a vassal wages war to leave its overlord. If the
+Applied only via `/lands war independence` (run by the vassal) - a vassal wages war to leave its overlord. If the
 vassal wins it stays free; if the overlord wins or the war draws, the vassal is re-subjugated and can't
 declare independence again until `cooldown` passes.
 
