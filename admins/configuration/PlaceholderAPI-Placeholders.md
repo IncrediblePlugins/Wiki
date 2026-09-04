@@ -11,7 +11,7 @@ Available arguments:
 * `here` - same as appending `_here`: use the player's current location instead of their edit land.
 * `any` - same as appending `_any` (nation placeholders only): use any nation the player is in, not
   just their current land's.
-* `allowempty` - for a placeholder that would otherwise return "None" when there's no value to show
+* `allowEmpty` - for a placeholder that would otherwise return "None" when there's no value to show
   (no land, no nation, no tag, ...), return an empty string instead. Useful when the placeholder
   feeds into a tab list, scoreboard line, or nametag prefix, where a "None" label next to every
   unaffiliated player reads as clutter rather than information. Example:
