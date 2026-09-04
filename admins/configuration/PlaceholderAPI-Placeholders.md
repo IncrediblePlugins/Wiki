@@ -15,13 +15,13 @@ they're trusted in.
 
 Append `_length(<number>)` to the placeholder and replace `<number>` with a number of your choice.
 
-# Placeholder Arguments (`_args{...}`)
+# Placeholder Arguments (`_options{...}`)
 
-Append `_args{key=value,key2=value2}` to a placeholder to pass it named arguments, e.g.
-`%lands_land_name_args{here=true,allowempty=true}%`. This is the general replacement for the
-`_here`/`_any` suffixes described above - `_args{here=true}` and `_args{any=true}` do exactly the
+Append `_options{key=value,key2=value2}` to a placeholder to pass it named arguments, e.g.
+`%lands_land_name_options{here=true,allowempty=true}%`. This is the general replacement for the
+`_here`/`_any` suffixes described above - `_options{here=true}` and `_options{any=true}` do exactly the
 same thing as `_here`/`_any`, just spelled out. The suffixes still work (they fill in the same
-values under the hood), but any new argument is only ever added to `_args{...}`, so it's worth
+values under the hood), but any new argument is only ever added to `_options{...}`, so it's worth
 switching to it going forward.
 
 Available arguments:
@@ -33,7 +33,7 @@ Available arguments:
   (no land, no nation, no tag, ...), return an empty string instead. Useful when the placeholder
   feeds into a tab list, scoreboard line, or nametag prefix, where a "None" label next to every
   unaffiliated player reads as clutter rather than information. Example:
-  `%lands_affiliation_args{allowempty=true}%`.
+  `%lands_affiliation_options{allowempty=true}%`.
 
 # Placeholders
 
@@ -67,11 +67,11 @@ Time until upkeep is collected on the server. This will be the same as `%lands_n
 
 `%lands_affiliation%`\
 Combination of land and nation name. You can edit the format in your language file. Returns "None"
-if the player has no land - add `_args{allowempty=true}` to get an empty string instead (e.g. for a
+if the player has no land - add `_options{allowempty=true}` to get an empty string instead (e.g. for a
 tab list, where an empty value looks cleaner than a "None" label there).
 
 `%lands_affiliation_name_or_tag%`\
-Combination of land and nation tag. If the land or nation has no tag set, the name will be used instead. You can edit the format in your language file. Also supports `_args{allowempty=true}`, same as `%lands_affiliation%` above.
+Combination of land and nation tag. If the land or nation has no tag set, the name will be used instead. You can edit the format in your language file. Also supports `_options{allowempty=true}`, same as `%lands_affiliation%` above.
 
 `%lands_affiliation_color%`\
 Get the color of the nation, the player is in. If the land isn't part of any nation, the land color will be returned
