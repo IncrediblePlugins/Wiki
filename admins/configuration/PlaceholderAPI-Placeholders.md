@@ -5,12 +5,7 @@ You can display a placeholder for a player's current location, by just appending
 # Placeholder Arguments (`_options{...}`)
 
 Append `_options{key=value,key2=value2}` to a placeholder to pass it named arguments, e.g.
-`%lands_land_name_options{here=true,allowempty=true}%`. This is the general replacement for the
-`_here`/`_any` suffixes described above - `_options{here=true}` and `_options{any=true}` do exactly the
-same thing as `_here`/`_any`, just spelled out. The suffixes still work (they fill in the same
-values under the hood), but any new argument is only ever added to `_options{...}`, so it's worth
-switching to it going forward.
-
+`%lands_land_name_options{here=true,allowempty=true}%`.
 Available arguments:
 
 * `here` - same as appending `_here`: use the player's current location instead of their edit land.
