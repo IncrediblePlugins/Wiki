@@ -40,6 +40,7 @@ which of your own lands a command applies to when you're trusted in more than on
 | `/lands claim auto` | `lands.command.claim.auto` | Toggles auto-claim while walking. |
 | `/lands claim fill` | `lands.command.claim.fill` | Claims empty chunks surrounded by your edit land. |
 | `/lands claim radius <radius>` | `lands.command.claim.radius` | Claims chunks around you. |
+| `/lands claim expand <amount>` | `lands.command.claim.expand` | Claims chunks by expanding your border in the direction you're facing (cardinal or diagonal). |
 | `/lands claim list` | `lands.command.claim.list` | Lists claimed chunks; teleporting also uses `lands.teleport.chunk`. |
 | `/lands unclaim` | `lands.command.unclaim` | Same command as `/unclaim`. Role flags and war restrictions still apply. |
 | `/unclaim` | `lands.command.unclaim` | Shortcut, same command as `/lands unclaim`. |

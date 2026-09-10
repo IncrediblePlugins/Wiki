@@ -31,6 +31,7 @@ Some commands only exist if your server enabled that feature. Your server may al
 | `/lands claim auto` | Toggles auto-claim while walking. |
 | `/lands claim fill` | Claims empty chunks that are surrounded by your edit land. |
 | `/lands claim radius <radius>` | Claims chunks around you. |
+| `/lands claim expand <amount>` | Claims chunks by expanding your border in the direction you're facing (cardinal or diagonal). |
 | `/lands claim list` | Shows claimed chunks for your edit land. |
 | `/lands claim merge <land>` | Merges another land into your edit land. |
 | `/lands unclaim` | Unclaims the chunk you are standing in, or unclaims your current selection. |
