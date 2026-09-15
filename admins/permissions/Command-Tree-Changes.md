@@ -36,6 +36,12 @@ manage permissions by hand, read this before assuming your old permission setup 
 - Staff who need to manage lands/nations they're not a member of use the
   `lands.admin.command.edit` bypass permission - this is unrelated to `/lands edit <land>` (below),
   which only lets *members* pick which of their own lands a command without an argument applies to.
+- `/lands admin migratedb <database> confirm` (`lands.admin.command.migratedb`) is now
+  `/lands admin database migrate <database> confirm` (`lands.admin.command.database.migrate`) - it
+  moved under a new `/lands admin database` parent alongside two new siblings:
+  `/lands admin database backup` (`lands.admin.command.database.backup`) runs an on-demand backup,
+  and `/lands admin database restore <backup> confirm` (`lands.admin.command.database.restore`,
+  destructive - requires confirmation) restores from one, tab-completing existing backup files.
 
 # `/lands edit`
 

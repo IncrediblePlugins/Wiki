@@ -24,7 +24,9 @@ Nested commands add the full path:
 | `/lands admin player <player> limits` | Shows all limits that apply to a player. | `lands.admin.command.player.limits` |
 | `/lands admin player <player> menu` | Opens the menu view of a player. | `lands.admin.command.player.menu` |
 | `/lands admin player <player> delete confirm` | Deletes stored Lands data for a player. | `lands.admin.command.player.delete` |
-| `/lands admin migratedb <database> confirm` | Migrates Lands data to another database type. | `lands.admin.command.migratedb` |
+| `/lands admin database migrate <database> confirm` | Migrates Lands data to another database type. | `lands.admin.command.database.migrate` |
+| `/lands admin database backup` | Runs an on-demand database backup. | `lands.admin.command.database.backup` |
+| `/lands admin database restore <backup> confirm` | Restores the database from a backup file. | `lands.admin.command.database.restore` |
 | `/lands admin land <land or *> limits` | Shows limits for a land. | `lands.admin.command.land.limits` |
 | `/lands admin land <land> menu` | Opens the menu of a land. | `lands.admin.command.land.menu` |
 | `/lands admin land <land or *> addrole <role> confirm` | Adds a custom role from `roles.yml` to one land or all lands. | `lands.admin.command.land.addrole` |
