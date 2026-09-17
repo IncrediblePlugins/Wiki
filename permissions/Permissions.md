@@ -34,7 +34,10 @@ Examples:
 | `betterfarming.admin.command.reload` | Allows `/farm admin reload`. |
 | `betterfarming.admin.command.about` | Allows `/farm admin about`. |
 | `betterfarming.admin.command.listperms` | Allows `/farm admin listperms`. |
-| `betterfarming.admin.command.migratedb` | Allows `/farm admin migratedb`. |
+| `betterfarming.admin.command.database` | Allows the `/farm admin database ...` command branch. |
+| `betterfarming.admin.command.database.migrate` | Allows `/farm admin database migrate`. Also requires `betterfarming.admin.command.database`. |
+| `betterfarming.admin.command.database.backup` | Allows `/farm admin database backup`. Also requires `betterfarming.admin.command.database`. |
+| `betterfarming.admin.command.database.restore` | Allows `/farm admin database restore`. Also requires `betterfarming.admin.command.database`. |
 | `betterfarming.admin.command.player` | Allows the `/farm admin player <player> ...` command branch. |
 | `betterfarming.admin.command.player.limits` | Allows viewing a player's BetterFarming limits. Also requires `betterfarming.admin.command.player`. |
 | `betterfarming.admin.command.player.give` | Allows the `/farm admin player <player> give ...` command branch. |

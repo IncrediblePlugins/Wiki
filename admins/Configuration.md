@@ -12,7 +12,7 @@ Most player-facing behavior is configured through these files:
 | `player-limits.yml` | Permission-based farm limits, trusted-member limits, and playtime rewards. |
 | `definitions_gui.yml` | Java inventory menu slots, materials, and shared GUI item definitions. |
 | `definitions_gui-bedrock.yml` | Bedrock form menu definitions. |
-| `Language/` | Messages, GUI text, dialogs, and translations. |
+| `Locale/` | Messages, GUI text, dialogs, and translations. |
 
 # Database
 
@@ -20,7 +20,21 @@ SQLite is used by default. Enable MySQL in `config.yml` under `database.mysql.en
 
 Use a unique `table-prefix` if BetterFarming shares a database with other plugins.
 
-To migrate data, use `/farm admin migratedb mysql` or `/farm admin migratedb sqlite`, then enable the target database type in `config.yml` and restart the server. Make a backup before migrating.
+To migrate data, use `/farm admin database migrate mysql` or `/farm admin database migrate sqlite`, then enable the target database type in `config.yml` and restart the server. Make a backup before migrating.
+
+## Backups
+
+Backups are dumped to `/plugins/BetterFarming/Backups`. Configure automatic backups under `database.backup` in `config.yml`:
+
+| Setting | Effect |
+| --- | --- |
+| `database.backup.schedule.time` | 24-hour `HH:mm` (server-local time zone) to run the daily backup. Leave blank to disable scheduled backups. |
+| `database.backup.schedule.days` | Weekday names (e.g. `monday`, `tuesday`) to restrict the schedule to. Leave empty to back up every day. |
+| `database.backup.max_backups` | How many backups to keep. Older backups beyond this count are deleted automatically. Defaults to `14`. |
+
+You can also trigger a backup on demand with `/farm admin database backup`, independent of the schedule.
+
+To restore a backup, use `/farm admin database restore <backup> confirm`. This overwrites the current database and restarts the server immediately afterward - the in-memory farm/player data from before the restore is never reloaded, so a restart is required to pick up the restored data safely.
 
 # Economy
 
