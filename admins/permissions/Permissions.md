@@ -66,7 +66,16 @@ Allow giving hopper items to players.
 `uhoppers.admin.command.reload`\
 Allow reloading reloadable configuration files.
 
-`uhoppers.admin.command.migratedb`\
+`uhoppers.admin.command.database`\
+Allow using `/upgradeablehoppers admin database`.
+
+`uhoppers.admin.command.database.backup`\
+Allow creating an on-demand database backup.
+
+`uhoppers.admin.command.database.restore`\
+Allow restoring the database from a backup.
+
+`uhoppers.admin.command.database.migrate`\
 Allow migrating data between SQLite and MySQL.
 
 `uhoppers.admin.command.about`\

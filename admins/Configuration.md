@@ -22,7 +22,16 @@ Example: `uhoppers.hoppers.5` and `uhoppers.hoppers.2` give a limit of 5 when di
 # Database
 UpgradeableHoppers uses SQLite by default. Enable `database.mysql.enabled` if you want to use MySQL instead.
 
-If you migrate between SQLite and MySQL, use `/upgradeablehoppers admin migratedb <mysql | sqlite>` after configuring the target database connection. After migration, enable the new database type in `config.yml` and restart the server.
+If you migrate between SQLite and MySQL, use `/upgradeablehoppers admin database migrate <mysql | sqlite>` after configuring the target database connection. After migration, enable the new database type in `config.yml` and restart the server.
+
+## Backups
+`database.backup.schedule.time` (24h `HH:mm`, server-local time zone) controls when scheduled backups run. Leave it blank (`''`) to disable scheduled backups entirely - you can still create one on demand with `/upgradeablehoppers admin database backup`.
+
+`database.backup.schedule.days` controls which weekdays the schedule applies to. Leave it empty to back up every day.
+
+`database.backup.max_backups` controls how many backups are kept. The oldest backups beyond this count are deleted automatically. Defaults to 14.
+
+Backups are written to `Data/Backups/`. Restore one with `/upgradeablehoppers admin database restore <file>` - see [Commands](Commands.md) for details, including the automatic restart after a restore completes.
 
 # Commands
 `command.get-confirm` controls whether players need to confirm purchases made with `/upgradeablehoppers get`.
