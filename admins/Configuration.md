@@ -34,7 +34,7 @@ Backups are dumped to `/plugins/BetterFarming/Backups`. Configure automatic back
 
 You can also trigger a backup on demand with `/farm admin database backup`, independent of the schedule.
 
-To restore a backup, use `/farm admin database restore <backup> confirm`. This overwrites the current database and restarts the server immediately afterward - the in-memory farm/player data from before the restore is never reloaded, so a restart is required to pick up the restored data safely.
+To restore a backup, use `/farm admin database restore <backup> confirm`. On SQLite, the live database file is replaced (the previous file is kept alongside it as a `.pre-restore-<timestamp>` backup). On MySQL, the target tables must already be empty - the restore does not delete existing data itself, it only fails if any target table still has rows. Either way, the server restarts immediately afterward, since the in-memory farm/player data from before the restore is never reloaded.
 
 # Economy
 
