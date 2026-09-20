@@ -29,11 +29,21 @@ Click an item to collect it, or use **Collect All** to move as much as possible 
 
 Upgrading **Storage Capacity** increases the number of storage slots. When storage is full, the farm pauses until space is available.
 
+## Auto-Sell
+
+If your server has set a sell price on this farm type's harvested items, the storage menu shows an **Auto-Sell** toggle. When enabled, sellable items are sold automatically for currency instead of being stored or moved into a hopper - items without a sell price are unaffected and stay in storage as usual. Auto-sell and hopper output cannot be used at the same time on the same farm.
+
+The toggle only appears if the farm type has at least one sellable item and you have permission to see it.
+
 # Fuel
 
 Some farm types require fuel. Open the fuel menu, place valid fuel items into the fuel slots, and close the menu to add the fuel time.
 
 Use the **Fuel Items** page in the menu to see which items your server accepts and how much time each item adds.
+
+If your server enabled fuel purchases, the fuel menu also has a **Buy Fuel** option that adds fuel time directly for currency, up to the farm's maximum fuel cap.
+
+If your fuel runs low, you get a one-time warning message while you're online, before the farm actually pauses.
 
 # Upgrades
 
@@ -64,3 +74,16 @@ Public access does not give players management access, upgrades, deletion, or pe
 # Hopper Output
 
 If your server has UpgradeableHoppers support enabled, place an upgradeable hopper directly underneath the farm. BetterFarming can then move harvested items from farm storage into the hopper for transport.
+
+# Your Farms List
+
+`/farm list` shows every farm you placed, with an overview item and two bulk actions that act on all of them at once:
+
+| Action | What it does |
+| --- | --- |
+| **Collect All Storage** | Collects storage from every farm you own into your inventory, as much as fits. |
+| **Refuel All** | Refuels every farm you own using the fuel item in your hand. |
+
+Both actions tell you what happened: nothing to collect, your inventory is full, only part of it fit, or how much was collected/refueled and from how many farms. Refuel All also tells you if you're not holding an item, or if the item you're holding isn't valid fuel for any farm that needs it.
+
+Refuel All does not simply dump your held item into the first farm it finds. It refuels whichever of your farms currently has the least fuel first, spreading the item across farms so the lowest ones catch up before an already-full farm gets any more - so a large stack of fuel does not get wasted topping off one farm while another sits empty.

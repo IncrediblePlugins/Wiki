@@ -77,6 +77,52 @@ fuel:
 
 If `strict` is true, the item name and lore must match too. Otherwise, BetterFarming compares the item more loosely.
 
+## Shared Fuel Item Presets
+
+If multiple farm types use the same fuel items, define them once under a top-level `fuel-items` section (a sibling of `types`) and reference the preset by name instead of repeating the list:
+
+```yaml
+fuel-items:
+  default:
+    bone_meal:
+      material: "BONE_MEAL"
+      strict: false
+      data:
+        seconds: 25
+
+types:
+  crop:
+    fuel:
+      enabled: true
+      items-preset: default
+```
+
+`items-preset` replaces `items` entirely for that farm type - a type using `items-preset` does not also need its own `items` list.
+
+## Buying Fuel
+
+Let players buy fuel time directly with their currency instead of requiring a physical fuel item:
+
+```yaml
+fuel:
+  purchase:
+    enabled: true
+    seconds-per-unit: 1800
+    cost: 100.0
+```
+
+When enabled, the fuel menu gets a purchase option that adds `seconds-per-unit` of fuel time for `cost`, using the same economy configured in `config.yml`. Purchases still respect the farm's `max` fuel cap.
+
+## Low Fuel Warning
+
+```yaml
+fuel:
+  warning:
+    threshold-seconds: 300
+```
+
+When a farm's remaining fuel drops below `threshold-seconds`, the owner gets a one-time warning if they are online. Set this to `0` to disable the warning. Defaults to `300` (5 minutes).
+
 # Levels
 
 Farm levels define upgrade paths.
@@ -128,6 +174,19 @@ levels:
 
 The global list of worlds where any farm can be created is configured in `config.yml` under `general.worlds_list`.
 
+# Auto-Sell
+
+Instead of storing harvested items or draining them into a hopper, a farm type can automatically sell them for currency:
+
+```yaml
+types:
+  crop:
+    auto-sell:
+      enabled: true
+```
+
+Auto-sell and hopper output are mutually exclusive per farm - a farm with auto-sell enabled is skipped by the hopper transfer task. Players toggle it per-farm from the storage menu; the toggle is hidden if the farm type has no items with a configured `sell-price` (see [Harvestable Blocks](#harvestable-blocks) below). How often auto-sell runs and whether owners are notified are configured in `config.yml` under `farm.auto-sell`.
+
 # Recipe
 
 Use `recipe` to allow players to craft a farm item.
@@ -175,6 +234,7 @@ blocks:
           min: 1
           max: 1
           chance: 100
+          sell-price: 0
 ```
 
 `item` is the item players place or plant. `harvest` is the list of item drops the farm adds to storage when the block is harvested.
@@ -182,6 +242,8 @@ blocks:
 `min` and `max` randomize the drop amount. `chance` controls the drop chance.
 
 Set a harvest item to `enabled: false` to disable that drop. For enabled harvest items, chance values are treated as percentages.
+
+`sell-price` is the per-unit amount auto-sell pays for this item. It defaults to `0`, meaning the item cannot be auto-sold and is only ever collected manually or moved through a hopper. Set it above `0` to make the item sellable - see [Auto-Sell](#auto-sell) above.
 
 # Custom Items and Model Data
 

@@ -92,5 +92,6 @@ Bypass permissions should only be given to trusted staff.
 | Permission | What it does |
 | --- | --- |
 | `betterfarming.admin.flag.auto_replant` | Shows and allows toggling the admin-only `AUTO_REPLANT` farm flag. |
+| `betterfarming.admin.flag.auto_sell` | Shows and allows toggling the admin-only `AUTO_SELL` farm flag. |
 
 Use `betterfarming.admin.*` for all admin command and admin flag permissions.

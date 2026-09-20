@@ -36,6 +36,15 @@ You can also trigger a backup on demand with `/farm admin database backup`, inde
 
 To restore a backup, use `/farm admin database restore <backup> confirm`. On SQLite, the live database file is replaced (the previous file is kept alongside it as a `.pre-restore-<timestamp>` backup). On MySQL, the target tables must already be empty - the restore does not delete existing data itself, it only fails if any target table still has rows. Either way, the server restarts immediately afterward, since the in-memory farm/player data from before the restore is never reloaded.
 
+# Auto-Sell
+
+Farm types can be configured to automatically sell harvested items instead of storing them or using a hopper - see [Farm Types](../config/Farm-Types.md) for the per-type `auto-sell.enabled` and per-item `sell-price` settings. Server-wide behavior is configured in `config.yml` under `farm.auto-sell`:
+
+| Setting | Effect |
+| --- | --- |
+| `farm.auto-sell.interval` | How often, in seconds, auto-sell runs and sells eligible farms' storage. Defaults to `30`. |
+| `farm.auto-sell.notify` | Whether an online owner gets a message when their items are auto-sold. Defaults to `false`. |
+
 # Economy
 
 BetterFarming can use Vault, player experience, player levels, or item currency. If all external economy options are disabled or unavailable, item currency is used.

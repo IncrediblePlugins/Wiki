@@ -18,6 +18,16 @@ Toggle permission:
 
 `betterfarming.admin.flag.auto_replant`
 
+# AUTO_SELL
+
+`AUTO_SELL` sells harvested storage items with a configured `sell-price` (see [Farm Types](../config/Farm-Types.md)) automatically, instead of storing them or moving them into a hopper. Items without a sell price are unaffected.
+
+The toggle in the storage menu is only shown if the farm type has at least one sellable item.
+
+Toggle permission:
+
+`betterfarming.admin.flag.auto_sell`
+
 # WorldGuard Flag
 
 Use this WorldGuard flag to allow farm creation in WorldGuard regions:

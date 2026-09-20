@@ -8,7 +8,7 @@ Some commands may be hidden from you if you do not have permission. Use `/farm h
 | --- | --- | --- |
 | `/farm get [type] [amount]` | Gets farm item(s). If type is not provided, the server's default farm type is used. The command may cost money, experience, levels, or configured currency items. | `betterfarming.command.get` |
 | `/farm get [type] [amount] confirm` | Confirms a farm purchase when your server requires purchase confirmation. | `betterfarming.command.get` |
-| `/farm list` | Opens the list of farms you placed. From this menu you can open a farm menu or teleport to a farm if teleporting is enabled. | `betterfarming.command.list` |
+| `/farm list` | Opens the list of farms you placed, with an overview and bulk "Collect All Storage"/"Refuel All" actions. From this menu you can also open a farm menu or teleport to a farm if teleporting is enabled. | `betterfarming.command.list` |
 | `/farm help [page]` | Shows BetterFarming command help. Only commands you can use are shown. | `betterfarming.command.help` |
 | `/farm confirmtp` | Confirms an unsafe farm teleport destination after BetterFarming asks for confirmation. | `betterfarming.command.confirmtp` |
 
