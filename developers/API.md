@@ -11,3 +11,20 @@ BetterFarming needs to be loaded before this API can be used. It doesn't need to
 ````java
 BetterFarmingAPI api = BetterFarmingAPI.getInstance();
 ````
+
+# Farm IDs
+
+`Farm.getId()` returns a `String` (a ULID), not an `int`. This is a breaking change from earlier versions where farm IDs were incrementing integers - if you stored or compared farm IDs as numbers, update to string handling.
+
+# Events
+
+Farm events live under `me.angeschossen.betterfarming.api.events.farm`:
+
+| Event | Cancellable | When |
+| --- | --- | --- |
+| `FarmPlaceEvent` | Yes | A farm is being created. |
+| `FarmBreakEvent` | Yes | A farm is being deleted. |
+| `FarmStatusChangeEvent` | No | A farm's status actually changes (e.g. running, paused for fuel or storage). Fired synchronously, after the change already took effect. |
+| `FarmHarvestEvent` | No | A growable block inside a farm reaches its max age and is harvested. Fired asynchronously, since farm growth is calculated off the main thread. |
+| `FarmUpgradeEvent` | No | A farm's radius, growth interval, or storage capacity has been upgraded and the cost has already been taken from the player. |
+| `FarmRefueledEvent` | No | Fuel time is added to a farm - manually, through a purchase, or via the API. |

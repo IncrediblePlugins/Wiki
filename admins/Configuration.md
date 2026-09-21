@@ -83,9 +83,22 @@ Optional integrations:
 | --- | --- |
 | Vault | Money economy for farm purchases and upgrades. |
 | Lands and other region plugins | Placement checks and optional region-member access. |
-| UpgradeableHoppers | Moves harvested items from farm storage into a hopper placed directly below the farm. |
+| UpgradeableHoppers | Moves harvested items from farm storage into a hopper placed directly below the farm. Not used by farms with auto-sell enabled - see [Auto-Sell](#auto-sell) above. |
 | HolographicDisplays, CMI, or DecentHolograms | Displays farm fuel or lifetime status above farms. |
 | Floodgate/Geyser through PluginFramework | Bedrock-compatible menu forms where supported by the framework. |
+| PlaceholderAPI | Farm count, status, and fuel/storage placeholders - see [Placeholders](#placeholders) below. |
+
+## Placeholders
+
+| Placeholder | Value |
+| --- | --- |
+| `%betterfarming_farm_count%` | Number of farms the player owns. Add `_options{type=<farm-type-key>}` to count only one farm type. |
+| `%betterfarming_paused_count%` | Number of the player's farms that are not currently running. |
+| `%betterfarming_storage_full_count%` | Number of the player's farms with full storage. |
+| `%betterfarming_here_status%` | Status of the farm at the player's current location, or empty if they're not standing in one. |
+| `%betterfarming_here_owner%` | Owner name of the farm at the player's current location. |
+| `%betterfarming_here_fuel_percent%` | Remaining fuel percentage of the farm at the player's current location. |
+| `%betterfarming_here_storage_percent%` | Storage fill percentage of the farm at the player's current location. |
 
 Hopper output requires `farm.hopper.enabled` to be true. BetterFarming checks farm storage every 2 seconds and pushes items into the upgradeable hopper below the farm if one is connected and not full.
 
