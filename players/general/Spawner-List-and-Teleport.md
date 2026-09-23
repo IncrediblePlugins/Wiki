@@ -2,7 +2,7 @@
 
 Use `/spawners list` to open a menu with your placed spawners.
 
-Each entry shows the spawner's location, entity type, and upgrade values.
+Each entry shows the spawner's location, entity type, stack size, and upgrade values.
 
 # Open a Spawner from the List
 

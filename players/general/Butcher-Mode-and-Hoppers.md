@@ -16,7 +16,9 @@ will show that it cannot be toggled for that entity type.
 
 # Drops
 
-Butcher mode drops loot at the spawner location.
+Butcher mode drops loot at the spawner location. If the spawner is part of a stack, drops are
+multiplied for the whole stack at once — see
+[Spawner Stacking](Spawner-Stacking.md).
 
 If your server uses UpgradeableHoppers, place an upgradeable hopper below the spawner to move
 butcher-mode drops into the hopper automatically.

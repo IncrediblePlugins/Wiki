@@ -13,6 +13,7 @@ uspawners.command.get
 uspawners.command.list
 uspawners.command.confirmtp
 uspawners.spawners.5
+uspawners.stack.64
 uspawners.upgrade
 uspawners.drop-item
 uspawners.teleport.spawner
@@ -32,7 +33,7 @@ uspawners.mob.cow
 uspawners.mob.zombie
 ```
 
-Use your own limit number in `uspawners.spawners.<number>`.
+Use your own limit numbers in `uspawners.spawners.<number>` and `uspawners.stack.<number>`.
 
 # Staff
 
