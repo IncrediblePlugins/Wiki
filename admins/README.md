@@ -12,7 +12,7 @@ Pages:
 | Setup | [Configuration](../config/Configuration.md) | Important `config.yml` options for worlds, limits, economy, protection, and integrations. |
 | Setup | [Database](../config/Database.md) | SQLite, MySQL, backups, and database migration. |
 | Spawner Setup | [Entities](../config/Entities.md) | Entity type costs, permissions, butcher settings, spawn conditions, and custom drops. |
-| Spawner Setup | [Levels](../config/Levels.md) | Upgrade levels and costs in `levels.yml`. |
+| Spawner Setup | [Levels](../config/Levels.md) | Upgrade levels, costs, and per-type stacking limits in `spawners.yml`. |
 | Permissions and Staff Tools | [Recommended Permission Setup](../permissions/Recommended-Permission-Setup.md) | A simple starting permission layout for survival servers. |
 | Permissions and Staff Tools | [Player Commands](../players/Commands.md) | Player command permissions. |
 | Permissions and Staff Tools | [Admin Commands](Commands.md) | Staff commands for giving spawners, inspecting players, teleporting, reloading, and cleanup. |

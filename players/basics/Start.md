@@ -41,9 +41,11 @@ entity type instead of opening the menu.
 
 # 4. Upgrade the Spawner
 
-The spawner has separate upgrades. Buying one upgrade does not increase the others.
+A spawner has one combined upgrade level. Buying the next level raises every stat at once (spawn
+interval, spawn amount, spawns per period, player distance, and nearby entities) for one combined
+cost.
 
-Read [Upgrades](Upgrades.md) for a full explanation of each upgrade type.
+Read [Upgrades](Upgrades.md) for a full explanation of what each stat does.
 
 # 5. Change the Entity Type
 

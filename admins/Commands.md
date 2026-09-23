@@ -17,7 +17,7 @@ Example: `/spawners admin give` uses `uspawners.admin.command.give`.
 | Command | What it does | Permission |
 | --- | --- | --- |
 | `/spawners admin` | Shows admin command help. | `uspawners.admin.command` |
-| `/spawners admin give <player> <entity> [amount] [spawn_interval] [spawn_amount] [period_amount] [player_range] [nearby_entities] [set-owner]` | Gives upgradeable spawner items. Level arguments are level ids from `levels.yml`. `set-owner` decides whether the item belongs to the target player. | `uspawners.admin.command.give` |
+| `/spawners admin give <player> <entity> [amount] [level] [set-owner]` | Gives upgradeable spawner items. `level` is a level id from `spawners.yml` (defaults to `1`). `set-owner` decides whether the item belongs to the target player (defaults to `true`). | `uspawners.admin.command.give` |
 | `/spawners list <player>` | Opens another player's placed-spawner list. | `uspawners.admin.command.list` |
 | `/spawners admin player <player>` | Shows how many spawners a player has placed and lists their spawner ids. | `uspawners.admin.command.player` |
 | `/spawners admin teleport <spawner-id>` | Teleports to a spawner by id. | `uspawners.admin.command.teleport` |
@@ -29,17 +29,12 @@ Example: `/spawners admin give` uses `uspawners.admin.command.give`.
 
 # Giving Spawners with Levels
 
-The level arguments use level ids from `levels.yml`, not raw values.
+`level` is a single combined level id from `spawners.yml`'s `types.spawner.levels` section, not a
+raw stat value — a spawner has one combined level, not a separate level per stat. See
+[Levels](../config/Levels.md).
 
-If you set a later level argument, also provide the previous arguments. For example, to give a pig
-spawner with custom upgrade levels, include the amount first and then the upgrade level ids in this
-order:
-
-1. Spawn Interval
-2. Spawn Amount
-3. Spawns During Period
-4. Player Distance
-5. Nearby Entities
+To set `level`, also provide `amount` (it comes first). For example, to give one pig spawner at
+level `3`: `/spawners admin give <player> PIG 1 3`.
 
 If `set-owner` is `true`, the target player is stored as the owner of the item. If your server has
 owner-locked spawner placement enabled, only that owner can place the item unless the player has a

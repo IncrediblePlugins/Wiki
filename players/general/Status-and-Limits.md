@@ -16,20 +16,22 @@ skip that spawn attempt.
 
 At least one player must be within the spawner's player distance.
 
-Upgrade Player Distance if your server allows it, or stand closer to the spawner.
+Upgrade the spawner to raise Player Distance if your server allows it, or stand closer to the
+spawner.
 
 # Max Nearby Entities
 
 There are too many nearby entities of the same type.
 
-Remove nearby entities, move farms farther apart, or upgrade Nearby Entities if your server allows
-it.
+Remove nearby entities, move farms farther apart, or upgrade the spawner to raise Nearby Entities
+if your server allows it.
 
 # Max Period Entities
 
 The spawner reached its spawn limit for the current period.
 
-Wait until the period resets, or upgrade Spawns During Period if your server allows it.
+Wait until the period resets, or upgrade the spawner to raise Spawns During Period if your server
+allows it.
 
 # Max Entities in Area
 
