@@ -43,6 +43,12 @@ Use the entity type menu to see which types are available to you.
 UpgradeableSpawners can merge spawned entities into stacks for performance. A visible stacked entity
 represents multiple entities.
 
+# Why did my spawner merge into another one?
+
+That is a different feature from stacked entities above — it merges the spawner **blocks**
+themselves, not the mobs they spawn. Read [Spawner Stacking](Spawner-Stacking.md) for how merging,
+breaking, and upgrading a stack works.
+
 # Why do drops appear without visible entities?
 
 That spawner is probably using butcher mode. Butcher mode handles the spawned entities instantly and

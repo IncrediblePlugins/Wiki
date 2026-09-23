@@ -12,6 +12,7 @@ Pages:
 | Getting Started | [Start](basics/Start.md) | First steps for getting, placing, opening, upgrading, and picking up spawners. |
 | Getting Started | [Commands](Commands.md) | Player command reference. |
 | Spawner Management | [Upgrades](basics/Upgrades.md) | What each upgrade does and how upgrade levels work. |
+| Spawner Management | [Spawner Stacking](general/Spawner-Stacking.md) | Merging spawner blocks into a stack, and how breaking/upgrading a stack works. |
 | Spawner Management | [Entity Types](basics/Entity-Types.md) | Changing the spawned entity and unlocking new entity types. |
 | Spawner Management | [Status and Limits](general/Status-and-Limits.md) | Why spawners pause and what the status menu means. |
 | Spawner Management | [Butcher Mode and Hoppers](general/Butcher-Mode-and-Hoppers.md) | Instantly killing spawned entities and moving drops into hoppers. |

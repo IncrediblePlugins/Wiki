@@ -26,6 +26,9 @@ Your server can also require one or more of these:
 If placement fails, read the message in chat. It usually tells you which rule stopped the
 placement.
 
+If you place a spawner right next to a matching one, your server may merge them into a single
+stack instead. Read [Spawner Stacking](../general/Spawner-Stacking.md) for how that works.
+
 # 3. Open the Spawner Menu
 
 Right-click one of your upgradeable spawners to open its menu.

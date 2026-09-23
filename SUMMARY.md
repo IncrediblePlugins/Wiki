@@ -6,6 +6,7 @@
 * [Start](players/basics/Start.md)
 * [Commands](players/Commands.md)
 * [Upgrades](players/basics/Upgrades.md)
+* [Spawner Stacking](players/general/Spawner-Stacking.md)
 * [Entity Types](players/basics/Entity-Types.md)
 * [Status and Limits](players/general/Status-and-Limits.md)
 * [Butcher Mode and Hoppers](players/general/Butcher-Mode-and-Hoppers.md)

@@ -63,6 +63,38 @@ The `spawner.vanilla` section controls normal Minecraft spawners:
 If normal spawner placement is disabled, `uspawners.bypass.vanilla.place` allows staff to place
 normal spawners anyway.
 
+# Spawner Stacking
+
+The `stacking` section controls whether placing a spawner next to a matching one merges them into
+a single stack instead of taking up another block. See
+[Spawner Stacking](../players/general/Spawner-Stacking.md) for the player-facing explanation.
+
+| Option | Use |
+| --- | --- |
+| `stacking.merge-radius` | How many blocks away a newly placed spawner looks for a compatible stack. Set to `0` to disable spawner stacking entirely. |
+| `stacking.max-stack` | Maximum spawners allowed in a single stack. Can be lowered per player with the `uspawners.stack.<number>` permission. |
+| `stacking.sneak-breaks-whole` | Whether sneaking while breaking a stack takes the entire stack at once instead of one spawner. |
+| `stacking.drop-bundled-item` | Whether a broken stack drops one item per spawner, or a single bundled item that rebuilds the whole stack when placed. |
+| `stacking.count-towards-player-limit` | Whether every spawner in a stack counts towards a player's `uspawners.spawners.<number>` limit. |
+| `stacking.count-towards-chunk-limit` | Whether every spawner in a stack counts towards `limit.max-per-chunk`. Usually left disabled, since reducing spawner blocks per chunk is the point of stacking. |
+| `stacking.upgrade-cost-multiplied` | Whether upgrading a stack multiplies the level cost by the stack size, since the upgrade applies to every spawner in it. |
+| `stacking.value-multiplier` | Extra factor applied on top of the stack size for scaled level values. `1.0` means a stack of 10 is worth exactly 10 single spawners; lower it to make large stacks less rewarding. |
+
+Only spawners with matching entity type and upgrade level merge into the same stack.
+
+# Sound and Particle Effects
+
+The `effects` section controls the sound and particle feedback played for spawner-related actions
+(upgrading, merging/breaking a stack, claiming a wild spawner, buying one, and changing entity type
+with an egg). Each effect has a `_sound` key, and some also have a `_particle` key.
+
+Sound values follow `<namespaced.sound.key>[,volume[,pitch]]` — find sound names with the in-game
+`/playsound` command. Particle values follow `<particle_name>[,count[,spread]]` — find names in
+Bukkit's `Particle` enum. Leave a value blank to disable that sound or particle.
+
+The `level-up_sound`/`level-up_particle` keys are read by UpgradeFramework itself, so the same two
+keys work the same way in any other UpgradeFramework-based plugin's config.
+
 # Limits and Performance
 
 `limit.area.max-entities` pauses nearby upgradeable spawners when too many entities spawned by

@@ -24,6 +24,11 @@ Sets how many upgradeable spawners a player can have placed at once.
 If `permission-stacking` is enabled in `config.yml`, multiple numbered permissions are added
 together. Otherwise, the highest number is used.
 
+`uspawners.stack.<number>`\
+Limits how many spawners a player can merge into a single stack. Without this permission, only the
+server-wide `stacking.max-stack` option in `config.yml` applies. See
+[Spawner Stacking](../players/general/Spawner-Stacking.md).
+
 ## Player Command Permissions
 
 `uspawners.command.get`\
