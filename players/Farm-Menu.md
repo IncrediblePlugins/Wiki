@@ -52,6 +52,14 @@ Upgrades can cost money, experience, levels, or configured item currency. Some s
 
 If the next level grows the farm's radius, that specific purchase can fail if the larger farm would overlap another farm or reach into a claim where you are not trusted, and on some servers, if the newly-covered area isn't inside a claim at all. A level that doesn't grow the radius (for example, a storage-only level after radius/interval are already maxed) isn't affected by any of this.
 
+# Stacking
+
+If your server enables it, placing another matching farm item (same type, same level) anywhere inside an existing farm's own protected area merges it into that farm instead of failing as an overlap. The **Stacked** item in the farm menu shows the current amount and the maximum for that farm.
+
+A stacked farm gets more storage capacity and grows faster, both scaling with the stack amount - it still only covers the same area as a single farm at that level, and still only runs out of fuel over about the same real time as an unstacked farm, since it just gets far more done in that time.
+
+Breaking a stacked farm removes one from the stack (or the whole stack at once, if your server enables that) and gives you a farm item back, the same way removing a single farm does.
+
 # Harvestable Blocks
 
 The **Harvestable Blocks** page shows which blocks this farm type can use.

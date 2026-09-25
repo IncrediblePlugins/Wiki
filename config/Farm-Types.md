@@ -203,6 +203,28 @@ Instead of storing harvested items or draining them into a hopper, a player can 
 
 Auto-sell and hopper output are mutually exclusive per farm - a farm with auto-sell enabled is skipped by the hopper-drain task. How often auto-sell runs and whether owners are notified are configured in `config.yml` under `farm.auto-sell`. See [Admin Flags](../admins/Flags.md) for the `AUTO_SELL` flag and its permission.
 
+# Stacking
+
+Add a `stacking` section to let players stack multiple farm items of this type into one farm, instead of every farm needing its own separate spot:
+
+```yaml
+stacking:
+  max: 10
+  scale-attributes: [ storage, interval ]
+```
+
+Placing a compatible farm item (same type, same level) anywhere inside an existing farm's own protected area merges it into that farm - not just right next to the farm's own block - instead of being rejected as an overlap. `max` caps how many can stack at one farm, on top of `upgrade.yml`'s own global `stacking.max-stack` cap (the lower of the two applies).
+
+`scale-attributes` lists which of the type's level attributes grow with the stack amount:
+
+* `storage` scales up normally - a stack of 10 has 10x the storage capacity of a single farm at that level.
+* `interval` scales *down* instead (growth gets faster, not slower) - a stack of 10 completes growth cycles roughly 10x faster on the same set of blocks. This is a farm-specific inversion of how stacking normally works, because a shorter interval is the better outcome for this attribute.
+* `radius` is not meant to be listed here - stacking multiple farms at one point doesn't grow the protected area, only what happens inside the single area the level already grants.
+
+Fuel isn't separately affected by stacking - because interval scales down while the farm consumes fuel each completed cycle, more frequent (but proportionally cheaper) fuel use roughly cancels out, so a stacked farm runs out of fuel in about the same real time as an unstacked one, just gets far more done in that time.
+
+The main farm menu shows a **Stacked** item with the current/maximum stack amount once stacking is enabled for the server (`upgrade.yml`'s `stacking.merge-radius` above `0`) - see [Farm Menu](../players/Farm-Menu.md).
+
 # Recipe
 
 Use `recipe` to allow players to craft a farm item.
