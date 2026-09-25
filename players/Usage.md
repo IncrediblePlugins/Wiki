@@ -62,6 +62,8 @@ You can collect individual items or use **Collect All**. If your inventory fills
 
 If your server uses UpgradeableHoppers integration, placing an upgradeable hopper directly below the farm lets BetterFarming move harvested items into that hopper automatically.
 
+If sellable items are configured for this farm type, you can instead enable **Auto-Sell** in the storage menu to sell harvested items automatically instead of collecting or hoppering them.
+
 # 6. Upgrade the Farm
 
 Left-click the farm to open the farm menu if your role can upgrade or manage that farm. You can also open your own farms from `/farm list`.

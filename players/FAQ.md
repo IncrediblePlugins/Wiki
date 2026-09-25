@@ -30,6 +30,8 @@ Harvested items are stored inside the farm storage. Right-click the farm to open
 
 If your server uses UpgradeableHoppers, an upgradeable hopper placed directly under the farm can transport items automatically.
 
+If the farm type has sellable items configured, you can also enable **Auto-Sell** in the storage menu to sell harvested items automatically for currency instead of storing or hoppering them.
+
 # Why can't I edit or remove a farm?
 
 You need the correct farm role. Opening the management menu requires upgrade access, and removing a farm requires interaction access plus delete access. The owner can trust you, change your role, or remove you from the farm.

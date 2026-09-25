@@ -18,5 +18,6 @@ BetterFarming can hook into these plugins if they are installed:
 | Region or claim plugins | Placement checks and region-member access. Supported providers include Lands, SuperiorSkyblock2, BentoBox, PlotSquared, GriefPrevention, and WorldGuard. |
 | UpgradeableHoppers | Automatic item output from farm storage into a hopper below the farm. |
 | Hologram plugins | Farm status or fuel display through HolographicDisplays, CMI, or DecentHolograms. |
+| PlaceholderAPI | Farm count, status, and fuel/storage placeholders for use in other plugins. |
 
 Continue with [Configuration](../admins/Configuration.md) after installing.
