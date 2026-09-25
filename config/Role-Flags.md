@@ -1,4 +1,4 @@
-The roles and their flags can be edited in the `roles.yml` file. These flags can't be toggled in game. However, each farm can set roles for their players.
+The roles and their flags can be edited in the `roles.yml` file. These flags can't be toggled in game. Setting which role a specific player has on a farm is handled by ChestProtect, not BetterFarming - see [Trust and Roles](../players/Trust-and-Roles.md).
 
 * **BLOCK_BREAK**\
 Allow a role to break non-harvestable blocks inside a farm.\
@@ -29,21 +29,6 @@ _Bypass permission: betterfarming.bypass.interact_
 Allow a role to open the main farm menu and upgrade the farm.\
 _Toggle permission: betterfarming.role.setting.upgrade_\
 _Bypass permission: betterfarming.bypass.upgrade_
-
-* **PLAYER_SETROLE**\
-Allow a role to set roles for players that have a lower role.\
-_Toggle permission: betterfarming.role.setting.player_setrole_\
-_Bypass permission: betterfarming.bypass.player_setrole_
-
-* **PLAYER_TRUST**\
-Allow a role to trust other players.\
-_Toggle permission: betterfarming.role.setting.player_trust_\
-_Bypass permission: betterfarming.bypass.player_trust_
-
-* **PLAYER_UNTRUST**\
-Allow a role to untrust players with a lower role.\
-_Toggle permission: betterfarming.role.setting.player_untrust_\
-_Bypass permission: betterfarming.bypass.player_untrust_
 
 * **DELETE**\
 Allow a role to delete the farm.\

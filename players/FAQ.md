@@ -34,9 +34,9 @@ If the farm type has sellable items configured, you can also enable **Auto-Sell*
 
 # Why can't I edit or remove a farm?
 
-You need the correct farm role. Opening the management menu requires upgrade access, and removing a farm requires interaction access plus delete access. The owner can trust you, change your role, or remove you from the farm.
+You need the correct farm role. Opening the management menu requires upgrade access, and removing a farm requires interaction access plus delete access. The owner can trust you, change your role, or remove you from the farm through ChestProtect.
 
-Server staff may also have bypass permissions, but normal players are controlled by the farm's trusted-player roles.
+Server staff may also have bypass permissions, but normal players are controlled by their role on the farm's ChestProtect protection.
 
 # What should I do before removing a farm?
 

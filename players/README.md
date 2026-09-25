@@ -13,5 +13,5 @@ Pages:
 | Getting Started | [Usage](Usage.md) | First steps: get, place, fuel, collect, upgrade, and remove farms. |
 | Getting Started | [Commands](Commands.md) | Player command reference. |
 | Management | [Farm Menu](Farm-Menu.md) | Storage, auto-sell, status, fuel, upgrades, public access, hopper output, and the farm list dashboard. |
-| Management | [Trust and Roles](Trust-and-Roles.md) | Adding players, changing roles, public farms, and claim members. |
+| Management | [Trust and Roles](Trust-and-Roles.md) | What each role can do, public farms, and claim members. Trusting/untrusting players is handled by ChestProtect. |
 | Help | [Frequently Asked Questions](FAQ.md) | Common problems and what to check first. |

@@ -57,9 +57,6 @@ These permissions allow changing role-flag defaults where the role settings UI o
 | `betterfarming.role.setting.plant` | `PLANT` |
 | `betterfarming.role.setting.interact` | `INTERACT` |
 | `betterfarming.role.setting.upgrade` | `UPGRADE` |
-| `betterfarming.role.setting.player_trust` | `PLAYER_TRUST` |
-| `betterfarming.role.setting.player_untrust` | `PLAYER_UNTRUST` |
-| `betterfarming.role.setting.player_setrole` | `PLAYER_SETROLE` |
 | `betterfarming.role.setting.delete` | `DELETE` |
 | `betterfarming.role.setting.configure` | `CONFIGURE` |
 
@@ -77,9 +74,6 @@ Bypass permissions should only be given to trusted staff.
 | `betterfarming.bypass.plant` | Planting protection. |
 | `betterfarming.bypass.interact` | Interaction protection. |
 | `betterfarming.bypass.upgrade` | Farm upgrade role checks. |
-| `betterfarming.bypass.player_trust` | Trust-player role checks. |
-| `betterfarming.bypass.player_untrust` | Untrust-player role checks. |
-| `betterfarming.bypass.player_setrole` | Set-role checks. |
 | `betterfarming.bypass.delete` | Farm deletion checks. |
 | `betterfarming.bypass.configure` | Farm configuration checks. |
 | `betterfarming.bypass.manage_players` | Managing farm players even when not trusted. |

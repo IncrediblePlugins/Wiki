@@ -70,7 +70,7 @@ Only configured blocks placed inside the farm radius are tracked. If a farm says
 
 The **Public** option lets other players use public farm actions: planting, harvesting, and interacting. Opening the farm uses the interact action, so keep a farm private if you do not want other players to use farm interactions such as storage access on a default setup.
 
-Public access does not give players management access, upgrades, deletion, or permission to change trusted players.
+Public access does not give players management access, upgrades, or deletion.
 
 # Hopper Output
 
