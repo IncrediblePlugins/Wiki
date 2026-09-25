@@ -23,8 +23,10 @@ Farm events live under `me.angeschossen.betterfarming.api.events.farm`:
 | Event | Cancellable | When |
 | --- | --- | --- |
 | `FarmPlaceEvent` | Yes | A farm is being created. |
-| `FarmBreakEvent` | Yes | A farm is being deleted. |
+| `FarmBreakEvent` | Yes (except `Reason.ADMIN`) | A farm is being deleted. |
 | `FarmStatusChangeEvent` | No | A farm's status actually changes (e.g. running, paused for fuel or storage). Fired synchronously, after the change already took effect. |
 | `FarmHarvestEvent` | No | A growable block inside a farm reaches its max age and is harvested. Fired asynchronously, since farm growth is calculated off the main thread. |
-| `FarmUpgradeEvent` | No | A farm's radius, growth interval, or storage capacity has been upgraded and the cost has already been taken from the player. |
+| `FarmUpgradeEvent` | No | A farm's level (radius, growth interval, and storage capacity together) has been upgraded and the cost has already been taken from the player. `getOldLevel()`/`getNewLevel()` are the level's own index, `getOldLevelName()`/`getNewLevelName()` its configured display name. |
 | `FarmRefueledEvent` | No | Fuel time is added to a farm - manually, through a purchase, or via the API. |
+
+`FarmBreakEvent.Reason`'s two claim-related constants were renamed from `LAND_UNCLAIM`/`LAND_UNTRUST` to `REGION_UNCLAIM`/`REGION_UNTRUST` (`PLAYER`/`ADMIN`/`EXPLOSION`/`INVALID` are unchanged) - a breaking change if you match on the old names.
