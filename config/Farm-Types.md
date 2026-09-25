@@ -38,9 +38,9 @@ The first enabled farm type that loads successfully becomes the default type for
 
 # Item
 
-`item` defines the farm item given by `/farm get` and `/farm admin give`.
+`item` sets the material of the farm item given by `/farm get` and `/farm admin give` - a plain vanilla material name, for example `item: END_ROD`.
 
-The item supports names, lore, materials, custom heads, custom model data, and compatible custom item providers used by PluginFramework.
+The item's name, lore, and other display are not configured per farm type. They come from the server's GUI locale (`Locale/<lang>_gui.yml`), under a single shared `physical: block:` template used by every farm type - the `<v:type>` placeholder in that template is what shows the specific farm type's own display name.
 
 # Farmland
 
