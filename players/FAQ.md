@@ -22,7 +22,7 @@ For crop farms, place configured crops. For tree farms, place configured sapling
 
 Open the farm menu and check the status item.
 
-Most stopped farms need fuel, empty storage, loaded chunks, harvestable blocks, the owner online, or a manual resume.
+Most stopped farms need fuel, empty storage, harvestable blocks, the owner online, or a manual resume.
 
 # Why are items not going into my inventory automatically?
 

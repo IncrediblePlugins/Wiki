@@ -58,22 +58,20 @@ The active economy comes from `config.yml`: Vault, experience, levels, or item c
 
 # Fuel
 
-Enable `fuel` if farms should pause when they run out of time.
+Add a `fuel` section if farms of this type should pause when they run out of time. The section's presence is the opt-in - there is no separate enable switch.
 
 ```yaml
 fuel:
-  enabled: true
-  initial: 6h
-  max: 7d
+  initial-seconds: 6h
+  max-seconds: 7d
   items:
     bone_meal:
       material: "BONE_MEAL"
       strict: false
-      data:
-        seconds: 25
+      seconds: 25
 ```
 
-`initial` is the fuel time a new farm starts with. `max` is the maximum stored fuel time. Each fuel item adds the configured number of seconds per item.
+`initial-seconds` is the fuel time a new farm starts with, seeded automatically the moment the farm item is placed. `max-seconds` is the maximum stored fuel time. Each fuel item adds its own `seconds` per item used.
 
 If `strict` is true, the item name and lore must match too. Otherwise, BetterFarming compares the item more loosely.
 
@@ -87,13 +85,11 @@ fuel-items:
     bone_meal:
       material: "BONE_MEAL"
       strict: false
-      data:
-        seconds: 25
+      seconds: 25
 
 types:
   crop:
     fuel:
-      enabled: true
       items-preset: default
 ```
 
@@ -111,50 +107,56 @@ fuel:
     cost: 100.0
 ```
 
-When enabled, the fuel menu gets a purchase option that adds `seconds-per-unit` of fuel time for `cost`, using the same economy configured in `config.yml`. Purchases still respect the farm's `max` fuel cap.
+When enabled, the fuel menu gets a purchase option that adds `seconds-per-unit` of fuel time for `cost`, using the same economy configured in `config.yml`. Purchases still respect the farm's `max-seconds` fuel cap.
 
 ## Low Fuel Warning
 
 ```yaml
 fuel:
-  warning:
-    threshold-seconds: 300
+  warning-threshold-seconds: 300
 ```
 
-When a farm's remaining fuel drops below `threshold-seconds`, the owner gets a one-time warning if they are online. Set this to `0` to disable the warning. Defaults to `300` (5 minutes).
+When a farm's remaining fuel drops below `warning-threshold-seconds`, the owner gets a one-time warning if they are online. Set this to `0` to disable the warning. Defaults to `300` (5 minutes).
 
 # Levels
 
-Farm levels define upgrade paths.
+A farm has one combined level per tier - radius, growth interval, and storage capacity all upgrade together as a single purchase. There is no independent-axis upgrading (buying more radius without also paying for whatever interval/storage change comes with that level).
 
-BetterFarming supports these level types:
-
-| Level | What it controls |
-| --- | --- |
-| `interval` | Seconds between growth cycles. Lower values are better, so they are sorted from slowest to fastest. |
-| `storage` | Internal storage slots. |
-| `radius` | Horizontal farm radius. |
-
-Each level key must be unique. The first sorted level is used for newly created farm items.
+Each level is a numbered entry under `levels`, with a display `name`, the `cost` to buy that level from the previous one, and an `attributes` map giving the value each attribute takes at that level:
 
 ```yaml
 levels:
-  interval:
-    1:
-      value: 120
-      cost: 0
-    2:
-      value: 60
-      cost: 7500.0
-  storage:
-    1:
-      value: 9
-      cost: 0
-  radius:
-    1:
-      value: 1
-      cost: 0
+  1:
+    name: '1'
+    cost: 0
+    attributes:
+      interval:
+        value: 120
+      radius:
+        value: 1
+      storage:
+        value: 9
+  2:
+    name: '2'
+    cost: 7500.0
+    attributes:
+      interval:
+        value: 60
+      radius:
+        value: 2
+      storage:
+        value: 18
 ```
+
+The three built-in attributes:
+
+| Attribute | What it controls |
+| --- | --- |
+| `interval` | Seconds between growth cycles. Lower is faster. |
+| `radius` | Horizontal farm radius. |
+| `storage` | Internal storage slots (only used if the type also has a `storage` section - see below). |
+
+Level `1` (or whichever level sorts first) is what a newly created farm item starts at. A level doesn't have to change every attribute compared to the one before it - once an attribute reaches its intended maximum, later levels can just repeat its value and only grow the others, so admins aren't forced to keep paying for an attribute that's already done growing.
 
 # Growth
 
@@ -174,18 +176,32 @@ levels:
 
 The global list of worlds where any farm can be created is configured in `config.yml` under `general.worlds_list`.
 
-# Auto-Sell
+# Storage
 
-Instead of storing harvested items or draining them into a hopper, a farm type can automatically sell them for currency:
+Add a `storage` section to give farms of this type internal storage - harvested items go here until collected or drained into a hopper. The section's presence is the opt-in; an empty section is enough:
 
 ```yaml
-types:
-  crop:
-    auto-sell:
-      enabled: true
+storage: { }
 ```
 
-Auto-sell and hopper output are mutually exclusive per farm - a farm with auto-sell enabled is skipped by the hopper transfer task. Players toggle it per-farm from the storage menu; the toggle is hidden if the farm type has no items with a configured `sell-price` (see [Harvestable Blocks](#harvestable-blocks) below). How often auto-sell runs and whether owners are notified are configured in `config.yml` under `farm.auto-sell`.
+Storage capacity comes from the type's own `storage` level attribute (see [Levels](#levels) above), so it already grows with upgrades without any separate config number. A farm type with no `storage` section can't hold harvested items at all - pair it with auto-sell (see below) if you want harvests to go straight to currency instead.
+
+# Hopper
+
+Add a `hopper` section to let a connected UpgradeableHoppers hopper drain this farm type's storage automatically:
+
+```yaml
+hopper:
+  y-range: 1
+```
+
+`y-range` is how many blocks below the farm's own position to look for a hopper. The section's presence is the opt-in - a type without it never queries UpgradeableHoppers at all, even if the integration is installed and enabled in `config.yml`.
+
+# Auto-Sell
+
+Instead of storing harvested items or draining them into a hopper, a player can toggle their farm to automatically sell eligible harvested items for currency. This is a per-farm toggle in the storage menu, not a per-type config option - the toggle only appears if at least one of the type's harvest items has a configured `sell-price` (see [Harvestable Blocks](#harvestable-blocks) below).
+
+Auto-sell and hopper output are mutually exclusive per farm - a farm with auto-sell enabled is skipped by the hopper-drain task. How often auto-sell runs and whether owners are notified are configured in `config.yml` under `farm.auto-sell`. See [Admin Flags](../admins/Flags.md) for the `AUTO_SELL` flag and its permission.
 
 # Recipe
 
@@ -200,19 +216,20 @@ recipe:
 
 Use an empty list to disable crafting.
 
-# Minion NPC
+# Armor Stand Representation
 
-If `minion.enabled` is true, BetterFarming places the configured armor stand instead of the farm block.
+Add an `armor-stand` section to represent this farm type with a decorative armor stand instead of a real placed block. The section's presence is the opt-in - a custom item provider (Nexo/ItemsAdder) block or furniture configured on `item` above still takes priority over this if set.
 
 ```yaml
-minion:
-  enabled: true
+armor-stand:
   helmet: "skin:925a32560831c295b00527926255e608a039776f3523b92edf788149aae67d6a"
   chestplate: "LEATHER_CHESTPLATE"
   leggings: "LEATHER_LEGGINGS"
   boots: "LEATHER_BOOTS"
   tool: "IRON_HOE"
 ```
+
+Every slot is optional. Off by default - the real vanilla item's own block (the `material` set on `item` above) represents the farm instead.
 
 # Harvestable Blocks
 

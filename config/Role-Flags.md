@@ -1,12 +1,12 @@
 The roles and their flags can be edited in the `roles.yml` file. These flags can't be toggled in game. However, each farm can set roles for their players.
 
 * **BLOCK_BREAK**\
-Allow a role to break non-harvestable blocks. In the current plugin code, non-harvestable block placement inside a farm is checked through this flag as well.\
+Allow a role to break non-harvestable blocks inside a farm.\
 _Toggle permission: betterfarming.role.setting.block_break_\
 _Bypass permission: betterfarming.bypass.block_break_
 
 * **BLOCK_PLACE**\
-Registered as a role flag for block placement. Current placement checks use `PLANT` for harvestable blocks and `BLOCK_BREAK` for other blocks.\
+Allow a role to place non-harvestable blocks inside a farm. Placement checks use `PLANT` instead for harvestable blocks.\
 _Toggle permission: betterfarming.role.setting.block_place_\
 _Bypass permission: betterfarming.bypass.block_place_
 

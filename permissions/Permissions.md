@@ -35,7 +35,6 @@ Examples:
 | `betterfarming.admin.command.about` | Allows `/farm admin about`. |
 | `betterfarming.admin.command.listperms` | Allows `/farm admin listperms`. |
 | `betterfarming.admin.command.database` | Allows the `/farm admin database ...` command branch. |
-| `betterfarming.admin.command.database.migrate` | Allows `/farm admin database migrate`. Also requires `betterfarming.admin.command.database`. |
 | `betterfarming.admin.command.database.backup` | Allows `/farm admin database backup`. Also requires `betterfarming.admin.command.database`. |
 | `betterfarming.admin.command.database.restore` | Allows `/farm admin database restore`. Also requires `betterfarming.admin.command.database`. |
 | `betterfarming.admin.command.player` | Allows the `/farm admin player <player> ...` command branch. |
@@ -72,8 +71,8 @@ Bypass permissions should only be given to trusted staff.
 
 | Permission | What it bypasses |
 | --- | --- |
-| `betterfarming.bypass.block_break` | Block break protection inside farms. Current non-harvestable block placement checks use this flag too. |
-| `betterfarming.bypass.block_place` | Registered block placement bypass. Current placement checks use `plant` for harvestable blocks and `block_break` for other blocks. |
+| `betterfarming.bypass.block_break` | Block break protection inside farms. |
+| `betterfarming.bypass.block_place` | Block placement protection inside farms for non-harvestable blocks (harvestable-block placement uses `plant` instead). |
 | `betterfarming.bypass.harvest` | Harvest protection. |
 | `betterfarming.bypass.plant` | Planting protection. |
 | `betterfarming.bypass.interact` | Interaction protection. |

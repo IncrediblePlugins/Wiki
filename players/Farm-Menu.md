@@ -16,7 +16,6 @@ Common paused states:
 | Storage full | Collect items from storage or connect an upgradeable hopper if your server supports it. |
 | No blocks | Place harvestable blocks inside the farm radius. |
 | Owner offline | The farm type requires the owner to be online. The farm continues when the owner returns. |
-| Chunk unloaded | The farm's chunk needs to be loaded. |
 | Paused manually | Click the status item again to resume, if the other requirements are met. |
 
 Players with configure access can click the status item to pause or resume a manually paused farm.
@@ -47,17 +46,11 @@ If your fuel runs low, you get a one-time warning message while you're online, b
 
 # Upgrades
 
-The default farm menu has three upgrade categories:
-
-| Upgrade | Effect |
-| --- | --- |
-| Growth Interval | Reduces the time between growth cycles. |
-| Radius | Increases how far the farm can reach. |
-| Storage Capacity | Adds more internal storage slots. |
+A farm has one combined level, not separate upgrade categories - buying the next level can grow growth interval, radius, and storage capacity together in a single purchase, however the server has configured that level. The menu shows the current and next level's values for each of those before you buy.
 
 Upgrades can cost money, experience, levels, or configured item currency. Some servers require the `betterfarming.upgrade` permission before any farm can be upgraded.
 
-Radius upgrades can fail if the larger farm would overlap another farm, leave a required claim, or reach into a claim where you are not trusted.
+If the next level grows the farm's radius, that specific purchase can fail if the larger farm would overlap another farm or reach into a claim where you are not trusted, and on some servers, if the newly-covered area isn't inside a claim at all. A level that doesn't grow the radius (for example, a storage-only level after radius/interval are already maxed) isn't affected by any of this.
 
 # Harvestable Blocks
 

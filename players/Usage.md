@@ -50,7 +50,6 @@ A farm can pause if:
 * its storage is full
 * it has no harvestable blocks inside the radius
 * the owner is offline and the farm type requires the owner to be online
-* the chunk is unloaded
 * a player paused it manually
 
 Open the farm menu to see the current status and the next thing to fix.
@@ -67,11 +66,7 @@ If your server uses UpgradeableHoppers integration, placing an upgradeable hoppe
 
 Left-click the farm to open the farm menu if your role can upgrade or manage that farm. You can also open your own farms from `/farm list`.
 
-Depending on your permissions and the server economy, you may be able to upgrade:
-
-* **Growth Interval** - shorter intervals make growth cycles faster
-* **Radius** - larger radius lets the farm cover more blocks
-* **Storage Capacity** - more storage slots before the farm pauses from full storage
+A farm has one combined level, not separate upgrades to buy - the next level can grow growth interval (faster cycles), radius (covers more blocks), and storage capacity (more slots before the farm pauses) together, however the server has configured that level.
 
 Upgrades can have costs and may be locked behind permissions on some servers.
 

@@ -16,11 +16,11 @@ Most player-facing behavior is configured through these files:
 
 # Database
 
-SQLite is used by default. Enable MySQL in `config.yml` under `database.mysql.enabled` if you want BetterFarming to use MySQL.
+SQLite is used by default. Enable MySQL in `config.yml` under `database.mysql.enabled` if you want BetterFarming to use MySQL - the same setting also exists in `upgrade.yml` and must match `config.yml`'s value.
 
 Use a unique `table-prefix` if BetterFarming shares a database with other plugins.
 
-To migrate data, use `/farm admin database migrate mysql` or `/farm admin database migrate sqlite`, then enable the target database type in `config.yml` and restart the server. Make a backup before migrating.
+There is no longer a dedicated command to copy existing data between SQLite and MySQL. Switching `database.mysql.enabled` in both `config.yml` and `upgrade.yml` and restarting connects to a fresh database on the new dialect (schema created automatically) - it does not carry over data from the old one.
 
 ## Backups
 
@@ -38,7 +38,7 @@ To restore a backup, use `/farm admin database restore <backup> confirm`. On SQL
 
 # Auto-Sell
 
-Farm types can be configured to automatically sell harvested items instead of storing them or using a hopper - see [Farm Types](../config/Farm-Types.md) for the per-type `auto-sell.enabled` and per-item `sell-price` settings. Server-wide behavior is configured in `config.yml` under `farm.auto-sell`:
+Players can toggle their own farms to automatically sell harvested items instead of storing them or using a hopper, per farm from the storage menu - see [Farm Types](../config/Farm-Types.md) for the per-item `sell-price` setting that makes an item eligible, and [Admin Flags](Flags.md) for the `AUTO_SELL` toggle permission. Server-wide timing/notification behavior is configured in `config.yml` under `farm.auto-sell`:
 
 | Setting | Effect |
 | --- | --- |
@@ -61,9 +61,9 @@ Important placement settings:
 | `types.<type>.world-blacklist` in `farms.yml` | Blocks one farm type from specific worlds. |
 | `farm.creation.only-owner` | Only the owner stored on a farm item can place it. |
 | `farm.creation.farm-land` | Lets BetterFarming create farmland under the farm area. |
-| `integration.lands.only-land` | Requires farms to stay inside claims when Lands integration is used. |
+| `integration.lands.only-land` | Does **not** restrict initial placement - it requires a radius-growing upgrade's newly-covered area to be inside a claim, and (mirrored into `upgrade.yml`, see below) controls whether unclaiming land deletes the farms standing in it. |
 
-Farm radius upgrades can also fail if the larger farm would overlap another farm, leave a required claim, or reach into a claim where the player is not trusted.
+A radius-growing upgrade (not the initial placement) can fail if the larger farm would overlap another farm or reach into a claim where the player is not trusted; with `integration.lands.only-land` enabled, it can also fail if the newly-covered area isn't inside a claim at all.
 
 # Protection
 
@@ -73,7 +73,7 @@ Farm radius upgrades can also fail if the larger farm would overlap another farm
 
 `farm.protection.allow-region-members` controls whether members from supported region plugins can use farms in their claims. Supported providers include Lands, SuperiorSkyblock2, BentoBox, PlotSquared, GriefPrevention, and WorldGuard, depending on the installed plugins and provider support.
 
-When a supported protection is deleted or a player is untrusted from a protection that contains their farm, BetterFarming can remove affected farms. For normal claim deletion, `integration.lands.only-land` decides whether claim removal should also remove farms in that claim.
+When a supported protection is deleted or a player is untrusted from a protection that contains their farm, BetterFarming can remove affected farms. The underlying deletion logic actually reads both settings from `upgrade.yml`, not `config.yml`: `integration.lands.only-land` there gates unclaim-triggered removal (mirror `config.yml`'s own copy of this key if you change it, per the Placement section above), and `integration.lands.untrust-remove` (no `config.yml` equivalent, defaults to `true`) gates untrust-triggered removal.
 
 # Integrations
 

@@ -17,11 +17,10 @@ All `/farm admin ...` commands require `betterfarming.admin.command` and then th
 | Command | What it does | Permission |
 | --- | --- | --- |
 | `/farm admin help [page]` | Shows admin command help. | `betterfarming.admin.command.help` |
-| `/farm admin give <player> <type> <amount> [set-owner] [interval-level] [storage-level] [radius-level]` | Gives farm items to a player. `set-owner` defaults to `true`; level numbers are 1-based. | `betterfarming.admin.command.give` |
+| `/farm admin give <player> <type> <amount> [level] [stack]` | Gives farm items to a player. `level` is the combined level index (0-based; omit it to use the type's configured entry level). `stack` optionally bundles that many farms into each item, up to the type's stacking cap. | `betterfarming.admin.command.give` |
 | `/farm admin reload` | Reloads config, language, GUI, player limits, and farm configuration where reloads are supported. Restart for settings marked restart-only. | `betterfarming.admin.command.reload` |
 | `/farm admin about` | Shows version, update, wiki, marketplace, license, and placeholder-parser information. | `betterfarming.admin.command.about` |
 | `/farm admin listperms <player> [page]` | Lists BetterFarming permissions active for a player. Op players have every permission. | `betterfarming.admin.command.listperms` |
-| `/farm admin database migrate <mysql|sqlite>` | Copies data to the selected database type. After it completes, enable the target database type in `config.yml` and restart. | `betterfarming.admin.command.database` and `betterfarming.admin.command.database.migrate` |
 | `/farm admin database backup` | Creates a database backup immediately, in addition to any configured backup schedule (see [Configuration](Configuration.md)). | `betterfarming.admin.command.database` and `betterfarming.admin.command.database.backup` |
 | `/farm admin database restore <backup> confirm` | Restores the database from a backup file and restarts the server. Destructive - requires confirmation. | `betterfarming.admin.command.database` and `betterfarming.admin.command.database.restore` |
 | `/farm admin player <player> limits` | Shows a player's effective limits. | `betterfarming.admin.command.player` and `betterfarming.admin.command.player.limits` |
@@ -29,8 +28,6 @@ All `/farm admin ...` commands require `betterfarming.admin.command` and then th
 
 # Notes
 
-The optional farm-item level arguments for `/farm admin give` are ordered as interval, storage, and radius.
+Farms have one combined level (radius, growth interval, and storage capacity together) - see [Farm Types](../config/Farm-Types.md#levels). `/farm admin give`'s optional `[level]` argument picks that single combined level, not a per-attribute value.
 
-`set-owner` defaults to `true`. If you set it to `false`, the farm item has no stored owner and can be placed by another player even when `farm.creation.only-owner` is enabled.
-
-Use `/farm admin database migrate` only after making a database backup (`/farm admin database backup`).
+There is no separate "set owner" option - `/farm admin give` always gives an item with the target player stored as its owner.
