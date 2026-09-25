@@ -12,10 +12,11 @@ Set a limit to `-1` for unlimited. Limits that are missing from a pack are treat
 | --- | --- |
 | `player_farms_total` | Total farms a player can create, regardless of farm type. |
 | `player_farms_<type>` | Farms of one type a player can create. The `<type>` part is the farm type key from `farms.yml`, such as `player_farms_crop` or `player_farms_tree`. |
-| `farm_members` | No longer enforced - trusting players is entirely handled by ChestProtect now, which has its own separate member-limit settings. |
 | `player_groups` | Reserved by the trusted-player framework. BetterFarming's default farm UI does not normally use player-created groups. |
 
 Farm-type limits are registered automatically from the enabled type keys in `farms.yml`.
+
+There is no farm-members limit here - trusting players on a farm is entirely ChestProtect's job now, which has its own separate max-members limit/permission setting, applied uniformly across everything it protects (farms included).
 
 # Example
 
@@ -28,14 +29,12 @@ packs:
       player_farms_total: 25
       player_farms_crop: 15
       player_farms_tree: 10
-      farm_members: 20
 
   default:
     limits:
       player_farms_total: 10
       player_farms_crop: -1
       player_farms_tree: -1
-      farm_members: 10
 ```
 
 # Playtime Rewards

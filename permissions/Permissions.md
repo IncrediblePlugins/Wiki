@@ -76,8 +76,6 @@ Bypass permissions should only be given to trusted staff.
 | `betterfarming.bypass.upgrade` | Farm upgrade role checks. |
 | `betterfarming.bypass.delete` | Farm deletion checks. |
 | `betterfarming.bypass.configure` | Farm configuration checks. |
-| `betterfarming.bypass.manage_players` | Managing farm players even when not trusted. |
-| `betterfarming.bypass.edit` | Opening other players' farm menus and bypassing role priority. |
 
 # Admin Flags
 
