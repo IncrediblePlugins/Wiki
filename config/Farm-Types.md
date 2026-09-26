@@ -127,7 +127,7 @@ Each level is a numbered entry under `levels`, with a display `name`, the `cost`
 ```yaml
 levels:
   1:
-    name: '1'
+    name: 'I'
     cost: 0
     attributes:
       interval:
@@ -137,7 +137,7 @@ levels:
       storage:
         value: 9
   2:
-    name: '2'
+    name: 'II'
     cost: 7500.0
     attributes:
       interval:
@@ -147,6 +147,8 @@ levels:
       storage:
         value: 18
 ```
+
+`name` is just display text - Roman numerals are the bundled default's own convention, not a requirement. The bundled default ships 5 levels per type; add more if you want a longer progression.
 
 The three built-in attributes:
 
