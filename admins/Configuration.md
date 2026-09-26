@@ -61,9 +61,9 @@ Important placement settings:
 | `types.<type>.world-blacklist` in `farms.yml` | Blocks one farm type from specific worlds. |
 | `farm.creation.only-owner` | Only the owner stored on a farm item can place it. |
 | `farm.creation.farm-land` | Lets BetterFarming create farmland under the farm area. |
-| `integration.lands.only-land` | Does **not** restrict initial placement - it requires a radius-growing upgrade's newly-covered area to be inside a claim, and (see Protection below) also controls whether unclaiming land deletes the farms standing in it. |
+| `integration.region.only-claimed` | Does **not** restrict initial placement - it requires a radius-growing upgrade's newly-covered area to be inside a claim, and (see Protection below) also controls whether unclaiming land deletes the farms standing in it. |
 
-A radius-growing upgrade (not the initial placement) can fail if the larger farm would overlap another farm or reach into a claim where the player is not trusted; with `integration.lands.only-land` enabled, it can also fail if the newly-covered area isn't inside a claim at all.
+A radius-growing upgrade (not the initial placement) can fail if the larger farm would overlap another farm or reach into a claim where the player is not trusted; with `integration.region.only-claimed` enabled, it can also fail if the newly-covered area isn't inside a claim at all.
 
 # Protection
 
@@ -73,7 +73,7 @@ A radius-growing upgrade (not the initial placement) can fail if the larger farm
 
 `protection.allow-region-members` controls whether members from supported region plugins can use farms in their claims. Supported providers include Lands, SuperiorSkyblock2, BentoBox, PlotSquared, GriefPrevention, and WorldGuard, depending on the installed plugins and provider support.
 
-When a supported protection is deleted or a player is untrusted from a protection that contains their farm, BetterFarming can remove affected farms. `integration.lands.only-land` gates unclaim-triggered removal (see Placement above), and `integration.lands.untrust-remove` (defaults to `true`) gates untrust-triggered removal.
+When a supported protection is deleted or a player is untrusted from a protection that contains their farm, BetterFarming can remove affected farms. `integration.region.only-claimed` gates unclaim-triggered removal (see Placement above), and `integration.region.untrust-remove` (defaults to `true`) gates untrust-triggered removal.
 
 # Integrations
 
