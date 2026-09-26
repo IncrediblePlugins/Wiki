@@ -213,7 +213,7 @@ stacking:
   scale-attributes: [ storage, interval ]
 ```
 
-Placing a compatible farm item (same type, same level) anywhere inside an existing farm's own protected area merges it into that farm - not just right next to the farm's own block - instead of being rejected as an overlap. `max` caps how many can stack at one farm, on top of `upgrade.yml`'s own global `stacking.max-stack` cap (the lower of the two applies).
+Placing a compatible farm item (same type, same level) anywhere inside an existing farm's own protected area merges it into that farm - not just right next to the farm's own block - instead of being rejected as an overlap. `max` caps how many can stack at one farm, on top of `config.yml`'s own global `stacking.max-stack` cap (the lower of the two applies).
 
 `scale-attributes` lists which of the type's level attributes grow with the stack amount:
 
@@ -223,7 +223,7 @@ Placing a compatible farm item (same type, same level) anywhere inside an existi
 
 Fuel isn't separately affected by stacking - because interval scales down while the farm consumes fuel each completed cycle, more frequent (but proportionally cheaper) fuel use roughly cancels out, so a stacked farm runs out of fuel in about the same real time as an unstacked one, just gets far more done in that time.
 
-The main farm menu shows a **Stacked** item with the current/maximum stack amount once stacking is enabled for the server (`upgrade.yml`'s `stacking.merge-radius` above `0`) - see [Farm Menu](../players/Farm-Menu.md).
+The main farm menu shows a **Stacked** item with the current/maximum stack amount once stacking is enabled for the server (`config.yml`'s `stacking.merge-radius` above `0`) - see [Farm Menu](../players/Farm-Menu.md).
 
 # Recipe
 

@@ -16,11 +16,11 @@ Most player-facing behavior is configured through these files:
 
 # Database
 
-SQLite is used by default. Enable MySQL in `config.yml` under `database.mysql.enabled` if you want BetterFarming to use MySQL - the same setting also exists in `upgrade.yml` and must match `config.yml`'s value.
+SQLite is used by default. Enable MySQL in `config.yml` under `database.mysql.enabled` if you want BetterFarming to use MySQL.
 
 Use a unique `table-prefix` if BetterFarming shares a database with other plugins.
 
-There is no longer a dedicated command to copy existing data between SQLite and MySQL. Switching `database.mysql.enabled` in both `config.yml` and `upgrade.yml` and restarting connects to a fresh database on the new dialect (schema created automatically) - it does not carry over data from the old one.
+There is no longer a dedicated command to copy existing data between SQLite and MySQL. Switching `database.mysql.enabled` in `config.yml` and restarting connects to a fresh database on the new dialect (schema created automatically) - it does not carry over data from the old one.
 
 ## Backups
 
@@ -61,7 +61,7 @@ Important placement settings:
 | `types.<type>.world-blacklist` in `farms.yml` | Blocks one farm type from specific worlds. |
 | `farm.creation.only-owner` | Only the owner stored on a farm item can place it. |
 | `farm.creation.farm-land` | Lets BetterFarming create farmland under the farm area. |
-| `integration.lands.only-land` | Does **not** restrict initial placement - it requires a radius-growing upgrade's newly-covered area to be inside a claim, and (mirrored into `upgrade.yml`, see below) controls whether unclaiming land deletes the farms standing in it. |
+| `integration.lands.only-land` | Does **not** restrict initial placement - it requires a radius-growing upgrade's newly-covered area to be inside a claim, and (see Protection below) also controls whether unclaiming land deletes the farms standing in it. |
 
 A radius-growing upgrade (not the initial placement) can fail if the larger farm would overlap another farm or reach into a claim where the player is not trusted; with `integration.lands.only-land` enabled, it can also fail if the newly-covered area isn't inside a claim at all.
 
@@ -71,9 +71,9 @@ A radius-growing upgrade (not the initial placement) can fail if the larger farm
 
 `farm.protection.anti-explosive` protects farm blocks from explosions.
 
-`farm.protection.allow-region-members` controls whether members from supported region plugins can use farms in their claims. Supported providers include Lands, SuperiorSkyblock2, BentoBox, PlotSquared, GriefPrevention, and WorldGuard, depending on the installed plugins and provider support.
+`protection.allow-region-members` controls whether members from supported region plugins can use farms in their claims. Supported providers include Lands, SuperiorSkyblock2, BentoBox, PlotSquared, GriefPrevention, and WorldGuard, depending on the installed plugins and provider support.
 
-When a supported protection is deleted or a player is untrusted from a protection that contains their farm, BetterFarming can remove affected farms. The underlying deletion logic actually reads both settings from `upgrade.yml`, not `config.yml`: `integration.lands.only-land` there gates unclaim-triggered removal (mirror `config.yml`'s own copy of this key if you change it, per the Placement section above), and `integration.lands.untrust-remove` (no `config.yml` equivalent, defaults to `true`) gates untrust-triggered removal.
+When a supported protection is deleted or a player is untrusted from a protection that contains their farm, BetterFarming can remove affected farms. `integration.lands.only-land` gates unclaim-triggered removal (see Placement above), and `integration.lands.untrust-remove` (defaults to `true`) gates untrust-triggered removal.
 
 # Integrations
 
