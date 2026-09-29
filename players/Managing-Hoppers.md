@@ -1,16 +1,23 @@
 This page explains the most important options in the hopper menu.
 
 # Main Menu
-Open the hopper menu by left-clicking your hopper without sneaking.
+Open the hopper menu by left-clicking your hopper without sneaking. Right-click it instead to view its 5 internal item slots directly, like a vanilla hopper.
 
 ## Upgrades
-Upgradeable hoppers can have these upgrade types:
+A hopper has a single level. Buying an upgrade raises all of these together, in one purchase:
 * `Transfer Amount` - how many items the hopper can transfer each cycle.
 * `Suction Radius` - how far away dropped items can be picked up.
 * `Links Amount` - how many destination containers the hopper can have.
 * `Max Link Distance` - how far away linked containers may be.
 
 Upgrade prices and maximum levels depend on the server configuration.
+
+## Stacking
+If enabled by the server, several hoppers of the same type and level can share a single block, instead of taking up a separate one each. A stacked hopper transfers and links proportionally more per cycle.
+
+To stack hoppers, click the "stack" item in a hopper's menu while holding a matching hopper item somewhere in your inventory - it doesn't need to be in your hand.
+
+A plain click on a hopper always opens its menu, so breaking one always means sneaking. Depending on server settings, sneak-breaking a stacked hopper either takes the whole stack at once, or just one hopper out of it at a time, leaving the rest in place.
 
 ## Suction
 The suction option controls the active pickup radius of the hopper. You can increase or decrease the current radius in the hopper menu, up to the level you have unlocked.

@@ -12,6 +12,9 @@ How many upgradeable hoppers can a player place? Replace `number` with an actual
 
 `uhoppers.links.<number>` may appear in `plugin.yml`, but current link limits are controlled by the `links_amount` levels in `hoppers.yml`.
 
+`uhoppers.stack.<number>`\
+Caps how many hoppers a player can stack into a single block, if [block stacking](../Configuration.md#block-stacking) is enabled. Without this permission, only `config.yml`'s `stacking.max-stack` and a type's own `hoppers.yml` `stacking.max` apply.
+
 ## Player Commands
 See here: [Link](../../players/Commands.md)
 
@@ -22,21 +25,10 @@ Allow using `/upgradeablehoppers confirmtp` to confirm unsafe teleport destinati
 Each hopper type in `hoppers.yml` can define its own `permission`. Players need that permission to get that hopper type with `/upgradeablehoppers get`.
 
 ## Upgrade Permissions
-If `hopper.upgrade-perm` is enabled in `config.yml`, players need a permission for each upgrade type they should be allowed to buy.
+Hoppers use a single combined level (transfer amount, suction radius, link amount, and link distance all upgrade together in one purchase). If `hopper.upgrade-perm` is enabled in `config.yml`, players need one flat permission to buy an upgrade at all:
 
-The current upgrade menu checks per-attribute permissions. Granting only `uhoppers.upgrade` is not enough for this check.
-
-`uhoppers.upgrade.TRANSFER_AMOUNT`\
-Allow upgrading transfer amount.
-
-`uhoppers.upgrade.SUCTION_RADIUS`\
-Allow upgrading suction radius.
-
-`uhoppers.upgrade.LINKS_AMOUNT`\
-Allow upgrading link amount.
-
-`uhoppers.upgrade.LINK_DISTANCE`\
-Allow upgrading maximum link distance.
+`uhoppers.upgrade`\
+Allow upgrading a hopper's level.
 
 ## Teleportation
 The following permissions limit all teleportation initiated by UpgradeableHoppers. Players have them by default. However, in some cases

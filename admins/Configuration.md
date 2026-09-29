@@ -39,11 +39,7 @@ Backups are written to `Data/Backups/`. Restore one with `/upgradeablehoppers ad
 Command aliases can be changed in the `command.alias` section. Alias changes require a restart.
 
 # Hopper Settings
-`hopper.only-owner` controls whether hopper items can only be placed by the player stored on the item. Admins can give unbound hopper items with `/upgradeablehoppers admin give <player> <type> <amount> false`.
-
-`hopper.item.over-max` controls whether players can buy hopper items after they already reached their placed hopper limit.
-
-`hopper.vanilla.crafting`, `hopper.vanilla.placing`, and `hopper.vanilla.convert` control how normal vanilla hoppers behave. You can allow them, block them, or convert placed vanilla hoppers into upgradeable hoppers.
+`hopper.vanilla.crafting` controls whether normal, non-upgradeable hoppers can still be crafted. This can be bypassed with the `uhoppers.bypass.vanilla.craft` permission.
 
 `hopper.default-settings_list` can enable default hopper flags for newly placed hoppers. Valid values are:
 * `FILTER_DELETE`
@@ -52,9 +48,31 @@ Command aliases can be changed in the `command.alias` section. Alias changes req
 
 `hopper.teleportation.cost_2` controls the cost for teleporting to a hopper through the hopper list menu.
 
-`hopper.upgrade-perm` enables extra upgrade permissions. If enabled, players need the matching `uhoppers.upgrade.<attribute>` permission for each upgrade type, such as `uhoppers.upgrade.TRANSFER_AMOUNT`.
+`hopper.upgrade-perm` restricts who can upgrade a hopper. If enabled, players need the `uhoppers.upgrade` permission on top of ownership/trust to purchase an upgrade at all. Hoppers use a single combined level now (see below), so this is one flat permission, not a per-attribute one.
 
-The current upgrade menu checks these per-attribute permissions. Granting only `uhoppers.upgrade` is not enough for this check.
+# Vanilla Hopper Placement
+These two top-level options control what happens with plain vanilla hoppers - not the plugin's own upgradeable ones:
+
+`vanilla.place` controls whether a plain vanilla hopper can be placed at all when it isn't auto-converted.
+
+`vanilla.convert` controls whether placing a plain vanilla hopper automatically converts it into a real upgradeable hopper instead.
+
+# Block Stacking
+Several upgradeable hoppers of the same type and level can share a single physical block, with a bigger transfer amount and link count. This is disabled by default - see the new `stacking` section in `config.yml`, and each hopper type's own `stacking` section in `hoppers.yml`, for the full set of options and their defaults.
+
+`stacking.merge-radius` controls automatic merging of newly placed hoppers with a nearby compatible stack. This ships at `0` (disabled) for hoppers specifically - hoppers are routinely placed directly next to each other on purpose (a row of hoppers, each with its own separate links), so auto-merging on placement would silently combine hoppers that were never meant to be one stack. Players can still stack manually: hold a matching hopper item and click the "stack" item in a hopper's menu.
+
+`stacking.max-stack` caps how many hoppers can share one block, server-wide. A type's own `hoppers.yml` `stacking.max` can lower this further per type - set it to `1` to stop that type from stacking at all.
+
+The `uhoppers.stack.<number>` permission can cap this further per player. Without it, only the config caps above apply.
+
+`stacking.sneak-breaks-whole` controls what a sneak-break (the only break gesture hoppers use - a plain click opens the menu instead) does to a stack: break the whole stack at once (the default), or remove just one hopper from it, leaving the rest in place.
+
+`stacking.drop-bundled-item` controls how a broken stack is returned: as one hopper item per hopper in the stack (the default - they stack normally in a player's inventory), or as a single "bundled" item that remembers the whole amount and rebuilds the stack when placed again.
+
+`stacking.count-towards-player-limit` controls whether every hopper inside a stack counts towards a player's placed-hopper limit, or just the one physical block.
+
+`stacking.upgrade-cost-multiplied` controls whether the cost to upgrade a stack is multiplied by its stack amount.
 
 # Teleportation
 `teleport.costs` controls the general teleportation cost.
@@ -64,7 +82,7 @@ The current upgrade menu checks these per-attribute permissions. Granting only `
 `teleport.wait` controls the wait time before teleporting.
 
 # Protection
-`protection.enabled_3` protects hoppers from other players. If disabled, everyone can open, upgrade, and remove hoppers.
+Hoppers are always owned - only the owner (and anyone they've trusted) can open, upgrade, or remove one, unless a player has a bypass permission. Players can grant other players access to their own hoppers if the ChestProtect plugin is installed.
 
 `protection.anti-explosive` controls whether explosions can destroy upgradeable hoppers.
 
@@ -80,7 +98,12 @@ The current upgrade menu checks these per-attribute permissions. Granting only `
 # Lands Integration
 `integration.lands.only-land` requires players to place hoppers inside supported claim or island regions.
 
-`integration.lands.untrust-remove` removes or schedules removal of affected hoppers when their owner is untrusted from a supported region.
+# Region Integration
+These two options control hoppers automatically becoming claimable by someone else (shown with a "Trying to claim this hopper..." message) once their owner loses access to the region the hopper stands in - supported by Lands, SuperiorSkyblock2, BentoBox, PlotSquared, and WorldGuard.
+
+`integration.region.only-claimed` makes a hopper claimable when the claiming-type region it stands in (e.g. a Lands claim) gets deleted or unclaimed. Region types that aren't claim-based (e.g. a WorldGuard flag region) always trigger this regardless of this setting.
+
+`integration.region.untrust-remove` makes a hopper claimable when its owner gets untrusted from the region it stands in.
 
 # Economy
 The economy section controls whether hopper purchases and upgrades use Vault, player experience, or item currency.
