@@ -22,7 +22,7 @@ Some commands only exist if your server enabled that feature. Your server may al
 | Command | What it does |
 | --- | --- |
 | `/lands` | Opens the main Lands menu. |
-| `/lands menu [menu] [args]` | Opens the Lands menu. Useful menu entries include `here`, `land`, `areas`, `claims`, `relations`, `map`, `inbox`, `level`, `rentable`, `all-lands`, `lands`, `nations`, and `personal-settings`. |
+| `/lands menu [menu] [args]` | Opens the Lands menu. Useful menu entries include `main`, `land`, `areas`, `claims`, `relations`, `options`, `inbox`, `level`, `rentals`, `all-lands`, and `lands`. |
 | `/lands help [page]` | Shows command help. |
 | `/lands create [name] [tag]` | Creates a land. If you do not enter a name, Lands may ask for one in chat or in a dialog. |
 | `/lands edit <land>` | Picks which of your own lands the commands below apply to. Only needed if you're trusted in more than one land. |

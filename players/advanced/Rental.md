@@ -47,8 +47,8 @@ This shows the current rent or sell information for that area.
 The menu setup is the easiest way.
 
 1. Place a sign where the offer should appear.
-2. Stand in the area.
-3. Use `/lands menu here`.
+2. Stand in the area. If you're trusted in more than one land, run `/lands edit here` first.
+3. Use `/lands menu areas` and choose this area from the list.
 4. Choose the rental setup option.
 5. Set the price, time, and other values.
 6. Confirm the offer.

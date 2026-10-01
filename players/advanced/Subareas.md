@@ -32,9 +32,9 @@ Use `/lands selection expand` if you want the area to use the full height. If yo
 
 # Open a Subarea Menu
 
-Stand inside the subarea and use `/lands menu here`.
+Open the areas list from `/lands`, or directly with `/lands menu areas`, and choose the area there.
 
-You can also open the areas list from `/lands` and choose the area there.
+If you're trusted in more than one land, stand inside the subarea and run `/lands edit here` first, so the areas list is for the right land.
 
 # Trust Players in a Subarea
 

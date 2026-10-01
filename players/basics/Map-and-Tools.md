@@ -67,7 +67,7 @@ Use `/lands menu inbox` to view land news and logs.
 
 # Personal Settings
 
-Use `/lands menu personal-settings` to change personal options such as invite messages, land enter messages, and inbox notices.
+Use `/lands menu main`, then choose **Settings**, to change personal options such as invite messages, land enter messages, and inbox notices. This is separate from `/lands menu options`, which holds miscellaneous settings for a land, not for you personally.
 
 # Safety Teleports
 

@@ -14,7 +14,7 @@ Run `/lands edit <land>` to make it your edit land, then use `/lands claim`.
 
 # How do I open the menu for the area I am standing in?
 
-Use `/lands menu here` to open the menu for the current subarea or default area, if you are allowed to access it.
+There's no direct shortcut for this. Run `/lands menu areas` and choose the area from the list - if you're trusted in more than one land, first stand in the area and run `/lands edit here` so the list is for the right land.
 
 # I am part of multiple lands in the same war. Which team do I join?
 
