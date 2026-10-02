@@ -22,7 +22,7 @@ Some commands only exist if your server enabled that feature. Your server may al
 | Command | What it does |
 | --- | --- |
 | `/lands` | Opens the main Lands menu. |
-| `/lands menu [menu] [args]` | Opens the Lands menu. Useful menu entries include `main`, `land`, `areas`, `claims`, `relations`, `options`, `inbox`, `level`, `rentals`, `all-lands`, and `lands`. |
+| `/lands menu [menu] [args]` | Opens the Lands menu. Top-level pages: `here` (the land you're standing in), `main`, `rentals`, `lands` (your "Your Lands" list), `land`, `personal`. `land` and `personal` are groups with their own pages: `/lands menu land` (bare) opens your edit land directly, plus `list`, `level`, `relations`, `areas`, `claims`, `inbox`, `options`, `requests`; `/lands menu personal` has `preferences` and `invites`. |
 | `/lands help [page]` | Shows command help. |
 | `/lands create [name] [tag]` | Creates a land. If you do not enter a name, Lands may ask for one in chat or in a dialog. |
 | `/lands edit <land>` | Picks which of your own lands the commands below apply to. Only needed if you're trusted in more than one land. |
@@ -117,6 +117,7 @@ through the rest of `/nations ...`, acting on your edit land's nation.
 | `/nations list` | Shows nations on the server. |
 | `/nations spawn [nation]` | Teleports to your own nation's capital spawn. With `<nation>`, teleports to any nation's capital spawn - you can pick any nation on the server, not just ones you're trusted in. |
 | `/nations` | Opens your nation's menu, if your edit land is part of one. Otherwise shows this help listing. |
+| `/nations menu [menu] [args]` | Opens the Nations menu. Top-level pages: `nations` (your own nations) and `nation`, a group with its own pages: `/nations menu nation` (bare) opens your edit land's nation directly, plus `level`, `relations`, `taxes`, `lands`, `effects`, `options`, `inbox`. |
 | `/nations info` | Shows information about your nation. |
 | `/nations chat` | Toggles nation chat mode. |
 | `/nations chat <message>` | Sends a message to nation chat without changing chat mode. |

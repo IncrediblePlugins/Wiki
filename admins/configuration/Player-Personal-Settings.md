@@ -2,7 +2,7 @@
 
 Personal settings control behavior for one player only. They do not change a land, role, nation, or war.
 
-Players can edit these settings in their personal settings menu if the flag is displayed and they have the matching `lands.player.setting.<flag>` permission.
+Players can edit these settings in their personal settings menu if the flag is displayed and they have the matching `lands.player.setting.<flag>` permission. Reach it directly with `/lands menu personal preferences` (or from `/lands` -> Personal).
 
 # Configuration
 

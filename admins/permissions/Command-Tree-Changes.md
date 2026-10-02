@@ -42,6 +42,22 @@ manage permissions by hand, read this before assuming your old permission setup 
   `/lands admin database backup` (`lands.admin.command.database.backup`) runs an on-demand backup,
   and `/lands admin database restore <backup> confirm` (`lands.admin.command.database.restore`,
   destructive - requires confirmation) restores from one, tab-completing existing backup files.
+- `/lands menu [menu] [args]` and `/nations menu [menu] [args]` are a real nested page tree now
+  instead of a flat list of names - `land` (`/lands menu` side) and `nation` (`/nations menu` side)
+  are groups: the bare group opens your edit land/its nation directly, and their own pages (`list`,
+  `level`, `relations`, `areas`, `claims`, `inbox`, `options`, `requests` under `land`; `level`,
+  `relations`, `taxes`, `lands`, `effects`, `options`, `inbox` under `nation`) are reached as
+  `/lands menu land <page>` / `/nations menu nation <page>`. A new `personal` group holds
+  player-wide pages not tied to a specific land: `preferences` (the personal settings menu - see
+  [Player Personal Settings](../configuration/Player-Personal-Settings.md)) and `invites`. Two
+  behavior changes to note:
+  - `/lands menu lands` now opens your own "Your Lands" list (same as `/lands menu land list`) -
+    it used to open the server-wide lands list. Use `/lands list` for that instead.
+  - `/nations menu all-nations` (the server-wide nations list) is gone entirely - use
+    `/nations list` instead.
+  - The bare `land`/`nation` group action no longer accepts a `<player>` argument to open it for
+    someone else (every page *beneath* them still does, e.g. `/lands menu land level <player>`) -
+    staff should use `/lands admin land <land> menu` for that instead.
 
 # `/lands edit`
 
