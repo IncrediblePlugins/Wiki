@@ -53,7 +53,7 @@ Some commands only exist if your server enabled that feature. Your server may al
 | `/lands list` | Shows lands on the server. |
 | `/lands spawn [land]` | Teleports to your edit land's spawn. With `<land>`, teleports to any land's spawn instead - you can pick any land on the server, not just ones you're trusted in. |
 | `/lands setspawn` | Sets your edit land's spawn. |
-| `/lands unstuck` | Teleports to the nearest wilderness location if you are trapped in a claim. |
+| `/lands unstuck` | Teleports to the nearest wilderness location if you are trapped in a claim. In the wilderness, teleports you to the world spawn instead. |
 | `/lands eco taxes` | Shows upcoming taxes you may need to pay as a land member. |
 | `/lands eco upkeep` | Shows upcoming upkeep for lands you own. |
 | `/lands invites menu` | Shows your invites and ownership requests. |

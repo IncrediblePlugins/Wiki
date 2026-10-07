@@ -71,6 +71,6 @@ Use `/lands menu main`, then choose **Settings**, to change personal options suc
 
 # Safety Teleports
 
-Use `/lands unstuck` if you are trapped inside a claim. It teleports you to nearby wilderness.
+Use `/lands unstuck` if you are trapped inside a claim. It teleports you to nearby wilderness. If you are stuck in the wilderness (e.g. in powdered snow while wilderness is protected), it teleports you to the world spawn instead.
 
 Use `/lands rtp` to random teleport, if your server enabled it.

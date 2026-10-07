@@ -61,7 +61,7 @@ which of your own lands a command applies to when you're trusted in more than on
 | `/lands list` | `lands.command.list` | Opens the lands list. |
 | `/lands spawn [land] [area] [target-player] [wait]` | `lands.command.spawn` | With `<land>`, browses any land's spawn - `<land>` tab-completes every land regardless of trust or whether a spawn is set. Without it, teleports to your own edit land's spawn. Role flags and `lands.teleport.land_spawn` still apply. `target-player`/`wait` are admin-only (`lands.admin.command.edit`). |
 | `/lands setspawn` | `lands.command.setspawn` | Sets your edit land's spawn (previously `/land <land> spawn set`). Role flags and spawn costs still apply. |
-| `/lands unstuck` | `lands.command.unstuck` | Teleporting also uses `lands.teleport.unstuck`. |
+| `/lands unstuck` | `lands.command.unstuck` | Teleporting also uses `lands.teleport.unstuck`. In the wilderness it teleports to the world spawn (`unstuck.wilderness-spawn` in `config.yml`). |
 | `/lands eco taxes` | `lands.command.eco.taxes` | Only registered if taxes are enabled. |
 | `/lands eco upkeep` | `lands.command.eco.upkeep` | Only registered if upkeep is enabled. |
 | `/lands invites menu` | `lands.command.invites.menu` | Registered if invites or ownership transfer are enabled. |
