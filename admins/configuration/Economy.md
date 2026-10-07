@@ -104,6 +104,7 @@ Important options:
 
 * `features.upkeep`: enables land upkeep.
 * `upkeep.per-chunk`: upkeep cost per claimed chunk.
+* `upkeep.flat`: flat upkeep every land pays on top of the per-chunk cost (also if it has no claims). Useful to discourage tiny one-chunk lands. If `upkeep.unclaim` is enabled, a missing flat amount unclaims chunks like missing per-chunk upkeep.
 * `upkeep.unclaim`: unclaim chunks if the land cannot pay.
 * `upkeep.nopay_time`: grace period for newly created lands.
 * `upkeep.upkeep-reminder_time`: reminder interval while a land has insufficient funds.
@@ -123,6 +124,7 @@ Important options:
 * `taxes.remove-land`: remove a land from the nation if it cannot pay nation taxes.
 * `upkeep.enabled_4`: enables nation upkeep.
 * `upkeep.per-chunk`: nation upkeep cost per chunk.
+* `upkeep.flat-per-land`: flat nation upkeep per member land (capital and vassals included), on top of the per-chunk cost. Counterpart to the land `upkeep.flat`, which lands in a nation don't pay. Part of the regular upkeep, so `upkeep.delete-nation` applies if it can't be paid.
 * `upkeep.delete-nation`: delete the nation if it cannot pay upkeep.
 * `upkeep.nopay_time`: grace period for newly created nations.
 
