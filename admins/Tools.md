@@ -28,9 +28,9 @@ Permission: `lands.admin.command.chatspy`
 
 # Teleport Other Players
 
-Random teleport another player with `/lands rtp <world> <player> [skip-cooldown]`.
+Random teleport another player with `/lands rtp <world> <player>`. This skips the player's cooldown and costs.
 
-Permission: `lands.admin.command.wild`
+Permission: `lands.admin.command.rtp`
 
 # Leaderboard Holograms
 

@@ -143,22 +143,30 @@ Useful player commands:
 
 # Random Teleport
 
-Random teleport is configured in `random-teleport`.
+Random teleport (`/lands rtp`) is configured in its own file: `Modules/RandomTeleport/rtp.yml`.
+
+Players are sent to a random spot between `min-distance` and `max-distance` around the world spawn (`/setworldspawn`). Spots are spread evenly over that area and always stay inside the world border. They also keep a distance to claims and protected regions (e.g. WorldGuard), and are never in oceans, rivers, lava or other unsafe places. Lands checks the destination before the teleport countdown starts.
+
+Overworld, nether and end worlds are supported:
+
+* In the nether, players are teleported into caves between the lava sea and the bedrock roof, never next to lava.
+* In the end, players are teleported to the outer islands (at least 1100 blocks from the center), and only after the Ender Dragon was defeated in that world (`end.require-dragon-killed`).
 
 Important options:
 
-* `random-teleport.wild-worlds_list`: worlds and distance ranges for `/lands rtp`.
-* `random-teleport.world-perms`: use world-specific permissions such as `lands.command.rtp.world`.
-* `random-teleport.backup`: fallback world if the player's current world is not configured.
-* `random-teleport.rtp-cooldown_time`: command cooldown.
-* `random-teleport.costs_4`: teleport cost.
-* `random-teleport.extensive-check`: load the destination chunk to check biome safety.
+* `worlds`: worlds where `/lands rtp` is enabled, each with `min-distance` and `max-distance`. Use `'*'` for all worlds that aren't listed by name. Each world can override `cost`, `claim-distance` and `biome-blacklist`.
+* `fallback-world`: world used if the player's current world isn't listed.
+* `per-world-permission`: require world-specific permissions such as `lands.command.rtp.world`.
+* `cooldown`: command cooldown. Bypass permission: `lands.bypass.cooldown.wild`.
+* `cost`: teleport cost.
+* `claim-distance`: minimum distance in blocks between the destination and the nearest claim.
+* `biome-blacklist`: additional biomes players are never teleported into.
+* `spread.candidates`: number of safe spots compared per teleport. The one furthest away from claims and recent random teleport destinations is used, so players don't end up next to each other.
+* `search.load-chunks-for-biomes`: load chunks to check their biome. Only needed for custom world generators or downloaded maps.
 
-Make sure each random-teleport world has a useful `/setworldspawn`, because distances are measured from world spawn.
+Staff can random-teleport another player with `/lands rtp <world> <player>`. This skips the player's cooldown and costs.
 
-Staff can random-teleport another player with `/lands rtp <world> <player> [skip-cooldown]`.
-
-Permission: `lands.admin.command.wild`
+Permission: `lands.admin.command.rtp`
 
 # Unstuck
 

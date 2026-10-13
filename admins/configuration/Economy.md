@@ -78,7 +78,7 @@ Common cost options in `config.yml`:
 * `land.spawn.teleport.costs.value_3`: cost to teleport to a land spawn.
 * `land.setowner.costs_6`: cost to transfer land ownership.
 * `chunk.teleport.costs_3`: cost to teleport to a chunk from the claims menu.
-* `random-teleport.costs_4`: cost for `/lands rtp`.
+* `cost` in `Modules/RandomTeleport/rtp.yml`: cost for `/lands rtp`. Can be set per world.
 
 # Taxes
 

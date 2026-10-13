@@ -67,7 +67,7 @@ works.
 | Command | What it does | Permission |
 | --- | --- | --- |
 | `/lands menu <player>` | Opens another player's Lands menu. | `lands.admin.command.menu` |
-| `/lands rtp <world> <player> [skip-cooldown]` | Random-teleports another player. | `lands.admin.command.wild` |
+| `/lands rtp <world> <player>` | Random-teleports another player, without cooldown and costs. | `lands.admin.command.rtp` |
 
 # Wars Admin Commands
 
