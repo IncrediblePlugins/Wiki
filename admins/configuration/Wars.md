@@ -100,7 +100,7 @@ set lives under `goals.raid.actions` in `modes.yml`.
 | `restrictions.min-players` | Online defenders required before enemies may interact in that land (and before capture flags work). `0` allows pillaging with no defenders online. Requires reload/restart. |
 | `restrictions.cooldown_logging_time` | Grace time enemies can still interact after the last defender logs out. |
 | `allies-war-field` | Allow fighting in allied lands of both sides, not only the direct participants. |
-| `actions.role-flags_list` | Role flags granted to enemies in the land during war (e.g. `ATTACK_PLAYER`, `LAND_ENTER`). |
+| `actions.role-flags_list` | Role flags granted to enemies in the land during war (e.g. `ATTACK_PLAYER`, `ITEM_PICKUP`). War participants can always enter the enemy land, so `LAND_ENTER` isn't needed here. |
 | `actions.block-place_list` | Specific blocks enemies may place if `BLOCK_PLACE` isn't granted. |
 | `actions.block-break_list` | Specific blocks enemies may break if `BLOCK_BREAK` isn't granted. |
 
