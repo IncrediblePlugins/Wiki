@@ -159,7 +159,7 @@ Every state takes the same options:
 
 | Option | What it does |
 | --- | --- |
-| `cmds.winner` / `cmds.loser` | Console commands run once per winner/loser land when the war resolves. Placeholders: `{winner}`/`{loser}` (parameter-safe name), `{winner_name}`/`{loser_name}` (display name), `{winner_owner}`/`{loser_owner}` (owner). `[]` = none. |
+| `cmds.winner` / `cmds.loser` | Console commands run once per land of the winner/loser when the war resolves (not for the lands of their allies). Placeholders: `{winner}`/`{loser}` (parameter-safe name), `{winner_name}`/`{loser_name}` (display name), `{winner_owner}`/`{loser_owner}` (owner). `[]` = none. |
 | `shield.winner` / `shield.loser` | War shield granted to the winner/loser afterwards (`0` = none). |
 
 Individual goals add their own options on top, described below.
@@ -185,8 +185,9 @@ goals:
 
 ## `annex` - unclaim the loser's lands
 
-The winner unclaims all of the loser's war lands (the loser gets the usual unclaim cash-back). No
-ownership transfer.
+The winner unclaims all of the loser's lands (the loser gets the usual unclaim cash-back). For a
+nation these are its member lands, but not its vassals. Lands of the loser's allies keep their
+claims. No ownership transfer.
 
 ```yaml
   annex:
@@ -230,7 +231,7 @@ declare independence again until `cooldown` passes.
 
 ## `raid` - post-war raid window
 
-The winner's members may act on the loser's lands for `duration` after the war, limited to the actions
+The winner's members may act on the loser's lands (not their allies') for `duration` after the war, limited to the actions
 in `actions`. Can also be added on top of another goal via `modes.<mode>.add-goals`.
 
 ```yaml
