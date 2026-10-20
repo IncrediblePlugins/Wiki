@@ -46,8 +46,8 @@ Useful commands:
 * `/lands bank balance`
 * `/lands bank deposit <amount>`
 * `/lands bank withdraw <amount>`
-* `/lands admin land <land or *> bank set <amount>`
-* `/lands admin land <land or *> bank modify <amount>`
+* `/lands admin land <land or all> bank set <amount>`
+* `/lands admin land <land or all> bank modify <amount>`
 
 Withdraws require the role flag `BALANCE_WITHDRAW`.
 

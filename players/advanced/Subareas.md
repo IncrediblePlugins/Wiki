@@ -38,9 +38,13 @@ If you're trusted in more than one land, stand inside the subarea and run `/land
 
 # Trust Players in a Subarea
 
-Use `/lands area <area> member trust <player>` to give the player access only to that area, unless they are also trusted in the whole land.
+Use `/trust <player> <area>` (or `/lands area <area> member trust <player>`) to give the player access only to that area.
 
-To remove them from that area, use `/lands area <area> member untrust <player>`.
+`/trust <player>` without an area only trusts them in the default area, not in subareas. Use `/trust <player> all` to trust them in every area.
+
+To remove them from that area, use `/untrust <player> <area>`.
+
+In commands, type an area name without spaces: an area named "My Farm" is `MyFarm`. This also applies to the default area, whose name depends on the server language (e.g. `Pardéfaut` for "Par défaut"). Tab completion shows the names this way.
 
 # Area Roles and Flags
 

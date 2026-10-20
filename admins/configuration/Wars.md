@@ -135,8 +135,8 @@ Admins can set or modify shields manually:
 
 | Command | Permission |
 | --- | --- |
-| `/lands admin land <land or *> shield set <time>` | `lands.admin.command.land.shield.set` |
-| `/lands admin land <land or *> shield modify <time>` | `lands.admin.command.land.shield.modify` |
+| `/lands admin land <land or all> shield set <time>` | `lands.admin.command.land.shield.set` |
+| `/lands admin land <land or all> shield modify <time>` | `lands.admin.command.land.shield.modify` |
 
 # Keep Inventory
 

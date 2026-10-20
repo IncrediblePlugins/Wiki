@@ -70,14 +70,14 @@ Some commands only exist if your server enabled that feature. Your server may al
 | `/lands leave` | Leaves your edit land, or the area you are standing in with `here`. |
 | `/lands rename <name>` | Renames your edit land. |
 | `/lands member menu` | Opens member management for your edit land. |
-| `/lands member trust <player>` | Trusts a player in the whole land. To trust them in only one area, use `/lands area <area> member trust <player>` instead. Also available as `/trust <player>`. |
-| `/lands member untrust <player>` | Removes a player from the whole land. To remove them from only one area, use `/lands area <area> member untrust <player>` instead. Also available as `/untrust <player>`. |
-| `/trust <player>` | Shortcut, same command as `/lands member trust`. |
-| `/untrust <player>` | Shortcut, same command as `/lands member untrust`. |
-| `/lands member setrole <player> <role>` | Sets a player's role for the whole land. To set their role in only one area, use `/lands area <area> member setrole <player> <role>` instead. |
+| `/lands member trust <player> [area or all] [duration]` | Trusts a player in the default area of your edit land. Name an area to trust them only there, or use `all` to trust them in every area. A temporary trust needs the area in front of the duration, e.g. `/trust <player> all 3d`. Also available as `/trust`. |
+| `/lands member untrust <player> [area or all]` | Removes a player from the whole land, or only from the area you name. Also available as `/untrust`. |
+| `/trust <player> [area or all] [duration]` | Shortcut, same command as `/lands member trust`. |
+| `/untrust <player> [area or all]` | Shortcut, same command as `/lands member untrust`. |
+| `/lands member setrole <player> <role> [area or all]` | Sets a player's role in every area they are trusted in, or only in the area you name. |
 | `/lands member setowner <player>` | Asks a member to become the new owner of your edit land. |
-| `/lands member ban <player> [silent]` | Bans a player from the whole land. To ban them from only one area, use `/lands area <area> member ban <player> [silent]` instead. |
-| `/lands member unban <player>` | Removes a player ban from the whole land. To unban them from only one area, use `/lands area <area> member unban <player>` instead. |
+| `/lands member ban <player> [area or all] [silent]` | Bans a player from the whole land, or only from the area you name. To ban silently, put the area in front, e.g. `all true`. |
+| `/lands member unban <player> [area or all]` | Removes a player ban from the whole land, or only from the area you name. |
 | `/lands area <name> create` | Creates a new, empty area. Use `assign` afterward (or on a land with a selection ready) to give it a shape. |
 | `/lands area <area> assign` | Assigns your current selection as the area's shape, creating the area first if it doesn't exist yet. Also available as `/assign <area>`. |
 | `/assign <area>` | Shortcut, same command as `/lands area <area> assign`. |

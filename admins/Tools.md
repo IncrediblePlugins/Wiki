@@ -20,7 +20,7 @@ Permission: `lands.admin.command.menu`
 
 # Chat Spy
 
-`/lands admin chatspy <land or nation or *>` toggles chat spy for one land, one nation, or all lands and nations.
+`/lands admin chatspy <land or nation or all>` toggles chat spy for one land, one nation, or all lands and nations.
 
 Run `/lands admin chatspy` without an argument to disable all selected chat spy targets.
 

@@ -73,7 +73,7 @@ Related options:
 Useful admin commands:
 
 * `/lands admin player <player> limits`
-* `/lands admin land <land or *> limits`
+* `/lands admin land <land> limits`
 * `/lands admin limits refresh`
 * `/lands admin limits migrate confirm`
 

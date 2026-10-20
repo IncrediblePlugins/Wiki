@@ -27,19 +27,19 @@ Nested commands add the full path:
 | `/lands admin database migrate <database> confirm` | Migrates Lands data to another database type. | `lands.admin.command.database.migrate` |
 | `/lands admin database backup` | Runs an on-demand database backup. | `lands.admin.command.database.backup` |
 | `/lands admin database restore <backup> confirm` | Restores the database from a backup file. | `lands.admin.command.database.restore` |
-| `/lands admin land <land or *> limits` | Shows limits for a land. | `lands.admin.command.land.limits` |
+| `/lands admin land <land> limits` | Shows limits for a land. | `lands.admin.command.land.limits` |
 | `/lands admin land <land> menu` | Opens the menu of a land. | `lands.admin.command.land.menu` |
-| `/lands admin land <land or *> addrole <role> confirm` | Adds a custom role from `roles.yml` to one land or all lands. | `lands.admin.command.land.addrole` |
-| `/lands admin land <land or *> setflag <flag> <state> <visitor>` | Sets a role flag or natural flag in one land or all lands. | `lands.admin.command.land.setflag` |
-| `/lands admin land <land or *> resetflag <flag or all>` | Resets one flag or all flags to config defaults. | `lands.admin.command.land.resetflag` |
-| `/lands admin land <land or *> removespawn` | Removes the spawn of one land or all lands. | `lands.admin.command.land.removespawn` |
-| `/lands admin land <land or *> shield set <time>` | Sets the war shield time. | `lands.admin.command.land.shield.set` |
-| `/lands admin land <land or *> shield modify <time>` | Adds or removes war shield time. | `lands.admin.command.land.shield.modify` |
-| `/lands admin land <land or *> bank set <amount>` | Sets the land bank balance. | `lands.admin.command.land.bank.set` |
-| `/lands admin land <land or *> bank modify <amount>` | Adds or removes land bank balance. | `lands.admin.command.land.bank.modify` |
+| `/lands admin land <land or all> addrole <role> confirm` | Adds a custom role from `roles.yml` to one land or all lands. | `lands.admin.command.land.addrole` |
+| `/lands admin land <land or all> setflag <flag> <state> <visitor>` | Sets a role flag or natural flag in one land or all lands. | `lands.admin.command.land.setflag` |
+| `/lands admin land <land or all> resetflag <flag or all>` | Resets one flag or all flags to config defaults. | `lands.admin.command.land.resetflag` |
+| `/lands admin land <land or all> removespawn` | Removes the spawn of one land or all lands. | `lands.admin.command.land.removespawn` |
+| `/lands admin land <land or all> shield set <time>` | Sets the war shield time. | `lands.admin.command.land.shield.set` |
+| `/lands admin land <land or all> shield modify <time>` | Adds or removes war shield time. | `lands.admin.command.land.shield.modify` |
+| `/lands admin land <land or all> bank set <amount>` | Sets the land bank balance. | `lands.admin.command.land.bank.set` |
+| `/lands admin land <land or all> bank modify <amount>` | Adds or removes land bank balance. | `lands.admin.command.land.bank.modify` |
 | `/lands admin resetworld <world> confirm` | Deletes all claims and land spawns in a world. | `lands.admin.command.resetworld` |
 | `/lands admin dismiss` | Dismisses new-flag notices. | `lands.admin.command.dismiss` |
-| `/lands admin chatspy [land or nation or *]` | Toggles chat spy for one land, one nation, all lands and nations, or disables it with no argument. | `lands.admin.command.chatspy` |
+| `/lands admin chatspy [land or nation or all]` | Toggles chat spy for one land, one nation, all lands and nations, or disables it with no argument. | `lands.admin.command.chatspy` |
 | `/lands admin debug` | Prints debug information. | `lands.admin.command.debug` |
 | `/lands admin debug tasks` | Prints task debug information. | `lands.admin.command.debug.tasks` |
 | `/lands admin import <plugin>` | Imports claims from a supported claim plugin. | `lands.admin.command.import` |
@@ -52,7 +52,7 @@ Nested commands add the full path:
 | `/lands admin player <player> give first-join-items` | Gives all enabled first-join items. | `lands.admin.command.give.first-join-items` |
 | `/lands admin listperms <player>` | Lists permissions detected for a player. | `lands.admin.command.listperms` |
 
-`<land or *>` means that `*` applies the command to all lands where the command supports it.
+`<land or all>` means that `all` applies the command to all lands where the command supports it. `limits` and `menu` always need a land. `all` is a reserved word: no land, nation, area or role can be named `all` (or `here`).
 
 Admins with `lands.admin.command.edit` can manage *any* land or nation directly through the normal
 player commands (`/lands ...` / `/nations ...`, or their `/land`/`/nation` aliases) without being an

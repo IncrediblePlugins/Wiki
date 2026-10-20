@@ -77,14 +77,14 @@ which of your own lands a command applies to when you're trusted in more than on
 | `/lands leave` | `lands.command.leave` | May require confirmation if leaving removes supplied claims. |
 | `/lands rename <name>` | `lands.command.rename` | Rename cost and cooldown can still apply. |
 | `/lands member menu` | `lands.command.member.menu` | Opens member management menu for your edit land. |
-| `/lands member trust <player> [duration]` | `lands.command.member.trust` | Trusts land-wide. Role flags and invite settings still apply. Use `/lands area <area> member trust <player>` to trust only in one area. Also available as `/trust`. |
-| `/lands member untrust <player>` | `lands.command.member.untrust` | Removes land-wide. Role flags still apply. Use `/lands area <area> member untrust <player>` to remove from only one area. Also available as `/untrust`. |
-| `/trust <player> [duration]` | `lands.command.trust` | Top-level shortcut, same command as `/lands member trust`. |
-| `/untrust <player>` | `lands.command.untrust` | Top-level shortcut, same command as `/lands member untrust`. |
-| `/lands member setrole <player> <role>` | `lands.command.member.setrole` | Sets the role land-wide. Role priority and role flags still apply. Use `/lands area <area> member setrole <player> <role>` to set the role in only one area. |
+| `/lands member trust <player> [area or all] [duration]` | `lands.command.member.trust` | Trusts in the default area, the named area, or every area with `all` (only areas the player may trust in). The duration needs the area in front of it. Role flags and invite settings still apply. Also available as `/trust`. |
+| `/lands member untrust <player> [area or all]` | `lands.command.member.untrust` | Removes land-wide (only from areas the player may untrust in), or from the named area. Role flags still apply. Also available as `/untrust`. |
+| `/trust <player> [area or all] [duration]` | `lands.command.trust` | Top-level shortcut, same command as `/lands member trust`. |
+| `/untrust <player> [area or all]` | `lands.command.untrust` | Top-level shortcut, same command as `/lands member untrust`. |
+| `/lands member setrole <player> <role> [area or all]` | `lands.command.member.setrole` | Sets the role in every area the player is trusted in (and the executor may manage), or in the named area. Role priority and role flags still apply. |
 | `/lands member setowner <player>` | `lands.command.member.setowner` | Ownership transfer settings and cost still apply. |
-| `/lands member ban <player> [silent]` | `lands.command.member.ban` | Bans land-wide. Not registered in basic mode. Use `/lands area <area> member ban <player> [silent]` to ban from only one area. |
-| `/lands member unban <player>` | `lands.command.member.unban` | Unbans land-wide. Not registered in basic mode. Use `/lands area <area> member unban <player>` to unban from only one area. |
+| `/lands member ban <player> [area or all] [silent]` | `lands.command.member.ban` | Bans land-wide (only in areas the executor may manage), or in the named area. `silent` comes after the area. Not registered in basic mode. |
+| `/lands member unban <player> [area or all]` | `lands.command.member.unban` | Unbans land-wide (only in areas the executor may manage), or in the named area. Not registered in basic mode. |
 | `/lands area <area> menu` | `lands.command.area.menu` | Only registered if subareas are enabled. |
 | `/lands area <name> create` | `lands.command.area.create` | Creates a new, empty area (no geometry yet). |
 | `/lands area <area> assign` | `lands.command.area.assign` | Assigns your current selection as the area's geometry, auto-creating the area first if it doesn't exist yet. Also available as `/assign <area>`. Previously named `resize`. |
