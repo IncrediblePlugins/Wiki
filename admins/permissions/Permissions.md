@@ -111,8 +111,6 @@ Replace `<command>` with the command name without `/`.
 | `lands.admin.*` | All Lands admin actions. Staff only. |
 | `lands.admin.disabled-features` | Use some features that are disabled for regular players, such as claiming in disabled worlds or setting rental areas while rent is disabled. |
 | `lands.admin.command.edit` | Manage any land via `/lands edit <land>`, even if not a member. May also ignore requirements such as max members for some commands. |
-| `lands.admin.land_delete` | Delete other players' lands or unclaim chunks from them. |
-| `lands.admin.land_setowner` | Use `/lands member setowner` for lands the player does not own. |
 | `lands.admin.setting_edit_land` | Edit natural flags of other players' lands. |
 | `lands.admin.setting_edit_role` | Edit role flags of other players' lands. |
 | `lands.admin.setting_edit_taxes` | Edit tax settings of other players' lands. |
