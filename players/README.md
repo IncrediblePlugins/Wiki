@@ -16,6 +16,7 @@ Pages:
 | Land Management | [Rent & Sell System](advanced/Rental.md) | Renting or buying areas and creating rent or sell offers. |
 | Land Management | [Economy](advanced/Economy.md) | Land banks, taxes, upkeep, claim costs, and rent payments. |
 | Land Management | [Land Discovery and Categories](general/Land-Discovery-and-Categories.md) | Finding lands, using categories, and understanding tags and titles. |
+| Land Management | [Levels](general/Levels.md) | Leveling up lands and nations, their rewards and locked features. |
 | Nations and Wars | [Relations](general/Relations.md) | Allies, enemies, relation requests, and nation-managed relations. |
 | Nations and Wars | [Nations](general/Nations.md) | Nations, nation members, nation upkeep, levels, and wars. |
 | Nations and Wars | [Wars](general/Wars.md) | War declaration, preparation, fighting, capture flags, and rewards. |

@@ -1,0 +1,32 @@
+# Land and Nation Levels
+
+Lands and nations can level up, if your server has levels enabled. Higher levels give rewards, for example more claims,
+more members, a lower upkeep, faster crop growth or features like a public spawn. The rewards of all levels you reached
+add up.
+
+# Leveling Up
+
+Open the level menu with `/lands menu land level` (for your nation: `/nations menu nation level`). It shows:
+
+* your current level and its rewards,
+* the next level, its cost and its rewards,
+* the requirements of the next level and how far you are, for example the number of trusted players or the age of the
+  land.
+
+Once all requirements are met, click **Level up**. The cost is paid from the land's bank (`/lands deposit`). A nation pays
+from the bank of its capital. You need to be allowed to withdraw from the land's bank (for nations: to edit the nation).
+
+When your land can level up, its online members are told after the next deposit.
+
+Your level is never lost, also if you no longer meet the requirements later.
+
+# Locked Features
+
+Your server can lock features until a level, for example:
+
+* visitors teleporting to your land's spawn,
+* the land storage,
+* renting out and selling areas,
+* declaring wars.
+
+If you try to use a locked feature, Lands tells you which level unlocks it.

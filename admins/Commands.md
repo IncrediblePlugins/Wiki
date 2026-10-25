@@ -37,6 +37,7 @@ Nested commands add the full path:
 | `/lands admin land <land or all> shield modify <time>` | Adds or removes war shield time. | `lands.admin.command.land.shield.modify` |
 | `/lands admin land <land or all> bank set <amount>` | Sets the land bank balance. | `lands.admin.command.land.bank.set` |
 | `/lands admin land <land or all> bank modify <amount>` | Adds or removes land bank balance. | `lands.admin.command.land.bank.modify` |
+| `/lands admin land <land> level <level> [commands]` | Sets the level of a land, up or down, without paying. With `commands` set to `true`, the commands of the levels passed upwards run. See [Levels](configuration/Levels.md#admin-commands). | `lands.admin.command.land.level` |
 | `/lands admin resetworld <world> confirm` | Deletes all claims and land spawns in a world. | `lands.admin.command.resetworld` |
 | `/lands admin dismiss` | Dismisses new-flag notices. | `lands.admin.command.dismiss` |
 | `/lands admin chatspy [land or nation or all]` | Toggles chat spy for one land, one nation, all lands and nations, or disables it with no argument. | `lands.admin.command.chatspy` |
@@ -51,6 +52,14 @@ Nested commands add the full path:
 | `/lands admin player <player> give captureflag <amount> [silent]` | Gives war capture flag items. | `lands.admin.command.give.captureflag` |
 | `/lands admin player <player> give first-join-items` | Gives all enabled first-join items. | `lands.admin.command.give.first-join-items` |
 | `/lands admin listperms <player>` | Lists permissions detected for a player. | `lands.admin.command.listperms` |
+
+# Nations Admin Commands
+
+| Command | What it does | Permission |
+| --- | --- | --- |
+| `/nations admin nation <nation> level <level> [commands]` | Sets the level of a nation, up or down, without paying. With `commands` set to `true`, the commands of the levels passed upwards run. | `nations.admin.command.nation.level` |
+| `/nations admin nation <nation> shield set <time>` | Sets the war shield time of a nation. | `nations.admin.command.nation.shield.set` |
+| `/nations admin nation <nation> shield modify <time>` | Adds or removes war shield time of a nation. | `nations.admin.command.nation.shield.modify` |
 
 `<land or all>` means that `all` applies the command to all lands where the command supports it. `limits` and `menu` always need a land. `all` is a reserved word: no land, nation, area or role can be named `all` (or `here`).
 

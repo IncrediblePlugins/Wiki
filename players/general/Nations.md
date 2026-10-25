@@ -44,7 +44,8 @@ If you are trusted in lands on both sides of the same war, your team is chosen o
 
 Nations can level up if your server has nation levels enabled.
 
-Levels can give the nation and its lands extra benefits, such as more claims or other server-defined rewards.
+Levels can give the nation and its lands extra benefits, such as more claims for every land, potion effects or a lower
+upkeep.
 
-Open `/nations` and go to the level menu to view the current progress and any potion
-effects or similar benefits your server gives through nation levels.
+Open the level menu with `/nations menu nation level`. Once all requirements are met, click **Level up**: the cost is paid
+from the bank of the capital. Levels are never lost. See [Levels](Levels.md).

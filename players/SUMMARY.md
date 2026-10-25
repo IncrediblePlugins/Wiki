@@ -13,6 +13,7 @@
 * [Rent & Sell System](advanced/Rental.md)
 * [Economy](advanced/Economy.md)
 * [Land Discovery and Categories](general/Land-Discovery-and-Categories.md)
+* [Levels](general/Levels.md)
 
 ## ⚔️ Nations and Wars
 * [Relations](general/Relations.md)

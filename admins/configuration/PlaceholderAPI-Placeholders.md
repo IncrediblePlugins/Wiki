@@ -185,6 +185,15 @@ The name of the next level.
 `%lands_land_level_next_index%`\
 The index of the next level. Example: `1`
 
+`%lands_land_level_cost%`\
+The cost of the next level.
+
+`%lands_land_level_ready%`\
+`true`, if the land can level up now: all requirements of the next level are met and the bank can pay the cost.
+
+`%lands_land_level_title%`\
+The title of the player in the land at its level (`titles` in `levels.yml`), for example `Mayor`.
+
 `%lands_land_shield%`\
 Get the remaining shield time.
 
@@ -269,6 +278,15 @@ The next level of the nation.
 
 `%lands_nation_level_next_index%`\
 The index of the next nation level. Example: `1`
+
+`%lands_nation_level_cost%`\
+The cost of the next nation level, paid by the capital.
+
+`%lands_nation_level_ready%`\
+`true`, if the nation can level up now.
+
+`%lands_nation_level_title%`\
+The title of the player in the nation at its level, for example `Emperor`.
 
 `%lands_nation_shield%`\
 Get the remaining shield time.
