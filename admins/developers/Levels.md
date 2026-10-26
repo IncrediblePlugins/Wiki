@@ -14,8 +14,10 @@ nation with `MemberHolder#getLevel()`, all levels with `LevelsHandler#getLandLev
 # Requirement Types
 
 A plugin adds a requirement by registering a requirement type. Lands creates a requirement from every section of that type
-in `levels.yml`. Register it in your plugin's `onLoad`: Lands reads `levels.yml` at the start of its `onEnable`.
-`LandsIntegration#onLoad(Runnable)` runs your code at the right time if your plugin loads before Lands.
+in `levels.yml`. Register it in your plugin's `onLoad`: Lands reads `levels.yml` at the start of its `onEnable`, and
+registering later throws an `IllegalStateException` (e.g. after a plugin reload). `LandsIntegration#onLoad(Runnable)` waits
+until Lands loaded, if your plugin loads first, but it must still be called from your `onLoad`. Catch the exception, so a
+missing requirement doesn't break the rest of your Lands integration.
 
 Requirements of a plugin are configured under the plugin's name: the type `myplugin.hoppers` is
 `requirements.myplugin.hoppers` in `levels.yml`.

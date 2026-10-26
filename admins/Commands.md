@@ -16,7 +16,7 @@ Nested commands add the full path:
 | Command | What it does | Permission |
 | --- | --- | --- |
 | `/lands admin menu` | Opens the admin menu. | `lands.admin.command.menu` |
-| `/lands admin reload` | Reloads Lands config, roles, levels, events, and player data cache. | `lands.admin.command.reload` |
+| `/lands admin reload` | Reloads Lands config, roles, events, and player data cache. Of `levels.yml` only the on/off options, sounds and farm multipliers; changed levels need a restart. | `lands.admin.command.reload` |
 | `/lands admin deleteinactive` | Runs the configured expiration actions for inactive players and lands. | `lands.admin.command.deleteinactive` |
 | `/lands admin limits` | Opens limit pack tools. | `lands.admin.command.limits` |
 | `/lands admin limits refresh` | Refreshes player limit packs. | `lands.admin.command.limits.refresh` |

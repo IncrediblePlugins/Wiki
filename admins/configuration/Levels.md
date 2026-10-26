@@ -1,6 +1,7 @@
 Land and nation levels are configured in `levels.yml` in the folder `/plugins/Lands`. You must insert valid YAML format. To
-verify your format, you can paste the content of the file in a [YAML validator](https://yaml-online-parser.appspot.com). The
-file can't be reloaded with `/lands reload`: restart the server after changing it.
+verify your format, you can paste the content of the file in a [YAML validator](https://yaml-online-parser.appspot.com).
+`/lands admin reload` only reloads `land.enabled`, `nation.enabled`, the sounds and `general.farm-multipliers`. Restart
+the server after changing the levels, and to enable levels that were disabled at startup.
 
 # How Levels Work
 
@@ -11,7 +12,7 @@ file can't be reloaded with `/lands reload`: restart the server after changing i
   level, see [Admin Commands](#admin-commands).
 * **The rewards of all reached levels add up.** A land at the third level has the rewards of the first three levels.
 * The `commands` of a level run **once**, when the level is reached.
-* Who may level up: players with the `balance_withdraw` flag of the land (it spends the land's money), for nations the
+* Who may level up: players with the `level_up` role flag of the land (by default only the owner), for nations the
   `nation_edit` flag.
 
 The order of the levels in the file is ascending, from the lowest to the highest level.
@@ -67,7 +68,7 @@ the value.
 | `members` | Trusted players. | Players of all lands of the nation, each player once. |
 | `chunks` | Claims. | Claims of all lands. |
 | `age` | Days since the land was created. | Days since the nation was created. |
-| `playtime` | Hours all trusted players played together. On a network the playtime of all servers counts. | Same, for the players of all lands. |
+| `playtime` | Hours all trusted players played together. On a network with Redis the playtime of all servers counts. | Same, for the players of all lands. |
 | `tenure` | Trusted players who are trusted for at least `days` days. Temporarily trusted players don't count. | Same, over all lands. |
 | `level_held` | Days since the current level was reached. | Same. |
 | `lands` | - | Lands of the nation, besides the capital. |
@@ -100,6 +101,17 @@ Other plugins add requirements under their own name:
 ```
 
 A requirement of a plugin that isn't installed is skipped (with a warning in the console).
+
+These plugins count blocks: a stacked spawner or hopper counts once, however many are stacked. BetterFarming loads the farms
+of a world once its chunks were loaded, so right after a restart a land can have fewer farms counted than it has.
+
+## Playtime on a Network
+
+On a network with Redis (`database.redis` in `config.yml`), each server stores the playtime of its players in the
+database, and the playtime of a player is the sum of all servers. This also counts for the playtime rewards of
+`player-limits.yml`. Each server needs its own `server-name`. If your servers share the statistics files of their world
+folders, set `general.playtime-shared-stats: true` in `config.yml`: then the highest playtime of the servers is used.
+MultiPaper does this on its own. Without Redis, the playtime of the server is used.
 
 ## Rewards
 

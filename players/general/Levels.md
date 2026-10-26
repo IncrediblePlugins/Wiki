@@ -14,9 +14,11 @@ Open the level menu with `/lands menu land level` (for your nation: `/nations me
   land.
 
 Once all requirements are met, click **Level up**. The cost is paid from the land's bank (`/lands deposit`). A nation pays
-from the bank of its capital. You need to be allowed to withdraw from the land's bank (for nations: to edit the nation).
+from the bank of its capital. You need the `level_up` role flag, which only the owner has by default (for nations: you need
+to be allowed to edit the nation).
 
-When your land can level up, its online members are told after the next deposit.
+When your land can level up, its online members are told, for example after a deposit or when a menu of the land is
+opened.
 
 Your level is never lost, also if you no longer meet the requirements later.
 
