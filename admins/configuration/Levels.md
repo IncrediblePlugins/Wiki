@@ -76,7 +76,7 @@ the value.
 
 **Lands count for their nation after a while.** A land counts for the requirements of its nation (lands, members,
 chunks, playtime, tenure and the requirements of other plugins) once it's in the nation for `nation.land-days` days
-(default 7), so lands can't join a nation just for its level-up. The capital always counts, and lands that were in a
+(default 7, servers that update from an older version start with 0), so lands can't join a nation just for its level-up. The capital always counts, and lands that were in a
 nation before the update count right away. When a land joins, the nation's online players are told when it counts.
 
 ```yaml
@@ -167,7 +167,8 @@ A feature that no level unlocks can always be used. Once a level unlocks it, lan
 
 ### Farm Multipliers
 
-The farm multipliers only work if they're enabled in `general.farm-multipliers`:
+The farm multipliers only work if they're enabled in `general.farm-multipliers`. New installs have them on; servers that
+update from an older version start with them off:
 
 ```yaml
 general:
@@ -224,13 +225,17 @@ A `levels.yml` from before levels were bought is converted when Lands starts:
   capital pays it alone, so check the nation costs.
 * `attributes` become `rewards`. Before, each level configured its total and only the current level counted. Now rewards
   add up, so each value becomes the difference to the level below.
-* Attributes without a reward are removed and listed in the console: a land level's `lands` (it was never applied) and
-  attributes of other plugins.
+* Attributes without a reward are removed and listed in the console: `lands` (it was never applied) and attributes of
+  other plugins. Add a `lands` reward to a nation level if you want nations to get more lands.
 * A level that didn't set an attribute counts as having the same value as the level below.
 * `commands.reached` become `commands`, with `<v:...>` placeholders. `commands.down` are removed (levels aren't lost
   anymore); the console lists the removed commands.
 
 Lands keep their levels. Nobody is charged and no commands run again.
+
+New features start turned off, so you decide which ones to use: your levels get none of the new requirements and rewards,
+the farm multipliers in `general.farm-multipliers` are off and `nation.land-days` is `0`. See the default `levels.yml`
+of a new install for examples.
 
 # Admin Commands
 
