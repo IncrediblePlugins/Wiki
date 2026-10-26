@@ -22,6 +22,10 @@ opened.
 
 Your level is never lost, also if you no longer meet the requirements later.
 
+Who counts as a member for the requirements: players trusted in the whole land, you included. Players trusted only in a
+sub area, tenants and players trusted for a limited time don't count. The playtime requirement only counts members who
+are trusted for some days (7 by default): trusting a player who played a lot doesn't help right away.
+
 # Locked Features
 
 Your server can lock features until a level, for example:

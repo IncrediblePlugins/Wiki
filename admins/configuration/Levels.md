@@ -69,10 +69,15 @@ the value.
 | `members` | Players trusted in the whole land, the owner included. Players trusted only in a sub area, tenants and temporarily trusted players don't count, also not for `playtime` and `tenure`. | Players of all lands of the nation, each player once. |
 | `chunks` | Claims. | Claims of all lands. |
 | `age` | Days since the land was created. | Days since the nation was created. |
-| `playtime` | Hours the members (see `members`) played together, also before they joined the land. On a network with Redis the playtime of all servers counts. | Same, for the players of all lands. |
+| `playtime` | Hours the members (see `members`) who are trusted for at least `days` days (default 7) played together, also before they joined the land. On a network with Redis the playtime of all servers counts. | Same, for the players of all lands. |
 | `tenure` | Members (see `members`) who are trusted for at least `days` days. | Same, over all lands. |
 | `level_held` | Days since the current level was reached. | Same. |
 | `lands` | - | Lands of the nation, besides the capital. |
+
+**Lands count for their nation after a while.** A land counts for the requirements of its nation (lands, members,
+chunks, playtime, tenure and the requirements of other plugins) once it's in the nation for `nation.land-days` days
+(default 7), so lands can't join a nation just for its level-up. The capital always counts, and lands that were in a
+nation before the update count right away. When a land joins, the nation's online players are told when it counts.
 
 ```yaml
       requirements:
@@ -186,13 +191,17 @@ Commands run once, when a land or nation reaches the level (also if an admin set
 | `<v:level>` | Name of the level. | Name of the level. |
 | `<v:owner>` | Owner of the land. | Owner of the nation. |
 | `<v:land>`, `<v:land_name>` | Command name and name of the land. | Runs the command for every land of the nation. |
-| `<v:member>` | Runs the command for every trusted player. | - |
+| `<v:member>` | Runs the command for every member (see `members` above). | - |
 | `<v:nation>`, `<v:nation_name>` | - | Command name and name of the nation. |
 
 ```yaml
       commands:
         - 'give <v:member> diamond 1'
 ```
+
+Use `<v:land>` and `<v:nation>` as command arguments: they're the command names, without spaces or colors. Names can
+contain spaces (if your server allows them), so `<v:land_name>` and `<v:nation_name>` belong at the end of a command, as
+message text: `broadcast <v:land_name> reached <v:level>!`.
 
 # Disabling Levels
 

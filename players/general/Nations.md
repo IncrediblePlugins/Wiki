@@ -49,3 +49,6 @@ upkeep.
 
 Open the level menu with `/nations menu nation level`. Once all requirements are met, click **Level up**: the cost is paid
 from the bank of the capital. Levels are never lost. See [Levels](Levels.md).
+
+A land that joins your nation counts for its level requirements (lands, members, claims, playtime) after some days in the
+nation (7 by default). The capital always counts. When a land joins, the nation's members are told how long it takes.
