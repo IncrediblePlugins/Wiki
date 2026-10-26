@@ -38,7 +38,7 @@ Pages:
 | Integrations and UI | [Translations](https://wiki.incredibleplugins.com/general/messages-and-config/translations) | Translation files and community translations. |
 | Integrations and UI | [Lands Events](configuration/Events.md) | Lands-specific `events.yml` events, groups, and cancellation hooks. |
 | Developers | [Setup](developers/API.md) | Setting up the Lands API. |
-| Developers | [Levels](developers/Levels.md) | Developer notes for custom level requirements. |
+| Developers | [Levels](developers/Levels.md) | Adding level requirement and reward types from another plugin. |
 | Developers | [Update](developers/Update.md) | Developer update notes. |
 | Developers | [Custom Wars](developers/Custom-Wars.md) | Developer notes for custom war integrations. |
 

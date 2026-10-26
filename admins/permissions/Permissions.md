@@ -11,6 +11,7 @@ Limits such as max lands, chunks, members, and upkeep limits are configured in `
 | `lands.command.*` | All player `/lands` commands (including `/land`, `/claim`, `/trust`, `/untrust`, `/assign`). |
 | `nations.command.*` | All player `/nations` commands (including `/nation`). |
 | `lands.admin.command.*` | All `/lands admin` commands. Staff only. |
+| `nations.admin.command.*` | All `/nations admin` commands (setting the level and the war shield of a nation). Staff only. |
 
 There is no standalone `/wars` command or `wars.*` permission tree - war commands live under
 `/lands war ...` and `/nations war ...`, covered by `lands.command.*` /

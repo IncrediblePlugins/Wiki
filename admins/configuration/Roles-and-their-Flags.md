@@ -88,6 +88,7 @@ Be careful with `addrole`: player-created lands can rename roles, so running it 
 | `AREA_ASSIGN` | Create sub areas and assign selections to areas. | `lands.role.setting.area_assign` | `lands.bypass.area_assign` |
 | `PLAYER_BAN` | Ban players from the land. | `lands.role.setting.player_ban` | `lands.bypass.player_ban` |
 | `WAR_MANAGE` | Declare wars, manage wars, and surrender for the land. | `lands.role.setting.war_manage` | `lands.bypass.war_manage` |
+| `LEVEL_UP` | Level up the land, paying the cost from the land bank. Only the owner by default. | `lands.role.setting.level_up` | `lands.bypass.level_up` |
 
 # Nation Role Flag
 

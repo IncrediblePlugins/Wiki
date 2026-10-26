@@ -1,100 +1,248 @@
-In the `levels.yml` file, which is located in the folder `/plugins/Lands`, you can edit and add land and nation levels.
-Please note that each config section (level section) name and level name must be unique.
-You must insert valid YAML format. To verify your format, you can paste the content of the file in a [YAML validator](https://yaml-online-parser.appspot.com).
-The order of the levels is ascending (lowest level to highest).
+Land and nation levels are configured in `levels.yml` in the folder `/plugins/Lands`. You must insert valid YAML format. To
+verify your format, you can paste the content of the file in a [YAML validator](https://yaml-online-parser.appspot.com).
+`/lands admin reload` only reloads `land.enabled`, `nation.enabled`, the sounds and `general.farm-multipliers`. Restart
+the server after changing the levels, and to enable levels that were disabled at startup.
+
+# How Levels Work
+
+* A land or nation **levels up in the level menu** (`/lands menu land level`, `/nations menu nation level`) once all
+  requirements of the next level are met. It pays the level's `cost` from its bank once. Nations pay from the bank of their
+  capital.
+* **Levels are never lost.** A land that no longer meets the requirements of its level keeps it. Only admins can lower a
+  level, see [Admin Commands](#admin-commands).
+* **The rewards of all reached levels add up.** A land at the third level has the rewards of the first three levels.
+* The `commands` of a level run **once**, when the level is reached.
+* Who may level up: players with the `level_up` role flag of the land (by default only the owner), for nations the
+  `nation_edit` flag.
+
+The order of the levels in the file is ascending, from the lowest to the highest level.
+
+# Levels
+
+Each level's section name is its id, for example `town`. Lands stores the id for every land and nation, so **don't rename
+a level's section once lands reached it**. A land with a level that doesn't exist anymore (renamed or removed) gets the
+level at the position it had, or the highest level if there are fewer levels now. It keeps the stored id, in case you add
+the level again.
+
+```yaml
+land:
+  enabled: true
+  levels:
+    town:
+      name: '<dark_green>Town'
+      cost: 12000
+      announce: false
+      titles:
+        owner: 'Mayor'
+        member: 'Citizen'
+      requirements:
+        members:
+          required: 5
+          title: 'Trust <v:req> Players'
+          description:
+            - '<t:regular>Have <v:req> players trusted.'
+      rewards:
+        chunks:
+          value: 4
+          description: '<t:regular><v:value> claims</t>'
+      commands: [ ]
+```
+
+| Option | Meaning |
+| --- | --- |
+| `name` | Shown in menus and in front of the land's name. MiniMessage. |
+| `cost` | Paid once from the bank when leveling up. `0` = free. |
+| `announce` | Tell the whole server when a land or nation reaches this level. |
+| `titles.owner`, `titles.member` | Titles of the owner and the members at this level, see the placeholders `%lands_land_level_title%` and `%lands_nation_level_title%`. |
+| `webmap-color` | Fill color on web maps, for example `'#55FF55'`. Default: the color of the land's name. |
+| `commands` | Console commands run once when the level is reached. |
+| `requirements` | What a land or nation needs to level up to this level, see below. |
+| `rewards` | What reaching this level gives, see below. |
+
+In `title` and `description` of a requirement, `<v:req>` is the required value. In `description` of a reward, `<v:value>` is
+the value.
+
+## Requirements
+
+| Requirement | Lands | Nations |
+| --- | --- | --- |
+| `members` | Players trusted in the whole land, the owner included. Players trusted only in a sub area, tenants and temporarily trusted players don't count, also not for `playtime` and `tenure`. | Players of all lands of the nation, each player once. |
+| `chunks` | Claims. | Claims of all lands. |
+| `age` | Days since the land was created. | Days since the nation was created. |
+| `playtime` | Hours the members (see `members`) who are trusted for at least `days` days (default 7) played together, also before they joined the land. On a network with Redis the playtime of all servers counts. | Same, for the players of all lands. |
+| `tenure` | Members (see `members`) who are trusted for at least `days` days. | Same, over all lands. |
+| `level_held` | Days since the current level was reached. | Same. |
+| `lands` | - | Lands of the nation, besides the capital. |
+
+**Lands count for their nation after a while.** A land counts for the requirements of its nation (lands, members,
+chunks, playtime, tenure and the requirements of other plugins) once it's in the nation for `nation.land-days` days
+(default 7), so lands can't join a nation just for its level-up. The capital always counts, and lands that were in a
+nation before the update count right away. When a land joins, the nation's online players are told when it counts.
+
+```yaml
+      requirements:
+        tenure:
+          required: 6
+          days: 7
+          title: '<v:req> Loyal Members'
+          description:
+            - '<t:regular>Have <v:req> players who are trusted'
+            - '<t:regular>for at least 7 days.'
+```
+
+Other plugins add requirements under their own name:
+
+```yaml
+      requirements:
+        upgradeablehoppers:
+          hoppers:
+            required: 5
+            title: '<v:req> Upgradeable Hoppers'
+        upgradeablespawners:
+          spawners:
+            required: 3
+        betterfarming:
+          farms:
+            required: 2
+```
+
+A requirement of a plugin that isn't installed is skipped (with a warning in the console).
+
+These plugins count the blocks placed in the claims right now: a stacked spawner or hopper counts once, however many
+are stacked. Blocks can be placed for the level-up and broken again afterward, so use them together with requirements
+that take time, like `tenure` or `level_held`. BetterFarming loads the farms
+of a world once its chunks were loaded, so right after a restart a land can have fewer farms counted than it has.
+
+## Playtime on a Network
+
+On a network with Redis (`database.redis` in `config.yml`), each server stores the playtime of its players in the
+database, and the playtime of a player is the sum of all servers. This also counts for the playtime rewards of
+`player-limits.yml`. Each server needs its own `server-name`. If your servers share the statistics files of their world
+folders, set `general.playtime-shared-stats: true` in `config.yml`: then the highest playtime of the servers is used.
+MultiPaper does this on its own. Without Redis, the playtime of the server is used.
+
+## Rewards
+
+| Reward | Lands | Nations |
+| --- | --- | --- |
+| `chunks` | More claims (negative: fewer). | More claims for every land of the nation. |
+| `members`, `areas` | More members, sub areas. | - |
+| `allies`, `enemies` | More allies, enemies. | More allies, enemies. |
+| `lands` | - | More lands in the nation. |
+| `upkeep` | Percent added to the upkeep, negative is a discount. Lands in a nation pay taxes instead of upkeep. | Percent added to the nation's upkeep. |
+| `unlock` | Features that can only be used from this level on, see below. | Same. |
+| `permissions` | Permissions the trusted players get while they're online. | Permissions the players of all its lands get. |
+| `crop_growth`, `spawner_rate`, `mob_xp`, `mob_drops` | Percent bonus inside the land. | Bonus inside all its lands, on top of the land's. |
+| `war_shield` | A longer war shield after a lost war, for example `6h`. | Same. |
+| `effects` | - | Potion effects the nation can activate in `/nations menu nation effects`. Format `EFFECT:LEVEL`, for example `JUMP_BOOST:2`. |
+| `effects_amount` | - | How many effects can be active at the same time. |
+
+```yaml
+      rewards:
+        upkeep:
+          value: -5
+          description: '<t:regular><v:value>% upkeep cost</t>'
+        unlock:
+          value:
+            - storage
+          description: '<t:positive>+ Unlocks: <v:value></t>'
+        permissions:
+          value:
+            - 'essentials.workbench'
+        crop_growth:
+          value: 10
+          description: '<t:regular><v:value>% crop growth</t>'
+```
+
+### Unlocks
+
+A feature that no level unlocks can always be used. Once a level unlocks it, lands below that level can't use it.
+
+| Feature | What's locked below the level |
+| --- | --- |
+| `public_spawn` | Visitors can't teleport to the land spawn. Members can. |
+| `storage` | The land storage (`/lands storage` and the main block's barrel). |
+| `rentals` | Renting out and selling areas. |
+| `declare_war` | Declaring wars. |
+
+### Farm Multipliers
+
+The farm multipliers only work if they're enabled in `general.farm-multipliers`:
+
+```yaml
+general:
+  farm-multipliers:
+    crop-growth: true
+    spawner-rate: true
+    mob-xp: true
+    mob-drops: true
+```
+
+A value of `150` means one extra growth stage (or drop) and a 50% chance for a second one. Mob XP and drops only count for
+mobs killed by players trusted in the land. The multipliers add up with the upgrades of BetterFarming and
+UpgradeableSpawners.
+
+## Commands
+
+Commands run once, when a land or nation reaches the level (also if an admin sets a level higher with `commands`).
+
+| Placeholder | Lands | Nations |
+| --- | --- | --- |
+| `<v:level>` | Name of the level. | Name of the level. |
+| `<v:owner>` | Owner of the land. | Owner of the nation. |
+| `<v:land>`, `<v:land_name>` | Command name and name of the land. | Runs the command for every land of the nation. |
+| `<v:member>` | Runs the command for every member (see `members` above). | - |
+| `<v:nation>`, `<v:nation_name>` | - | Command name and name of the nation. |
+
+```yaml
+      commands:
+        - 'give <v:member> diamond 1'
+```
+
+Use `<v:land>` and `<v:nation>` as command arguments: they're the command names, without spaces or colors. Names can
+contain spaces (if your server allows them), so `<v:land_name>` and `<v:nation_name>` belong at the end of a command, as
+message text: `broadcast <v:land_name> reached <v:level>!`.
 
 # Disabling Levels
-You can individually disable / enable land or nation levels. Please note that some `{level}` placeholders in your language file will then get replaced with "Disabled" ingame. So you might want to remove them with the editor of your choice.
 
-# Configuring Land Levels
-## Requirements
-For each level you must configure requirements. If a land passes these requirements they will level up. If they later do no longer pass these, their level will get lowered again. The requirement `balance` represents the bank balance of the land (`/lands bank balance`).
-```yaml
-      requirements:
-        members: 5
-        chunks: 10
-        balance: 15000
-```
+Set `land.enabled` or `nation.enabled` to `false`. The stored levels are kept, so enabling levels again gives every land its
+level back. While levels are disabled, no rewards apply and every feature is unlocked. Nation effects that players already
+turned on stay on.
 
-## Benefits of a Level
-Each level can have their own benefits. The `chunks` value will add or remove (= negative value) chunks to the land. That means that the land can claim more chunks at `/claim`. The `upkeep` value will higher or lower (= negative value) their upkeep costs by a given value.
-```yaml
-      values:
-        chunks: 4
-        upkeep: 50
-```
+Levels need the `player-limits.yml` file (instead of numbered permissions for limits).
 
-### Execute Commands at Level up and down
-The `reached` commands list will be executed when a land reaches this particular level and the `down` command list will be executed when a land gets downgraded from this particular level to the previous one.
+# Updating From an Older Version
 
-Available placeholders:
-* {level}: Name of the level
-* {land}: Name of the land
-* {owner}: The player name of the land owner.
-* {member}: The player name a land member.\
+**Update all servers of a network at the same time**, and only start them once all run the new version. An older version
+can't read the converted `levels.yml` and doesn't store the level ids, so servers with different versions disagree about
+levels. Before converting, Lands copies the old file to `levels.yml.pre-9.0`; use it if you go back to an older version.
 
-If the command contains the {members} placeholder, the command will be executed for each player that is trusted in the land.
-````yaml
-      commands:
-        reached:
-          - 'say Land {land} just levelled up.'
-        down: []
-````
+A `levels.yml` from before levels were bought is converted when Lands starts:
 
-# Configuring Nation Levels
-## Requirements
-The `members` requirement represents the total unique player amount of all lands that are part of the nation. The `chunks` requirement is the sum of all claims of the lands that are part of the nation. Same goes for the `members` and `balance` requirements. 
-````yaml
-      requirements:
-        members: 12
-        chunks: 100
-        balance: 100000
-````
+* `title` becomes `name`.
+* The `balance` requirement becomes the `cost`. Nations used to need the balance of all their lands together; now the
+  capital pays it alone, so check the nation costs.
+* `attributes` become `rewards`. Before, each level configured its total and only the current level counted. Now rewards
+  add up, so each value becomes the difference to the level below.
+* Attributes without a reward are removed and listed in the console: a land level's `lands` (it was never applied) and
+  attributes of other plugins.
+* A level that didn't set an attribute counts as having the same value as the level below.
+* `commands.reached` become `commands`, with `<v:...>` placeholders. `commands.down` are removed (levels aren't lost
+  anymore); the console lists the removed commands.
 
-## Benefits of a Level
-Attributes of a level will apply on top of whatever the current value for the land or nation is.\
-Available attributes are:
-* `chunks`: Each land in the nation will get x more or less (= negative value) chunks for claiming. 
-* `upkeep`: The nation will need to pay x more or less (= negative value) money for their upkeep.
-* `effects`: Configure a list of effects that the nation can enable to be active in their nation.
-* `effects_amount`: Configure how many effects can be active at once.
+Lands keep their levels. Nobody is charged and no commands run again.
 
-Example:
-````yaml
-      values:
-        chunks: 20
-        upkeep: 20
-        # Allow nations to activate a specific amount of effects in their nation. Effects can be unlocked through level progression.
-        effects:
-          description: '&a+ Unlock effects: {value}'
-          # Configure a list of unlocked effects for this level. 
-          # Valid effects: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
-          # Format: EFFECT:AMPLIFIER
-          # The amplifier is the strength (level) of the effect. Example: JUMP:2 -> Jump II
-          value:
-            - JUMP
-            - SPEED
-            - FAST_DIGGING
-            - DOLPHINS_GRACE
-        # Modify how many effects can be active at the same time.
-        effects_amount:
-          description: '&a+ Have {value} effects active at once'
-          value: 1
-````
+# Admin Commands
 
-## Execute Commands at Level up and down
-The `reached` commands list will be executed when a nation reaches this particular level and the `down` command list will be executed when a nation gets downgraded from this particular level to the previous one.
+| Command | What it does | Permission |
+| --- | --- | --- |
+| `/lands admin land <land> level <level> [commands]` | Sets the level of a land, up or down, without paying. With `commands: true`, the commands of the levels passed upwards run and the members are told. | `lands.admin.command.land.level` |
+| `/nations admin nation <nation> level <level> [commands]` | The same for a nation. | `nations.admin.command.nation.level` |
 
-Available placeholders:
-* {level}: Name of the level
-* {nation}: Name of the nation
-* {owner}: The player name of nation owner.
-* {land}: Name of a land that is part of the nation.
+Lowering a level takes the rewards of the levels above away: limits shrink (nothing is unclaimed or untrusted), unlocked
+features are locked again and nation effects that aren't unlocked anymore are turned off.
 
-If the command contains the {land} placeholder, the command will be executed for each land, which is part of the nation.
-````yaml
-      commands:
-        reached:
-          - 'say Nation {nation} just levelled up.'
-        down: []
-````
+# Placeholders
+
+See [PlaceholderAPI Placeholders](PlaceholderAPI-Placeholders.md): `%lands_land_level%`, `%lands_land_level_next%`,
+`%lands_land_level_cost%`, `%lands_land_level_ready%`, `%lands_land_level_title%` and the `nation` versions.
