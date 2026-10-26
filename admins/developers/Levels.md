@@ -49,8 +49,10 @@ public final class MyPlugin extends JavaPlugin {
 }
 ```
 
-* `retrieveValue` may be costly: Lands never calls it on the main thread and never waits for it there. Do the work off the
-  main thread and complete the future exceptionally on errors. A value that takes longer than 10 seconds counts as not met.
+* Lands calls `retrieveValue` on its own async threads, which saving and level-ups share, and never waits for it on the
+  main thread. Return quickly and don't block: run costly work on your own executor and return its future. Complete the
+  future exceptionally on errors. A value that takes longer than 10 seconds counts as not met (the work isn't
+  interrupted), and a failed value isn't retrieved again for menus and placeholders for a minute.
 * Lands caches values for 30 seconds for menus and placeholders, and retrieves them again before a level-up. When you know
   a value changed (e.g. a hopper was placed), call `LevelsHandler#invalidate(holder, "myplugin.hoppers")`.
 * `RequirementDefinition#getSection()` has the requirement's section, for your own options.
@@ -61,3 +63,7 @@ public final class MyPlugin extends JavaPlugin {
 Rewards work the same way: `LevelsHandler#registerRewardType(HolderType, String, RewardType)`. A reward's `onReach`
 runs when a land or nation reaches its level, `onLose` when an admin lowers the level below it. Rewards of all levels up
 to the current one apply, so a plugin can also check `holder.getLevel()` and the levels below it whenever it needs to.
+
+`onReach`, `onLose` and `MemberHolderLevelChangedEvent` only run on the server where the level changed: not on the other
+servers of a network (they load the new level from the database) and not when lands are loaded at startup. A reward that
+works per server (like permissions) should check the level instead.

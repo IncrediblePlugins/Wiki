@@ -20,8 +20,9 @@ The order of the levels in the file is ascending, from the lowest to the highest
 # Levels
 
 Each level's section name is its id, for example `town`. Lands stores the id for every land and nation, so **don't rename
-a level's section once lands reached it**. A land with a level that doesn't exist anymore gets the highest level (and keeps
-the stored id, in case you add the level again).
+a level's section once lands reached it**. A land with a level that doesn't exist anymore (renamed or removed) gets the
+level at the position it had, or the highest level if there are fewer levels now. It keeps the stored id, in case you add
+the level again.
 
 ```yaml
 land:
@@ -65,11 +66,11 @@ the value.
 
 | Requirement | Lands | Nations |
 | --- | --- | --- |
-| `members` | Trusted players. | Players of all lands of the nation, each player once. |
+| `members` | Players trusted in the whole land, the owner included. Players trusted only in a sub area, tenants and temporarily trusted players don't count, also not for `playtime` and `tenure`. | Players of all lands of the nation, each player once. |
 | `chunks` | Claims. | Claims of all lands. |
 | `age` | Days since the land was created. | Days since the nation was created. |
-| `playtime` | Hours all trusted players played together. On a network with Redis the playtime of all servers counts. | Same, for the players of all lands. |
-| `tenure` | Trusted players who are trusted for at least `days` days. Temporarily trusted players don't count. | Same, over all lands. |
+| `playtime` | Hours the members (see `members`) played together, also before they joined the land. On a network with Redis the playtime of all servers counts. | Same, for the players of all lands. |
+| `tenure` | Members (see `members`) who are trusted for at least `days` days. | Same, over all lands. |
 | `level_held` | Days since the current level was reached. | Same. |
 | `lands` | - | Lands of the nation, besides the capital. |
 
@@ -102,7 +103,9 @@ Other plugins add requirements under their own name:
 
 A requirement of a plugin that isn't installed is skipped (with a warning in the console).
 
-These plugins count blocks: a stacked spawner or hopper counts once, however many are stacked. BetterFarming loads the farms
+These plugins count the blocks placed in the claims right now: a stacked spawner or hopper counts once, however many
+are stacked. Blocks can be placed for the level-up and broken again afterward, so use them together with requirements
+that take time, like `tenure` or `level_held`. BetterFarming loads the farms
 of a world once its chunks were loaded, so right after a restart a land can have fewer farms counted than it has.
 
 ## Playtime on a Network
@@ -194,11 +197,16 @@ Commands run once, when a land or nation reaches the level (also if an admin set
 # Disabling Levels
 
 Set `land.enabled` or `nation.enabled` to `false`. The stored levels are kept, so enabling levels again gives every land its
-level back. While levels are disabled, no rewards apply and every feature is unlocked.
+level back. While levels are disabled, no rewards apply and every feature is unlocked. Nation effects that players already
+turned on stay on.
 
 Levels need the `player-limits.yml` file (instead of numbered permissions for limits).
 
 # Updating From an Older Version
+
+**Update all servers of a network at the same time**, and only start them once all run the new version. An older version
+can't read the converted `levels.yml` and doesn't store the level ids, so servers with different versions disagree about
+levels. Before converting, Lands copies the old file to `levels.yml.pre-9.0`; use it if you go back to an older version.
 
 A `levels.yml` from before levels were bought is converted when Lands starts:
 
@@ -207,6 +215,9 @@ A `levels.yml` from before levels were bought is converted when Lands starts:
   capital pays it alone, so check the nation costs.
 * `attributes` become `rewards`. Before, each level configured its total and only the current level counted. Now rewards
   add up, so each value becomes the difference to the level below.
+* Attributes without a reward are removed and listed in the console: a land level's `lands` (it was never applied) and
+  attributes of other plugins.
+* A level that didn't set an attribute counts as having the same value as the level below.
 * `commands.reached` become `commands`, with `<v:...>` placeholders. `commands.down` are removed (levels aren't lost
   anymore); the console lists the removed commands.
 
