@@ -20,16 +20,17 @@ Last logins and playtimes are the ones of the whole network: they're read from t
 on another server of the network isn't inactive. For players who weren't online since the update, the playerdata of
 this server is used.
 
-`owner-tiers_list` sets how long owners may be offline, by their playtime. Each entry is `'<playtime>: <offline time>'`:
+`owners.tiers_list` sets how long owners may be offline, by their playtime. Each entry is `'<playtime>: <offline time>'`:
 from this much playtime on, owners may be offline this long. `never` means they never count as inactive. The tier with
 the highest playtime the player reached applies.
 
 ```yaml
-owner-tiers_list:
-  - '0: 14d'     # everyone: 14 days
-  - '5h: 30d'    # from 5 hours of playtime on: 30 days
-  - '2d: 90d'    # from 2 days of playtime on: 90 days
-  - '7d: never'  # from 7 days of playtime on: never
+owners:
+  tiers_list:
+    - '0: 14d'     # everyone: 14 days
+    - '5h: 30d'    # from 5 hours of playtime on: 30 days
+    - '2d: 90d'    # from 2 days of playtime on: 90 days
+    - '7d: never'  # from 7 days of playtime on: never
 ```
 
 An empty list means owners don't expire.
@@ -38,7 +39,7 @@ Players whose playtime is unknown (0, e.g. their statistics file is missing) use
 veterans without data don't expire early. Members without playtime data don't get a land as active members, though.
 Players whose last login is unknown are decided by `unknown-players`, whatever their tier.
 
-`member-tiers_list` works the same way for members. Inactive members are untrusted from the land and all its areas. It's
+`members.member-tiers_list` works the same way for members. Inactive members are untrusted from the land and all its areas. It's
 empty by default, so members don't expire.
 
 If the playtime or last logins can't be read (e.g. the database is down), or some Lands data failed to load, the check
@@ -46,20 +47,21 @@ is skipped. Nothing is deleted then.
 
 # What Happens to the Land
 
-`owner-outcomes_list` decides what happens to the land of an inactive owner. The outcomes are tried in order, and the
+`owners.outcomes_list` decides what happens to the land of an inactive owner. The outcomes are tried in order, and the
 first that's possible happens:
 
 | Outcome | Effect |
 |---|---|
 | `transfer` | The land goes to the active member with the highest role (the one seen last first). Only members trusted in the whole land count, not tenants, temporary members or members of a sub area only. Only possible if one of them is active. |
-| `sell` | The land is put up for sale for `sale-duration_time`. If nobody buys it in that time, the next outcome happens. Not while the land is at war. See [Selling Lands](#selling-lands). |
+| `sell` | The land is put up for sale for `sale.duration_time`. If nobody buys it in that time, the next outcome happens. Not while the land is at war. See [Selling Lands](#selling-lands). |
 | `delete` | The land is deleted. Not if `keep-lands` keeps it. |
 
 ```yaml
-owner-outcomes_list:
-  - transfer
-  - sell
-  - delete
+owners:
+  outcomes_list:
+    - transfer
+    - sell
+    - delete
 ```
 
 The default is `transfer`, then `delete`. An empty list means nothing happens to the land, only members expire.
@@ -70,7 +72,7 @@ A deleted land's bank goes to its owner.
 
 ## Selling Lands
 
-With `sell` in `owner-outcomes_list`, the land of an inactive owner is put up for sale at the first check after the
+With `sell` in `owners.outcomes_list`, the land of an inactive owner is put up for sale at the first check after the
 owner became inactive. Players find these lands in `/lands rental list` (the type filter "Inactive owners" shows only
 them) and buy one by clicking it, or with `/lands rental buy` while standing in it (permission
 `lands.command.rental.buy`). The list says why the land is for sale and when it's deleted if nobody buys it.
@@ -78,7 +80,7 @@ them) and buy one by clicking it, or with `/lands rental buy` while standing in 
 Selling needs `land.rent.sell` to be enabled. Without it, `sell` is left out (the next outcome happens) and Lands logs a
 warning at the start.
 
-* The price is `sale-price` plus `sale-price-per-chunk` for each claimed chunk.
+* The price is `sale.price` plus `sale.price-per-chunk` for each claimed chunk.
 * The price and the land bank go to the old owner.
 * The buyer becomes the owner. All members are untrusted, except tenants of rented or sold areas: they keep what they
   rented or bought. The land's inbox tells who bought it.
@@ -86,7 +88,7 @@ warning at the start.
 * The buyer needs the same as for buying a land with a sell sign: they must be able to own another land in its world,
   and the land's owner must not have changed too recently (`land.setowner.owner-change-cooldown`).
 * A land that `keep-lands` keeps stays for sale until someone buys it, since it can't be deleted after the sale.
-* `sale-duration_time` (default `14d`) is how long the land is for sale, from the check that put it up for sale. After
+* `sale.duration_time` (default `14d`) is how long the land is for sale, from the check that put it up for sale. After
   that, the next outcome happens, e.g. `delete`. A land is always put up for sale first, also if its owner has been
   inactive for longer (e.g. expiration was turned on later). `0`, or `sell` as the last outcome, means it's for sale until someone buys it.
 * The sale ends if the owner logs in, or if a member becomes active and `transfer` comes before `sell`.
@@ -119,16 +121,16 @@ its capital if none of its lands is active.
 
 # When Lands Are Checked
 
-`check-mode` sets when lands are checked:
+`check.frequency` sets when lands are checked:
 
 | Value | Checks |
 |---|---|
-| `daily` | At `check-time` (24h, server time zone, default `04:00`) on `check-days_list` (weekday names, e.g. `monday`; empty = every day). |
-| `interval` | Every `check-interval_time` (e.g. `6h`). The first check is one interval after the start. |
+| `daily` | At `check.daily-time` (24h, server time zone, default `04:00`) on `check.daily-days_list` (weekday names, e.g. `monday`; empty = every day). |
+| `interval` | Every `check.interval_time` (e.g. `6h`). The first check is one interval after the start. |
 | `manual` | Only with `/lands admin expiration run`. |
 
 `daily` is the default: lands are deleted at a known time, the same for everyone, so nobody can wait for a land to
-disappear to claim its area first. Changing `check-mode` requires a restart.
+disappear to claim its area first. Changing `check.frequency` requires a restart.
 
 A land that becomes due is acted on at the first check from then on.
 
@@ -178,10 +180,10 @@ on again, so you can review them:
 
 | Old | New |
 |---|---|
-| `owner_list` | `owner-tiers_list`, with the same behavior. `'15m:7d', '30m:14d'` ("up to 15m playtime: 7d, up to 30m: 14d, more: 14d") becomes `'0: 7d', '15m: 14d'`. |
-| `member_list` | `member-tiers_list`, the same way. |
-| `replace-owner` | `owner-outcomes_list`: `transfer`, `delete` (true) or `delete` (false). Empty if `owner_list` was empty. |
+| `owner_list` | `owners.tiers_list`, with the same behavior. `'15m:7d', '30m:14d'` ("up to 15m playtime: 7d, up to 30m: 14d, more: 14d") becomes `'0: 7d', '15m: 14d'`. |
+| `member_list` | `members.member-tiers_list`, the same way. |
+| `replace-owner` | `owners.outcomes_list`: `transfer`, `delete` (true) or `delete` (false). Empty if `owner_list` was empty. |
 | `delete-invalid` | `unknown-players: inactive` (true) or `ignore` (false). |
 | `no-claims` (days) | `empty-lands_time` (e.g. `7d`). |
 
-Updated servers get `check-mode: interval`, since lands were checked every 6 hours before. Consider `daily`.
+Updated servers get `check.frequency: interval`, since lands were checked every 6 hours before. Consider `daily`.
