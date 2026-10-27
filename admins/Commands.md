@@ -19,7 +19,6 @@ Nested commands add the full path:
 | `/lands admin reload` | Reloads Lands config, roles, events, and player data cache. Of `levels.yml` only the on/off options, sounds and farm multipliers; changed levels need a restart. | `lands.admin.command.reload` |
 | `/lands admin expiration list [time]` | Lists the lands that are deleted or transferred by [expiration](configuration/Expiration.md) within the time (default `7d`). | `lands.admin.command.expiration.list` |
 | `/lands admin expiration run` | Checks the lands for expiration now. In preview, it only shows what would happen. | `lands.admin.command.expiration.run` |
-| `/lands admin deleteinactive` | The old name of `/lands admin expiration run`. | `lands.admin.command.deleteinactive` |
 | `/lands admin limits` | Opens limit pack tools. | `lands.admin.command.limits` |
 | `/lands admin limits refresh` | Refreshes player limit packs. | `lands.admin.command.limits.refresh` |
 | `/lands admin limits migrate confirm` | Migrates old numbered limit permissions to `player-limits.yml`. | `lands.admin.command.limits.migrate` |

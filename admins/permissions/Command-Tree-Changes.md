@@ -58,6 +58,10 @@ manage permissions by hand, read this before assuming your old permission setup 
   - The bare `land`/`nation` group action no longer accepts a `<player>` argument to open it for
     someone else (every page *beneath* them still does, e.g. `/lands menu land level <player>`) -
     staff should use `/lands admin land <land> menu` for that instead.
+- `/lands admin deleteinactive` (`lands.admin.command.deleteinactive`) is gone: it's
+  `/lands admin expiration run` now (`lands.admin.command.expiration.run`), next to
+  `/lands admin expiration list`, which shows the lands that expire soon. See
+  [Land Expiration](../configuration/Expiration.md).
 
 # `/lands edit`
 

@@ -171,7 +171,6 @@ Players without any land who weren't online for 180 days are deleted from the La
 |---|---|---|
 | `/lands admin expiration list [time]` | Lands that are deleted or transferred within the time (default `7d`), the soonest first, and lands that are kept although they expired. | `lands.admin.command.expiration.list` |
 | `/lands admin expiration run` | Checks the lands now, like a scheduled check. In preview, it only shows what would happen. | `lands.admin.command.expiration.run` |
-| `/lands admin deleteinactive` | The old name of `/lands admin expiration run`. | `lands.admin.command.deleteinactive` |
 
 `lands.admin.command.expiration` gives both `list` and `run`.
 
