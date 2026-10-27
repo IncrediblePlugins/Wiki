@@ -67,8 +67,9 @@ A deleted land's bank goes to its owner.
 ## Selling Lands
 
 With `sell` in `owner-outcomes_list`, the land of an inactive owner is put up for sale at the first check after the
-owner became inactive. Players list the lands for sale with `/lands buy` and buy one with `/lands buy <land>`
-(permission `lands.command.buy`).
+owner became inactive. Players find these lands in `/lands rental list` (the type filter "Inactive owners" shows only
+them) and buy one by clicking it, or with `/lands rental buy <land>` (permission `lands.command.rental.buy`). The list
+says why the land is for sale and when it's deleted if nobody buys it.
 
 * The price is `sale-price` plus `sale-price-per-chunk` for each claimed chunk.
 * The price and the land bank go to the old owner.

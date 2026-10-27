@@ -34,7 +34,6 @@ which of your own lands a command applies to when you're trusted in more than on
 | `/lands help [page]` | `lands.command.help` | Shows command help. |
 | `/lands create [name] [tag]` | `lands.command.create` | Feature and cost settings can still block creation. |
 | `/lands edit <land>` | `lands.command.edit` | Picks which of your own lands the commands below apply to. Requires being trusted in at least two lands (or the `lands.admin.command.edit` bypass). |
-| `/lands buy [land]` | `lands.command.buy` | Lists the lands of inactive owners that are for sale, or buys one. Only registered if `sell` is in `land.expiration.owner-outcomes_list`. See [Land Expiration](../configuration/Expiration.md#selling-lands). |
 | `/claim` | `lands.command.claim` | Shortcut: creates and claims a land named after the player. |
 | `/lands claim` | `lands.command.claim` | Same command, reached from under `/lands`. With zero lands, auto-creates one named after you, same as `/claim`. |
 | `/lands claim merge <land>` | `lands.command.claim.merge` | Merges another land into your edit land. |
@@ -72,6 +71,7 @@ which of your own lands a command applies to when you're trusted in more than on
 | `/lands rental cancel` | `lands.command.rental.cancel` | Cancels your rental as a tenant. Only registered if rentals are enabled. |
 | `/lands rental info` | `lands.command.rental.info` | Only registered if rentals are enabled. |
 | `/lands rental list` | `lands.command.rental.list` | Teleporting to rentable offers also uses `lands.teleport.rentable`. |
+| `/lands rental buy [land] [area]` | `lands.command.rental.buy` | Buys a sub area or land with a sell offer, or the land of an inactive owner that's for sale (see [Land Expiration](../configuration/Expiration.md#selling-lands)), after a confirmation. Without arguments, what's for sale where you stand. `/lands rental` is also registered without rentals if `sell` is in `land.expiration.owner-outcomes_list`. |
 | `/lands camp` | `lands.command.camp` | Opens your camp, or creates one if you don't have one. Only registered if camps are enabled. |
 | `/lands chat <message>` | `lands.command.chat` | Sends or toggles land chat for your edit land. |
 | `/lands delete` | `lands.command.delete` | Requires confirmation. |

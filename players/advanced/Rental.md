@@ -4,7 +4,9 @@ Lands can let players rent or buy areas. Servers can offer rentals through a sig
 
 Use `/lands rental list` to see areas and lands that can be rented or bought.
 
-The menu can filter and sort offers. Depending on your server settings, you may also be able to teleport to an offer from the list.
+The menu can filter and sort offers: everything, offers to rent, offers to buy, and lands of inactive owners. Depending on your server settings, you may also be able to teleport to an offer from the list.
+
+Some servers put the lands of inactive owners up for sale. They're listed with why they're for sale and when they're deleted if nobody buys them. Click one to buy it.
 
 # Rent an Area
 
@@ -16,9 +18,15 @@ While renting, you are treated as the tenant of that area. The area owner cannot
 
 # Buy an Area or Land
 
-Click the sell sign or hologram.
+Click the sell sign or hologram, or use `/lands rental buy`:
 
-Subareas can be sold. Whole lands can also be sold if the offer is set on the default area.
+* `/lands rental buy` buys what's for sale where you stand.
+* `/lands rental buy <land>` buys a whole land.
+* `/lands rental buy <land> <area>` buys a subarea.
+
+The command shows the price and asks you to confirm first.
+
+Subareas can be sold. Whole lands can also be sold if the offer is set on the default area. When you buy the land of an inactive owner, its members are untrusted.
 
 # Cancel Your Rental
 
