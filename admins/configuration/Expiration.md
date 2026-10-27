@@ -35,7 +35,8 @@ owner-tiers_list:
 An empty list means owners don't expire.
 
 Players whose playtime is unknown (0, e.g. their statistics file is missing) use the tier with the highest playtime, so
-veterans without data don't expire early.
+veterans without data don't expire early. Members without playtime data don't get a land as active members, though.
+Players whose last login is unknown are decided by `unknown-players`, whatever their tier.
 
 `member-tiers_list` works the same way for members. Inactive members are untrusted from the land and all its areas. It's
 empty by default, so members don't expire.
@@ -84,6 +85,7 @@ warning at the start.
 * A sold land leaves its nation. A sold capital passes the capital on first, like a deleted one (see below).
 * The buyer needs the same as for buying a land with a sell sign: they must be able to own another land in its world,
   and the land's owner must not have changed too recently (`land.setowner.owner-change-cooldown`).
+* A land that `keep-lands` keeps stays for sale until someone buys it, since it can't be deleted after the sale.
 * `sale-duration_time` (default `14d`) is how long the land is for sale, from the check that put it up for sale. After
   that, the next outcome happens, e.g. `delete`. A land is always put up for sale first, also if its owner has been
   inactive for longer (e.g. expiration was turned on later). `0`, or `sell` as the last outcome, means it's for sale until someone buys it.
