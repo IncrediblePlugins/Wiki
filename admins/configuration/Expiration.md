@@ -2,17 +2,26 @@
 
 Lands can untrust inactive members, give the land of an inactive owner to an active member, put it up for sale, or delete it.
 
-These settings are in `config.yml` under `land.expiration`. Expiration is off by default.
+These settings are in `config.yml` under `land.expiration`.
 
-Take a database backup before turning expiration on. A deleted land can't be restored without one.
+Take a database backup before setting the status to `active`. A deleted land can't be restored without one.
+
+# Status
+
+`status` decides whether expiration runs:
+
+| Value | Effect |
+|---|---|
+| `off` | Nothing expires, nothing is shown. |
+| `preview` | The default. The checks only log what would happen, nothing is done. Members see in the land menu when their land would expire. |
+| `active` | Lands and members expire. |
 
 # Quick Start
 
 1. Back up the database.
-2. Set `land.expiration.enabled_23` to `true` and keep `preview` on `true`. Restart.
-3. Check what would happen: `/lands admin expiration list` and `/lands admin expiration run`. In preview, both only
-   show and log it.
-4. Adjust the tiers until the list looks right, then set `preview` to `false` and restart.
+2. Keep `status: preview`. Check what would happen: `/lands admin expiration list` and `/lands admin expiration run`
+   only show and log it.
+3. Adjust the tiers until the list looks right, then set `status: active` and restart.
 
 # How Players Count as Inactive
 
@@ -54,7 +63,7 @@ first that's possible happens:
 |---|---|
 | `transfer` | The land goes to the active member with the highest role (the one seen last first). Only members trusted in the whole land count, not tenants, temporary members or members of a sub area only. Only possible if one of them is active. |
 | `sell` | The land is put up for sale for `sale.duration_time`. If nobody buys it in that time, the next outcome happens. Not while the land is at war. See [Selling Lands](#selling-lands). |
-| `delete` | The land is deleted. Not if `keep-lands` keeps it. |
+| `delete` | The land is deleted. Not while it's at war: then nothing happens until the war is over. Lands with rented or sold areas and lands with a KotH arena are deleted like others. |
 
 ```yaml
 owners:
@@ -87,7 +96,7 @@ warning at the start.
 * A sold land leaves its nation. A sold capital passes the capital on first, like a deleted one (see below).
 * The buyer needs the same as for buying a land with a sell sign: they must be able to own another land in its world,
   and the land's owner must not have changed too recently (`land.setowner.owner-change-cooldown`).
-* A land that `keep-lands` keeps stays for sale until someone buys it, since it can't be deleted after the sale.
+* A land at war when its sale ends stays for sale until someone buys it, since it can't be deleted then.
 * `sale.duration_time` (default `14d`) is how long the land is for sale, from the check that put it up for sale. After
   that, the next outcome happens, e.g. `delete`. A land is always put up for sale first, also if its owner has been
   inactive for longer (e.g. expiration was turned on later). `0`, or `sell` as the last outcome, means it's for sale until someone buys it.
@@ -102,16 +111,10 @@ If a capital is deleted or sold, another land of the nation with an active owner
 only lands that reached the capital level of `levels.yml`; the highest level first). The nation is only deleted with
 its capital if none of its lands is active.
 
-## Lands That Aren't Deleted
+## Lands at War
 
-`keep-lands` protects lands from deletion. They're only logged, but may still get a new owner or be sold:
-
-| Option | Lands that are kept |
-|---|---|
-| `keep-lands.at-war` | Lands at war. |
-| `keep-lands.with-tenants` | Lands with rented or sold areas, so tenants don't lose what they paid for. |
-| `keep-lands.with-koth-arena` | Lands with a KotH arena. |
-| `keep-lands.from-level` | Lands from this level of `levels.yml` on (its id, e.g. `town`). Empty: no level. |
+A land at war isn't deleted, only logged: the war would end. It may still get a new owner. Admin lands and camps never
+expire.
 
 ## Bypasses and Shields
 
@@ -125,8 +128,8 @@ its capital if none of its lands is active.
 
 | Value | Checks |
 |---|---|
-| `daily` | At `check.daily-time` (24h, server time zone, default `04:00`) on `check.daily-days_list` (weekday names, e.g. `monday`; empty = every day). |
-| `interval` | Every `check.interval_time` (e.g. `6h`). The first check is one interval after the start. |
+| `daily` | Every day at `check.daily.time` (24h, server time zone, default `04:00`), or only on the weekdays in `check.daily.days_list` (e.g. `[ monday, thursday ]`). |
+| `interval` | Every `check.interval_time` (e.g. `6h`) after the server started. The first check runs one interval after the start. |
 | `manual` | Only with `/lands admin expiration run`. |
 
 `daily` is the default: lands are deleted at a known time, the same for everyone, so nobody can wait for a land to
@@ -146,7 +149,7 @@ warnings off.
 The warning ends by itself once the owner logs in.
 
 The land menu and the land info menu show an "Inactivity" item: when the land is deleted or transferred, or why it
-isn't. Members who may edit the land settings and admins see it. With `show-to-strangers: true`, every player sees it.
+isn't. Members who may edit the land settings and admins see it. With `show-to-untrusted: true`, every player sees it.
 It isn't shown to others by default, since it tells when the owner was last online.
 
 PlaceholderAPI: `%lands_land_expiration%`, `%lands_land_expiration_date%` and `%lands_land_expiration_action%`. See
@@ -156,10 +159,9 @@ PlaceholderAPI: `%lands_land_expiration%`, `%lands_land_expiration_date%` and `%
 
 | Option | Description |
 |---|---|
-| `preview` | Only log what would happen, and show it in `/lands admin expiration list`, without doing it. On by default. |
-| `empty-lands_time` | Lands without claims are deleted once they're this old. `0` = never. Only if `land.creation.claim-radius` is larger than `-1`. Lands of online owners aren't deleted. |
+| `empty-lands_time` | Lands without any claims are deleted once they're this old, e.g. lands whose owner never claimed land after creating it. `0` = never. Lands of online owners aren't deleted. |
 | `unknown-players` | Players whose last login is unknown (e.g. the playerdata folder was deleted): `ignore` (they never count as inactive) or `inactive`. With `inactive`, deleting the playerdata folder **may delete all affected lands**. |
-| `show-to-strangers` | Players who aren't trusted in a land see when it's deleted. Off by default. |
+| `show-to-untrusted` | Players who aren't trusted in a land see when it expires. Off by default. |
 
 Players without any land who weren't online for 180 days are deleted from the Lands database too, if no tiers are set.
 
@@ -175,8 +177,8 @@ Players without any land who weren't online for 180 days are deleted from the La
 
 # Updating From the Old Options
 
-The old options (before the rework) are converted when you update, and **expiration is turned off** until you turn it
-on again, so you can review them:
+The old options (before the rework) are converted when you update, and **expiration only runs in preview** until you
+set `status: active`, so you can review them:
 
 | Old | New |
 |---|---|
@@ -184,6 +186,6 @@ on again, so you can review them:
 | `member_list` | `members.member-tiers_list`, the same way. |
 | `replace-owner` | `owners.outcomes_list`: `transfer`, `delete` (true) or `delete` (false). Empty if `owner_list` was empty. |
 | `delete-invalid` | `unknown-players: inactive` (true) or `ignore` (false). |
-| `no-claims` (days) | `empty-lands_time` (e.g. `7d`). |
+| `no-claims` (days) | `empty-lands_time` (e.g. `7d`). Only if `land.creation.claim-radius` wasn't `-1`, where `no-claims` had no effect. |
 
 Updated servers get `check.frequency: interval`, since lands were checked every 6 hours before. Consider `daily`.
