@@ -148,9 +148,11 @@ warnings off.
 
 The warning ends by itself once the owner logs in.
 
-The land menu and the land info menu show an "Inactivity" item: when the land is deleted or transferred, or why it
-isn't. Members who may edit the land settings and admins see it. With `show-to-untrusted: true`, every player sees it.
-It isn't shown to others by default, since it tells when the owner was last online.
+The land menu and the land info menu show an "Inactivity" item when something happens to the land soon: within
+`warn-before` (3 days if that's `0`), or while it's for sale. It says when the land is deleted, transferred or put up
+for sale. It isn't shown while the owner is online, since their offline time only starts once they log out. Members who
+may edit the land settings and admins see it. With `show-to-untrusted: true`, every player sees it. It isn't shown to
+others by default, since it tells when the owner was last online.
 
 PlaceholderAPI: `%lands_land_expiration%`, `%lands_land_expiration_date%` and `%lands_land_expiration_action%`. See
 [PlaceholderAPI Placeholders](PlaceholderAPI-Placeholders.md).
@@ -169,7 +171,7 @@ Players without any land who weren't online for 180 days are deleted from the La
 
 | Command | Description | Permission |
 |---|---|---|
-| `/lands admin expiration list [time]` | Lands that are deleted or transferred within the time (default `7d`), the soonest first, and lands that are kept although they expired. | `lands.admin.command.expiration.list` |
+| `/lands admin expiration list [duration]` | Lands that are deleted or transferred within the duration (default `7d`), the soonest first, and lands that are kept although they expired. | `lands.admin.command.expiration.list` |
 | `/lands admin expiration run` | Checks the lands now, like a scheduled check. In preview, it only shows what would happen. | `lands.admin.command.expiration.run` |
 
 `lands.admin.command.expiration` gives both `list` and `run`.

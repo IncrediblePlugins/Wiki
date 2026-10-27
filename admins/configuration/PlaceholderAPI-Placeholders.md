@@ -144,10 +144,11 @@ Only for members who may edit the land settings, unless `land.expiration.show-to
 [Land Expiration](Expiration.md).
 
 `%lands_land_expiration_date%`\
-When the land is deleted or transferred because of inactivity.
+When the land is deleted, transferred or put up for sale because of inactivity. Empty while the owner is online.
 
 `%lands_land_expiration_action%`\
-What happens to the land because of inactivity: `never`, `protected`, `transfer`, `sell` or `delete`.
+What happens to the land because of inactivity: `never`, `online` (the owner is online, the time starts once they
+log out), `protected`, `transfer`, `sell` or `delete`.
 
 `%lands_land_balance%`\
 The balance of the land bank.
