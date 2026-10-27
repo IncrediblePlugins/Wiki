@@ -18,13 +18,8 @@ While renting, you are treated as the tenant of that area. The area owner cannot
 
 # Buy an Area or Land
 
-Click the sell sign or hologram, or use `/lands rental buy`:
-
-* `/lands rental buy` buys what's for sale where you stand.
-* `/lands rental buy <land>` buys a whole land.
-* `/lands rental buy <land> <area>` buys a subarea.
-
-The command shows the price and asks you to confirm first.
+Click the sell sign or hologram, or stand inside the area or land and use `/lands rental buy`. The command shows the
+price and asks you to confirm first.
 
 Subareas can be sold. Whole lands can also be sold if the offer is set on the default area. When you buy the land of an inactive owner, its members are untrusted.
 

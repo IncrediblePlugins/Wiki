@@ -71,7 +71,7 @@ which of your own lands a command applies to when you're trusted in more than on
 | `/lands rental cancel` | `lands.command.rental.cancel` | Cancels your rental as a tenant. Only registered if rentals are enabled. |
 | `/lands rental info` | `lands.command.rental.info` | Only registered if rentals are enabled. |
 | `/lands rental list` | `lands.command.rental.list` | Teleporting to rentable offers also uses `lands.teleport.rentable`. |
-| `/lands rental buy [land] [area]` | `lands.command.rental.buy` | Buys a sub area or land with a sell offer, or the land of an inactive owner that's for sale (see [Land Expiration](../configuration/Expiration.md#selling-lands)), after a confirmation. Without arguments, what's for sale where you stand. `/lands rental` is also registered without rentals if `sell` is in `land.expiration.owner-outcomes_list`. |
+| `/lands rental buy` | `lands.command.rental.buy` | Buys what's for sale where you stand, after a confirmation: a sub area or land with a sell offer, or the land of an inactive owner (see [Land Expiration](../configuration/Expiration.md#selling-lands)). Only registered if selling is enabled (`land.rent.sell`). |
 | `/lands camp` | `lands.command.camp` | Opens your camp, or creates one if you don't have one. Only registered if camps are enabled. |
 | `/lands chat <message>` | `lands.command.chat` | Sends or toggles land chat for your edit land. |
 | `/lands delete` | `lands.command.delete` | Requires confirmation. |

@@ -63,7 +63,7 @@ Some commands only exist if your server enabled that feature. Your server may al
 | `/lands rental cancel` | Cancels your rental while standing inside the rented area. |
 | `/lands rental info` | Shows rent or sell information for the area you are standing in. |
 | `/lands rental list` | Opens the rent and sell offers menu. |
-| `/lands rental buy [land] [area]` | Buys a subarea or land that's for sale, or what's for sale where you stand. |
+| `/lands rental buy` | Buys the subarea or land you're standing in, if it's for sale. |
 | `/lands camp` | Opens your camp, or creates a new one if you don't have one yet, if camps are enabled. |
 | `/lands chat` | Toggles land chat mode for your edit land. |
 | `/lands chat <message>` | Sends a message to your edit land's chat without changing chat mode. |
