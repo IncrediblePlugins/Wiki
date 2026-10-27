@@ -34,6 +34,7 @@ which of your own lands a command applies to when you're trusted in more than on
 | `/lands help [page]` | `lands.command.help` | Shows command help. |
 | `/lands create [name] [tag]` | `lands.command.create` | Feature and cost settings can still block creation. |
 | `/lands edit <land>` | `lands.command.edit` | Picks which of your own lands the commands below apply to. Requires being trusted in at least two lands (or the `lands.admin.command.edit` bypass). |
+| `/lands buy [land]` | `lands.command.buy` | Lists the lands of inactive owners that are for sale, or buys one. Only registered if `sell` is in `land.expiration.owner-outcomes_list`. See [Land Expiration](../configuration/Expiration.md#selling-lands). |
 | `/claim` | `lands.command.claim` | Shortcut: creates and claims a land named after the player. |
 | `/lands claim` | `lands.command.claim` | Same command, reached from under `/lands`. With zero lands, auto-creates one named after you, same as `/claim`. |
 | `/lands claim merge <land>` | `lands.command.claim.merge` | Merges another land into your edit land. |

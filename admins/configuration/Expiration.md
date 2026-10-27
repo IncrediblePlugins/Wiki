@@ -1,6 +1,6 @@
 # Land Expiration and Cleanup
 
-Lands can untrust inactive members, give the land of an inactive owner to an active member, or delete it.
+Lands can untrust inactive members, give the land of an inactive owner to an active member, put it up for sale, or delete it.
 
 These settings are in `config.yml` under `land.expiration`. Expiration is off by default.
 
@@ -20,12 +20,12 @@ Last logins and playtimes are the ones of the whole network: they're read from t
 on another server of the network isn't inactive. For players who weren't online since the update, the playerdata of
 this server is used.
 
-`owner-tiers` sets how long owners may be offline, by their playtime. Each entry is `'<playtime>: <offline time>'`:
+`owner-tiers_list` sets how long owners may be offline, by their playtime. Each entry is `'<playtime>: <offline time>'`:
 from this much playtime on, owners may be offline this long. `never` means they never count as inactive. The tier with
 the highest playtime the player reached applies.
 
 ```yaml
-owner-tiers:
+owner-tiers_list:
   - '0: 14d'     # everyone: 14 days
   - '5h: 30d'    # from 5 hours of playtime on: 30 days
   - '2d: 90d'    # from 2 days of playtime on: 90 days
@@ -34,7 +34,7 @@ owner-tiers:
 
 An empty list means owners don't expire.
 
-`member-tiers` works the same way for members. Inactive members are untrusted from the land and all its areas. It's
+`member-tiers_list` works the same way for members. Inactive members are untrusted from the land and all its areas. It's
 empty by default, so members don't expire.
 
 If the playtime or last logins can't be read (e.g. the database is down), or some Lands data failed to load, the check
@@ -42,27 +42,57 @@ is skipped. Nothing is deleted then.
 
 # What Happens to the Land
 
-`owner-action` decides what happens to the land of an inactive owner:
+`owner-outcomes_list` decides what happens to the land of an inactive owner. The outcomes are tried in order, and the
+first that's possible happens:
 
-| Value | Effect |
+| Outcome | Effect |
 |---|---|
-| `transfer` | The land goes to the active member with the highest role (the one seen last first). Only members trusted in the whole land count, not tenants, temporary members or members of a sub area only. If no member who could own it is active, it's deleted. |
-| `delete` | The land is deleted. |
-| `none` | Nothing happens to the land. Only members expire. |
+| `transfer` | The land goes to the active member with the highest role (the one seen last first). Only members trusted in the whole land count, not tenants, temporary members or members of a sub area only. Only possible if one of them is active. |
+| `sell` | The land is put up for sale for `sale-duration_time`. If nobody buys it in that time, the next outcome happens. Not while the land is at war. See [Selling Lands](#selling-lands). |
+| `delete` | The land is deleted. Not if `keep-lands` keeps it. |
+
+```yaml
+owner-outcomes_list:
+  - transfer
+  - sell
+  - delete
+```
+
+The default is `transfer`, then `delete`. An empty list means nothing happens to the land, only members expire.
 
 The old owner is untrusted after a transfer. A member who already owns as many lands as their limit allows is skipped.
 
 A deleted land's bank goes to its owner.
 
+## Selling Lands
+
+With `sell` in `owner-outcomes_list`, the land of an inactive owner is put up for sale at the first check after the
+owner became inactive. Players list the lands for sale with `/lands buy` and buy one with `/lands buy <land>`
+(permission `lands.command.buy`).
+
+* The price is `sale-price` plus `sale-price-per-chunk` for each claimed chunk.
+* The price and the land bank go to the old owner.
+* The buyer becomes the owner. All members are untrusted, except tenants of rented or sold areas: they keep what they
+  rented or bought. The land's inbox tells who bought it.
+* A sold land leaves its nation. A sold capital passes the capital on first, like a deleted one (see below).
+* The buyer needs the same as for buying a land with a sell sign: they must be able to own another land in its world,
+  and the land's owner must not have changed too recently (`land.setowner.owner-change-cooldown`).
+* `sale-duration_time` (default `14d`) is how long the land is for sale. After that, the next outcome happens, e.g.
+  `delete`. `0`, or `sell` as the last outcome, means it's for sale until someone buys it.
+* The sale ends if the owner logs in, or if a member becomes active and `transfer` comes before `sell`.
+* In preview, lands aren't for sale.
+
+Players can only buy lands of the server they're on.
+
 ## Nation Capitals
 
-If a capital is deleted, another land of the nation with an active owner becomes the capital first (not a vassal, and
+If a capital is deleted or sold, another land of the nation with an active owner becomes the capital first (not a vassal, and
 only lands that reached the capital level of `levels.yml`; the highest level first). The nation is only deleted with
 its capital if none of its lands is active.
 
 ## Lands That Aren't Deleted
 
-`keep-lands` protects lands from deletion. They're only logged, but may still get a new owner:
+`keep-lands` protects lands from deletion. They're only logged, but may still get a new owner or be sold:
 
 | Option | Lands that are kept |
 |---|---|
@@ -83,7 +113,7 @@ its capital if none of its lands is active.
 
 | Value | Checks |
 |---|---|
-| `daily` | At `check-time` (24h, server time zone, default `04:00`) on `check-days` (weekday names, e.g. `monday`; empty = every day). |
+| `daily` | At `check-time` (24h, server time zone, default `04:00`) on `check-days_list` (weekday names, e.g. `monday`; empty = every day). |
 | `interval` | Every `check-interval_time` (e.g. `6h`). The first check is one interval after the start. |
 | `manual` | Only with `/lands admin expiration run`. |
 
@@ -94,7 +124,7 @@ A land that becomes due is acted on at the first check from then on.
 
 # Warnings and Where Players See It
 
-`warn-before_time` (default `3d`) is how long before a land is deleted or transferred its members are told. `0` turns
+`warn-before_time` (default `3d`) is how long before a land is deleted, transferred or put up for sale its members are told. `0` turns
 warnings off.
 
 * The land gets an inbox message when the warning time begins.
@@ -138,9 +168,9 @@ on again, so you can review them:
 
 | Old | New |
 |---|---|
-| `owner_list` | `owner-tiers`, with the same behavior. `'15m:7d', '30m:14d'` ("up to 15m playtime: 7d, up to 30m: 14d, more: 14d") becomes `'0: 7d', '15m: 14d'`. |
-| `member_list` | `member-tiers`, the same way. |
-| `replace-owner` | `owner-action: transfer` (true) or `delete` (false). `none` if `owner_list` was empty. |
+| `owner_list` | `owner-tiers_list`, with the same behavior. `'15m:7d', '30m:14d'` ("up to 15m playtime: 7d, up to 30m: 14d, more: 14d") becomes `'0: 7d', '15m: 14d'`. |
+| `member_list` | `member-tiers_list`, the same way. |
+| `replace-owner` | `owner-outcomes_list`: `transfer`, `delete` (true) or `delete` (false). Empty if `owner_list` was empty. |
 | `delete-invalid` | `unknown-players: inactive` (true) or `ignore` (false). |
 | `no-claims` (days) | `empty-lands_time` (e.g. `7d`). |
 

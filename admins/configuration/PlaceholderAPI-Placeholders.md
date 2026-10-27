@@ -147,7 +147,7 @@ Only for members who may edit the land settings, unless `land.expiration.show-to
 When the land is deleted or transferred because of inactivity.
 
 `%lands_land_expiration_action%`\
-What happens to the land because of inactivity: `never`, `protected`, `transfer` or `delete`.
+What happens to the land because of inactivity: `never`, `protected`, `transfer`, `sell` or `delete`.
 
 `%lands_land_balance%`\
 The balance of the land bank.
