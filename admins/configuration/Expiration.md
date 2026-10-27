@@ -177,8 +177,9 @@ Players without any land who weren't online for 180 days are deleted from the La
 
 # Updating From the Old Options
 
-The old options (before the rework) are converted when you update, and **expiration only runs in preview** until you
-set `status: active`, so you can review them:
+The old options (before the rework) are converted when you update. If you used expiration (owner or member entries,
+or `no-claims`), it **only runs in preview** until you set `status: active`, so you can review them. Otherwise it's
+`off`, like before:
 
 | Old | New |
 |---|---|
