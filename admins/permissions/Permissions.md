@@ -63,7 +63,7 @@ Example with LuckPerms: `/lp group default permission set lands.teleport.sub_are
 | `lands.bypass.encirclement` | Bypass encirclement prevention. |
 | `lands.bypass.member.untrust` | Untrust players or remove invites in other players' lands. |
 | `lands.bypass.spawn.private` | Teleport to private land spawns. |
-| `lands.bypass.expiration` | Bypass land expiration. Requires LuckPerms support. |
+| `lands.bypass.expiration` | Never count as inactive for land expiration. For offline players, this needs LuckPerms. |
 | `lands.bypass.priority` | Ignore role priority checks when managing members or roles. |
 | `lands.bypass.wilderness.worldedit` | Use WorldEdit in worlds protected by wilderness restrictions. |
 

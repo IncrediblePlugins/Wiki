@@ -25,7 +25,7 @@ Useful Lands settings:
 | `land.claimblock.refund` | Return claim blocks when claim-block chunks are unclaimed. |
 | `upkeep.unclaim` | Unclaim chunks if a land cannot pay upkeep. |
 | `land.leave-unclaim` | Unclaim chunks supplied by a member who leaves when the owner no longer has enough claim limit. |
-| `land.expiration` | Remove inactive members, replace inactive owners, or delete inactive lands. |
+| `land.expiration` | Untrust inactive members, give the land of an inactive owner to an active member, or delete it. |
 
 # Admin Notes
 

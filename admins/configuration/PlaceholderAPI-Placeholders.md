@@ -138,6 +138,17 @@ Amount of members of the land that are online.
 `%lands_land_members_online%`\
 Names of the land members that are currently online.
 
+`%lands_land_expiration%`\
+What happens to the land because of inactivity, and when. Example: Deleted on 11/03/2026 04:00 AM, unless the owner logs in (`general.date-format.general`).
+Only for members who may edit the land settings, unless `land.expiration.show-to-strangers` is on. See
+[Land Expiration](Expiration.md).
+
+`%lands_land_expiration_date%`\
+When the land is deleted or transferred because of inactivity.
+
+`%lands_land_expiration_action%`\
+What happens to the land because of inactivity: `never`, `protected`, `transfer` or `delete`.
+
 `%lands_land_balance%`\
 The balance of the land bank.
 
