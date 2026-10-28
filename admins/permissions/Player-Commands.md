@@ -54,6 +54,7 @@ which of your own lands a command applies to when you're trusted in more than on
 | `/lands view disable` | `lands.command.view` | Inherits the `/lands view` permission. |
 | `/lands selection` | `lands.command.selection` | Selection size is controlled by limits. |
 | `/lands selection expand [y-min] [y-max]` | `lands.command.selection` | Inherits the `/lands selection` permission. |
+| `/lands selection assign <area>` | `lands.command.selection.assign` | Same command as `/assign <area>`: assigns your current selection to an existing area, or creates the area first. |
 | `/lands info player <player>` | `lands.command.info.player` | Shows information about a player. |
 | `/lands info land <land>` | `lands.command.info.land` | Shows information about a land. |
 | `/lands confirmtp` | `lands.command.confirmtp` | Confirms unsafe teleport destinations. |
