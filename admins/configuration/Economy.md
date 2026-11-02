@@ -49,7 +49,7 @@ Useful commands:
 * `/lands admin land <land or all> bank set <amount>`
 * `/lands admin land <land or all> bank modify <amount>`
 
-Withdraws require the role flag `BALANCE_WITHDRAW`.
+Deposits require the role flag `BALANCE_DEPOSIT`, withdraws the role flag `BALANCE_WITHDRAW`.
 
 # Claim Costs
 

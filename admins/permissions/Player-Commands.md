@@ -99,7 +99,7 @@ which of your own lands a command applies to when you're trusted in more than on
 | `/lands area <area> rental remove offer` | `lands.command.area.rental.remove.offer` | Removes a rental/sale offer. |
 | `/lands area <area> rental remove tenant` | `lands.command.area.rental.remove.tenant` | Forcefully removes the tenant; compensation may be required. |
 | `/lands bank balance` | `lands.command.bank.balance` | Only registered if land banks are enabled. |
-| `/lands bank deposit <amount>` | `lands.command.bank.deposit` | Only registered if land banks are enabled. |
+| `/lands bank deposit <amount>` | `lands.command.bank.deposit` | Only registered if land banks are enabled. Role flag `BALANCE_DEPOSIT` still applies. |
 | `/lands bank withdraw <amount>` | `lands.command.bank.withdraw` | Role flag `BALANCE_WITHDRAW` still applies. |
 | `/lands storage` | `lands.command.storage` | Only registered if land storage is enabled. |
 | `/lands relation` | `lands.command.relation` | Only registered if relations are enabled. |

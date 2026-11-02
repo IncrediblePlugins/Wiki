@@ -85,6 +85,7 @@ Be careful with `addrole`: player-created lands can rename roles, so running it 
 | `SETTING_EDIT_TAXES` | Edit tax settings. Roles with this flag do not pay taxes. | `lands.role.setting.setting_edit_taxes` | `lands.bypass.setting_edit_taxes` |
 | `SETTING_EDIT_VARIOUS` | Rename the land and change its title. | `lands.role.setting.setting_edit_various` | `lands.bypass.setting_edit_various` |
 | `BALANCE_WITHDRAW` | Withdraw money from the land bank. | `lands.role.setting.balance_withdraw` | `lands.bypass.balance_withdraw` |
+| `BALANCE_DEPOSIT` | Deposit money into the land bank. | `lands.role.setting.balance_deposit` | `lands.bypass.balance_deposit` |
 | `AREA_ASSIGN` | Create sub areas and assign selections to areas. | `lands.role.setting.area_assign` | `lands.bypass.area_assign` |
 | `PLAYER_BAN` | Ban players from the land. | `lands.role.setting.player_ban` | `lands.bypass.player_ban` |
 | `WAR_MANAGE` | Declare wars, manage wars, and surrender for the land. | `lands.role.setting.war_manage` | `lands.bypass.war_manage` |
