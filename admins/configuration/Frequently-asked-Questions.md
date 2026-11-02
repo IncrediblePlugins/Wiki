@@ -56,19 +56,9 @@ In the `/plugins/Lands/Language` folder.
 ***
 
 ## My players are allowed to pvp, even though pvp is disabled?
-You have combat tagging enabled:
-```yaml
-# Specified combat settings which do not affect wars.
-combat:
-  # Combat tagging
-  # If a player attacks a other player he will by tagged for x seconds so that, regardless of land settings,
-  # other players can attack him.
-  # 0s = disabled
-  tag-time: 15s
-  # Should players, which are members in a common land, be able to fight in wilderness?
-  # NOTE: This option requires server restart / reload.
-  ally-wilderness: true
-```
+They are most likely in combat with each other: they started the fight where PvP is allowed (for example in the
+wilderness) and followed each other into the land. Players in combat can keep fighting each other for the time set in
+`land.combat.tag.tag_time` (`0s` disables combat tags). See [Combat Tags](Combat-Tags.md).
 
 ***
 

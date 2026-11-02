@@ -25,6 +25,7 @@
 * [Roles and Role Flags](configuration/Roles-and-their-Flags.md)
 * [Natural Flags](configuration/Natural-Flags.md)
 * [Player Personal Settings](configuration/Player-Personal-Settings.md)
+* [Combat Tags](configuration/Combat-Tags.md)
 * [Wars](configuration/Wars.md)
 * [War Modes and Goals](configuration/War-Modes-and-Goals.md)
 
