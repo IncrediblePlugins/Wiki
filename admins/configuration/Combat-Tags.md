@@ -13,7 +13,8 @@ settings in `wars.yml`.
 # How it works
 
 * A player is tagged when they hit another player, or are hit by one, and the hit is allowed. This includes hits with
-  projectiles and harmful potions.
+  projectiles and harmful potions, and damage a player causes indirectly, such as with TNT, end crystals, beds or
+  respawn anchors that explode, or lightning from a trident with Channeling.
 * Both players must be in survival mode. Players in creative, adventure or spectator mode aren't tagged.
 * The tag lasts for the configured time (`tag_time`) after the last hit between the two players. Every hit between them
   starts the time again.
