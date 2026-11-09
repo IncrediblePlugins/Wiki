@@ -55,3 +55,15 @@ LandsIntegration api = LandsIntegration.of(plugin);
         .setIcon(itemstack)
         .setDescription(description);
     ````
+4. Creating sub areas\
+   Like lands (``Land.of(...)``), nations and roles, sub areas are created with a factory method: ``LandArea.of(...)``.
+   The region between both corners must be inside claims of the land and must not overlap another sub area.
+   The future completes with ``null`` if that's not the case, or if another plugin cancelled the ``AreaCreateEvent``.
+    ````java
+    LandArea.of(land, "Market", corner1, corner2, api.getLandPlayer(player.getUniqueId())).thenAccept(area -> {
+        if (area == null) {
+            // the region isn't inside the land or overlaps another sub area
+        }
+    });
+    ````
+   Delete it again with ``LandArea#delete(LandPlayer)``. This calls the ``AreaDeleteEvent``.
