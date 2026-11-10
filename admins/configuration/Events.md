@@ -17,7 +17,7 @@ For the shared syntax rules, conditions, and command formatting, also read the g
 Each event has a section like this:
 
 ```yaml
-LandCreateEvent:
+LandPreCreateEvent:
   cancel: ''
   commands:
     condition: '!cancelled'
@@ -64,7 +64,7 @@ Some events include `cancel`.
 Examples include:
 
 * `ChunkPreClaimEvent`
-* `LandCreateEvent`
+* `LandPreCreateEvent`
 * `LandDeleteEvent`
 * `LandTrustPlayerEvent`
 * `PlayerTaxEvent`

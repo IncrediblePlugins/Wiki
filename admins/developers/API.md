@@ -21,7 +21,7 @@ LandsIntegration api = LandsIntegration.of(plugin);
     ````java
     LandWorld world = api.getWorld(world);
     if (world != null) { // Lands is enabled in this world
-        if (world.hasFlag(api.getLandPlayer(player), location, material, Flags.BLOCK_BREAK, false)) {
+        if (world.hasRoleFlag(api.getLandPlayer(player), location, Flags.BLOCK_BREAK, material, false)) {
             // the player is allowed to break blocks with the given material at the given location
         } else {
             // the player isn't allowed to break this block in wilderness or a claimed land at this position
