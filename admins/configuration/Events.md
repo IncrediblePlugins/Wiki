@@ -92,8 +92,11 @@ War-related sections include:
 
 * `WarDeclareEvent`
 * `WarEndEvent`
-* `WarShieldChangeEvent` (cancellable: a war shield of a land or nation changes)
-* `MemberHolderRelationRequestEvent` (cancellable: an alliance request or a request to end being enemies is sent)
+
+Not every event has a section in the default `events.yml`. To run commands for another event, add a section named
+after its class, for example `WarShieldChangeEvent` (a war shield of a land or nation changes) or
+`MemberHolderRelationRequestEvent` (an alliance request or a request to end being enemies is sent). Both can be
+cancelled.
 
 Use these to announce wars, reward sides, run cleanup commands, or notify external systems.
 
