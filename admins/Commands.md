@@ -34,7 +34,7 @@ Nested commands add the full path:
 | `/lands admin land <land or all> setflag <flag> <state> <visitor>` | Sets a role flag or natural flag in one land or all lands. | `lands.admin.command.land.setflag` |
 | `/lands admin land <land or all> resetflag <flag or all>` | Resets one flag or all flags to config defaults. | `lands.admin.command.land.resetflag` |
 | `/lands admin land <land or all> removespawn` | Removes the spawn of one land or all lands. | `lands.admin.command.land.removespawn` |
-| `/lands admin land <land or all> shield set <time>` | Sets the war shield time. | `lands.admin.command.land.shield.set` |
+| `/lands admin land <land or all> shield set <time>` | Sets the war shield time of a land, or of all lands (not nations). | `lands.admin.command.land.shield.set` |
 | `/lands admin land <land or all> shield modify <time>` | Adds or removes war shield time. | `lands.admin.command.land.shield.modify` |
 | `/lands admin land <land or all> bank set <amount>` | Sets the land bank balance. | `lands.admin.command.land.bank.set` |
 | `/lands admin land <land or all> bank modify <amount>` | Adds or removes land bank balance. | `lands.admin.command.land.bank.modify` |
@@ -59,8 +59,8 @@ Nested commands add the full path:
 | Command | What it does | Permission |
 | --- | --- | --- |
 | `/nations admin nation <nation> level <level> [commands]` | Sets the level of a nation, up or down, without paying. With `commands` set to `true`, the commands of the levels passed upwards run. | `nations.admin.command.nation.level` |
-| `/nations admin nation <nation> shield set <time>` | Sets the war shield time of a nation. | `nations.admin.command.nation.shield.set` |
-| `/nations admin nation <nation> shield modify <time>` | Adds or removes war shield time of a nation. | `nations.admin.command.nation.shield.modify` |
+| `/nations admin nation <nation or all> shield set <time>` | Sets the war shield time of a nation, or of all nations. | `nations.admin.command.nation.shield.set` |
+| `/nations admin nation <nation or all> shield modify <time>` | Adds or removes war shield time of a nation, or of all nations. | `nations.admin.command.nation.shield.modify` |
 
 `<land or all>` means that `all` applies the command to all lands where the command supports it. `limits` and `menu` always need a land. `all` is a reserved word: no land, nation, area or role can be named `all` (or `here`).
 
