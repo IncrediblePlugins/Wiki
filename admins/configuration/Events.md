@@ -92,6 +92,8 @@ War-related sections include:
 
 * `WarDeclareEvent`
 * `WarEndEvent`
+* `WarShieldChangeEvent` (cancellable: a war shield of a land or nation changes)
+* `MemberHolderRelationRequestEvent` (cancellable: an alliance request or a request to end being enemies is sent)
 
 Use these to announce wars, reward sides, run cleanup commands, or notify external systems.
 

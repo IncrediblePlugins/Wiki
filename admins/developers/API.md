@@ -67,3 +67,25 @@ LandsIntegration api = LandsIntegration.of(plugin);
     });
     ````
    Delete it again with ``LandArea#delete(LandPlayer)``. This calls the ``AreaDeleteEvent``.
+5. Relations and war declarations\
+   Lands and nations send alliance requests and declare wars with the same checks as the commands. Pass the player who
+   does it to check their role flag and the requirements of the server, or ``null`` to skip the checks of a player
+   (like an admin). A land in a nation acts for its nation. The futures can complete on another thread.
+    ````java
+    land.requestAlliance(target, landPlayer).thenAccept(result -> {
+        // RelationResult.SUCCESS: the target accepts it with RelationRequest#accept
+    });
+    land.addEnemy(target, landPlayer);
+    land.declareWar(target, null, null, landPlayer).thenAccept(result -> {
+        // WarDeclarationResult.SUCCESS: land.getWarDeclaration() is the declaration
+    });
+    for (RelationRequest request : target.getReceivedRelationRequests()) {
+        request.accept(null);
+    }
+    ````
+   Requests call the ``MemberHolderRelationRequestEvent`` (cancellable), changes of a relation the
+   ``MemberHolderRelationChangeEvent``. ``removeAlly`` and ``requestNeutralization`` end relations again.
+6. War shields\
+   Every change of a war shield calls the cancellable ``WarShieldChangeEvent`` with its reason (the end of a war, a
+   declaration, an admin or a plugin through ``MemberHolder#setWarShield``/``addWarshield``). Cancel it to keep the
+   shield as it is.

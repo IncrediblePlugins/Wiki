@@ -28,7 +28,9 @@ the replacement and compile against the new API.
 | `CaptureFlagBreakEvent.BreakReason` | `land.block.removalreason.CaptureFlagRemovalReason` (same values) |
 
 In `events.yml`, the sections `LandCreateEvent` and `PlayerSpawnLandEvent` are renamed to `LandPreCreateEvent` and
-`LandSpawnTeleportEvent` on the first start of 9.3.0, so commands configured there keep running.
+`LandSpawnTeleportEvent` on the first start of 9.3.0, so commands configured there keep running. `PlayerSpawnLandEvent`
+wasn't called anymore: its commands run again, on every teleport to a land spawn. The section `LevelChangedEvent`,
+which never matched its event, becomes `MemberHolderLevelChangedEvent` and runs from now on.
 
 ## Methods
 
@@ -46,6 +48,7 @@ In `events.yml`, the sections `LandCreateEvent` and `PlayerSpawnLandEvent` are r
 | `Area#getId()` | `Area#getULID()` |
 | `Area#hasRoleFlag(Player, ...)`, `Area#hasFlag(...)` | `Area#hasRoleFlag(LandPlayer, RoleFlag, Material, boolean)`, `Area#hasRoleFlag(UUID, RoleFlag)` |
 | `LandArea#contains(int, int, int)` | `LandArea#getBoundingBox()` |
+| `CaptureFlag#breakCaptureFlag(..., CaptureFlagBreakEvent.BreakReason)` | Same method with a `CaptureFlagRemovalReason` (same values) |
 | `TaxHolder#getColorName()` (on areas) | `getColorName(CommandSender)` |
 | `MemberHolder#getWarName()` | `MemberHolder#getWarName(PlayerDataBase)` (`null` for the default language) |
 | `MemberHolder#isTrusted(LandPlayer)` | `MemberHolder#isTrusted(UUID)` |
