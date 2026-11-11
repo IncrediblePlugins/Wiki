@@ -19,10 +19,10 @@ LandsIntegration api = LandsIntegration.of(plugin);
 1. Checking Role-Flag States for Players\
    Using ``LandWorld`` to check flag states has the benefit that it also checks wilderness flags. Some use cases might not intent that. In this case you can use ``LandsIntegration#getArea(location)`` and check the flag state of the area instead.
     ````java
-    LandWorld world = api.getWorld(world);
+    LandWorld landWorld = api.getWorld(location.getWorld());
     LandPlayer landPlayer = api.getLandPlayer(player.getUniqueId());
-    if (world != null && landPlayer != null) { // Lands is enabled in this world, the player's data is loaded
-        if (world.hasRoleFlag(landPlayer, location, Flags.BLOCK_BREAK, material, false)) {
+    if (landWorld != null && landPlayer != null) { // Lands is enabled in this world, the player's data is loaded
+        if (landWorld.hasRoleFlag(landPlayer, location, Flags.BLOCK_BREAK, material, false)) {
             // the player is allowed to break blocks with the given material at the given location
         } else {
             // the player isn't allowed to break this block in wilderness or a claimed land at this position
@@ -34,9 +34,9 @@ LandsIntegration api = LandsIntegration.of(plugin);
    ``LandWorld`` does check wilderness and claimed lands if applicable. If you want to
    limit the check to claimed land, use ``LandsIntegration#getArea(location)`` instead of getting the world.
     ````java
-    LandWorld world = api.getWorld(world);
-    if (world != null) { // Lands is enabled in this world
-        if (world.hasNaturalFlag(location, Flags.MONSTER_SPAWN)) {
+    LandWorld landWorld = api.getWorld(location.getWorld());
+    if (landWorld != null) { // Lands is enabled in this world
+        if (landWorld.hasNaturalFlag(location, Flags.MONSTER_SPAWN)) {
             // monsters are allowed to spawn at this location
         } else {
             // they aren't allowed to spawn at this location

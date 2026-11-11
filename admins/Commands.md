@@ -35,7 +35,7 @@ Nested commands add the full path:
 | `/lands admin land <land or all> resetflag <flag or all>` | Resets one flag or all flags to config defaults. | `lands.admin.command.land.resetflag` |
 | `/lands admin land <land or all> removespawn` | Removes the spawn of one land or all lands. | `lands.admin.command.land.removespawn` |
 | `/lands admin land <land or all> shield set <time>` | Sets the war shield time of a land, or of all lands (not nations). | `lands.admin.command.land.shield.set` |
-| `/lands admin land <land or all> shield modify <time>` | Adds or removes war shield time. | `lands.admin.command.land.shield.modify` |
+| `/lands admin land <land or all> shield modify <time>` | Adds or removes war shield time of a land, or of all lands (not nations). | `lands.admin.command.land.shield.modify` |
 | `/lands admin land <land or all> bank set <amount>` | Sets the land bank balance. | `lands.admin.command.land.bank.set` |
 | `/lands admin land <land or all> bank modify <amount>` | Adds or removes land bank balance. | `lands.admin.command.land.bank.modify` |
 | `/lands admin land <land> level <level> [commands]` | Sets the level of a land, up or down, without paying. With `commands` set to `true`, the commands of the levels passed upwards run. See [Levels](configuration/Levels.md#admin-commands). | `lands.admin.command.land.level` |
