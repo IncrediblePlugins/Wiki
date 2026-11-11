@@ -20,8 +20,9 @@ LandsIntegration api = LandsIntegration.of(plugin);
    Using ``LandWorld`` to check flag states has the benefit that it also checks wilderness flags. Some use cases might not intent that. In this case you can use ``LandsIntegration#getArea(location)`` and check the flag state of the area instead.
     ````java
     LandWorld world = api.getWorld(world);
-    if (world != null) { // Lands is enabled in this world
-        if (world.hasRoleFlag(api.getLandPlayer(player), location, Flags.BLOCK_BREAK, material, false)) {
+    LandPlayer landPlayer = api.getLandPlayer(player.getUniqueId());
+    if (world != null && landPlayer != null) { // Lands is enabled in this world, the player's data is loaded
+        if (world.hasRoleFlag(landPlayer, location, Flags.BLOCK_BREAK, material, false)) {
             // the player is allowed to break blocks with the given material at the given location
         } else {
             // the player isn't allowed to break this block in wilderness or a claimed land at this position
