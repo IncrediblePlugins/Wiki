@@ -98,6 +98,10 @@ after its class, for example `WarShieldChangeEvent` (a war shield of a land or n
 `MemberHolderRelationRequestEvent` (an alliance request or a request to end being enemies is sent). Both can be
 cancelled.
 
+With mutual war declarations (wars.yml), `WarDeclareEvent` also runs when a land or nation accepts a declaration by
+declaring back. Then `war_accept` is true, and the attacker of the event is the side that accepts. Check
+`!war_accept` in a condition to run commands only for new declarations.
+
 Use these to announce wars, reward sides, run cleanup commands, or notify external systems.
 
 # Testing
