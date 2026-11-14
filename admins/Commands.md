@@ -2,7 +2,9 @@
 
 Admin commands are for server staff. Do not give these permissions to regular players.
 
-Most `/lands admin` subcommands use the permission format `lands.admin.command.<subcommand>`.
+Most `/lands admin` subcommands use the permission format `lands.admin.command.<subcommand>`. The commands that group
+them need a permission too: `lands.admin.command` for `/lands admin` and `lands.admin.command.land` for
+`/lands admin land`. `lands.admin.command.*` includes both.
 
 Nested commands add the full path:
 
